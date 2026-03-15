@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "Japan Etiquette Guide",
+    "slug": "japan-etiquette-guide",
+    "scheme": "japan-etiquette-guide",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      "expo-router",
+      "expo-localization"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
