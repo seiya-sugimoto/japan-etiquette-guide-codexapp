@@ -1,123 +1,123 @@
 # Japan Etiquette Guide
 
-Japan Etiquette Guide is a mobile app for foreign visitors to Japan.
+Japan Etiquette Guide は、訪日外国人向けのモバイルアプリです。
 
-It is not a sightseeing guide. The app focuses on practical etiquette, manners, and unwritten social rules that help travelers feel more confident in everyday situations while also supporting comfortable shared spaces for both visitors and local residents.
+観光ガイドではなく、日本での振る舞い、マナー、暗黙ルールを短時間で分かりやすく伝えることを目的にしています。旅行者が日常の場面で不安を減らし、日本人と外国人が相互に気持ちよく過ごせる共有空間を支えるためのアプリです。
 
-## Product Concept
+## コンセプト
 
-Many visitors do not struggle because they lack interest or respect. They struggle because many Japanese social expectations are quiet, contextual, and easy to miss when you are moving quickly through a new country.
+訪日外国人が困るのは、興味や敬意が足りないからとは限りません。日本の社会的な期待や振る舞いは、静かで文脈依存なものが多く、短い旅行の中では気づきにくいことがあります。
 
-This app is designed to reduce that anxiety.
+このアプリは、そうした不安や戸惑いを減らすために作っています。
 
-The goal is to help users:
+目指している体験は次のとおりです。
 
-- understand key etiquette in 3 to 10 seconds
-- avoid common misunderstandings
-- feel calm and confident while traveling
-- learn the difference between hard rules, local patterns, and "safe default" behavior
+- 3〜10秒で要点がつかめる
+- よくある誤解を減らせる
+- 旅行中に落ち着いて行動できる
+- 絶対ルールと、地域差や場面差のある「無難な行動」の違いが分かる
 
-The tone of the app is intentionally:
+文言と体験のトーンは、常に次を重視しています。
 
 - practical
 - calm
 - non-judgmental
 - culturally natural
-- easy to scan on mobile
+- mobile で読みやすいこと
 
-## Who It Is For
+## 想定ユーザー
 
-- first-time and second-time visitors to Japan
-- travelers who do not read Japanese well
-- people who want simple, respectful guidance in real situations
-- users who care about shared comfort, not just "avoiding mistakes"
+- 初めて、または2回目くらいの訪日旅行者
+- 日本語があまり読めない旅行者
+- 実際の場面で役立つマナーを知りたい人
+- 「怒られないため」ではなく、相互に気持ちよく過ごしたい人
 
-## Current App Scope
+## 現在のアプリ構成
 
-The app currently includes:
+現在の MVP では主に次を含みます。
 
 - Home
 - Browse
 - Search
 - Settings
-- Category detail screens
-- language switching
-- premium content structure
-- localized UI with lightweight non-English detail fallbacks
+- カテゴリ詳細画面
+- 言語切り替え
+- Premium 導線の土台
+- 非英語向けの軽量なローカライズ構造
 
-## Core Guide Categories
+## 現在のガイドカテゴリ
 
-Current guide coverage includes:
+現在収録している主なカテゴリは次のとおりです。
 
-- Train
-- Restaurant Basics
-- Shrine Visits
-- Onsen and Sento
-- Temple Visits
-- Ryokan Etiquette
-- Shoes Indoors
-- Trash and Public Manners
-- Payments and Tipping
-- Chopsticks
-- Visiting a Home
-- Convenience Stores
-- Queues and Escalators
-- Photos and Video
-- Smoking
-- Large Luggage
-- Residential Areas and Private Stays
-- Toilets
-- Bicycles and Rental Cycles
+- 電車
+- レストラン
+- 神社
+- 温泉
+- 寺院
+- 旅館
+- 靴を脱ぐ
+- ゴミ・公共マナー
+- 支払い・チップ
+- 箸
+- 家を訪問するとき
+- コンビニ
+- 列・エスカレーター
+- 写真・動画撮影
+- 喫煙
+- 大きな荷物・スーツケース
+- 住宅街・私有地・民泊
+- トイレ
+- 自転車・レンタサイクル
 
-## Design Direction
+## デザイン方針
 
-The visual direction is built around a calm and refined mobile experience:
+UI は、旅行中でも一瞬で読める落ち着いた体験を目指しています。
 
-- soft off-white / paper-like surfaces
-- deep indigo as the main color
-- muted vermilion accents
-- spacious card-based layouts
-- fast scanning and one-handed mobile use
+- やわらかいオフホワイト系の背景
+- 深い藍色を基調にした配色
+- 控えめな朱色アクセント
+- 余白をしっかり取ったカードベースの構成
+- 片手でも使いやすいモバイル体験
 
-The app aims to feel distinctly Japanese without becoming cliché, flashy, or touristy.
+日本らしさは出しつつも、ありがちな観光アプリ風や派手すぎる見た目にはしない方針です。
 
-## Tech Stack
+## 技術構成
 
 - Expo
 - React Native
 - TypeScript
 - expo-router
-- AsyncStorage for lightweight local settings/state
+- AsyncStorage
 
-## Localization
+## 多言語対応
 
-The app includes UI language support for:
+UI 言語として現在サポート対象にしているのは次です。
 
-- English
-- Japanese
-- Korean
-- Traditional Chinese
-- Simplified Chinese
-- Thai
-- French
-- Spanish
-- Vietnamese
+- 英語
+- 日本語
+- 韓国語
+- 繁体字中国語
+- 簡体字中国語
+- タイ語
+- フランス語
+- スペイン語
+- ベトナム語
 
-At the moment, English contains the primary content copy. Non-English languages use localized UI plus lightweight fallback content structure, with room for fuller content translation later.
+現時点では英語を中心にコンテンツを持ちつつ、他言語は UI ローカライズと軽量なフォールバック構造で支えています。今後、カテゴリ本文の本格翻訳を追加できる前提で設計しています。
 
-## Premium Structure
+## Premium 構造
 
-The project includes a premium-ready content model for future one-time unlock flows.
+将来的な one-time unlock を見据えて、Premium 用の構造を先に入れています。
 
-Today this mostly supports:
+現状は主に次の土台です。
 
-- free vs premium category separation
-- premium badges and routing
-- future purchase integration points
+- free / premium カテゴリ分離
+- premium バッジや導線
+- 将来の課金接続ポイント
 
-## Project Structure
+## ディレクトリ構成
 
-The app uses a thin `app/` route layer with most logic inside `src/`.
+ルート層は薄く保ち、主要ロジックは `src/` に寄せています。
 
 ```text
 app/
@@ -135,42 +135,41 @@ src/
   types/
 ```
 
-## Running Locally
+## ローカル起動方法
 
 ```bash
 npm install
 npm start
 ```
 
-Type-checking:
+型チェック:
 
 ```bash
 npx tsc --noEmit
 ```
 
-## Status
+## 現在の開発状況
 
-This repository is currently in active MVP development.
+このリポジトリは MVP 開発中です。
 
-Recent work includes:
+ここまでの主な実装内容は次のとおりです。
 
-- Expo app foundation
-- category-based content model
-- UI polish inspired by travel-friendly mobile references
-- multilingual settings and UI support
-- new etiquette scenarios based on high-friction travel moments
-- content tone revisions to make guidance more practical and less judgmental
+- Expo アプリの土台構築
+- カテゴリベースのコンテンツモデル
+- 旅行中に使いやすい UI への調整
+- 多言語設定と UI ローカライズ
+- 「知らないと困りやすい」シーンの追加
+- 説教的になりすぎないコンテンツ文言への見直し
 
-## Product Principles
+## プロダクト原則
 
-This project is not meant to judge visitors.
+このアプリは、外国人をジャッジするためのものではありません。
 
-It is meant to help foreign visitors move through Japan more naturally and with less stress, while encouraging mutual comfort in shared spaces.
+訪日外国人が日本で自然にふるまいやすくなり、不安を減らし、共有空間での快適さを高めることを目的としています。
 
-When adding or editing content, prioritize:
+今後コンテンツや機能を追加するときも、次を優先します。
 
-- clarity over completeness
-- guidance over correction
-- realistic travel usefulness over cultural trivia
-- local nuance over rigid universal rules
-
+- 完全性より分かりやすさ
+- 指摘よりガイド
+- 雑学より旅行中の実用性
+- 一般化しすぎない地域差・場面差への配慮
