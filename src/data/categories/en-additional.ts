@@ -191,5 +191,185 @@ export const additionalEnglishCategories: Category[] = [
       commonMistakes: ["Taking over the front window for the whole ride.", "Stopping in the exit path for one last photo."],
       readMore: ["Board quickly, look briefly, share naturally, and exit smoothly."]
     }
+  },
+  {
+    id: "hotel-checkin",
+    slug: "hotel-checkin",
+    title: "Hotel Check-In",
+    shortDescription: "Have your booking ready and listen to the hotel explanation.",
+    access: "free",
+    imageUrl: lodgingImage,
+    badge: "essential",
+    tags: ["hotel", "check-in"],
+    content: {
+      quickView: ["Prepare your reservation and passport.", "Listen before asking many questions.", "Keep the counter clear."],
+      dos: ["Prepare your reservation name, passport, and payment method before reaching the desk.", "Listen to the explanation about keys, breakfast, or bath rules."],
+      donts: ["Do not spread your luggage around the front desk.", "Do not assume every hotel uses the same check-in flow."],
+      whyItMatters: ["A calm check-in helps staff serve many arriving guests smoothly."],
+      commonMistakes: ["Searching for documents at the counter.", "Ignoring details about breakfast, baths, or checkout times."],
+      readMore: ["Even short explanations often contain useful details, so listening first usually saves time later."]
+    }
+  },
+  {
+    id: "hotel-lobby",
+    slug: "hotel-lobby",
+    title: "Hotel Lobby",
+    shortDescription: "Use the lobby as a shared waiting space, not a personal base.",
+    access: "free",
+    imageUrl: lodgingImage,
+    badge: "essential",
+    tags: ["hotel", "lobby"],
+    content: {
+      quickView: ["Keep luggage compact.", "Use side areas if you need time.", "Avoid loud group conversations."],
+      dos: ["Choose a side area if you need to reorganize bags or check plans.", "Keep your belongings close to your seat."],
+      donts: ["Do not occupy major walkways with luggage.", "Do not use the middle of the lobby as a planning zone."],
+      whyItMatters: ["Lobbies are shared by arriving guests, departing guests, and staff at the same time."],
+      commonMistakes: ["Spreading suitcases into walking paths.", "Speaking loudly because the space feels open."],
+      readMore: ["If you need a few minutes, moving to a side seating area is usually the best choice."]
+    }
+  },
+  {
+    id: "hotel-breakfast",
+    slug: "hotel-breakfast",
+    title: "Hotel Breakfast",
+    shortDescription: "Follow the seating flow, take food lightly, and keep the line moving.",
+    access: "free",
+    imageUrl: diningImage,
+    badge: "essential",
+    tags: ["hotel", "breakfast", "buffet"],
+    content: {
+      quickView: ["Wait to be seated if needed.", "Take small portions first.", "Return trays or dishes where instructed."],
+      dos: ["Watch whether staff are seating guests before choosing a table.", "Take food in smaller rounds if the buffet is busy."],
+      donts: ["Do not cut into the buffet line.", "Do not reserve large tables with luggage or bags alone."],
+      whyItMatters: ["Breakfast rooms often look relaxed, but the flow is usually fast and structured."],
+      commonMistakes: ["Taking too much food at once.", "Standing in front of dishes while deciding what to take."],
+      readMore: ["At crowded times, shorter stays and smaller plate trips usually feel smoother for everyone."]
+    }
+  },
+  {
+    id: "hotel-elevator",
+    slug: "hotel-elevator",
+    title: "Hotel Elevators",
+    shortDescription: "Let people out first and keep the ride quiet and short.",
+    access: "free",
+    imageUrl: lodgingImage,
+    badge: "essential",
+    tags: ["hotel", "elevator"],
+    content: {
+      quickView: ["Let people exit first.", "Move inside quickly.", "Keep luggage out of the way."],
+      dos: ["Wait until other passengers step out before entering.", "Hold the door briefly if someone is clearly approaching."],
+      donts: ["Do not stand in the doorway.", "Do not talk loudly in a full elevator."],
+      whyItMatters: ["Elevators are small, shared spaces where courtesy becomes very visible."],
+      commonMistakes: ["Trying to enter before people exit.", "Leaving a suitcase in the center of the floor."],
+      readMore: ["Simple elevator manners make a stronger impression than many travelers expect."]
+    }
+  },
+  {
+    id: "shared-lounge",
+    slug: "shared-lounge",
+    title: "Shared Lounges",
+    shortDescription: "Use the room lightly and match the quietest tone in the space.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["lounge", "shared space"],
+    content: {
+      quickView: ["Use only the space you need.", "Check whether calls are okay.", "Leave the area tidy."],
+      dos: ["Choose one seat area and keep your belongings compact.", "Check whether drinks, food, or phone calls are allowed."],
+      donts: ["Do not spread bags across multiple seats.", "Do not use a quiet room for a loud call."],
+      whyItMatters: ["Shared comfort depends on everyone using the room with a light footprint."],
+      commonMistakes: ["Turning a quiet lounge into a work desk with cables and bags everywhere.", "Leaving cups or trash behind."],
+      readMore: ["If the atmosphere is unclear, matching the quietest people in the room is usually the safest choice."]
+    }
+  },
+  {
+    id: "coin-laundry",
+    slug: "coin-laundry",
+    title: "Coin Laundry",
+    shortDescription: "Use machines efficiently and pick up finished laundry on time.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["laundry", "shared facility"],
+    content: {
+      quickView: ["Read the machine first.", "Set a timer if needed.", "Come back when the cycle ends."],
+      dos: ["Check the machine type and instructions before starting.", "Return promptly when your wash or dry cycle finishes."],
+      donts: ["Do not leave completed laundry in the machine for a long time.", "Do not spread personal items over folding counters."],
+      whyItMatters: ["Laundry rooms work best when people respect both time and space."],
+      commonMistakes: ["Forgetting the finish time.", "Using shared counters as personal storage."],
+      readMore: ["In a busy laundry room, quick pickup matters almost as much as using the machine correctly."]
+    }
+  },
+  {
+    id: "capsule-hotel",
+    slug: "capsule-hotel",
+    title: "Capsule Hotels",
+    shortDescription: "Think quiet, compact, and considerate in the sleeping area.",
+    access: "premium",
+    imageUrl: lodgingImage,
+    badge: "premium",
+    tags: ["capsule hotel", "sleep"],
+    content: {
+      quickView: ["Finish noisy tasks before entering the capsule area.", "Use silent mode.", "Move gently at night."],
+      dos: ["Prepare what you need before going into the sleeping area.", "Keep your phone fully silent."],
+      donts: ["Do not make calls near the capsules.", "Do not unzip bags loudly for a long time late at night."],
+      whyItMatters: ["Sound travels easily in capsule hotels, even when you feel you are being quiet."],
+      commonMistakes: ["Repacking luggage after midnight.", "Watching videos near sleeping capsules."],
+      readMore: ["The simplest rule is: do noisy things before entering the area where people are trying to sleep."]
+    }
+  },
+  {
+    id: "hostel-dorm",
+    slug: "hostel-dorm",
+    title: "Hostels and Dorm Rooms",
+    shortDescription: "Shared rooms work best when everyone reduces noise, light, and clutter.",
+    access: "premium",
+    imageUrl: lodgingImage,
+    badge: "premium",
+    tags: ["hostel", "dorm"],
+    content: {
+      quickView: ["Use common areas for calls and repacking.", "Keep your bed area tidy.", "Use small light at night."],
+      dos: ["Move long conversations and bag repacking to a lounge or common space.", "Keep your belongings close to your bed area."],
+      donts: ["Do not turn on bright lights late at night unless necessary.", "Do not use the floor as extra storage."],
+      whyItMatters: ["Dorm rooms can feel social, but they are still shared rest spaces."],
+      commonMistakes: ["Having a full conversation at the bedside while others rest.", "Leaving bags and chargers across the floor."],
+      readMore: ["If you want to chat, eat, or organize luggage, common areas are usually the better place."]
+    }
+  },
+  {
+    id: "checkout-room",
+    slug: "checkout-room",
+    title: "Leaving the Room at Checkout",
+    shortDescription: "Leave the room reasonably tidy and get out on time.",
+    access: "free",
+    imageUrl: lodgingImage,
+    badge: "essential",
+    tags: ["checkout", "hotel room"],
+    content: {
+      quickView: ["Check for forgotten items.", "Leave the room reasonably tidy.", "Do not assume a late exit is fine."],
+      dos: ["Check outlets, bathroom shelves, and under the bed before leaving.", "Follow any simple trash or key return instructions."],
+      donts: ["Do not leave the room heavily scattered.", "Do not stay past checkout time without asking."],
+      whyItMatters: ["Checkout timing affects cleaning and the next guest's arrival."],
+      commonMistakes: ["Leaving chargers or passports behind.", "Packing in a rush and leaving the room in chaos."],
+      readMore: ["The goal is not perfection. Basic tidiness and being on time are usually enough."]
+    }
+  },
+  {
+    id: "luggage-storage",
+    slug: "luggage-storage",
+    title: "Luggage Storage and Lockers",
+    shortDescription: "Choose the right space quickly and do your sorting away from the lockers.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["locker", "storage", "luggage"],
+    content: {
+      quickView: ["Choose the right locker size first.", "Do not repack in front of the lockers.", "Take note of where you stored your bag."],
+      dos: ["Prepare payment and decide roughly what size locker you need before using the machine.", "Step aside if you need extra time to sort your luggage."],
+      donts: ["Do not block a whole row of lockers while repacking.", "Do not force oversized bags into the wrong locker."],
+      whyItMatters: ["Locker areas are usually narrow, busy, and meant for quick use."],
+      commonMistakes: ["Opening multiple lockers while others wait.", "Forgetting which locker bank you used."],
+      readMore: ["Taking a quick photo of the locker number or nearby sign can save time later in large stations."]
+    }
   }
 ];

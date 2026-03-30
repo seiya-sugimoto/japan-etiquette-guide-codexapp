@@ -48,6 +48,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "ropeway-cablecar": {
       title: "Ropeways and Cable Cars",
       shortDescription: "Board quickly, share the view, and do not hold the best spot too long."
+    },
+    "hotel-checkin": {
+      title: "Hotel Check-In",
+      shortDescription: "Have your booking ready and listen to the hotel explanation."
+    },
+    "hotel-lobby": {
+      title: "Hotel Lobby",
+      shortDescription: "Use the lobby as a shared waiting space, not a personal base."
+    },
+    "hotel-breakfast": {
+      title: "Hotel Breakfast",
+      shortDescription: "Follow the seating flow, take food lightly, and keep the line moving."
+    },
+    "hotel-elevator": {
+      title: "Hotel Elevators",
+      shortDescription: "Let people out first and keep the ride quiet and short."
+    },
+    "shared-lounge": {
+      title: "Shared Lounges",
+      shortDescription: "Use the room lightly and match the quietest tone in the space."
+    },
+    "coin-laundry": {
+      title: "Coin Laundry",
+      shortDescription: "Use machines efficiently and pick up finished laundry on time."
+    },
+    "capsule-hotel": {
+      title: "Capsule Hotels",
+      shortDescription: "Think quiet, compact, and considerate in the sleeping area."
+    },
+    "hostel-dorm": {
+      title: "Hostels and Dorm Rooms",
+      shortDescription: "Shared rooms work best when everyone reduces noise, light, and clutter."
+    },
+    "checkout-room": {
+      title: "Leaving the Room at Checkout",
+      shortDescription: "Leave the room reasonably tidy and get out on time."
+    },
+    "luggage-storage": {
+      title: "Luggage Storage and Lockers",
+      shortDescription: "Choose the right space quickly and do your sorting away from the lockers."
     }
   },
   ja: {
@@ -90,6 +130,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "ropeway-cablecar": {
       title: "ロープウェイ・ケーブルカー",
       shortDescription: "景色を楽しみつつ、狭い車内をみんなで気持ちよく使うコツ。"
+    },
+    "hotel-checkin": {
+      title: "ホテルのチェックイン",
+      shortDescription: "予約情報や説明を落ち着いて確認して、到着後をスムーズにする。"
+    },
+    "hotel-lobby": {
+      title: "ホテルロビー",
+      shortDescription: "共有の待合空間として、周囲の流れを止めずに使うためのポイント。"
+    },
+    "hotel-breakfast": {
+      title: "ホテルの朝食会場",
+      shortDescription: "席案内やビュッフェの流れを見ながら気持ちよく利用するコツ。"
+    },
+    "hotel-elevator": {
+      title: "ホテルのエレベーター",
+      shortDescription: "小さい共有空間で自然に見える乗り方の基本。"
+    },
+    "shared-lounge": {
+      title: "共用ラウンジ・休憩スペース",
+      shortDescription: "静かな共有スペースを軽やかに使うための考え方。"
+    },
+    "coin-laundry": {
+      title: "コインランドリー",
+      shortDescription: "機械だけでなく時間と共有スペースにも配慮するための基本。"
+    },
+    "capsule-hotel": {
+      title: "カプセルホテル",
+      shortDescription: "音と動きに気を配って、眠る人の近くで自然にふるまうコツ。"
+    },
+    "hostel-dorm": {
+      title: "ホステル・相部屋",
+      shortDescription: "音・光・荷物の広がりを抑えて、共有の寝室を快適に使う基本。"
+    },
+    "checkout-room": {
+      title: "チェックアウト前に部屋を出るとき",
+      shortDescription: "忘れ物と散らかりを減らして、気持ちよく部屋を出るためのポイント。"
+    },
+    "luggage-storage": {
+      title: "荷物預かり・コインロッカー",
+      shortDescription: "ロッカー前の流れを止めずに、手早く荷物を預けるコツ。"
     }
   },
   ko: {
@@ -132,6 +212,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "ropeway-cablecar": {
       title: "로프웨이와 케이블카",
       shortDescription: "좁은 객실에서 전망을 함께 나누며 타는 방법."
+    },
+    "hotel-checkin": {
+      title: "호텔 체크인",
+      shortDescription: "예약 정보와 안내를 차분히 확인해 도착 직후를 더 편하게 만드는 방법."
+    },
+    "hotel-lobby": {
+      title: "호텔 로비",
+      shortDescription: "공용 대기 공간인 로비를 주변 흐름을 막지 않고 쓰는 요령."
+    },
+    "hotel-breakfast": {
+      title: "호텔 조식",
+      shortDescription: "자리 안내와 뷔페 흐름을 보며 편하게 이용하는 기본."
+    },
+    "hotel-elevator": {
+      title: "호텔 엘리베이터",
+      shortDescription: "작은 공용 공간에서 자연스럽게 보이는 기본 예절."
+    },
+    "shared-lounge": {
+      title: "공용 라운지와 휴게 공간",
+      shortDescription: "조용한 공용 공간을 가볍게 사용하는 방법."
+    },
+    "coin-laundry": {
+      title: "코인세탁실",
+      shortDescription: "기계뿐 아니라 시간과 공용 공간도 배려하는 기본."
+    },
+    "capsule-hotel": {
+      title: "캡슐호텔",
+      shortDescription: "잠자는 공간 가까이에서 소리와 움직임을 줄이는 요령."
+    },
+    "hostel-dorm": {
+      title: "호스텔과 도미토리",
+      shortDescription: "소리와 빛, 짐의 퍼짐을 줄여 공유 침실을 편하게 쓰는 방법."
+    },
+    "checkout-room": {
+      title: "체크아웃 직전 방을 나설 때",
+      shortDescription: "잊은 물건과 어지러움을 줄이고 편하게 방을 나오는 기본."
+    },
+    "luggage-storage": {
+      title: "짐 보관과 코인락커",
+      shortDescription: "락커 앞 흐름을 막지 않고 빠르게 짐을 맡기는 요령."
     }
   },
   "zh-Hant": {
@@ -174,6 +294,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "ropeway-cablecar": {
       title: "纜車與空中纜車",
       shortDescription: "上車快一點、看景色時彼此禮讓會更舒服。"
+    },
+    "hotel-checkin": {
+      title: "飯店辦理入住",
+      shortDescription: "先準備好訂房資訊和證件，入住會順很多。"
+    },
+    "hotel-lobby": {
+      title: "飯店大廳",
+      shortDescription: "把大廳當成共用等待空間，而不是自己的臨時基地。"
+    },
+    "hotel-breakfast": {
+      title: "飯店早餐",
+      shortDescription: "照著座位和取餐動線走，大家都會更舒服。"
+    },
+    "hotel-elevator": {
+      title: "飯店電梯",
+      shortDescription: "在小小的共用空間裡，自然又不打擾別人的基本做法。"
+    },
+    "shared-lounge": {
+      title: "共用休息室",
+      shortDescription: "輕鬆使用共用空間，同時保留別人的舒適感。"
+    },
+    "coin-laundry": {
+      title: "投幣洗衣店",
+      shortDescription: "不只看機器，還要顧到時間和共用檯面。"
+    },
+    "capsule-hotel": {
+      title: "膠囊旅館",
+      shortDescription: "在睡眠區附近把聲音和動作都放輕，會自在很多。"
+    },
+    "hostel-dorm": {
+      title: "青年旅館與多人房",
+      shortDescription: "控制聲音、燈光和行李範圍，讓共用房間更舒服。"
+    },
+    "checkout-room": {
+      title: "退房前離開房間時",
+      shortDescription: "避免忘東忘西，也讓房間保持基本整齊。"
+    },
+    "luggage-storage": {
+      title: "行李寄放與置物櫃",
+      shortDescription: "快速寄放行李，同時不要堵住置物櫃區域。"
     }
   },
   "zh-Hans": {
@@ -216,6 +376,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "ropeway-cablecar": {
       title: "索道和缆车",
       shortDescription: "上车快一点、看风景时互相礼让会更舒服。"
+    },
+    "hotel-checkin": {
+      title: "酒店办理入住",
+      shortDescription: "先准备好预订信息和证件，入住会顺很多。"
+    },
+    "hotel-lobby": {
+      title: "酒店大堂",
+      shortDescription: "把大堂当成共享等候空间，而不是自己的临时基地。"
+    },
+    "hotel-breakfast": {
+      title: "酒店早餐",
+      shortDescription: "跟着入座和取餐动线走，大家都会更舒服。"
+    },
+    "hotel-elevator": {
+      title: "酒店电梯",
+      shortDescription: "在小小的共享空间里，自然又不打扰别人的基本做法。"
+    },
+    "shared-lounge": {
+      title: "共享休息区",
+      shortDescription: "轻松使用共享空间，同时保留别人的舒适感。"
+    },
+    "coin-laundry": {
+      title: "投币洗衣房",
+      shortDescription: "不只看机器，也要顾到时间和共享台面。"
+    },
+    "capsule-hotel": {
+      title: "胶囊旅馆",
+      shortDescription: "在睡眠区附近把声音和动作都放轻，会舒服很多。"
+    },
+    "hostel-dorm": {
+      title: "青年旅馆与多人房",
+      shortDescription: "控制声音、灯光和行李范围，让共享房间更舒服。"
+    },
+    "checkout-room": {
+      title: "退房前离开房间时",
+      shortDescription: "减少遗漏物品，也让房间保持基本整齐。"
+    },
+    "luggage-storage": {
+      title: "行李寄存和投币柜",
+      shortDescription: "快速寄放行李，同时不要堵住柜子区域。"
     }
   }
 };
