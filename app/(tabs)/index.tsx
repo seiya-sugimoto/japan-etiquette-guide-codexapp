@@ -1,41 +1,59 @@
 import { Link, useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { Image, Pressable, StyleSheet, View } from "react-native";
+import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
 
-import { AppCard } from "@/components/ui/AppCard";
 import { AppScreen } from "@/components/ui/AppScreen";
 import { AppText } from "@/components/ui/AppText";
-import { featuredCategorySlugs } from "@/data/mocks/featuredCategories";
 import { useCategories } from "@/features/categories/hooks/useCategories";
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
 import { colors } from "@/lib/constants/colors";
 import { radius } from "@/lib/constants/radius";
+import { shadows } from "@/lib/constants/shadows";
 import { spacing } from "@/lib/constants/spacing";
+import type { CategoryId } from "@/types/category";
+
+const heroSlug = "photo-video";
+const featuredGridSlugs = ["restaurant", "train", "shrine", "onsen"] as const;
+
+const categoryIcons: Record<string, keyof typeof Ionicons.glyphMap> = {
+  restaurant: "restaurant-outline",
+  train: "train-outline",
+  shrine: "business-outline",
+  onsen: "water-outline"
+};
 
 export default function HomeScreen() {
   const router = useRouter();
   const { currentLanguage, getLanguageLabel, t } = useAppLanguage();
   const categories = useCategories();
-  const featured = categories.filter((category) => featuredCategorySlugs.includes(category.slug));
-  const surprisingSlugs = ["photo-video", "smoking", "toilet"];
-  const horizontal = categories.filter((category) => surprisingSlugs.includes(category.slug));
+
+  const hero = categories.find((category) => category.slug === heroSlug) ?? categories[0];
+  const featuredCards = featuredGridSlugs
+    .map((slug) => categories.find((category) => category.slug === slug))
+    .filter((category): category is NonNullable<typeof category> => Boolean(category));
 
   return (
     <AppScreen>
       <View style={styles.topBar}>
-        <View style={styles.titleRow}>
-          <View style={styles.logo}>
-            <Ionicons color={colors.surface} name="shield-checkmark" size={18} />
-          </View>
-          <AppText variant="subtitle">{t.appName}</AppText>
+        <View style={styles.brandBlock}>
+          <AppText color={colors.textMuted} style={styles.brandKicker} variant="eyebrow">
+            {t.homeTab}
+          </AppText>
+          <AppText style={styles.brandName} variant="subtitle">
+            {t.appName}
+          </AppText>
         </View>
-        <View style={styles.actions}>
+
+        <View style={styles.topActions}>
           <Link asChild href="/language">
-            <Pressable style={styles.langButton}>
+            <Pressable style={styles.languageChip}>
               <Ionicons color={colors.primary} name="language" size={16} />
-              <AppText variant="caption">{getLanguageLabel(currentLanguage)}</AppText>
+              <AppText color={colors.primary} variant="caption">
+                {getLanguageLabel(currentLanguage)}
+              </AppText>
             </Pressable>
           </Link>
+
           <Link asChild href="/(tabs)/settings">
             <Pressable style={styles.iconButton}>
               <Ionicons color={colors.primary} name="settings-outline" size={18} />
@@ -45,22 +63,12 @@ export default function HomeScreen() {
       </View>
 
       <View style={styles.headingBlock}>
-        <AppText variant="hero">{t.homeQuestion}</AppText>
-        <AppText color={colors.textMuted}>{t.homeIntro}</AppText>
-      </View>
-
-      <View style={styles.grid}>
-        {featured.map((category) => (
-          <Link asChild href={`/category/${category.slug}`} key={category.id}>
-            <Pressable style={styles.gridCard}>
-              <Image source={{ uri: category.imageUrl }} style={styles.gridImage} />
-              <View style={styles.gridOverlay} />
-              <AppText style={styles.gridLabel} color={colors.surface} variant="subtitle">
-                {category.title}
-              </AppText>
-            </Pressable>
-          </Link>
-        ))}
+        <AppText style={styles.headline} variant="hero">
+          {t.homeQuestion}
+        </AppText>
+        <AppText color={colors.textMuted} style={styles.intro}>
+          {t.homeIntro}
+        </AppText>
       </View>
 
       <Link asChild href="/(tabs)/search">
@@ -70,37 +78,89 @@ export default function HomeScreen() {
         </Pressable>
       </Link>
 
+      {hero ? (
+        <Link asChild href={`/category/${hero.slug}`}>
+          <Pressable style={styles.heroCard}>
+            <ImageBackground imageStyle={styles.heroImage} source={{ uri: hero.imageUrl }} style={styles.heroImage}>
+              <View style={styles.heroOverlay} />
+              <View style={styles.heroContent}>
+                <View style={styles.heroBadge}>
+                  <AppText color={colors.surface} style={styles.heroBadgeLabel} variant="caption">
+                    {hero.badge === "premium" ? "Premium" : t.commonSituations}
+                  </AppText>
+                </View>
+
+                <View style={styles.heroCopy}>
+                  <AppText color={colors.surface} style={styles.heroTitle} variant="title">
+                    {hero.title}
+                  </AppText>
+                  <AppText color="rgba(255,255,255,0.84)" style={styles.heroDescription}>
+                    {hero.shortDescription}
+                  </AppText>
+                </View>
+
+                <View style={styles.heroButton}>
+                  <AppText color={colors.primary} variant="caption">
+                    {t.readMore}
+                  </AppText>
+                  <Ionicons color={colors.primary} name="arrow-forward" size={16} />
+                </View>
+              </View>
+            </ImageBackground>
+          </Pressable>
+        </Link>
+      ) : null}
+
       <View style={styles.sectionHeader}>
-        <AppText variant="subtitle">{t.commonSituations}</AppText>
+        <AppText style={styles.sectionTitle} variant="subtitle">
+          {t.browseTitle}
+        </AppText>
         <Pressable onPress={() => router.push("/browse")}>
-          <AppText variant="caption" color={colors.primary}>
+          <AppText color={colors.primary} variant="caption">
             {t.seeAll}
           </AppText>
         </Pressable>
       </View>
 
-      <View style={styles.horizontalList}>
-        {horizontal.map((category) => (
+      <View style={styles.cardGrid}>
+        {featuredCards.map((category) => (
           <Link asChild href={`/category/${category.slug}`} key={category.id}>
-            <Pressable style={styles.horizontalCard}>
-              <Image source={{ uri: category.imageUrl }} style={styles.horizontalImage} />
-              <AppText style={styles.horizontalLabel}>{category.title}</AppText>
+            <Pressable style={styles.categoryCard}>
+              <View style={styles.iconCircle}>
+                <Ionicons
+                  color={colors.primary}
+                  name={categoryIcons[category.slug] ?? "ellipse-outline"}
+                  size={20}
+                />
+              </View>
+              <AppText style={styles.categoryTitle} variant="subtitle">
+                {category.title}
+              </AppText>
+              <AppText color={colors.textMuted} numberOfLines={2} style={styles.categoryDescription}>
+                {category.shortDescription}
+              </AppText>
             </Pressable>
           </Link>
         ))}
       </View>
 
-      <AppCard style={styles.premiumCard}>
-        <AppText variant="title" color={colors.surface}>
-          {t.unlockTitle}
-        </AppText>
-        <AppText color="#D7DDEA">{t.unlockBody}</AppText>
-        <Pressable onPress={() => router.push("/premium")} style={styles.premiumButton}>
-          <AppText variant="caption" color={colors.primary}>
+      <View style={styles.premiumBanner}>
+        <View style={styles.premiumCopy}>
+          <AppText color={colors.accentSoft} style={styles.premiumKicker} variant="eyebrow">
+            Premium
+          </AppText>
+          <AppText color={colors.surface} style={styles.premiumTitle} variant="title">
+            {t.unlockTitle}
+          </AppText>
+          <AppText color="rgba(255,255,255,0.82)">{t.unlockBody}</AppText>
+        </View>
+
+        <Pressable onPress={() => router.push("/premium")} style={styles.premiumAction}>
+          <AppText color={colors.primary} variant="caption">
             {t.goPremium}
           </AppText>
         </Pressable>
-      </AppCard>
+      </View>
     </AppScreen>
   );
 }
@@ -108,109 +168,166 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   topBar: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center"
-  },
-  titleRow: {
-    flexDirection: "row",
     alignItems: "center",
-    gap: spacing.sm
+    justifyContent: "space-between"
   },
-  logo: {
-    width: 30,
-    height: 30,
-    borderRadius: 10,
-    backgroundColor: colors.primary,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  actions: {
-    flexDirection: "row",
-    gap: spacing.sm
-  },
-  langButton: {
-    flexDirection: "row",
-    alignItems: "center",
+  brandBlock: {
     gap: 4,
+    flex: 1,
+    paddingRight: spacing.md
+  },
+  brandKicker: {
+    textTransform: "uppercase"
+  },
+  brandName: {
+    color: colors.primary
+  },
+  topActions: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm
+  },
+  languageChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
     paddingHorizontal: spacing.sm,
-    paddingVertical: 8,
-    borderRadius: radius.md,
-    backgroundColor: colors.surface
+    paddingVertical: 10,
+    borderRadius: radius.pill,
+    backgroundColor: colors.surfaceMuted
   },
   iconButton: {
-    width: 36,
-    height: 36,
-    borderRadius: radius.md,
-    backgroundColor: colors.surface,
+    width: 42,
+    height: 42,
+    borderRadius: radius.pill,
+    backgroundColor: colors.surfaceMuted,
     alignItems: "center",
     justifyContent: "center"
   },
   headingBlock: {
     gap: spacing.sm
   },
-  grid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: spacing.sm
+  headline: {
+    maxWidth: 320
   },
-  gridCard: {
-    width: "48%",
-    aspectRatio: 1,
-    borderRadius: radius.md,
-    overflow: "hidden",
-    justifyContent: "flex-end",
-    padding: spacing.sm
-  },
-  gridImage: {
-    ...StyleSheet.absoluteFillObject
-  },
-  gridOverlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(0,0,0,0.28)"
-  },
-  gridLabel: {
-    fontWeight: "700"
+  intro: {
+    maxWidth: 320
   },
   searchEntry: {
-    backgroundColor: colors.surface,
-    borderRadius: radius.md,
-    paddingHorizontal: spacing.md,
-    paddingVertical: 16,
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.sm,
-    borderWidth: 1,
-    borderColor: "#EEF1F5"
+    backgroundColor: colors.surfaceMuted,
+    paddingHorizontal: spacing.md,
+    paddingVertical: 18,
+    borderRadius: radius.lg,
+    ...shadows.card
+  },
+  heroCard: {
+    borderRadius: 32,
+    overflow: "hidden",
+    ...shadows.strong
+  },
+  heroImage: {
+    minHeight: 440,
+    justifyContent: "flex-end"
+  },
+  heroOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(27, 28, 26, 0.28)"
+  },
+  heroContent: {
+    padding: spacing.lg,
+    gap: spacing.md
+  },
+  heroBadge: {
+    alignSelf: "flex-start",
+    paddingHorizontal: spacing.sm,
+    paddingVertical: 6,
+    borderRadius: radius.pill,
+    backgroundColor: "rgba(80, 12, 7, 0.78)"
+  },
+  heroBadgeLabel: {
+    textTransform: "uppercase"
+  },
+  heroCopy: {
+    gap: spacing.sm,
+    maxWidth: 280
+  },
+  heroTitle: {
+    lineHeight: 32
+  },
+  heroDescription: {
+    lineHeight: 22
+  },
+  heroButton: {
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    backgroundColor: colors.surface,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: 14,
+    borderRadius: radius.pill
   },
   sectionHeader: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
+    justifyContent: "space-between"
   },
-  horizontalList: {
+  sectionTitle: {
+    color: colors.primary
+  },
+  cardGrid: {
     flexDirection: "row",
+    flexWrap: "wrap",
     gap: spacing.md
   },
-  horizontalCard: {
-    flex: 1,
+  categoryCard: {
+    width: "47.5%",
+    minHeight: 180,
+    borderRadius: 30,
+    backgroundColor: colors.surface,
+    padding: spacing.md,
+    justifyContent: "space-between",
+    ...shadows.card
+  },
+  iconCircle: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.surfaceMuted
+  },
+  categoryTitle: {
+    color: colors.primary
+  },
+  categoryDescription: {
+    marginTop: spacing.xs,
+    minHeight: 42
+  },
+  premiumBanner: {
+    backgroundColor: colors.primary,
+    borderRadius: 32,
+    padding: spacing.lg,
+    gap: spacing.lg,
+    ...shadows.strong
+  },
+  premiumCopy: {
     gap: spacing.sm
   },
-  horizontalImage: {
-    width: "100%",
-    aspectRatio: 0.82,
-    borderRadius: radius.md
+  premiumKicker: {
+    textTransform: "uppercase"
   },
-  horizontalLabel: {
-    fontWeight: "600"
+  premiumTitle: {
+    lineHeight: 34
   },
-  premiumCard: {
-    backgroundColor: colors.primary
-  },
-  premiumButton: {
+  premiumAction: {
     alignSelf: "flex-start",
     backgroundColor: colors.surface,
-    borderRadius: radius.md,
+    borderRadius: radius.pill,
     paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.sm
+    paddingVertical: 14
   }
 });

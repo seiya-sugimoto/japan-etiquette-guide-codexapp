@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from "react";
-import { StyleSheet, View, type ViewStyle } from "react-native";
+import { StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
 
 import { colors } from "@/lib/constants/colors";
 import { radius } from "@/lib/constants/radius";
@@ -7,7 +7,7 @@ import { shadows } from "@/lib/constants/shadows";
 import { spacing } from "@/lib/constants/spacing";
 
 type AppCardProps = PropsWithChildren<{
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 }>;
 
 export function AppCard({ children, style }: AppCardProps) {
@@ -17,9 +17,7 @@ export function AppCard({ children, style }: AppCardProps) {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: colors.surface,
-    borderRadius: radius.md,
-    borderWidth: 1,
-    borderColor: colors.border,
+    borderRadius: radius.lg,
     padding: spacing.md,
     gap: spacing.sm,
     ...shadows.card

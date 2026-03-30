@@ -3,6 +3,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
 import { colors } from "@/lib/constants/colors";
+import { radius } from "@/lib/constants/radius";
 
 export default function TabLayout() {
   const { t } = useAppLanguage();
@@ -14,8 +15,23 @@ export default function TabLayout() {
         headerTintColor: colors.text,
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.textMuted,
-        tabBarStyle: { backgroundColor: colors.surface, height: 72, paddingTop: 6 },
-        tabBarLabelStyle: { fontSize: 11, fontWeight: "700" }
+        tabBarStyle: {
+          position: "absolute",
+          left: 16,
+          right: 16,
+          bottom: 14,
+          backgroundColor: "rgba(251, 249, 246, 0.94)",
+          height: 76,
+          paddingTop: 8,
+          borderTopWidth: 0,
+          borderRadius: radius.lg
+        },
+        tabBarLabelStyle: { fontSize: 11, fontWeight: "700", marginBottom: 6 },
+        tabBarItemStyle: {
+          marginVertical: 8,
+          borderRadius: radius.pill
+        },
+        tabBarBackground: () => null
       }}
     >
       <Tabs.Screen

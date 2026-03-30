@@ -4,6 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { AppCard } from "@/components/ui/AppCard";
 import { AppText } from "@/components/ui/AppText";
 import { colors } from "@/lib/constants/colors";
+import { radius } from "@/lib/constants/radius";
 import { spacing } from "@/lib/constants/spacing";
 
 export function QuickViewCard({
@@ -20,21 +21,38 @@ export function QuickViewCard({
   const iconBackground = tone === "success" ? styles.success : tone === "danger" ? styles.danger : styles.neutral;
 
   return (
-    <AppCard>
+    <AppCard style={[styles.card, tone === "success" ? styles.cardSuccess : tone === "danger" ? styles.cardDanger : styles.cardNeutral]}>
       <View style={styles.row}>
         <View style={[styles.iconWrap, iconBackground]}>
           <Ionicons color={iconColor} name={iconName} size={18} />
         </View>
         <AppText variant="subtitle">{title}</AppText>
       </View>
-      {items.map((item) => (
-        <AppText key={item}>{item}</AppText>
-      ))}
+      <View style={styles.items}>
+        {items.map((item) => (
+          <View key={item} style={styles.itemRow}>
+            <View style={styles.dot} />
+            <AppText style={styles.itemText}>{item}</AppText>
+          </View>
+        ))}
+      </View>
     </AppCard>
   );
 }
 
 const styles = StyleSheet.create({
+  card: {
+    gap: spacing.md
+  },
+  cardSuccess: {
+    backgroundColor: "#F7FBF8"
+  },
+  cardDanger: {
+    backgroundColor: "#FCF5F5"
+  },
+  cardNeutral: {
+    backgroundColor: colors.surfaceMuted
+  },
   row: {
     flexDirection: "row",
     alignItems: "center",
@@ -54,6 +72,24 @@ const styles = StyleSheet.create({
     backgroundColor: "#FBECEE"
   },
   neutral: {
-    backgroundColor: "#EEF3FA"
+    backgroundColor: "#F1ECE8"
+  },
+  items: {
+    gap: spacing.sm
+  },
+  itemRow: {
+    flexDirection: "row",
+    gap: spacing.sm,
+    alignItems: "flex-start"
+  },
+  dot: {
+    width: 8,
+    height: 8,
+    borderRadius: radius.pill,
+    backgroundColor: colors.accent,
+    marginTop: 7
+  },
+  itemText: {
+    flex: 1
   }
 });

@@ -10,7 +10,7 @@ type BadgeTone = "default" | "premium";
 export function AppBadge({ label, tone = "default" }: { label: string; tone?: BadgeTone }) {
   return (
     <View style={[styles.badge, tone === "premium" ? styles.premium : styles.default]}>
-      <AppText variant="caption" color={tone === "premium" ? colors.surface : colors.primary}>
+      <AppText style={styles.label} variant="caption" color={tone === "premium" ? colors.surface : colors.primary}>
         {label}
       </AppText>
     </View>
@@ -24,10 +24,13 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.xs,
     borderRadius: radius.pill
   },
+  label: {
+    textTransform: "uppercase"
+  },
   default: {
     backgroundColor: colors.surfaceMuted
   },
   premium: {
-    backgroundColor: colors.primary
+    backgroundColor: colors.primarySoft
   }
 });
