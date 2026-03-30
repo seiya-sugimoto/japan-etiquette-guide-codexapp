@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Pressable, StyleSheet, View } from "react-native";
 
 import { CategoryList } from "@/components/category/CategoryList";
+import { filterCategoriesForBrowse, type BrowseViewMode } from "@/data/categories/meta";
 import { AppScreen } from "@/components/ui/AppScreen";
 import { AppText } from "@/components/ui/AppText";
 import { useCategories } from "@/features/categories/hooks/useCategories";
@@ -11,9 +12,10 @@ import { radius } from "@/lib/constants/radius";
 import { spacing } from "@/lib/constants/spacing";
 
 export default function BrowseScreen() {
-  const [viewMode, setViewMode] = useState<"situation" | "place">("situation");
+  const [viewMode, setViewMode] = useState<BrowseViewMode>("situation");
   const categories = useCategories();
   const { t } = useAppLanguage();
+  const visibleCategories = filterCategoriesForBrowse(categories, viewMode);
 
   return (
     <AppScreen>
@@ -33,7 +35,7 @@ export default function BrowseScreen() {
         <AppText variant="title">{t.browseTitle}</AppText>
         <AppText color={colors.textMuted}>{t.browseDescription}</AppText>
       </View>
-      <CategoryList categories={categories} />
+      <CategoryList categories={visibleCategories} />
     </AppScreen>
   );
 }

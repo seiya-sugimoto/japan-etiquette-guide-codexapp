@@ -8,6 +8,7 @@ import { AppCard } from "@/components/ui/AppCard";
 import { AppScreen } from "@/components/ui/AppScreen";
 import { AppText } from "@/components/ui/AppText";
 import { SearchBar } from "@/components/ui/SearchBar";
+import { useCategories } from "@/features/categories/hooks/useCategories";
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
 import { searchCategories } from "@/features/categories/utils/searchCategories";
 import { colors } from "@/lib/constants/colors";
@@ -16,16 +17,12 @@ import { spacing } from "@/lib/constants/spacing";
 
 export default function SearchScreen() {
   const router = useRouter();
+  const categories = useCategories();
   const { currentLanguage, recentSearches, suggestedTopics, t } = useAppLanguage();
   const [query, setQuery] = useState("");
   const [recentItems, setRecentItems] = useState(recentSearches);
   const results = useMemo(() => searchCategories(query, currentLanguage), [currentLanguage, query]);
-  const topicRoutes: Record<string, "/category/onsen" | "/category/shrine" | "/category/payments-tipping" | "/category/chopsticks"> = {
-    [suggestedTopics[0]]: "/category/onsen",
-    [suggestedTopics[1]]: "/category/shrine",
-    [suggestedTopics[2]]: "/category/payments-tipping",
-    [suggestedTopics[3]]: "/category/chopsticks"
-  };
+  const defaultResults = categories.slice(0, 4);
 
   return (
     <AppScreen>
@@ -44,17 +41,14 @@ export default function SearchScreen() {
       <View style={styles.chips}>
         {suggestedTopics.map((topic) => (
           <Pressable
-            key={topic}
+            key={topic.slug}
             onPress={() => {
-              setQuery(topic);
-              const route = topicRoutes[topic];
-              if (route) {
-                router.push(route);
-              }
+              setQuery(topic.label);
+              router.push(`/category/${topic.slug}`);
             }}
             style={styles.chip}
           >
-            <AppText>{topic}</AppText>
+            <AppText>{topic.label}</AppText>
           </Pressable>
         ))}
       </View>
@@ -62,7 +56,7 @@ export default function SearchScreen() {
       <AppText variant="caption" color={colors.primary}>
         {t.searchResults.toUpperCase()}
       </AppText>
-      <CategoryList categories={results.slice(0, query ? 3 : 2)} />
+      <CategoryList categories={query ? results : defaultResults} />
 
       <View style={styles.recentHeader}>
         <AppText variant="caption" color={colors.primary}>

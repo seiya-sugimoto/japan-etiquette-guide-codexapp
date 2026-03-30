@@ -1,4 +1,5 @@
 import type { Category } from "@/types/category";
+import { additionalEnglishCategories } from "@/data/categories/en-additional";
 
 export const englishCategories: Category[] = [
   {
@@ -342,5 +343,6 @@ export const englishCategories: Category[] = [
       commonMistakes: ["Leaving a rental bike where it blocks foot traffic.", "Riding too quickly through a crowded tourist street.", "Skipping parking signs because the stop feels short."],
       readMore: ["Rental cycles are convenient, but parking and riding rules can be strict. Signs and rental instructions are the safest guide."]
     }
-  }
+  },
+  ...additionalEnglishCategories
 ];

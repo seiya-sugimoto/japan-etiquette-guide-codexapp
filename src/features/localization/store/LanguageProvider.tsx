@@ -6,6 +6,7 @@ import {
   localizedCategoryCopy,
   localizedRecentSearches,
   localizedSuggestedTopics,
+  type SuggestedTopic,
   supportedLanguages,
   translations
 } from "@/lib/i18n/translations";
@@ -18,7 +19,7 @@ type LanguageContextValue = {
   setLanguage: (language: AppLanguage) => Promise<void>;
   t: (typeof translations)["en"];
   supportedLanguages: typeof supportedLanguages;
-  suggestedTopics: string[];
+  suggestedTopics: SuggestedTopic[];
   recentSearches: string[];
   getCategoryCopy: (categoryId: string) => { title: string; shortDescription: string } | undefined;
   getLanguageLabel: (language: AppLanguage) => string;

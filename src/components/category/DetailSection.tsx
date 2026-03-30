@@ -6,7 +6,7 @@ export function DetailSection({ title, items }: { title: string; items: string[]
     <AppCard>
       <AppText variant="subtitle">{title}</AppText>
       {items.map((item) => (
-        <AppText key={`${title}-${item}`}>• {item}</AppText>
+        <AppText key={`${title}-${item}`}>- {item}</AppText>
       ))}
     </AppCard>
   );

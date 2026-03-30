@@ -30,14 +30,19 @@ export default function CategoryDetailScreen() {
   return (
     <AppScreen>
       <CategoryHero category={category} />
-      <QuickViewCard items={category.content.quickView.slice(0, 2)} title={t.doLabel} tone="success" />
-      <QuickViewCard items={category.content.donts.slice(0, 2)} title={t.avoidLabel} tone="danger" />
+      <QuickViewCard items={category.content.quickView.slice(0, 3)} title={t.quickView} tone="neutral" />
+      <DetailSection title={t.doLabel} items={category.content.dos} />
+      <DetailSection title={t.avoidLabel} items={category.content.donts} />
       <AppCard>
         <View style={styles.watchRow}>
           <Ionicons color={colors.primary} name="pricetag-outline" size={18} />
           <View style={styles.watchCopy}>
             <AppText variant="subtitle">{t.watchFor}</AppText>
-            <AppText color={colors.textMuted}>{category.content.readMore[0]}</AppText>
+            {category.content.quickView.map((item) => (
+              <AppText key={`watch-${item}`} color={colors.textMuted}>
+                {item}
+              </AppText>
+            ))}
           </View>
         </View>
       </AppCard>
