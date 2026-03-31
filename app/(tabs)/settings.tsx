@@ -7,6 +7,7 @@ import { AppScreen } from "@/components/ui/AppScreen";
 import { AppText } from "@/components/ui/AppText";
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
 import { colors } from "@/lib/constants/colors";
+import { radius } from "@/lib/constants/radius";
 import { spacing } from "@/lib/constants/spacing";
 
 function SettingsRow({
@@ -29,13 +30,17 @@ function SettingsRow({
           <View style={styles.rowIcon}>
             <Ionicons color={colors.primary} name={icon} size={20} />
           </View>
+
           <View style={styles.rowBody}>
-            <AppText variant="subtitle">{title}</AppText>
+            <AppText style={styles.rowTitle} variant="subtitle">
+              {title}
+            </AppText>
             <AppText color={colors.textMuted}>{description}</AppText>
           </View>
+
           <View style={styles.trailing}>
             {trailing ? (
-              <AppText variant="caption" color={colors.textMuted}>
+              <AppText color={colors.textMuted} numberOfLines={1} style={styles.trailingText} variant="caption">
                 {trailing}
               </AppText>
             ) : null}
@@ -52,6 +57,27 @@ export default function SettingsScreen() {
 
   return (
     <AppScreen>
+      <View style={styles.header}>
+        <AppText style={styles.title} variant="hero">
+          {t.settingsTab}
+        </AppText>
+        <AppText color={colors.textMuted}>
+          Keep the app simple, readable, and useful while you travel.
+        </AppText>
+      </View>
+
+      <AppCard style={styles.infoCard}>
+        <AppText color={colors.primary} style={styles.eyebrow} variant="eyebrow">
+          Japan Etiquette Guide
+        </AppText>
+        <AppText style={styles.infoTitle} variant="subtitle">
+          Practical help for everyday situations in Japan.
+        </AppText>
+        <AppText color={colors.textMuted}>
+          Use language, premium, and feedback settings here without leaving the calm flow of the app.
+        </AppText>
+      </AppCard>
+
       <SettingsRow
         href="/language"
         icon="language"
@@ -76,20 +102,51 @@ export default function SettingsScreen() {
 }
 
 const styles = StyleSheet.create({
+  header: {
+    gap: spacing.sm
+  },
+  title: {
+    color: colors.primary
+  },
+  infoCard: {
+    borderRadius: 28,
+    backgroundColor: colors.surfaceMuted
+  },
+  eyebrow: {
+    textTransform: "uppercase"
+  },
+  infoTitle: {
+    color: colors.primary
+  },
   rowCard: {
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
+    borderRadius: 28,
+    padding: spacing.md
   },
   rowIcon: {
-    width: 40
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.surfaceMuted
   },
   rowBody: {
     flex: 1,
-    gap: 4
+    gap: 6,
+    paddingHorizontal: spacing.md
+  },
+  rowTitle: {
+    color: colors.primary
   },
   trailing: {
     flexDirection: "row",
     alignItems: "center",
-    gap: spacing.xs
+    gap: spacing.xs,
+    maxWidth: 96
+  },
+  trailingText: {
+    textAlign: "right"
   }
 });

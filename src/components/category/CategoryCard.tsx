@@ -12,22 +12,34 @@ import type { Category } from "@/types/category";
 
 export function CategoryCard({ category }: { category: Category }) {
   const badgeLabel =
-    category.badge === "high-risk" ? "HIGH RISK" : category.badge === "essential" ? "ESSENTIAL" : category.access === "premium" ? "PREMIUM" : "FREE";
+    category.badge === "high-risk"
+      ? "HIGH RISK"
+      : category.badge === "essential"
+        ? "ESSENTIAL"
+        : category.access === "premium"
+          ? "PREMIUM"
+          : null;
 
   return (
     <Pressable onPress={() => router.push(`/category/${category.slug}`)}>
       <AppCard style={styles.card}>
-        <View style={styles.iconWrap}>
+        <View style={styles.thumbWrap}>
           <Image source={{ uri: category.imageUrl }} style={styles.thumb} />
         </View>
         <View style={styles.body}>
-        <View style={styles.header}>
-          <AppText variant="subtitle">{category.title}</AppText>
-            <AppBadge label={badgeLabel} tone={category.access === "premium" ? "premium" : "default"} />
+          <View style={styles.header}>
+            <AppText style={styles.title} variant="subtitle">
+              {category.title}
+            </AppText>
+            {badgeLabel ? <AppBadge label={badgeLabel} tone={category.access === "premium" ? "premium" : "default"} /> : null}
+          </View>
+          <AppText color={colors.textMuted} numberOfLines={2} style={styles.description}>
+            {category.shortDescription}
+          </AppText>
         </View>
-        <AppText color={colors.textMuted}>{category.shortDescription}</AppText>
+        <View style={styles.chevronWrap}>
+          <Ionicons color={colors.textMuted} name="chevron-forward" size={18} />
         </View>
-        <Ionicons color={colors.textMuted} name="chevron-forward" size={18} />
       </AppCard>
     </Pressable>
   );
@@ -36,12 +48,14 @@ export function CategoryCard({ category }: { category: Category }) {
 const styles = StyleSheet.create({
   card: {
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
+    borderRadius: 28,
+    padding: spacing.md
   },
-  iconWrap: {
-    width: 56,
-    height: 56,
-    borderRadius: radius.md,
+  thumbWrap: {
+    width: 72,
+    height: 72,
+    borderRadius: 22,
     overflow: "hidden"
   },
   thumb: {
@@ -50,12 +64,28 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 1,
-    gap: 4
+    gap: 8,
+    paddingHorizontal: spacing.md
   },
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     gap: spacing.sm
+  },
+  title: {
+    flex: 1,
+    color: colors.primary
+  },
+  description: {
+    lineHeight: 22
+  },
+  chevronWrap: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.surfaceMuted
   }
 });

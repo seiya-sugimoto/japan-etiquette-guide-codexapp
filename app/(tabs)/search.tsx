@@ -22,62 +22,64 @@ export default function SearchScreen() {
   const [query, setQuery] = useState("");
   const [recentItems, setRecentItems] = useState(recentSearches);
   const results = useMemo(() => searchCategories(query, currentLanguage), [currentLanguage, query]);
-  const defaultResults = categories.slice(0, 4);
+  const visibleResults = query ? results : categories.slice(0, 4);
 
   return (
     <AppScreen>
-      <View style={styles.searchRow}>
-        <Pressable onPress={() => router.back()}>
-          <Ionicons color={colors.primary} name="arrow-back" size={20} />
-        </Pressable>
-        <View style={styles.searchWrap}>
-          <SearchBar value={query} onChangeText={setQuery} placeholder={t.searchPlaceholder} />
+      <View style={styles.header}>
+        <AppText style={styles.title} variant="hero">
+          {t.searchTab}
+        </AppText>
+        <AppText color={colors.textMuted}>{t.searchPlaceholder}</AppText>
+      </View>
+
+      <SearchBar value={query} onChangeText={setQuery} placeholder={t.searchPlaceholder} />
+
+      <View style={styles.section}>
+        <AppText color={colors.primary} style={styles.eyebrow} variant="eyebrow">
+          {t.suggestedTopics}
+        </AppText>
+        <View style={styles.chips}>
+          {suggestedTopics.map((topic) => (
+            <Pressable
+              key={topic.slug}
+              onPress={() => {
+                setQuery(topic.label);
+                router.push(`/category/${topic.slug}`);
+              }}
+              style={styles.chip}
+            >
+              <AppText style={styles.chipLabel}>{topic.label}</AppText>
+            </Pressable>
+          ))}
         </View>
       </View>
 
-      <AppText variant="caption" color={colors.primary}>
-        {t.suggestedTopics.toUpperCase()}
-      </AppText>
-      <View style={styles.chips}>
-        {suggestedTopics.map((topic) => (
-          <Pressable
-            key={topic.slug}
-            onPress={() => {
-              setQuery(topic.label);
-              router.push(`/category/${topic.slug}`);
-            }}
-            style={styles.chip}
-          >
-            <AppText>{topic.label}</AppText>
-          </Pressable>
-        ))}
-      </View>
-
-      <AppText variant="caption" color={colors.primary}>
-        {t.searchResults.toUpperCase()}
-      </AppText>
-      <CategoryList categories={query ? results : defaultResults} />
-
-      <View style={styles.recentHeader}>
-        <AppText variant="caption" color={colors.primary}>
-          {t.recentSearches.toUpperCase()}
+      <View style={styles.section}>
+        <AppText color={colors.primary} style={styles.eyebrow} variant="eyebrow">
+          {t.searchResults}
         </AppText>
-        <Pressable onPress={() => setRecentItems([])}>
-          <AppText variant="caption" color={colors.textMuted}>
-            {t.clearAll}
-          </AppText>
-        </Pressable>
+        <CategoryList categories={visibleResults} />
       </View>
-      <AppCard>
+
+      <AppCard style={styles.recentCard}>
+        <View style={styles.recentHeader}>
+          <AppText color={colors.primary} style={styles.eyebrow} variant="eyebrow">
+            {t.recentSearches}
+          </AppText>
+          <Pressable onPress={() => setRecentItems([])}>
+            <AppText color={colors.textMuted} variant="caption">
+              {t.clearAll}
+            </AppText>
+          </Pressable>
+        </View>
+
         {recentItems.map((topic) => (
           <View key={topic} style={styles.recentRow}>
-            <Ionicons color={colors.textMuted} name="time-outline" size={18} />
-            <Pressable
-              onPress={() => {
-                setQuery(topic);
-              }}
-              style={styles.recentTextWrap}
-            >
+            <View style={styles.recentIcon}>
+              <Ionicons color={colors.textMuted} name="time-outline" size={16} />
+            </View>
+            <Pressable onPress={() => setQuery(topic)} style={styles.recentTextWrap}>
               <AppText style={styles.recentText}>{topic}</AppText>
             </Pressable>
             <Pressable onPress={() => setRecentItems((items) => items.filter((item) => item !== topic))}>
@@ -91,13 +93,17 @@ export default function SearchScreen() {
 }
 
 const styles = StyleSheet.create({
-  searchRow: {
-    flexDirection: "row",
-    alignItems: "center",
+  header: {
     gap: spacing.sm
   },
-  searchWrap: {
-    flex: 1
+  title: {
+    color: colors.primary
+  },
+  section: {
+    gap: spacing.md
+  },
+  eyebrow: {
+    textTransform: "uppercase"
   },
   chips: {
     flexDirection: "row",
@@ -106,16 +112,21 @@ const styles = StyleSheet.create({
   },
   chip: {
     paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
+    paddingVertical: 12,
     backgroundColor: colors.surface,
-    borderRadius: radius.pill,
-    borderWidth: 1,
-    borderColor: "#E6EAF0"
+    borderRadius: radius.pill
+  },
+  chipLabel: {
+    color: colors.textSubtle
+  },
+  recentCard: {
+    borderRadius: 28,
+    backgroundColor: colors.surfaceMuted
   },
   recentHeader: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
+    justifyContent: "space-between"
   },
   recentRow: {
     flexDirection: "row",
@@ -123,10 +134,18 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     paddingVertical: spacing.sm
   },
-  recentText: {
-    flex: 1
+  recentIcon: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.surface
   },
   recentTextWrap: {
     flex: 1
+  },
+  recentText: {
+    color: colors.textSubtle
   }
 });

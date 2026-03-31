@@ -1,4 +1,5 @@
 import { StyleSheet, TextInput, View } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 import { colors } from "@/lib/constants/colors";
 import { radius } from "@/lib/constants/radius";
@@ -15,6 +16,7 @@ export function SearchBar({
 }) {
   return (
     <View style={styles.wrapper}>
+      <Ionicons color={colors.textMuted} name="search" size={18} />
       <TextInput
         value={value}
         onChangeText={onChangeText}
@@ -28,13 +30,16 @@ export function SearchBar({
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: colors.surface,
-    borderColor: colors.border,
-    borderWidth: 1,
-    borderRadius: radius.md,
-    paddingHorizontal: spacing.md
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    backgroundColor: colors.surfaceMuted,
+    borderRadius: radius.lg,
+    paddingHorizontal: spacing.md,
+    minHeight: 56
   },
   input: {
+    flex: 1,
     minHeight: 48,
     color: colors.text
   }
