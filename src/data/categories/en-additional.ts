@@ -551,5 +551,185 @@ export const additionalEnglishCategories: Category[] = [
       commonMistakes: ["Using a drink recycling bin for unrelated garbage.", "Standing in front of the machine while sorting coins and bags."],
       readMore: ["Bins beside vending machines often accept only drink containers, not food wrappers or general trash."]
     }
+  },
+  {
+    id: "supermarket",
+    slug: "supermarket",
+    title: "Supermarkets",
+    shortDescription: "Follow the aisle flow, then bag your items where the store expects.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["shopping", "groceries"],
+    content: {
+      quickView: ["Keep aisles clear.", "Pay first, then bag if that is the system.", "Handle products carefully."],
+      dos: ["Use a basket when you need one and move aside if you stop to compare products.", "Move to the packing counter after payment when the store separates checkout and bagging."],
+      donts: ["Do not block narrow aisles with your basket or cart.", "Do not leave chilled or frozen items on random shelves if you change your mind."],
+      whyItMatters: ["Supermarkets are everyday local spaces, so smooth movement matters more than visitors sometimes expect."],
+      commonMistakes: ["Trying to bag groceries right at the cashier when the store uses a separate packing area.", "Leaving unwanted products in the wrong place."],
+      readMore: ["If you decide not to buy something, returning it to the correct section is usually the most helpful choice."]
+    }
+  },
+  {
+    id: "drugstore",
+    slug: "drugstore",
+    title: "Drugstores",
+    shortDescription: "Know which items are simple shopping and which ones need extra guidance.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["shopping", "medicine"],
+    content: {
+      quickView: ["Check whether it is medicine or cosmetics.", "Ask briefly if you are unsure.", "Follow usage notes for health products."],
+      dos: ["Ask staff a short question if you need help finding the right product.", "Follow any explanation the staff gives for medicine with restrictions."],
+      donts: ["Do not assume every medicine can be chosen as casually as snacks or shampoo.", "Do not open products unless they are clearly marked as testers."],
+      whyItMatters: ["Drugstores mix everyday shopping with health items, so some products come with stricter handling or sales rules."],
+      commonMistakes: ["Confusing testers with sealed products.", "Buying medicine without understanding what it is for."],
+      readMore: ["If medicine labels feel unclear, asking staff one short question is much safer than guessing."]
+    }
+  },
+  {
+    id: "department-store",
+    slug: "department-store",
+    title: "Department Stores",
+    shortDescription: "Move calmly, handle displays carefully, and follow the room's pace.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["shopping", "department store"],
+    content: {
+      quickView: ["Slow down a little.", "Treat displays gently.", "Keep luggage from becoming the focus."],
+      dos: ["Handle products carefully and follow staff guidance if service feels formal.", "Keep your voice and movement calm, especially near display counters."],
+      donts: ["Do not treat the floor like a noisy public square.", "Do not open packaging or take close-up counter photos without checking."],
+      whyItMatters: ["Department stores in Japan often put a lot of care into atmosphere, presentation, and service."],
+      commonMistakes: ["Speaking loudly with a group near a quiet counter.", "Using the store mainly as a place to sit with large luggage."],
+      readMore: ["The more refined a floor feels, the more helpful it is to slow down and match the space."]
+    }
+  },
+  {
+    id: "duty-free",
+    slug: "duty-free",
+    title: "Duty-Free Shopping",
+    shortDescription: "Bring the right documents and expect a process, not just a discount.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["shopping", "tax-free"],
+    content: {
+      quickView: ["Keep your passport ready.", "Check whether the purchase qualifies.", "Follow sealing or packaging rules."],
+      dos: ["Prepare your passport before reaching the counter if tax-free processing is required.", "Confirm that the store and item are eligible before assuming you can do tax-free checkout."],
+      donts: ["Do not assume every branch or every item is tax-free.", "Do not open sealed packaging if the rules say to keep it closed."],
+      whyItMatters: ["Duty-free shopping depends on documentation and store-specific rules, not just the price."],
+      commonMistakes: ["Reaching the counter without a passport.", "Assuming a phone photo of a passport will be enough."],
+      readMore: ["It is usually easiest to decide before paying whether you want normal checkout or tax-free processing."]
+    }
+  },
+  {
+    id: "fitting-room",
+    slug: "fitting-room",
+    title: "Fitting Rooms",
+    shortDescription: "Wait your turn, follow the store rules, and help keep the clothes clean.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["shopping", "clothing"],
+    content: {
+      quickView: ["Follow the fitting room rules.", "Keep clothes clean.", "Do not assume photos are always fine."],
+      dos: ["Ask or check signs before entering, especially if the store limits the number of items.", "Use the face cover or shoe rules the store provides."],
+      donts: ["Do not walk in with shoes if the fitting room area requires them off.", "Do not leave unwanted clothes scattered around the room."],
+      whyItMatters: ["Fitting rooms are controlled spaces because the store is protecting both cleanliness and product condition."],
+      commonMistakes: ["Bringing in too many items without checking.", "Taking mirror photos in a store that does not allow it."],
+      readMore: ["If the fitting room system feels strict, it is usually about cleanliness, queue order, and care for the clothes."]
+    }
+  },
+  {
+    id: "secondhand-shop",
+    slug: "secondhand-shop",
+    title: "Secondhand and Reuse Shops",
+    shortDescription: "Look closely, handle gently, and ask before opening or testing things.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["shopping", "reuse"],
+    content: {
+      quickView: ["Check items carefully.", "Handle them gently.", "Ask before opening, testing, or inspecting deeply."],
+      dos: ["Examine items with care and ask if you want to test electronics or open packaging.", "Follow staff guidance for higher-value items or display cases."],
+      donts: ["Do not treat secondhand goods like rough bargain bins unless the store clearly works that way.", "Do not open sealed goods without permission."],
+      whyItMatters: ["Many reuse shops in Japan are highly organized, and product condition is a big part of the trust."],
+      commonMistakes: ["Handling goods too roughly because they are secondhand.", "Treating a premium resale shop like a flea market."],
+      readMore: ["The more carefully items are displayed, the more carefully customers are usually expected to handle them."]
+    }
+  },
+  {
+    id: "market-shopping-street",
+    slug: "market-shopping-street",
+    title: "Markets and Shopping Streets",
+    shortDescription: "Keep moving, leave room for locals, and respect shop fronts as working space.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["shopping street", "market"],
+    content: {
+      quickView: ["Walk with the flow.", "Step aside before stopping.", "Check before photographing workers or stalls."],
+      dos: ["Move to one side when possible and step away from the center if you stop to look.", "Treat shop entrances and display space as part of a working area."],
+      donts: ["Do not block a shop front while deciding what to do next.", "Do not touch produce or goods unless that is clearly part of the system."],
+      whyItMatters: ["Markets and shopping streets are not just sightseeing spots. They are also everyday shopping and working spaces."],
+      commonMistakes: ["Stopping in front of a stall to discuss plans.", "Photographing workers without asking."],
+      readMore: ["Enjoy the street, but remember that for many people it is still a place to work or shop quickly."]
+    }
+  },
+  {
+    id: "shopping-bags-packaging",
+    slug: "shopping-bags-packaging",
+    title: "Shopping Bags and Packaging",
+    shortDescription: "Listen for the bag question and answer simply so the checkout can keep moving.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["checkout", "shopping bag"],
+    content: {
+      quickView: ["You may be asked about a bag.", "Gift wrapping is often a separate choice.", "Decide before the line slows down."],
+      dos: ["Listen for short questions about bags or wrapping and answer briefly.", "If you want special wrapping, mention it before the purchase finishes when possible."],
+      donts: ["Do not assume a plastic bag is automatic or always free.", "Do not hold up the line while deciding something non-essential."],
+      whyItMatters: ["A short bag or wrapping question often affects speed, cost, and waste reduction all at once."],
+      commonMistakes: ["Feeling confused by a simple bag question.", "Asking for elaborate wrapping only after the checkout is already done."],
+      readMore: ["Even if you miss the spoken question, staff often point to the bag or options, so a short reply is usually enough."]
+    }
+  },
+  {
+    id: "delivery-service",
+    slug: "delivery-service",
+    title: "Delivery Services",
+    shortDescription: "Check the address carefully and follow the form one step at a time.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["delivery", "shipping"],
+    content: {
+      quickView: ["Confirm the address first.", "Ask for help with the form if needed.", "Make sure the destination can receive it."],
+      dos: ["Check the full destination name, address, and delivery timing before sending anything.", "Ask staff for help if the form or service options feel unclear."],
+      donts: ["Do not guess the address or hotel name.", "Do not assume every hotel will accept every package without notice."],
+      whyItMatters: ["Japan's delivery services are reliable, but they depend on very clear recipient information."],
+      commonMistakes: ["Using an incomplete hotel name.", "Trying to figure everything out only after reaching a busy counter."],
+      readMore: ["If you are sending something to a hotel, confirming the hotel's receiving policy first is usually the safest step."]
+    }
+  },
+  {
+    id: "atm",
+    slug: "atm",
+    title: "Using an ATM",
+    shortDescription: "Use the machine efficiently, then step aside before sorting your cash or wallet.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["atm", "cash"],
+    content: {
+      quickView: ["Prepare your card first.", "Move aside after the transaction.", "Do not sort everything at the machine."],
+      dos: ["Have your card ready before you step up to the ATM.", "Move away before counting cash, checking receipts, or repacking your wallet."],
+      donts: ["Do not assume every ATM accepts foreign cards.", "Do not leave receipts behind."],
+      whyItMatters: ["ATM corners are usually small and meant for quick, private use."],
+      commonMistakes: ["Taking too long to decide the language or network options.", "Standing at the machine while reorganizing a full wallet."],
+      readMore: ["Convenience store ATMs are often the easiest option for foreign cards, but it is still wise to check before relying on one machine."]
+    }
   }
 ];

@@ -128,6 +128,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "vending-machine": {
       title: "Vending Machines",
       shortDescription: "Buy quickly, step aside, and recycle drink containers correctly later."
+    },
+    supermarket: {
+      title: "Supermarkets",
+      shortDescription: "Follow the aisle flow, then bag your items where the store expects."
+    },
+    drugstore: {
+      title: "Drugstores",
+      shortDescription: "Know which items are simple shopping and which ones need extra guidance."
+    },
+    "department-store": {
+      title: "Department Stores",
+      shortDescription: "Move calmly, handle displays carefully, and follow the room's pace."
+    },
+    "duty-free": {
+      title: "Duty-Free Shopping",
+      shortDescription: "Bring the right documents and expect a process, not just a discount."
+    },
+    "fitting-room": {
+      title: "Fitting Rooms",
+      shortDescription: "Wait your turn, follow the store rules, and help keep the clothes clean."
+    },
+    "secondhand-shop": {
+      title: "Secondhand and Reuse Shops",
+      shortDescription: "Look closely, handle gently, and ask before opening or testing things."
+    },
+    "market-shopping-street": {
+      title: "Markets and Shopping Streets",
+      shortDescription: "Keep moving, leave room for locals, and respect shop fronts as working space."
+    },
+    "shopping-bags-packaging": {
+      title: "Shopping Bags and Packaging",
+      shortDescription: "Listen for the bag question and answer simply so checkout keeps moving."
+    },
+    "delivery-service": {
+      title: "Delivery Services",
+      shortDescription: "Check the address carefully and follow the form one step at a time."
+    },
+    atm: {
+      title: "Using an ATM",
+      shortDescription: "Use the machine efficiently, then step aside before sorting your wallet."
     }
   },
   ja: {
@@ -250,6 +290,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "vending-machine": {
       title: "自動販売機",
       shortDescription: "手早く買ってその場を空け、飲み終わった容器は正しく捨てる。"
+    },
+    supermarket: {
+      title: "スーパー",
+      shortDescription: "通路の流れを見て、袋詰めは店のやり方に合わせる。"
+    },
+    drugstore: {
+      title: "ドラッグストア",
+      shortDescription: "普通の買い物と説明が必要な薬を分けて考える。"
+    },
+    "department-store": {
+      title: "百貨店",
+      shortDescription: "少し落ち着いたペースで動き、売り場の空気に合わせる。"
+    },
+    "duty-free": {
+      title: "免税店・免税手続き",
+      shortDescription: "割引というより手続きとして考え、書類を先に用意する。"
+    },
+    "fitting-room": {
+      title: "試着室",
+      shortDescription: "店のルールに従って、服をきれいに扱う。"
+    },
+    "secondhand-shop": {
+      title: "中古店・リユースショップ",
+      shortDescription: "よく見て、ていねいに扱い、開封や試用は確認してから。"
+    },
+    "market-shopping-street": {
+      title: "市場・商店街",
+      shortDescription: "通路をふさがず、店先を生活や仕事の場として尊重する。"
+    },
+    "shopping-bags-packaging": {
+      title: "レジ袋・包装",
+      shortDescription: "袋や包装の確認には短く答えて、会計の流れを止めない。"
+    },
+    "delivery-service": {
+      title: "宅配・配送サービス",
+      shortDescription: "宛先をよく確認し、伝票は一つずつ落ち着いて進める。"
+    },
+    atm: {
+      title: "ATMで現金を下ろすとき",
+      shortDescription: "操作は手早く済ませて、財布の整理は横に移ってから。"
     }
   },
   ko: {
@@ -372,6 +452,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "vending-machine": {
       title: "자판기",
       shortDescription: "빠르게 고르고 자리를 비운 뒤, 마신 용기는 알맞게 버려요."
+    },
+    supermarket: {
+      title: "슈퍼마켓",
+      shortDescription: "통로 흐름을 보고, 담는 장소도 가게 방식에 맞춰요."
+    },
+    drugstore: {
+      title: "드러그스토어",
+      shortDescription: "일반 쇼핑과 설명이 필요한 약을 구분해서 생각해요."
+    },
+    "department-store": {
+      title: "백화점",
+      shortDescription: "조금 차분한 속도로 움직이며 매장 분위기에 맞춰요."
+    },
+    "duty-free": {
+      title: "면세 쇼핑",
+      shortDescription: "할인보다 절차라고 생각하고 서류를 먼저 챙겨요."
+    },
+    "fitting-room": {
+      title: "피팅룸",
+      shortDescription: "매장 규칙을 따르며 옷을 깨끗하게 다뤄요."
+    },
+    "secondhand-shop": {
+      title: "중고·리유즈 숍",
+      shortDescription: "잘 보고, 조심히 다루고, 개봉이나 테스트는 먼저 물어봐요."
+    },
+    "market-shopping-street": {
+      title: "시장·상점가",
+      shortDescription: "통로를 막지 말고, 가게 앞을 생활과 일의 공간으로 존중해요."
+    },
+    "shopping-bags-packaging": {
+      title: "쇼핑백·포장",
+      shortDescription: "봉투와 포장 질문에는 짧게 답하고 계산 흐름을 막지 않아요."
+    },
+    "delivery-service": {
+      title: "택배·배송 서비스",
+      shortDescription: "주소를 잘 확인하고, 접수표는 하나씩 차분히 작성해요."
+    },
+    atm: {
+      title: "ATM 이용",
+      shortDescription: "조작은 빠르게 마치고, 지갑 정리는 옆으로 비켜서 해요."
     }
   },
   "zh-Hant": {
@@ -494,6 +614,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "vending-machine": {
       title: "自動販賣機",
       shortDescription: "快速買完就讓開，喝完的容器再正確回收。"
+    },
+    supermarket: {
+      title: "超市",
+      shortDescription: "順著通道流動，裝袋也照店裡的方式來。"
+    },
+    drugstore: {
+      title: "藥妝店",
+      shortDescription: "把一般購物和需要說明的藥品分開看待。"
+    },
+    "department-store": {
+      title: "百貨公司",
+      shortDescription: "步調放慢一點，順著賣場的氣氛行動。"
+    },
+    "duty-free": {
+      title: "免稅購物",
+      shortDescription: "先把它當成一套流程，而不只是折扣。"
+    },
+    "fitting-room": {
+      title: "試衣間",
+      shortDescription: "照店規使用，也幫忙保持衣服乾淨。"
+    },
+    "secondhand-shop": {
+      title: "二手與再利用商店",
+      shortDescription: "看仔細、拿輕一點，開封或測試前先問。"
+    },
+    "market-shopping-street": {
+      title: "市場與商店街",
+      shortDescription: "邊走邊看，也要把店門口當成工作空間來尊重。"
+    },
+    "shopping-bags-packaging": {
+      title: "購物袋與包裝",
+      shortDescription: "聽到袋子或包裝問題時，簡短回答就好。"
+    },
+    "delivery-service": {
+      title: "宅配與寄送服務",
+      shortDescription: "地址先核對清楚，再一步一步填單。"
+    },
+    atm: {
+      title: "使用 ATM",
+      shortDescription: "操作俐落完成，整理錢包再移到旁邊。"
     }
   },
   "zh-Hans": {
@@ -616,6 +776,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "vending-machine": {
       title: "自动售货机",
       shortDescription: "快速买完就让开，喝完的容器再正确回收。"
+    },
+    supermarket: {
+      title: "超市",
+      shortDescription: "顺着通道流动，装袋也照店里的方式来。"
+    },
+    drugstore: {
+      title: "药妆店",
+      shortDescription: "把普通购物和需要说明的药品分开看待。"
+    },
+    "department-store": {
+      title: "百货公司",
+      shortDescription: "步调放慢一点，顺着卖场的气氛行动。"
+    },
+    "duty-free": {
+      title: "免税购物",
+      shortDescription: "先把它当成一套流程，而不只是折扣。"
+    },
+    "fitting-room": {
+      title: "试衣间",
+      shortDescription: "照店规使用，也帮忙保持衣服干净。"
+    },
+    "secondhand-shop": {
+      title: "二手与再利用商店",
+      shortDescription: "看仔细、拿轻一点，开封或测试前先问。"
+    },
+    "market-shopping-street": {
+      title: "市场与商店街",
+      shortDescription: "边走边看，也要把店门口当成工作空间来尊重。"
+    },
+    "shopping-bags-packaging": {
+      title: "购物袋与包装",
+      shortDescription: "听到袋子或包装问题时，简短回答就好。"
+    },
+    "delivery-service": {
+      title: "宅配与寄送服务",
+      shortDescription: "地址先核对清楚，再一步一步填单。"
+    },
+    atm: {
+      title: "使用 ATM",
+      shortDescription: "操作利落完成，整理钱包再移到旁边。"
     }
   }
 };
