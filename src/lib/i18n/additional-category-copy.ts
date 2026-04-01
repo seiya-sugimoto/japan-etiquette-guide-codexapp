@@ -168,6 +168,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     atm: {
       title: "Using an ATM",
       shortDescription: "Use the machine efficiently, then step aside before sorting your wallet."
+    },
+    "museum-gallery": {
+      title: "Museums and Galleries",
+      shortDescription: "Read the room, keep quiet, and assume touching or photos may be limited."
+    },
+    "castle-garden": {
+      title: "Castles, Gardens, and Historic Sites",
+      shortDescription: "Move slowly, stay on the path, and treat barriers as real boundaries."
+    },
+    "observatory-night-view": {
+      title: "Observatories and Night Views",
+      shortDescription: "Take your turn at the best spot, then step aside."
+    },
+    "live-concert": {
+      title: "Live Shows, Concerts, and Theaters",
+      shortDescription: "Arrive on time, follow venue rules, and keep focus on the performance."
+    },
+    "sports-event": {
+      title: "Watching Sports",
+      shortDescription: "Enjoy the excitement, but respect seats, sections, and cleanup."
+    },
+    "theme-park": {
+      title: "Theme Parks",
+      shortDescription: "Treat lines, waiting zones, and viewing spots as shared space."
+    },
+    "festival-fireworks": {
+      title: "Festivals and Fireworks",
+      shortDescription: "Crowds change fast, so move early and stay aware of the flow."
+    },
+    "seasonal-scenic-spot": {
+      title: "Cherry Blossom and Autumn Leaf Spots",
+      shortDescription: "Enjoy the scenery gently and share crowded photo spots patiently."
+    },
+    "rental-car": {
+      title: "Rental Cars",
+      shortDescription: "Check documents, parking rules, and return conditions before driving."
+    },
+    "service-area": {
+      title: "Service Areas and Roadside Stations",
+      shortDescription: "Use rest stops efficiently, park neatly, and leave shared spaces tidy."
     }
   },
   ja: {
@@ -330,6 +370,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     atm: {
       title: "ATMで現金を下ろすとき",
       shortDescription: "操作は手早く済ませて、財布の整理は横に移ってから。"
+    },
+    "museum-gallery": {
+      title: "博物館・美術館",
+      shortDescription: "まず館内ルールを見て、静かに、近づきすぎずに楽しむ。"
+    },
+    "castle-garden": {
+      title: "城・庭園・文化財",
+      shortDescription: "決められた道をゆっくり進み、境界線は本物のルールと考える。"
+    },
+    "observatory-night-view": {
+      title: "展望台・夜景スポット",
+      shortDescription: "いちばん良い場所は譲り合って、撮ったら次の人に回す。"
+    },
+    "live-concert": {
+      title: "ライブ・コンサート・劇場",
+      shortDescription: "時間どおりに入り、会場ルールと公演への集中を大切にする。"
+    },
+    "sports-event": {
+      title: "スポーツ観戦",
+      shortDescription: "盛り上がりながらも、席・エリア・後片づけを守る。"
+    },
+    "theme-park": {
+      title: "テーマパーク",
+      shortDescription: "列、待機場所、観覧場所はみんなの共有スペースとして使う。"
+    },
+    "festival-fireworks": {
+      title: "祭り・花火大会",
+      shortDescription: "人の流れが急に変わるので、早めに動いて帰りも先に考える。"
+    },
+    "seasonal-scenic-spot": {
+      title: "桜・紅葉の名所",
+      shortDescription: "景色も植物も共有物として扱い、写真スポットは譲り合う。"
+    },
+    "rental-car": {
+      title: "レンタカー",
+      shortDescription: "運転前に書類、駐車ルール、返却条件を確認しておく。"
+    },
+    "service-area": {
+      title: "サービスエリア・道の駅",
+      shortDescription: "休憩は手早く、駐車はきれいに、使った場所は整えて出る。"
     }
   },
   ko: {
@@ -492,6 +572,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     atm: {
       title: "ATM 이용",
       shortDescription: "조작은 빠르게 마치고, 지갑 정리는 옆으로 비켜서 해요."
+    },
+    "museum-gallery": {
+      title: "박물관·미술관",
+      shortDescription: "먼저 규칙을 보고, 조용히, 너무 가까이 가지 않으며 봐요."
+    },
+    "castle-garden": {
+      title: "성·정원·문화재",
+      shortDescription: "정해진 길을 따라 천천히 움직이고 경계선은 실제 규칙으로 봐요."
+    },
+    "observatory-night-view": {
+      title: "전망대·야경 명소",
+      shortDescription: "좋은 자리는 나눠 쓰고, 사진을 찍으면 다음 사람에게 넘겨요."
+    },
+    "live-concert": {
+      title: "라이브·콘서트·극장",
+      shortDescription: "제시간에 들어가고, 공연과 공연장 규칙에 집중해요."
+    },
+    "sports-event": {
+      title: "스포츠 관람",
+      shortDescription: "응원은 즐기되, 좌석과 구역, 정리는 함께 지켜요."
+    },
+    "theme-park": {
+      title: "테마파크",
+      shortDescription: "줄, 대기 공간, 관람 자리는 모두의 공유 공간으로 써요."
+    },
+    "festival-fireworks": {
+      title: "축제·불꽃놀이",
+      shortDescription: "인파 흐름이 빨리 바뀌니 일찍 움직이고 돌아가는 길도 먼저 봐요."
+    },
+    "seasonal-scenic-spot": {
+      title: "벚꽃·단풍 명소",
+      shortDescription: "풍경과 식물을 함께 지키고, 사진 자리는 서로 양보해요."
+    },
+    "rental-car": {
+      title: "렌터카",
+      shortDescription: "운전 전에 서류, 주차 규칙, 반납 조건을 먼저 확인해요."
+    },
+    "service-area": {
+      title: "휴게소·도로 휴식 시설",
+      shortDescription: "잠깐 쉬고, 바르게 주차하고, 사용한 자리는 정리해요."
     }
   },
   "zh-Hant": {
@@ -654,6 +774,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     atm: {
       title: "使用 ATM",
       shortDescription: "操作俐落完成，整理錢包再移到旁邊。"
+    },
+    "museum-gallery": {
+      title: "博物館與美術館",
+      shortDescription: "先看規則，安靜欣賞，也別預設一定能拍照。"
+    },
+    "castle-garden": {
+      title: "城、庭園與歷史古蹟",
+      shortDescription: "慢慢走在路線上，把界線真的當成界線。"
+    },
+    "observatory-night-view": {
+      title: "展望台與夜景景點",
+      shortDescription: "好位置輪流用，拍完就讓下一個人上來。"
+    },
+    "live-concert": {
+      title: "演唱會、現場表演與劇場",
+      shortDescription: "準時入場，跟著場館規則，把注意力留給演出。"
+    },
+    "sports-event": {
+      title: "看運動比賽",
+      shortDescription: "可以熱情，但也要守住座位、分區和離場整理。"
+    },
+    "theme-park": {
+      title: "主題樂園",
+      shortDescription: "排隊、等候區和觀賞位置都當成共享空間來用。"
+    },
+    "festival-fireworks": {
+      title: "祭典與煙火大會",
+      shortDescription: "人潮變化很快，提早移動也提早想好怎麼離開。"
+    },
+    "seasonal-scenic-spot": {
+      title: "櫻花與紅葉名所",
+      shortDescription: "景色和植物都要一起珍惜，拍照點也要慢慢分享。"
+    },
+    "rental-car": {
+      title: "租車",
+      shortDescription: "上路前先確認文件、停車規則和還車條件。"
+    },
+    "service-area": {
+      title: "服務區與道路休息站",
+      shortDescription: "短暫休息、停車整齊，用完後把共享空間恢復乾淨。"
     }
   },
   "zh-Hans": {
@@ -816,6 +976,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     atm: {
       title: "使用 ATM",
       shortDescription: "操作利落完成，整理钱包再移到旁边。"
+    },
+    "museum-gallery": {
+      title: "博物馆与美术馆",
+      shortDescription: "先看规则，安静欣赏，也别默认一定能拍照。"
+    },
+    "castle-garden": {
+      title: "城、庭园与历史古迹",
+      shortDescription: "慢慢走在路线内，把界线真的当成界线。"
+    },
+    "observatory-night-view": {
+      title: "展望台与夜景景点",
+      shortDescription: "好位置轮流用，拍完就让下一位上来。"
+    },
+    "live-concert": {
+      title: "演唱会、现场表演与剧场",
+      shortDescription: "准时入场，跟着场馆规则，把注意力留给演出。"
+    },
+    "sports-event": {
+      title: "看体育比赛",
+      shortDescription: "可以热情，但也要守住座位、分区和离场整理。"
+    },
+    "theme-park": {
+      title: "主题乐园",
+      shortDescription: "排队、等候区和观赏位置都当成共享空间来用。"
+    },
+    "festival-fireworks": {
+      title: "祭典与烟花大会",
+      shortDescription: "人潮变化很快，提早移动也提早想好怎么离开。"
+    },
+    "seasonal-scenic-spot": {
+      title: "樱花与红叶名所",
+      shortDescription: "景色和植物都要一起珍惜，拍照点也要慢慢分享。"
+    },
+    "rental-car": {
+      title: "租车",
+      shortDescription: "上路前先确认文件、停车规则和还车条件。"
+    },
+    "service-area": {
+      title: "服务区与道路休息站",
+      shortDescription: "短暂休息、停车整齐，用完后把共享空间恢复干净。"
     }
   }
 };

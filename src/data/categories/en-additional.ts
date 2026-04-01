@@ -731,5 +731,185 @@ export const additionalEnglishCategories: Category[] = [
       commonMistakes: ["Taking too long to decide the language or network options.", "Standing at the machine while reorganizing a full wallet."],
       readMore: ["Convenience store ATMs are often the easiest option for foreign cards, but it is still wise to check before relying on one machine."]
     }
+  },
+  {
+    id: "museum-gallery",
+    slug: "museum-gallery",
+    title: "Museums and Galleries",
+    shortDescription: "Read the room, keep quiet, and assume touching or photos may be limited.",
+    access: "free",
+    imageUrl: cultureImage,
+    badge: "essential",
+    tags: ["museum", "gallery"],
+    content: {
+      quickView: ["Read the rules first.", "Keep your voice low.", "Do not assume photos are always allowed."],
+      dos: ["Check the signs before entering each room, especially for photo rules.", "Give other visitors room to view the work."],
+      donts: ["Do not get too close to fragile objects.", "Do not use flash unless it is clearly allowed."],
+      whyItMatters: ["These spaces are meant for careful viewing, so your sound, distance, and camera use affect everyone else quickly."],
+      commonMistakes: ["Assuming one photo rule applies to the whole building.", "Standing too long in front of a popular work without noticing others waiting."],
+      readMore: ["If the rules change by room, checking again as you move is usually safer than assuming they stay the same."]
+    }
+  },
+  {
+    id: "castle-garden",
+    slug: "castle-garden",
+    title: "Castles, Gardens, and Historic Sites",
+    shortDescription: "Move slowly, stay on the path, and treat barriers as real boundaries.",
+    access: "free",
+    imageUrl: cultureImage,
+    badge: "essential",
+    tags: ["historic site", "garden"],
+    content: {
+      quickView: ["Stay on marked paths.", "Remove shoes when asked.", "Do not step past low barriers."],
+      dos: ["Follow the route the site gives you and watch for shoe-removal signs.", "Treat ropes, low fences, and markers as real limits even if the area looks open."],
+      donts: ["Do not touch old wood, stone, or painted surfaces unless it is clearly allowed.", "Do not cross into restricted spots for a better photo."],
+      whyItMatters: ["Historic places can look sturdy, but many are fragile and carefully preserved."],
+      commonMistakes: ["Stepping over a low barrier for a photo.", "Ignoring a shoe-removal rule because the area feels public."],
+      readMore: ["If a place looks delicate, it usually is. Moving more slowly is often the right instinct."]
+    }
+  },
+  {
+    id: "observatory-night-view",
+    slug: "observatory-night-view",
+    title: "Observatories and Night Views",
+    shortDescription: "Take your turn at the best spot, then step aside for the next person.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["viewpoint", "night view"],
+    content: {
+      quickView: ["Share the main viewing spots.", "Keep camera gear compact.", "Step aside after your photo."],
+      dos: ["Take your turn at the window or rail, then move so others can enjoy the same view.", "Keep your setup small in tight viewing areas."],
+      donts: ["Do not hold the best spot for too long.", "Do not block others with large tripods or bags."],
+      whyItMatters: ["Everyone comes for the same few good angles, especially at sunset or night."],
+      commonMistakes: ["Staying at the glass while checking every photo.", "Setting up a large device in a narrow viewing zone."],
+      readMore: ["A good rhythm is simple: look, shoot, step aside, then come back later if space opens up."]
+    }
+  },
+  {
+    id: "live-concert",
+    slug: "live-concert",
+    title: "Live Shows, Concerts, and Theaters",
+    shortDescription: "Arrive on time, follow the venue rules, and keep attention on the performance.",
+    access: "premium",
+    imageUrl: publicImage,
+    badge: "premium",
+    tags: ["concert", "theater"],
+    content: {
+      quickView: ["Check venue rules before you enter.", "Keep your phone fully silent.", "Do not film if the venue bans it."],
+      dos: ["Arrive with enough time to find your seat or section without rushing.", "Follow the venue's rules for entry timing, seating, and applause."],
+      donts: ["Do not talk through the performance.", "Do not assume late entry is always allowed without disruption."],
+      whyItMatters: ["Performance venues work best when everyone follows the same timing and attention rules together."],
+      commonMistakes: ["Using your phone during the show.", "Entering noisily after the performance has already started."],
+      readMore: ["Each venue has its own style, but silence, timing, and no unauthorized filming are usually safe defaults."]
+    }
+  },
+  {
+    id: "sports-event",
+    slug: "sports-event",
+    title: "Watching Sports",
+    shortDescription: "Enjoy the excitement, but respect seats, sections, and cleanup.",
+    access: "premium",
+    imageUrl: publicImage,
+    badge: "premium",
+    tags: ["sports", "stadium"],
+    content: {
+      quickView: ["Sit in the right section.", "Keep your things inside your seat space.", "Clean up when you leave."],
+      dos: ["Check whether your section has its own cheering rhythm or customs.", "Keep your belongings compact so they do not spill into other seats or steps."],
+      donts: ["Do not occupy seats that are not yours.", "Do not block views with constant standing where that is not normal."],
+      whyItMatters: ["Sports events can be loud and fun, but shared excitement still depends on clear seat and section etiquette."],
+      commonMistakes: ["Sitting in the wrong block.", "Leaving trash under the seat or on the step."],
+      readMore: ["A quick look around your section usually tells you how active or quiet the cheering is meant to be."]
+    }
+  },
+  {
+    id: "theme-park",
+    slug: "theme-park",
+    title: "Theme Parks",
+    shortDescription: "Have fun, but treat lines, waiting areas, and viewing spots as shared space.",
+    access: "premium",
+    imageUrl: publicImage,
+    badge: "premium",
+    tags: ["theme park", "queue"],
+    content: {
+      quickView: ["Follow queue systems carefully.", "Do not save too much space.", "Keep pathways clear while checking maps or photos."],
+      dos: ["Use designated waiting spots and follow the park's line rules closely.", "Step aside before stopping to plan your route or take pictures."],
+      donts: ["Do not cut back into a line because your group separated.", "Do not block a busy path while deciding what to do next."],
+      whyItMatters: ["Theme parks feel playful, but the crowd system is usually very structured."],
+      commonMistakes: ["Using the walkway as a planning zone.", "Holding parade or show space for more people than are actually there."],
+      readMore: ["In very busy parks, where you stand often matters almost as much as what you plan to do."]
+    }
+  },
+  {
+    id: "festival-fireworks",
+    slug: "festival-fireworks",
+    title: "Festivals and Fireworks",
+    shortDescription: "Crowds can change fast, so move early and stay aware of the flow.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["festival", "fireworks"],
+    content: {
+      quickView: ["Arrive with extra time.", "Follow the crowd flow.", "Keep your trash and belongings under control."],
+      dos: ["Check how you will leave before the event ends.", "Listen to staff directions when crowd control becomes strict."],
+      donts: ["Do not stop suddenly in a moving crowd.", "Do not spread out a picnic area where that is not allowed."],
+      whyItMatters: ["Festival crowds can shift from relaxed to extremely dense very quickly."],
+      commonMistakes: ["Trying to move against the crowd after the event.", "Waiting until the last minute to think about the return route."],
+      readMore: ["The safest plan is simple: know where you will stand, and know how you will leave."]
+    }
+  },
+  {
+    id: "seasonal-scenic-spot",
+    slug: "seasonal-scenic-spot",
+    title: "Cherry Blossom and Autumn Leaf Spots",
+    shortDescription: "Enjoy the scenery gently and remember that beauty and crowding often come together.",
+    access: "free",
+    imageUrl: cultureImage,
+    badge: "essential",
+    tags: ["scenic spot", "seasonal"],
+    content: {
+      quickView: ["Stay on the path.", "Share photo spots.", "Do not touch or pull branches."],
+      dos: ["Use marked paths and wait your turn for the best photo angle.", "Treat trees, plants, and protected ground carefully even if they look easy to step on."],
+      donts: ["Do not pull branches closer for a photo.", "Do not set up large tripods where they block others."],
+      whyItMatters: ["Famous seasonal spots are beautiful but also fragile and crowded."],
+      commonMistakes: ["Stepping into protected ground for a better shot.", "Stopping in the narrowest viewpoint for too long."],
+      readMore: ["At crowded seasonal spots, patient sharing usually leads to a better experience than rushing for the perfect photo."]
+    }
+  },
+  {
+    id: "rental-car",
+    slug: "rental-car",
+    title: "Rental Cars",
+    shortDescription: "Check documents, parking rules, and return conditions before you drive.",
+    access: "premium",
+    imageUrl: transportImage,
+    badge: "premium",
+    tags: ["driving", "rental car"],
+    content: {
+      quickView: ["Make sure your license is valid.", "Check the fuel and return rules.", "Do not park casually."],
+      dos: ["Confirm your license or permit requirements before the trip and again when you pick up the car.", "Check parking, fuel, and return-time rules before you drive away."],
+      donts: ["Do not assume your normal license works automatically everywhere.", "Do not leave the car in a spot that is not clearly marked for parking."],
+      whyItMatters: ["Driving in Japan can feel orderly and narrow at the same time, so small misunderstandings become expensive quickly."],
+      commonMistakes: ["Forgetting the right permit or translation.", "Returning the car late or without the required refueling."],
+      readMore: ["Before driving, make sure you understand three things clearly: license validity, parking rules, and the return procedure."]
+    }
+  },
+  {
+    id: "service-area",
+    slug: "service-area",
+    title: "Service Areas and Roadside Stations",
+    shortDescription: "Use rest stops efficiently, park neatly, and leave shared spaces tidy.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["road trip", "rest stop"],
+    content: {
+      quickView: ["Park inside the lines.", "Use the stop lightly.", "Clean up before you go."],
+      dos: ["Park within the marked space and move your car if you need a better place later.", "Use food, shopping, and seating areas without spreading your belongings too far."],
+      donts: ["Do not leave trash on tables or in the parking area.", "Do not block the traffic flow while deciding where to go next."],
+      whyItMatters: ["Service areas are shared by many kinds of travelers and work best when people stop briefly and move clearly."],
+      commonMistakes: ["Parking across lines.", "Repacking the whole car in the busiest part of the lot."],
+      readMore: ["Even relaxed roadside stops have a rhythm: arrive, park neatly, rest, tidy up, and move on."]
+    }
   }
 ];
