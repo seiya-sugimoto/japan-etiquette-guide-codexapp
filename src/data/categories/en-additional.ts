@@ -371,5 +371,185 @@ export const additionalEnglishCategories: Category[] = [
       commonMistakes: ["Opening multiple lockers while others wait.", "Forgetting which locker bank you used."],
       readMore: ["Taking a quick photo of the locker number or nearby sign can save time later in large stations."]
     }
+  },
+  {
+    id: "cafe",
+    slug: "cafe",
+    title: "Cafes",
+    shortDescription: "Check the flow first, then choose your seat and pace.",
+    access: "free",
+    imageUrl: diningImage,
+    badge: "essential",
+    tags: ["cafe", "seating"],
+    content: {
+      quickView: ["See whether it is seat first or order first.", "Keep your stay light at busy times.", "Do not block the pickup counter."],
+      dos: ["Watch the entrance signs or other customers for a moment before sitting down.", "Choose a smaller table if you are alone during a rush."],
+      donts: ["Do not assume every cafe welcomes a very long stay with one drink.", "Do not spread devices and shopping bags across the table."],
+      whyItMatters: ["Many cafes in Japan are small, and the pace can shift quickly when the shop gets busy."],
+      commonMistakes: ["Sitting first in a counter-order cafe.", "Staying too long in a crowded shop without noticing the flow."],
+      readMore: ["If you are unsure how long to stay, the busiest periods usually call for shorter visits and lighter use of space."]
+    }
+  },
+  {
+    id: "bakery",
+    slug: "bakery",
+    title: "Bakeries",
+    shortDescription: "Use the tray and tongs, and handle display food gently.",
+    access: "free",
+    imageUrl: diningImage,
+    badge: "essential",
+    tags: ["bakery", "self-service"],
+    content: {
+      quickView: ["Take a tray if that is the system.", "Use tongs carefully.", "Keep the line moving."],
+      dos: ["Use the tray and tongs when the shop provides them.", "Move along the display without stopping too long in one spot."],
+      donts: ["Do not touch bread directly unless it is clearly allowed.", "Do not lean over the display with open bags or sleeves."],
+      whyItMatters: ["Bakery displays are open, so both hygiene and smooth movement matter."],
+      commonMistakes: ["Touching more than one item while deciding.", "Blocking the front of the display for too long."],
+      readMore: ["Even when the bakery feels casual, moving like a quiet line usually matches the local rhythm best."]
+    }
+  },
+  {
+    id: "fast-food",
+    slug: "fast-food",
+    title: "Fast Food",
+    shortDescription: "Order efficiently, clear your table, and keep the seating turning over.",
+    access: "free",
+    imageUrl: diningImage,
+    badge: "essential",
+    tags: ["fast food", "self-service"],
+    content: {
+      quickView: ["Know your order before the counter.", "Return trays if the shop expects it.", "Leave the table reasonably clean."],
+      dos: ["Prepare your order before reaching the counter when possible.", "Return trays and trash after eating if the system asks for it."],
+      donts: ["Do not leave wrappers and trays on the table and walk away.", "Do not block the condiment or pickup area."],
+      whyItMatters: ["Fast-food spaces are built for quick turnover, so small delays are very visible."],
+      commonMistakes: ["Not noticing the tray return station.", "Staying long after finishing during a busy period."],
+      readMore: ["Watching one or two local customers usually shows you the cleanup flow faster than reading every sign."]
+    }
+  },
+  {
+    id: "food-court",
+    slug: "food-court",
+    title: "Food Courts",
+    shortDescription: "Share seats fairly and follow the self-service rhythm.",
+    access: "free",
+    imageUrl: diningImage,
+    badge: "essential",
+    tags: ["food court", "shared seating"],
+    content: {
+      quickView: ["Use only the seats you need.", "Carry your tray carefully.", "Return dishes or trash where instructed."],
+      dos: ["Use only the number of seats your group actually needs.", "Return trays, dishes, or trash to the right station after eating."],
+      donts: ["Do not reserve a large area with bags alone.", "Do not leave finished trays on the table when a return station is available."],
+      whyItMatters: ["Food courts depend on many people sharing the same seats for short periods."],
+      commonMistakes: ["Saving too many seats too early.", "Treating a shared table area like a private dining room."],
+      readMore: ["At busy times, the most appreciated rhythm is simple: eat, clear, and make room naturally."]
+    }
+  },
+  {
+    id: "izakaya",
+    slug: "izakaya",
+    title: "Izakaya",
+    shortDescription: "Expect house rules, a different pace, and a few local customs.",
+    access: "premium",
+    imageUrl: diningImage,
+    badge: "premium",
+    tags: ["izakaya", "drinks"],
+    content: {
+      quickView: ["Wait to be seated.", "Check the house rules first.", "Order with the pace of the room."],
+      dos: ["Check whether there is a cover charge, one-drink rule, or time limit.", "Watch the room before treating it like a casual pub."],
+      donts: ["Do not assume everything placed on the table is free or optional.", "Do not bring large luggage into a very small seating area."],
+      whyItMatters: ["Many travelers get confused by small local customs in izakaya, especially at the start of the meal."],
+      commonMistakes: ["Being surprised by a cover charge or otoshi.", "Taking too long to order in a tiny place."],
+      readMore: ["A quick look at the menu, seating size, and cover information usually tells you what kind of place it is."]
+    }
+  },
+  {
+    id: "bar",
+    slug: "bar",
+    title: "Bars",
+    shortDescription: "Read the mood first, then match your voice and pace to the room.",
+    access: "premium",
+    imageUrl: diningImage,
+    badge: "premium",
+    tags: ["bar", "nightlife"],
+    content: {
+      quickView: ["Notice the mood before speaking loudly.", "Order clearly and simply.", "Check before taking photos."],
+      dos: ["Take a moment to see whether the bar feels quiet, social, formal, or casual.", "Keep your voice close to the room's current level."],
+      donts: ["Do not assume every bar welcomes loud group energy.", "Do not use flash or film staff without checking."],
+      whyItMatters: ["Many bars in Japan depend heavily on atmosphere, and reading the room matters as much as knowing the menu."],
+      commonMistakes: ["Speaking too loudly in a quiet cocktail bar.", "Blocking the counter while deciding what to order."],
+      readMore: ["One minute of observation when you arrive often works better than one minute of questions."]
+    }
+  },
+  {
+    id: "all-you-can-drink",
+    slug: "all-you-can-drink",
+    title: "All-You-Can-Drink Plans",
+    shortDescription: "Drink plans still come with time limits, last orders, and waste rules.",
+    access: "premium",
+    imageUrl: diningImage,
+    badge: "premium",
+    tags: ["nomihodai", "drinks"],
+    content: {
+      quickView: ["Check the time limit.", "Notice the last order time.", "Order only what your table can finish."],
+      dos: ["Confirm the time limit and last order time before settling in.", "Order at a pace your group can actually enjoy."],
+      donts: ["Do not treat the plan like a challenge.", "Do not leave many unfinished drinks on the table."],
+      whyItMatters: ["These plans are structured around fairness, timing, and efficient service."],
+      commonMistakes: ["Ordering too much too quickly.", "Missing the last order because no one checked the time."],
+      readMore: ["It usually feels better to pace the table than to keep adding drinks no one really wants."]
+    }
+  },
+  {
+    id: "karaoke",
+    slug: "karaoke",
+    title: "Karaoke",
+    shortDescription: "Check the time plan, room rules, and order flow at the start.",
+    access: "premium",
+    imageUrl: publicImage,
+    badge: "premium",
+    tags: ["karaoke", "nightlife"],
+    content: {
+      quickView: ["Confirm the time limit first.", "Follow the room-use rules.", "Leave the room in good condition."],
+      dos: ["Check the fee system, time limit, and any minimum order rules when you arrive.", "Use microphones and room equipment carefully."],
+      donts: ["Do not assume the room has no rules just because it feels private.", "Do not stay past your time without checking for an extension."],
+      whyItMatters: ["Karaoke in Japan is fun but system-driven, so understanding the plan early prevents confusion later."],
+      commonMistakes: ["Not understanding the time plan.", "Leaving the room messy or treating the equipment roughly."],
+      readMore: ["A quick check of the order method and extension rules at the start prevents most problems later on."]
+    }
+  },
+  {
+    id: "food-stalls",
+    slug: "food-stalls",
+    title: "Food Stalls and Street Food Areas",
+    shortDescription: "Follow the flow, eat where it makes sense, and manage your trash.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["street food", "festival"],
+    content: {
+      quickView: ["Check whether to eat nearby or move on.", "Step out of the path if you stop.", "Keep your trash with you."],
+      dos: ["See whether the stall expects you to eat nearby or continue walking.", "Move to the side if you stop to eat or take photos."],
+      donts: ["Do not stop in the narrowest part of a crowd.", "Do not drip or scatter food while walking through a busy area."],
+      whyItMatters: ["These areas can feel casual, but movement and shared space matter a lot when crowds are tight."],
+      commonMistakes: ["Eating in the middle of a moving crowd.", "Leaving skewers, cups, or wrappers in the wrong place."],
+      readMore: ["Some areas are more relaxed about eating while walking, but stopping neatly is usually the safer choice."]
+    }
+  },
+  {
+    id: "vending-machine",
+    slug: "vending-machine",
+    title: "Vending Machines",
+    shortDescription: "Buy quickly, step aside, and recycle drink containers correctly later.",
+    access: "free",
+    imageUrl: publicImage,
+    badge: "essential",
+    tags: ["vending machine", "recycling"],
+    content: {
+      quickView: ["Choose quickly.", "Step away after buying.", "Use the correct recycling bin if there is one."],
+      dos: ["Decide on your drink before standing in front of the machine for too long.", "Step away once you buy so the next person can use it."],
+      donts: ["Do not leave bottles or cans beside the machine if no bin is there.", "Do not assume every nearby bin accepts general trash."],
+      whyItMatters: ["Vending machines are convenient because people keep the area neat and moving."],
+      commonMistakes: ["Using a drink recycling bin for unrelated garbage.", "Standing in front of the machine while sorting coins and bags."],
+      readMore: ["Bins beside vending machines often accept only drink containers, not food wrappers or general trash."]
+    }
   }
 ];

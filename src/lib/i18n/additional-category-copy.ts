@@ -88,6 +88,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "luggage-storage": {
       title: "Luggage Storage and Lockers",
       shortDescription: "Choose the right space quickly and do your sorting away from the lockers."
+    },
+    cafe: {
+      title: "Cafes",
+      shortDescription: "Check the flow first, then choose your seat and pace."
+    },
+    bakery: {
+      title: "Bakeries",
+      shortDescription: "Use the tray and tongs, and handle display food gently."
+    },
+    "fast-food": {
+      title: "Fast Food",
+      shortDescription: "Order efficiently, clear your table, and keep the seating turning over."
+    },
+    "food-court": {
+      title: "Food Courts",
+      shortDescription: "Share seats fairly and follow the self-service rhythm."
+    },
+    izakaya: {
+      title: "Izakaya",
+      shortDescription: "Expect house rules, a different pace, and a few local customs."
+    },
+    bar: {
+      title: "Bars",
+      shortDescription: "Read the mood first, then match your voice and pace to the room."
+    },
+    "all-you-can-drink": {
+      title: "All-You-Can-Drink Plans",
+      shortDescription: "Drink plans still come with time limits, last orders, and waste rules."
+    },
+    karaoke: {
+      title: "Karaoke",
+      shortDescription: "Check the time plan, room rules, and order flow at the start."
+    },
+    "food-stalls": {
+      title: "Food Stalls and Street Food Areas",
+      shortDescription: "Follow the flow, eat where it makes sense, and manage your trash."
+    },
+    "vending-machine": {
+      title: "Vending Machines",
+      shortDescription: "Buy quickly, step aside, and recycle drink containers correctly later."
     }
   },
   ja: {
@@ -170,6 +210,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "luggage-storage": {
       title: "荷物預かり・コインロッカー",
       shortDescription: "ロッカー前の流れを止めずに、手早く荷物を預けるコツ。"
+    },
+    cafe: {
+      title: "カフェ",
+      shortDescription: "先に流れを見てから、座る場所と過ごし方を決める。"
+    },
+    bakery: {
+      title: "ベーカリー",
+      shortDescription: "トレーとトングを使い、並んだパンはやさしく扱う。"
+    },
+    "fast-food": {
+      title: "ファストフード店",
+      shortDescription: "注文は手早く、食後は片づけて、席は気持ちよく回す。"
+    },
+    "food-court": {
+      title: "フードコート",
+      shortDescription: "必要な席だけ使って、セルフサービスの流れに合わせる。"
+    },
+    izakaya: {
+      title: "居酒屋",
+      shortDescription: "店ごとのルールや独特の流れを先に見ておくと安心。"
+    },
+    bar: {
+      title: "バー",
+      shortDescription: "まず空気を見て、声の大きさや過ごし方を合わせる。"
+    },
+    "all-you-can-drink": {
+      title: "飲み放題",
+      shortDescription: "時間制やラストオーダーがある前提で、無理なく頼む。"
+    },
+    karaoke: {
+      title: "カラオケ",
+      shortDescription: "最初に時間プランとルール、注文方法を確認する。"
+    },
+    "food-stalls": {
+      title: "屋台・食べ歩きエリア",
+      shortDescription: "人の流れを見ながら、食べる場所とゴミの扱いに気を配る。"
+    },
+    "vending-machine": {
+      title: "自動販売機",
+      shortDescription: "手早く買ってその場を空け、飲み終わった容器は正しく捨てる。"
     }
   },
   ko: {
@@ -252,6 +332,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "luggage-storage": {
       title: "짐 보관과 코인락커",
       shortDescription: "락커 앞 흐름을 막지 않고 빠르게 짐을 맡기는 요령."
+    },
+    cafe: {
+      title: "카페",
+      shortDescription: "먼저 흐름을 보고, 그다음 자리에 앉고 머무는 속도를 정해요."
+    },
+    bakery: {
+      title: "베이커리",
+      shortDescription: "쟁반과 집게를 쓰고, 진열된 빵은 조심스럽게 다뤄요."
+    },
+    "fast-food": {
+      title: "패스트푸드점",
+      shortDescription: "주문은 빠르게, 먹은 뒤엔 정리하고, 자리는 자연스럽게 비워요."
+    },
+    "food-court": {
+      title: "푸드코트",
+      shortDescription: "필요한 자리만 쓰고, 셀프서비스 흐름에 맞춰 움직여요."
+    },
+    izakaya: {
+      title: "이자카야",
+      shortDescription: "가게 규칙과 특유의 속도를 먼저 보면 훨씬 편해요."
+    },
+    bar: {
+      title: "바",
+      shortDescription: "먼저 분위기를 읽고, 목소리 크기와 머무는 리듬을 그 공간에 맞춰요."
+    },
+    "all-you-can-drink": {
+      title: "무제한 음료 플랜",
+      shortDescription: "시간 제한, 라스트 오더, 남김 규칙을 먼저 생각하고 주문해요."
+    },
+    karaoke: {
+      title: "가라오케",
+      shortDescription: "처음에 시간제와 룸 규칙, 주문 방식을 확인하면 편해요."
+    },
+    "food-stalls": {
+      title: "포장마차·길거리 음식 구역",
+      shortDescription: "사람 흐름을 보며 먹는 위치와 쓰레기 처리를 신경 써요."
+    },
+    "vending-machine": {
+      title: "자판기",
+      shortDescription: "빠르게 고르고 자리를 비운 뒤, 마신 용기는 알맞게 버려요."
     }
   },
   "zh-Hant": {
@@ -334,6 +454,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "luggage-storage": {
       title: "行李寄放與置物櫃",
       shortDescription: "快速寄放行李，同時不要堵住置物櫃區域。"
+    },
+    cafe: {
+      title: "咖啡店",
+      shortDescription: "先看店裡的流程，再決定座位和停留節奏。"
+    },
+    bakery: {
+      title: "麵包店",
+      shortDescription: "用托盤和夾子，對展示中的麵包輕一點。"
+    },
+    "fast-food": {
+      title: "速食店",
+      shortDescription: "點餐俐落、吃完整理，讓座位自然流動。"
+    },
+    "food-court": {
+      title: "美食街",
+      shortDescription: "只用需要的座位，照著自助節奏走就好。"
+    },
+    izakaya: {
+      title: "居酒屋",
+      shortDescription: "先看店規和節奏，通常會輕鬆很多。"
+    },
+    bar: {
+      title: "酒吧",
+      shortDescription: "先讀空氣，再調整音量和聊天節奏。"
+    },
+    "all-you-can-drink": {
+      title: "喝到飽方案",
+      shortDescription: "先注意時間限制、最後點單和不要浪費。"
+    },
+    karaoke: {
+      title: "卡拉 OK",
+      shortDescription: "一開始先確認時間方案、包廂規則和點餐方式。"
+    },
+    "food-stalls": {
+      title: "屋台與邊走邊吃區域",
+      shortDescription: "跟著人流走，注意在哪裡吃和垃圾怎麼處理。"
+    },
+    "vending-machine": {
+      title: "自動販賣機",
+      shortDescription: "快速買完就讓開，喝完的容器再正確回收。"
     }
   },
   "zh-Hans": {
@@ -416,6 +576,46 @@ export const additionalLocalizedCategoryCopy: Partial<
     "luggage-storage": {
       title: "行李寄存和投币柜",
       shortDescription: "快速寄放行李，同时不要堵住柜子区域。"
+    },
+    cafe: {
+      title: "咖啡店",
+      shortDescription: "先看店里的流程，再决定座位和停留节奏。"
+    },
+    bakery: {
+      title: "面包店",
+      shortDescription: "用托盘和夹子，对展示中的面包轻一点。"
+    },
+    "fast-food": {
+      title: "快餐店",
+      shortDescription: "点餐利落、吃完整理，让座位自然周转。"
+    },
+    "food-court": {
+      title: "美食广场",
+      shortDescription: "只用需要的座位，照着自助节奏走就好。"
+    },
+    izakaya: {
+      title: "居酒屋",
+      shortDescription: "先看店规和节奏，通常会轻松很多。"
+    },
+    bar: {
+      title: "酒吧",
+      shortDescription: "先看气氛，再调整音量和聊天节奏。"
+    },
+    "all-you-can-drink": {
+      title: "畅饮套餐",
+      shortDescription: "先注意时间限制、最后点单和不要浪费。"
+    },
+    karaoke: {
+      title: "卡拉 OK",
+      shortDescription: "一开始先确认时间方案、包厢规则和点餐方式。"
+    },
+    "food-stalls": {
+      title: "摊位与边走边吃区域",
+      shortDescription: "跟着人流走，注意在哪里吃和垃圾怎么处理。"
+    },
+    "vending-machine": {
+      title: "自动售货机",
+      shortDescription: "快速买完就让开，喝完的容器再正确回收。"
     }
   }
 };
