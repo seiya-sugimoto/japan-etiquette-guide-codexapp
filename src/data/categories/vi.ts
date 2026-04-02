@@ -400,5 +400,157 @@ export const vietnameseCategoryContent: Partial<Record<CategoryId, CategoryConte
     whyItMatters: ["Khu đồ ăn đường phố có thể trông thoải mái, nhưng khi đông người thì việc di chuyển và chia sẻ không gian trở nên rất quan trọng."],
     commonMistakes: ["Ăn ngay giữa dòng người đang di chuyển.", "Để que xiên, cốc hay giấy gói sai chỗ."],
     readMore: ["Một số nơi thoải mái hơn với việc vừa đi vừa ăn, nhưng dừng gọn gàng vẫn thường là lựa chọn an toàn hơn."]
+  },
+  "vending-machine": {
+    quickView: ["Chọn nhanh.", "Mua xong thì bước ra bên.", "Nếu có thùng phù hợp, hãy bỏ đúng loại tái chế."],
+    dos: ["Chọn đồ uống trước khi đứng lâu trước máy.", "Mua xong thì bước sang bên để người tiếp theo dùng máy."],
+    donts: ["Đừng để chai hay lon bên cạnh máy nếu không có chỗ bỏ đúng.", "Đừng nghĩ thùng rác nào gần đó cũng nhận rác thường."],
+    whyItMatters: ["Máy bán hàng tự động tiện vì mọi người giữ khu vực quanh đó gọn và lưu thông."],
+    commonMistakes: ["Dùng thùng tái chế đồ uống cho loại rác khác.", "Đứng trước máy để sắp xếp tiền và túi đồ."],
+    readMore: ["Thùng cạnh máy bán hàng tự động thường chỉ dành cho vỏ đồ uống, không phải giấy gói thức ăn hay rác chung."]
+  },
+  "secondhand-shop": {
+    quickView: ["Xem hàng thật kỹ.", "Cầm nắm nhẹ tay.", "Hỏi trước khi mở, thử hay kiểm tra sâu hơn."],
+    dos: ["Xem món đồ cẩn thận và hỏi trước nếu muốn thử thiết bị hay mở bao bì.", "Làm theo hướng dẫn của nhân viên với đồ giá trị cao hoặc trong tủ kính."],
+    donts: ["Đừng đối xử với đồ secondhand như đống đồ để bới tung lên, trừ khi cửa hàng thật sự vận hành như vậy.", "Đừng mở hàng còn niêm phong khi chưa được phép."],
+    whyItMatters: ["Nhiều cửa hàng đồ cũ ở Nhật được sắp xếp rất kỹ, và tình trạng sản phẩm là một phần lớn của sự tin cậy."],
+    commonMistakes: ["Cầm nắm quá mạnh tay vì nghĩ rằng đồ đã qua sử dụng rồi.", "Xem cửa hàng resale cao cấp như một chợ trời."],
+    readMore: ["Càng được trưng bày cẩn thận thì khách thường càng được kỳ vọng phải chạm và xem một cách cẩn trọng."]
+  },
+  "shopping-bags-packaging": {
+    quickView: ["Có thể bạn sẽ được hỏi có cần túi không.", "Gói quà thường là lựa chọn riêng.", "Quyết định trước khi làm chậm hàng chờ."],
+    dos: ["Lắng nghe câu hỏi ngắn về túi hay gói hàng và trả lời đơn giản.", "Nếu muốn gói đặc biệt, hãy nói trước khi thanh toán xong nếu có thể."],
+    donts: ["Đừng nghĩ túi nhựa lúc nào cũng có sẵn hay luôn miễn phí.", "Đừng giữ cả hàng chờ chỉ vì một quyết định không quá cần thiết."],
+    whyItMatters: ["Một câu hỏi ngắn về túi hay gói hàng thường ảnh hưởng cùng lúc đến tốc độ, chi phí và việc giảm rác thải."],
+    commonMistakes: ["Bối rối trước câu hỏi đơn giản về cái túi.", "Chỉ hỏi gói cầu kỳ sau khi đã thanh toán xong."],
+    readMore: ["Ngay cả khi bạn nghe không kịp câu hỏi, nhân viên thường sẽ chỉ vào túi hay các lựa chọn nên một câu trả lời ngắn là đủ."]
+  },
+  "delivery-service": {
+    quickView: ["Xác nhận địa chỉ trước.", "Cần thì nhờ giúp với biểu mẫu.", "Đảm bảo nơi nhận thật sự có thể nhận hàng."],
+    dos: ["Kiểm tra tên người nhận, địa chỉ đầy đủ và thời gian giao trước khi gửi món gì.", "Hỏi nhân viên nếu biểu mẫu hay các lựa chọn dịch vụ chưa rõ."],
+    donts: ["Đừng đoán địa chỉ hay tên khách sạn.", "Đừng nghĩ khách sạn nào cũng nhận mọi bưu kiện mà không cần báo trước."],
+    whyItMatters: ["Dịch vụ giao hàng ở Nhật rất đáng tin, nhưng phụ thuộc nhiều vào thông tin người nhận thật chính xác."],
+    commonMistakes: ["Dùng tên khách sạn chưa đầy đủ.", "Chỉ tới quầy đông rồi mới bắt đầu tìm hiểu mọi thứ."],
+    readMore: ["Nếu gửi tới khách sạn, xác nhận trước chính sách nhận hàng của họ thường là bước an toàn nhất."]
+  },
+  atm: {
+    quickView: ["Chuẩn bị thẻ trước.", "Giao dịch xong thì bước sang bên.", "Đừng sắp xếp mọi thứ ngay trước máy."],
+    dos: ["Cầm sẵn thẻ trước khi bước tới ATM.", "Rời khỏi máy rồi mới đếm tiền, xem biên lai hay sắp lại ví."],
+    donts: ["Đừng nghĩ ATM nào cũng nhận thẻ nước ngoài.", "Đừng bỏ biên lai lại sau khi đi."],
+    whyItMatters: ["Khu ATM thường nhỏ và được thiết kế cho việc dùng nhanh, riêng tư."],
+    commonMistakes: ["Tốn quá nhiều thời gian để chọn ngôn ngữ hay mạng thẻ.", "Đứng ở máy để sắp lại một chiếc ví đầy đồ."],
+    readMore: ["ATM ở cửa hàng tiện lợi thường dễ dùng nhất với thẻ nước ngoài, nhưng vẫn nên kiểm tra trước thay vì chỉ trông vào một máy."]
+  },
+  "observatory-night-view": {
+    quickView: ["Chia sẻ các vị trí ngắm đẹp nhất.", "Giữ thiết bị chụp ảnh gọn.", "Chụp xong thì bước sang bên."],
+    dos: ["Đến lượt mình ở cửa kính hay lan can rồi di chuyển để người khác cũng được xem cùng góc đó.", "Giữ bộ chụp ảnh nhỏ gọn trong khu quan sát chật."],
+    donts: ["Đừng giữ chỗ đẹp quá lâu.", "Đừng chắn người khác bằng chân máy lớn hay túi to."],
+    whyItMatters: ["Mọi người đều đến vì vài góc đẹp giống nhau, nhất là lúc hoàng hôn hay về đêm."],
+    commonMistakes: ["Đứng sát kính quá lâu để kiểm tra từng bức ảnh.", "Dựng thiết bị lớn trong khu quan sát hẹp."],
+    readMore: ["Nhịp tốt nhất rất đơn giản: ngắm, chụp, bước sang bên rồi quay lại sau nếu không gian thoáng hơn."]
+  },
+  "live-concert": {
+    quickView: ["Kiểm tra quy định của địa điểm trước khi vào.", "Để điện thoại ở chế độ im lặng hoàn toàn.", "Đừng quay phim nếu địa điểm cấm."],
+    dos: ["Đến đủ sớm để tìm chỗ ngồi hay khu vực của mình mà không phải vội.", "Làm theo quy định về vào cửa, chỗ ngồi và cách hưởng ứng."],
+    donts: ["Đừng nói chuyện xuyên suốt buổi diễn.", "Đừng nghĩ vào muộn lúc nào cũng được mà không gây ảnh hưởng."],
+    whyItMatters: ["Các địa điểm biểu diễn hoạt động tốt nhất khi mọi người cùng chia sẻ một nhịp thời gian và sự tập trung giống nhau."],
+    commonMistakes: ["Dùng điện thoại trong lúc biểu diễn.", "Đi vào ồn ào sau khi buổi diễn đã bắt đầu."],
+    readMore: ["Mỗi nơi có phong cách riêng, nhưng im lặng, đúng giờ và không quay trái phép gần như luôn là lựa chọn an toàn."]
+  },
+  "sports-event": {
+    quickView: ["Ngồi đúng khu vực của mình.", "Giữ đồ trong phạm vi ghế của bạn.", "Thu dọn chỗ trước khi rời đi."],
+    dos: ["Kiểm tra xem khu của bạn có nhịp cổ vũ hay thói quen riêng không.", "Giữ đồ gọn để không tràn sang ghế bên cạnh hay bậc thang."],
+    donts: ["Đừng ngồi vào ghế không phải của mình.", "Đừng đứng chắn tầm nhìn liên tục ở nơi điều đó không phải bình thường."],
+    whyItMatters: ["Sự hào hứng ở sự kiện thể thao có thể rất lớn, nhưng niềm vui chung vẫn dựa trên trật tự rõ ràng về ghế và khu vực."],
+    commonMistakes: ["Ngồi nhầm block.", "Để rác dưới ghế hay trên lối bậc thang."],
+    readMore: ["Nhìn quanh khu của mình một chút thường đủ để hiểu nơi đó được kỳ vọng cổ vũ sôi động hay giữ nhịp yên hơn."]
+  },
+  "theme-park": {
+    quickView: ["Làm theo hệ thống xếp hàng cẩn thận.", "Đừng giữ quá nhiều chỗ cho người khác.", "Giữ lối đi thoáng khi xem bản đồ hay chụp ảnh."],
+    dos: ["Dùng đúng khu chờ được chỉ định và làm theo quy tắc hàng chờ của công viên.", "Nép sang bên trước khi dừng lại để lên kế hoạch hay chụp hình."],
+    donts: ["Đừng quay lại chen vào hàng vì nhóm của bạn bị tách ra.", "Đừng đứng chắn lối đi đông người khi còn đang quyết định sẽ làm gì tiếp."],
+    whyItMatters: ["Công viên chủ đề trông vui nhộn, nhưng cách vận hành đám đông thường rất có cấu trúc."],
+    commonMistakes: ["Dùng lối đi làm chỗ đứng bàn bạc kế hoạch.", "Giữ chỗ cho nhiều người hơn số đang thật sự có mặt."],
+    readMore: ["Ở công viên rất đông, chỗ bạn đứng thường quan trọng gần như ngang với việc bạn định làm gì."]
+  },
+  "service-area": {
+    quickView: ["Đỗ xe trong vạch.", "Dùng điểm dừng một cách gọn gàng.", "Dọn trước khi đi tiếp."],
+    dos: ["Đỗ xe trong ô đã đánh dấu và nếu cần chỗ khác thì di chuyển xe sau.", "Dùng khu ăn uống, mua sắm hay ghế ngồi mà không bày đồ quá rộng."],
+    donts: ["Đừng để rác trên bàn hay trong bãi đỗ xe.", "Đừng chặn luồng xe chỉ vì còn đang quyết định sẽ đi đâu tiếp."],
+    whyItMatters: ["Các trạm dừng nghỉ được nhiều loại khách dùng chung và hoạt động tốt nhất khi mọi người nghỉ vừa đủ rồi tiếp tục đi rõ ràng."],
+    commonMistakes: ["Đỗ xe đè lên vạch.", "Sắp xếp lại cả xe ở khu đông nhất của bãi đỗ."],
+    readMore: ["Ngay cả điểm dừng ven đường thư thả cũng có nhịp riêng: đến nơi, đỗ gọn, nghỉ, dọn và tiếp tục lên đường."]
+  },
+  temple: {
+    quickView: ["Di chuyển chậm.", "Giữ giọng nói nhỏ.", "Đọc biển báo trước khi vào chính điện hay các gian bên trong."],
+    dos: ["Đọc hướng dẫn được treo trước khi bước vào.", "Cởi giày khi được yêu cầu.", "Giữ việc dùng điện thoại và chụp ảnh ở mức kín đáo."],
+    donts: ["Đừng vào khu vực hạn chế.", "Đừng mặc định rằng chỗ nào cũng được chụp ảnh.", "Tránh làm gián đoạn việc cầu nguyện hay nghi lễ."],
+    whyItMatters: ["Chùa có thể là nơi cầu nguyện, tưởng niệm và thực hành tôn giáo đang diễn ra, chứ không chỉ là điểm tham quan."],
+    commonMistakes: ["Nói to trong không gian bên trong.", "Không để ý chỗ cần tháo giày.", "Chụp ảnh mà chưa kiểm tra quy định."],
+    readMore: ["Quy định thay đổi theo từng chùa, đặc biệt ở gian trong, khu tưởng niệm và khu vực chụp ảnh."]
+  },
+  ryokan: {
+    quickView: ["Lắng nghe kỹ phần giải thích lúc check-in.", "Đi theo giờ ăn và giờ tắm của nơi ở.", "Giữ phòng yên và gọn."],
+    dos: ["Kiểm tra giờ ăn, giờ tắm và nội quy nhà từ lúc đến.", "Dùng dép đúng khu vực của nó.", "Hỏi trước khi dịch chuyển futon, bàn ghế hay đồ trong phòng."],
+    donts: ["Đừng mang giày ngoài vào trong.", "Đừng nghĩ ryokan vận hành giống hệt khách sạn.", "Đừng bỏ qua phần giải thích lúc check-in vì nhiều chi tiết quan trọng nằm ở đó."],
+    whyItMatters: ["Ryokan thường có nhịp sinh hoạt rõ hơn khách sạn, nhất là quanh bữa ăn, phòng tắm và việc dùng phòng."],
+    commonMistakes: ["Lỡ giờ ăn hay giờ tắm.", "Đi nhầm dép toilet sang chỗ khác.", "Để đồ ướt ở nơi nhân viên cần chuẩn bị lại phòng."],
+    readMore: ["Nếu không chắc, hỏi nhân viên vẫn là lựa chọn an toàn nhất. Kỳ vọng có thể khác nhau giữa từng ryokan."]
+  },
+  "shoes-indoors": {
+    quickView: ["Nhìn xem có bậc cửa, thảm hay khu để giày không.", "Khi sàn chuyển sang không gian trong nhà thì tháo giày.", "Dùng dép trong nhà đúng khu vực."],
+    dos: ["Để ý genkan, kệ giày, dép trong nhà hay biển báo.", "Nếu có dép được chuẩn bị sẵn, hãy dùng chúng ở khu trong nhà thông thường.", "Đặc biệt cẩn thận ở phòng tatami và phòng thử đồ."],
+    donts: ["Đừng bước lên sàn trong nhà bằng giày đi ngoài.", "Đừng mang dép toilet ra khỏi khu đó.", "Đừng nghĩ nơi nào cũng theo cùng một mẫu giống hệt nhau."],
+    whyItMatters: ["Tháo giày giúp không gian trong nhà sạch và dễ chịu, và điều này xuất hiện ở nhiều nơi hơn khách thường nghĩ."],
+    commonMistakes: ["Không để ý bậc nhỏ ở lối vào.", "Bước lên tatami bằng dép hay giày.", "Nhầm dép phòng tắm với dép trong nhà bình thường."],
+    readMore: ["Điều này xuất hiện ở nhà riêng, chùa, một số nhà hàng, phòng thử đồ, phòng khám và chỗ ở truyền thống."]
+  },
+  chopsticks: {
+    quickView: ["Đừng cắm đũa thẳng đứng vào bát cơm.", "Đừng chuyền thức ăn từ đũa sang đũa.", "Khi tạm ngừng, hãy đặt đũa lên gác đũa hoặc chỗ kê."],
+    dos: ["Khi có thể, hãy đặt đũa gọn lên chỗ kê.", "Nếu món chung có đũa gắp riêng thì dùng chúng.", "Nếu cần nĩa, việc hỏi xin hoàn toàn không có vấn đề gì."],
+    donts: ["Đừng xiên thức ăn một cách tùy tiện.", "Đừng vung đũa khi đang nói chuyện.", "Đừng dùng đũa để chỉ người hay món ăn."],
+    whyItMatters: ["Một số cử chỉ với đũa gợi liên tưởng mạnh đến tang lễ, và một số khác chỉ đơn giản tạo cảm giác thô trong bữa ăn chung."],
+    commonMistakes: ["Đặt đũa vắt ngang bát quá lâu.", "Chuyền thức ăn trực tiếp từ đôi đũa này sang đôi đũa khác.", "Dùng đũa để kéo đĩa lại gần."],
+    readMore: ["Bạn không cần kỹ thuật hoàn hảo. Sự bình tĩnh và cẩn thận quan trọng hơn việc trông thật sành điệu."]
+  },
+  "visiting-home": {
+    quickView: ["Cởi giày ở cửa.", "Quan sát cách dùng dép.", "Một món quà nhỏ thường được trân trọng nhưng không phải lúc nào cũng bắt buộc."],
+    dos: ["Hãy nhìn theo chủ nhà ở khu vực cửa vào.", "Nếu chưa rõ, hỏi xem nên để áo khoác hay túi ở đâu.", "Trong căn hộ, giữ giọng nói nhẹ thường được đánh giá cao."],
+    donts: ["Đừng mang dép toilet ra ngoài khu đó.", "Đừng nghĩ phòng nào cũng dùng cùng một loại dép.", "Cố gắng đừng đến quá sớm so với giờ hẹn nếu chủ nhà không gợi ý."],
+    whyItMatters: ["Việc đến thăm nhà có thể trang trọng hơn một chút so với điều nhiều người đi du lịch hình dung, nhất là quanh lối vào và không gian sinh hoạt chung."],
+    commonMistakes: ["Bước lên tatami bằng dép.", "Bỏ lỡ bước chuyển từ giày ngoài sang dép trong nhà.", "Mang túi ướt hay vali lớn vào một lối vào nhỏ mà chưa kiểm tra."],
+    readMore: ["Bạn không cần phải quá kiểu cách. Quan sát chủ nhà và đi theo nhịp chung thường là đủ."]
+  },
+  "convenience-store": {
+    quickView: ["Dùng khay thanh toán nếu có.", "Chuẩn bị sẵn tiền hay thẻ.", "Nếu cần sắp xếp đồ, hãy bước sang bên."],
+    dos: ["Quan sát nhịp ở quầy trước khi thanh toán.", "Giữ phương thức thanh toán sẵn sàng.", "Sau khi trả tiền, dịch sang một bên nếu cần xếp lại đồ hoặc hóa đơn."],
+    donts: ["Cố gắng đừng chắn quầy trong lúc sắp xếp mọi thứ.", "Đừng nghĩ cửa hàng nào cũng đóng gói hay phục vụ giống nhau.", "Nếu bỏ lỡ câu hỏi của thu ngân, bạn hoàn toàn có thể dừng lại và hỏi lịch sự."],
+    whyItMatters: ["Cửa hàng tiện lợi được thiết kế để di chuyển rất nhanh, nên chỉ cần để ý một chút là cả hàng chờ sẽ thuận hơn."],
+    commonMistakes: ["Không để ý khay thanh toán.", "Đứng chặn khách sau vì đang xếp biên lai và tiền thừa.", "Không nhận ra khu lò vi sóng, nhận hàng hay tự đóng túi tách riêng."],
+    readMore: ["Konbini là nơi rất tốt để học những nhịp nhỏ của đời sống hằng ngày ở Nhật."]
+  },
+  smoking: {
+    quickView: ["Tìm khu hút thuốc được chỉ định.", "Đừng nghĩ cứ ở ngoài trời là được hút.", "Kiểm tra quy định của từng nơi."],
+    dos: ["Dùng khu hút thuốc đã đánh dấu khi có.", "Nhìn biển báo quanh ga, trên đường, ở nhà hàng và trong các tòa nhà.", "Giữ thuốc và tro trong khu vực được phép."],
+    donts: ["Đừng hút ở nơi không có gạt tàn hay sự cho phép rõ ràng.", "Đừng nghĩ quy định hút thuốc giống nhau ở mọi nhà hàng hay quán bar.", "Tránh suy nghĩ rằng ngoài trời đồng nghĩa với được phép hút."],
+    whyItMatters: ["Quy định hút thuốc ngoài đường có thể rất nghiêm ở một số khu, và khói thuốc thường được xem là vấn đề về sự thoải mái và an toàn chung."],
+    commonMistakes: ["Châm thuốc gần lối ra ga mà chưa kiểm tra khu vực.", "Chỉ bắt đầu tìm chỗ hút sau khi đã rời xa gạt tàn.", "Cho rằng một nhà hàng sẽ có quy định giống nhà hàng trước đó."],
+    readMore: ["Quy định thay đổi theo thành phố, tòa nhà và từng địa điểm. Biển báo và khu hút thuốc chỉ định là chỉ dẫn tốt nhất."]
+  },
+  "residential-private": {
+    quickView: ["Giữ âm lượng thấp.", "Tôn trọng các khu vực dùng chung.", "Làm theo quy định địa phương về rác và lối vào."],
+    dos: ["Nói nhỏ ở hành lang, cầu thang và lối vào, nhất là sáng sớm hay đêm muộn.", "Đọc hướng dẫn về rác và check-in nếu có.", "Giữ hành lý và cửa ra vào gọn thoáng."],
+    donts: ["Đừng nghĩ khu dân cư vận hành như khu du lịch.", "Đừng để túi hay rác ở không gian chung.", "Đừng gây ồn ở ban công, ngoài đường hay ở cửa vào lúc khuya."],
+    whyItMatters: ["Các chỗ ở tư nhân và khu dân cư chia sẻ cùng một không gian với đời sống hằng ngày của cư dân địa phương."],
+    commonMistakes: ["Nói chuyện lớn trước tòa nhà khi về muộn.", "Mang rác ra sai ngày hoặc sai chỗ.", "Để vali ngoài hành lang."],
+    readMore: ["Dù nơi lưu trú có vẻ thoải mái, quy định của tòa nhà và khu dân cư vẫn rất quan trọng ở khu dân cư."]
+  },
+  bicycle: {
+    quickView: ["Đừng bước bất ngờ vào làn hay khu vực xe đạp.", "Chỉ đỗ xe ở nơi được phép.", "Hãy xem xe đạp là phương tiện đi lại thực sự."],
+    dos: ["Nhìn quanh trước khi băng qua khu có xe đạp chạy.", "Dùng khu để xe được chỉ định nếu bạn thuê hay đỗ xe đạp.", "Giữ kiểm soát và giảm tốc ở khu vực có người đi bộ."],
+    donts: ["Đừng để xe đạp bừa bãi trước ga hay cửa hàng.", "Đừng chắn vỉa hè hẹp bằng một chiếc xe đang dừng.", "Đừng nghĩ luật đi xe đạp lỏng lẻo chỉ vì xe đạp rất phổ biến."],
+    whyItMatters: ["Ở Nhật, xe đạp là một phần của đời sống hằng ngày, nên việc di chuyển và đỗ xe được xem khá nghiêm túc."],
+    commonMistakes: ["Để xe ở khu cấm mà không nhìn thấy biển.", "Băng qua mà không để ý xe đạp đang tới nhanh.", "Bỏ lại xe thuê ở nơi không được chỉ định."],
+    readMore: ["Quy định đi lại và đỗ xe có thể khác nhau theo thành phố. Biển báo, vạch trên mặt đất và hướng dẫn của dịch vụ thuê xe là mốc tốt nhất."]
   }
 };

@@ -400,5 +400,157 @@ export const spanishCategoryContent: Partial<Record<CategoryId, CategoryContent>
     whyItMatters: ["Estas zonas parecen informales, pero el movimiento y el espacio compartido importan mucho cuando hay mucha gente."],
     commonMistakes: ["Comer en medio de una multitud en movimiento.", "Dejar brochetas, vasos o envoltorios en el lugar equivocado."],
     readMore: ["Algunas zonas toleran más comer mientras caminas, pero detenerse con orden suele ser la opción más segura."]
+  },
+  "vending-machine": {
+    quickView: ["Elige rápido.", "Apártate después de comprar.", "Usa la papelera de reciclaje correcta si existe."],
+    dos: ["Decide tu bebida antes de quedarte mucho rato delante de la máquina.", "Apártate en cuanto compres para que la siguiente persona pueda usarla."],
+    donts: ["No dejes botellas o latas al lado de la máquina si no hay contenedor adecuado.", "No supongas que cualquier papelera cercana acepta basura general."],
+    whyItMatters: ["Las máquinas expendedoras son cómodas porque la gente mantiene la zona limpia y en movimiento."],
+    commonMistakes: ["Usar el contenedor de bebidas para basura que no corresponde.", "Quedarse delante de la máquina mientras reorganizas monedas y bolsas."],
+    readMore: ["Las papeleras junto a las máquinas suelen aceptar solo envases de bebida, no envoltorios de comida ni basura general."]
+  },
+  "secondhand-shop": {
+    quickView: ["Mira los artículos con atención.", "Manipúlalos con suavidad.", "Pregunta antes de abrir, probar o inspeccionar a fondo."],
+    dos: ["Revisa los objetos con cuidado y pregunta si quieres probar aparatos o abrir embalajes.", "Sigue las indicaciones del personal con artículos caros o vitrinas."],
+    donts: ["No trates los artículos de segunda mano como un montón para rebuscar salvo que la tienda funcione claramente así.", "No abras productos sellados sin permiso."],
+    whyItMatters: ["Muchas tiendas de reutilización en Japón son muy ordenadas, y el estado del producto forma parte central de la confianza."],
+    commonMistakes: ["Manipular los productos con demasiada brusquedad por ser de segunda mano.", "Tratar una tienda de reventa cuidada como si fuera un mercadillo."],
+    readMore: ["Cuanto más cuidada parezca la exposición, más se espera normalmente que el cliente trate los artículos con delicadeza."]
+  },
+  "shopping-bags-packaging": {
+    quickView: ["Puede que te pregunten si quieres bolsa.", "El envoltorio regalo suele ser una opción aparte.", "Decídelo antes de frenar la fila."],
+    dos: ["Escucha las preguntas cortas sobre bolsa o envoltorio y responde de forma simple.", "Si quieres envoltorio especial, intenta decirlo antes de terminar la compra."],
+    donts: ["No supongas que la bolsa de plástico es automática o siempre gratis.", "No retrases la fila por una decisión no esencial."],
+    whyItMatters: ["Una pregunta breve sobre bolsa o envoltorio suele afectar al mismo tiempo a la velocidad, al coste y a la reducción de residuos."],
+    commonMistakes: ["Quedarse confundido por una pregunta sencilla sobre la bolsa.", "Pedir un envoltorio elaborado cuando la compra ya está cerrada."],
+    readMore: ["Aunque no entiendas la pregunta hablada, el personal suele señalar la bolsa o las opciones, así que una respuesta corta suele bastar."]
+  },
+  "delivery-service": {
+    quickView: ["Confirma primero la dirección.", "Pide ayuda con el formulario si hace falta.", "Asegúrate de que el destino puede recibir el envío."],
+    dos: ["Comprueba el nombre completo, la dirección y el momento de entrega antes de enviar nada.", "Pide ayuda al personal si el formulario o las opciones no te quedan claras."],
+    donts: ["No adivines la dirección o el nombre del hotel.", "No supongas que todos los hoteles aceptan cualquier paquete sin aviso."],
+    whyItMatters: ["Los servicios de envío en Japón son muy fiables, pero dependen de información muy precisa sobre la persona destinataria."],
+    commonMistakes: ["Poner un nombre de hotel incompleto.", "Intentar resolverlo todo solo al llegar a un mostrador ya ocupado."],
+    readMore: ["Si vas a enviar algo a un hotel, confirmar antes su política de recepción suele ser el paso más seguro."]
+  },
+  atm: {
+    quickView: ["Prepara primero la tarjeta.", "Apártate después de la operación.", "No ordenes todo delante de la máquina."],
+    dos: ["Ten la tarjeta lista antes de acercarte al cajero.", "Muévete a un lado antes de contar el dinero, mirar recibos o reorganizar la cartera."],
+    donts: ["No supongas que todos los cajeros aceptan tarjetas extranjeras.", "No dejes recibos tirados."],
+    whyItMatters: ["La zona del cajero suele ser pequeña y pensada para un uso rápido y privado."],
+    commonMistakes: ["Tardar demasiado en elegir idioma o red.", "Quedarse en la máquina reorganizando una cartera llena."],
+    readMore: ["Los cajeros de las tiendas de conveniencia suelen ser la opción más fácil para tarjetas extranjeras, pero aun así conviene comprobarlo antes."]
+  },
+  "observatory-night-view": {
+    quickView: ["Comparte los mejores puntos de vista.", "Mantén el equipo de foto compacto.", "Apártate después de hacer la foto."],
+    dos: ["Toma tu turno en la ventana o la barandilla y luego muévete para que otras personas disfruten la misma vista.", "Mantén el montaje pequeño en zonas de observación estrechas."],
+    donts: ["No ocupes demasiado tiempo el mejor sitio.", "No bloquees a otras personas con trípodes grandes o bolsas voluminosas."],
+    whyItMatters: ["Todo el mundo va por unos pocos ángulos buenos, sobre todo al atardecer o de noche."],
+    commonMistakes: ["Quedarse pegado al cristal revisando cada foto.", "Montar un equipo grande en una zona de observación estrecha."],
+    readMore: ["El buen ritmo es simple: mirar, hacer la foto, apartarse y volver más tarde si el espacio se libera."]
+  },
+  "live-concert": {
+    quickView: ["Revisa las normas del recinto antes de entrar.", "Pon el móvil completamente en silencio.", "No grabes si el lugar lo prohíbe."],
+    dos: ["Llega con tiempo suficiente para encontrar tu asiento o zona sin prisas.", "Sigue las normas del recinto sobre entrada, asientos y aplausos."],
+    donts: ["No hables durante la actuación.", "No supongas que siempre se puede entrar tarde sin molestar."],
+    whyItMatters: ["Los recintos de espectáculos funcionan mejor cuando todo el mundo comparte las mismas reglas de atención y de tiempo."],
+    commonMistakes: ["Usar el móvil durante el show.", "Entrar haciendo ruido cuando la actuación ya ha empezado."],
+    readMore: ["Cada lugar tiene su estilo, pero el silencio, la puntualidad y no grabar sin permiso suelen ser reglas seguras por defecto."]
+  },
+  "sports-event": {
+    quickView: ["Siéntate en la sección correcta.", "Mantén tus cosas dentro de tu espacio.", "Recoge tu zona al marcharte."],
+    dos: ["Comprueba si tu sección tiene su propio ritmo o costumbres de animación.", "Mantén las pertenencias compactas para no invadir asientos ni escaleras."],
+    donts: ["No ocupes asientos que no son tuyos.", "No bloquees constantemente la vista poniéndote de pie donde no es normal."],
+    whyItMatters: ["Los eventos deportivos pueden ser muy animados, pero la emoción compartida sigue dependiendo de reglas claras sobre asientos y secciones."],
+    commonMistakes: ["Sentarse en el bloque equivocado.", "Dejar basura bajo el asiento o sobre las escaleras."],
+    readMore: ["Basta una mirada rápida a tu alrededor para entender si tu sección está pensada para animar mucho o de forma más tranquila."]
+  },
+  "theme-park": {
+    quickView: ["Sigue con cuidado los sistemas de fila.", "No reserves demasiado espacio para otras personas.", "Mantén libres los caminos cuando mires mapas o hagas fotos."],
+    dos: ["Usa las zonas de espera designadas y sigue bien las reglas de cola del parque.", "Apártate antes de detenerte a planear la ruta o sacar fotos."],
+    donts: ["No vuelvas a entrar en la fila porque el grupo se separó.", "No bloquees un camino concurrido mientras decides qué hacer después."],
+    whyItMatters: ["Los parques temáticos parecen juguetones, pero su sistema de multitudes suele estar muy estructurado."],
+    commonMistakes: ["Usar el pasillo como zona de planificación.", "Guardar espacio para más gente de la que realmente está allí."],
+    readMore: ["En parques muy llenos, el sitio donde te colocas suele importar casi tanto como lo que planeas hacer."]
+  },
+  "service-area": {
+    quickView: ["Aparca dentro de las líneas.", "Usa la parada con ligereza.", "Recoge antes de irte."],
+    dos: ["Aparca dentro del espacio marcado y mueve el coche después si encuentras un sitio mejor.", "Usa las zonas de comida, compras y asientos sin extender demasiado tus pertenencias."],
+    donts: ["No dejes basura en las mesas ni en el aparcamiento.", "No bloquees el flujo de coches mientras decides adónde ir."],
+    whyItMatters: ["Las áreas de servicio las comparten muchos tipos de viajeros y funcionan mejor cuando la gente descansa un rato y sigue su camino con claridad."],
+    commonMistakes: ["Aparcar ocupando dos líneas.", "Reorganizar todo el coche en la parte más concurrida del aparcamiento."],
+    readMore: ["Incluso las paradas de carretera más relajadas tienen un ritmo: llegar, aparcar bien, descansar, recoger y seguir adelante."]
+  },
+  temple: {
+    quickView: ["Muévete despacio.", "Habla bajo.", "Mira las señales antes de entrar en los edificios."],
+    dos: ["Lee las indicaciones antes de entrar.", "Quítate los zapatos cuando se pida.", "Mantén el móvil y las fotos con discreción."],
+    donts: ["No entres en zonas restringidas.", "No supongas que se puede hacer fotos en todas partes.", "Evita interrumpir rezos o ceremonias."],
+    whyItMatters: ["Los templos pueden ser lugares de oración, memoria y práctica viva, no solo lugares turísticos."],
+    commonMistakes: ["Hablar demasiado alto en interiores.", "No ver la zona donde hay que quitarse los zapatos.", "Hacer fotos sin comprobarlo primero."],
+    readMore: ["Las normas cambian según el templo, sobre todo en salas interiores, espacios conmemorativos y fotografía."]
+  },
+  ryokan: {
+    quickView: ["Escucha bien la explicación al llegar.", "Respeta los horarios de comida y baño.", "Mantén la habitación tranquila y ordenada."],
+    dos: ["Comprueba al llegar los horarios de comida, baño y las reglas de la casa.", "Usa las zapatillas solo en las zonas donde corresponden.", "Pregunta antes de mover futones, muebles u objetos de la habitación."],
+    donts: ["No uses zapatos de exterior dentro.", "No supongas que un ryokan funciona exactamente como un hotel.", "Intenta no perderte la explicación de llegada, porque ahí suelen darse muchos detalles."],
+    whyItMatters: ["Los ryokan suelen tener un ritmo interno más marcado que un hotel, sobre todo alrededor de comidas, baños y uso de la habitación."],
+    commonMistakes: ["Perder la hora de la comida o del baño.", "Usar las zapatillas del baño en otra zona.", "Dejar cosas mojadas donde el personal necesita preparar la habitación."],
+    readMore: ["Si dudas, preguntar al personal suele ser la opción más segura. Las expectativas cambian de una posada a otra."]
+  },
+  "shoes-indoors": {
+    quickView: ["Fíjate en escalón, alfombra o zona de zapatos.", "Quítate los zapatos cuando el suelo pase a ser interior.", "Usa las zapatillas interiores solo donde corresponda."],
+    dos: ["Busca genkan, estantería de zapatos, zapatillas o carteles.", "Si te dan zapatillas, úsalas en las zonas interiores normales.", "Ten especial cuidado con tatami y probadores."],
+    donts: ["No pises suelos interiores con zapatos de exterior.", "No uses las zapatillas del baño fuera de esa zona.", "No supongas que todos los lugares siguen exactamente el mismo patrón."],
+    whyItMatters: ["Quitar los zapatos ayuda a mantener limpios y cómodos los espacios interiores, y aparece en más lugares de los que mucha gente imagina."],
+    commonMistakes: ["No ver el pequeño escalón de la entrada.", "Pisar tatami con zapatillas o zapatos.", "Confundir zapatillas del baño con zapatillas interiores normales."],
+    readMore: ["Esto aparece en casas, templos, algunos restaurantes, probadores, clínicas y alojamientos tradicionales."]
+  },
+  chopsticks: {
+    quickView: ["No claves los palillos rectos en el arroz.", "No pases comida de palillo a palillo.", "Déjalos en un soporte cuando hagas una pausa."],
+    dos: ["Coloca los palillos con orden en el soporte cuando sea posible.", "Si hay palillos de servir en un plato compartido, úsalos.", "Si necesitas tenedor, es totalmente normal pedirlo."],
+    donts: ["No pinches la comida sin más.", "No señales ni gesticules con los palillos mientras hablas.", "No los uses para arrastrar platos hacia ti."],
+    whyItMatters: ["Algunos gestos con los palillos recuerdan mucho a rituales funerarios y otros simplemente se sienten bruscos en una comida compartida."],
+    commonMistakes: ["Dejar los palillos cruzados sobre un cuenco durante mucho rato.", "Pasar la comida directamente de unos palillos a otros.", "Usarlos para acercar platos."],
+    readMore: ["No necesitas una técnica perfecta. Lo importante es manejarlos con calma y cuidado, no parecer experto."]
+  },
+  "visiting-home": {
+    quickView: ["Quítate los zapatos en la entrada.", "Observa cómo se usan las zapatillas.", "Un pequeño regalo suele apreciarse, aunque no siempre es necesario."],
+    dos: ["Sigue el ejemplo de la persona anfitriona al entrar.", "Pregunta dónde dejar abrigo o bolso si no lo tienes claro.", "En apartamentos, hablar con un volumen tranquilo suele agradecerse."],
+    donts: ["No uses las zapatillas del baño fuera de esa zona.", "No supongas que todas las habitaciones usan las mismas zapatillas.", "Procura no llegar mucho antes de la hora acordada salvo que la persona anfitriona lo sugiera."],
+    whyItMatters: ["Las visitas a casas pueden sentirse un poco más formales de lo que mucha gente viajera espera, sobre todo en la entrada y en los espacios compartidos."],
+    commonMistakes: ["Pisar tatami con zapatillas.", "No hacer bien el cambio entre zapatos de exterior y zapatillas de interior.", "Entrar con una bolsa mojada o una maleta grande en una entrada pequeña sin comprobarlo."],
+    readMore: ["No hace falta ser excesivamente formal. Observar a la persona anfitriona y seguir el flujo general suele bastar."]
+  },
+  "convenience-store": {
+    quickView: ["Usa la bandeja de pago si la hay.", "Ten efectivo o tarjeta listos.", "Apártate si necesitas tiempo para ordenar tus cosas."],
+    dos: ["Observa primero el ritmo del mostrador antes de pagar.", "Lleva preparado tu medio de pago.", "Después de pagar, muévete un poco si necesitas recolocar compras o recibos."],
+    donts: ["Procura no bloquear el mostrador mientras reorganizas todo.", "No supongas que todas las tiendas embolsan o sirven de la misma manera.", "Si no entiendes una pregunta de la caja, está bien parar y pedirlo con educación."],
+    whyItMatters: ["Las tiendas de conveniencia están diseñadas para moverse rápido, así que un poco de atención ayuda a toda la fila."],
+    commonMistakes: ["No darse cuenta de la bandeja de pago.", "Ordenar recibos y cambio bloqueando a la siguiente persona.", "No ver una zona separada para microondas, recogida o autoembolsado."],
+    readMore: ["Los konbini son un muy buen lugar para aprender los pequeños ritmos de la vida diaria en Japón."]
+  },
+  smoking: {
+    quickView: ["Busca una zona de fumadores designada.", "No supongas que por estar al aire libre ya se puede.", "Comprueba la norma de cada lugar."],
+    dos: ["Usa las zonas marcadas para fumar cuando existan.", "Mira los carteles en estaciones, calles, restaurantes y edificios.", "Mantén cigarrillo y ceniza dentro del área permitida."],
+    donts: ["No fumes donde no haya cenicero o permiso claro.", "No supongas que las normas son iguales en todos los restaurantes o bares.", "Evita pensar que exterior significa automáticamente permitido."],
+    whyItMatters: ["Las reglas sobre fumar en la calle pueden ser estrictas en algunas zonas, y el humo suele tratarse como asunto de comodidad y seguridad compartida."],
+    commonMistakes: ["Encender un cigarrillo junto a una salida de estación sin comprobar la zona.", "Buscar dónde fumar solo después de alejarse de un cenicero.", "Suponer que un restaurante tiene la misma política que el anterior."],
+    readMore: ["Las normas cambian según ciudad, edificio y local. Los carteles y las zonas designadas son la mejor guía."]
+  },
+  "residential-private": {
+    quickView: ["Mantén el volumen bajo.", "Respeta las zonas comunes.", "Sigue las reglas locales de basura y acceso."],
+    dos: ["Habla suave en pasillos, escaleras y entradas, sobre todo muy temprano o muy tarde.", "Lee las instrucciones de basura y check-in si las hay.", "Mantén despejados equipaje y puerta."],
+    donts: ["No supongas que una zona residencial funciona como una zona turística.", "No dejes bolsas o basura en espacios comunes.", "No hagas ruido en balcón, calle o entrada por la noche."],
+    whyItMatters: ["Los alojamientos privados y las zonas residenciales comparten el mismo espacio con la vida diaria del vecindario."],
+    commonMistakes: ["Hablar fuerte delante del edificio al volver tarde.", "Sacar la basura el día o en el lugar equivocados.", "Dejar maletas en el pasillo."],
+    readMore: ["Aunque la estancia parezca informal, las reglas del edificio y del vecindario importan mucho en zonas residenciales."]
+  },
+  bicycle: {
+    quickView: ["No entres de golpe en carriles o zonas de bici.", "Aparca solo donde esté permitido.", "Trata la bici como un transporte diario de verdad."],
+    dos: ["Mira a tu alrededor antes de cruzar una zona por la que circulen bicicletas.", "Usa las zonas señaladas para aparcar si alquilas o dejas una bici.", "Reduce la velocidad y mantén control en zonas peatonales."],
+    donts: ["No dejes una bici en cualquier sitio frente a una estación o tienda.", "No bloquees aceras estrechas con una bici parada.", "No supongas que las normas de circulación son relajadas porque haya muchas bicis."],
+    whyItMatters: ["En Japón, la bicicleta forma parte de la vida diaria, así que circulación y aparcamiento se toman en serio."],
+    commonMistakes: ["Dejar una bici en zona prohibida sin ver el cartel.", "Cruzar sin mirar por una zona por la que pasan bicis rápido.", "Abandonar una bici de alquiler fuera del punto indicado."],
+    readMore: ["Las reglas de circulación y aparcamiento cambian según la ciudad. Las señales, las marcas en el suelo y las normas del alquiler son la mejor referencia."]
   }
 };
