@@ -240,5 +240,85 @@ export const vietnameseCategoryContent: Partial<Record<CategoryId, CategoryConte
     whyItMatters: ["Khác biệt về giấy tờ, biển báo, bãi đỗ hay thủ tục trả xe có thể nhanh chóng thành chi phí lớn hoặc rắc rối thật sự."],
     commonMistakes: ["Quên bằng lái hay bản dịch cần thiết.", "Trả xe mà chưa đổ xăng dù hợp đồng yêu cầu."],
     readMore: ["Trước khi lái đi, hãy làm rõ ít nhất ba điểm: giấy tờ của bạn, chỗ nào được đỗ và quy trình trả xe cụ thể."]
+  },
+  "airport-limousine-bus": {
+    quickView: ["Đến sớm hơn một chút.", "Kiểm tra kỹ đúng bến và đúng điểm đến.", "Làm theo quy trình hành lý mà nhân viên hướng dẫn."],
+    dos: ["Xác nhận số bến và tên điểm đến thật rõ trước khi xếp hàng.", "Làm theo hướng dẫn của nhân viên với vali cỡ lớn."],
+    donts: ["Đừng nghĩ xe sẽ chờ bạn đến phút cuối.", "Đừng để hành lý ở chỗ nhân viên chưa cho phép."],
+    whyItMatters: ["Xe buýt sân bay thường chạy rất đúng giờ, nên chỉ một chút lúng túng lúc lên xe cũng có thể làm chậm cả nhóm khách."],
+    commonMistakes: ["Đứng chờ ở bến sai.", "Bỏ lỡ bước dán thẻ hoặc gửi hành lý."],
+    readMore: ["Nhìn lại tên điểm đến thêm một lần thường rất đáng giá, nhất là khi có nhiều khách sạn hay ga có tên gần giống nhau."]
+  },
+  "night-bus": {
+    quickView: ["Hãy xem đây là nơi để ngủ nghỉ.", "Giảm tiếng ồn và ánh sáng xuống mức thấp nhất.", "Chuẩn bị đồ cần dùng trước khi xe vào không khí yên tĩnh."],
+    dos: ["Nếu cần nói chuyện, hãy nói rất ngắn và rất nhỏ.", "Chuẩn bị sẵn những gì bạn cần trước khi xe bước vào phần nghỉ đêm."],
+    donts: ["Đừng gọi điện trên xe.", "Đừng dùng màn hình sáng mà không nghĩ đến người xung quanh."],
+    whyItMatters: ["Chỉ một âm thanh nhỏ hay một chút ánh sáng cũng có thể ảnh hưởng đến rất nhiều người trên xe buýt đêm."],
+    commonMistakes: ["Sắp xếp lại túi sau khi tắt đèn.", "Xem video mà quên giảm độ sáng màn hình."],
+    readMore: ["Nếu phải di chuyển trong chuyến đi, làm chậm rãi và giữ ánh sáng lẫn tiếng động ở mức thấp nhất thường là cách an toàn nhất."]
+  },
+  "ride-hailing": {
+    quickView: ["Tìm đúng điểm đón trước.", "Chờ mà không chắn hàng người hay lòng đường.", "Nếu có khu xếp hàng sẵn, hãy theo đúng thứ tự."],
+    dos: ["Kiểm tra chính xác vị trí đón trước khi bấm gọi xe.", "Đứng ở nơi tài xế dễ nhìn thấy mà không làm phiền người khác."],
+    donts: ["Đừng nghĩ xe có thể dừng ở bất kỳ chỗ nào.", "Đừng chen lên trước những người đã chờ từ trước."],
+    whyItMatters: ["Ở ga lớn hay sân bay, chỉ một sai lệch nhỏ về điểm đón cũng có thể làm rối cả tài xế lẫn hành khách khác."],
+    commonMistakes: ["Gọi xe trước khi tìm ra khu đón đúng.", "Đứng chờ nhầm làn hay nhầm hàng."],
+    readMore: ["Ở các điểm trung chuyển lớn, thói quen tốt nhất thường là: tìm đúng điểm đón trước rồi mới gọi xe."]
+  },
+  ferry: {
+    quickView: ["Di chuyển cẩn thận.", "Giữ đồ đạc gọn gàng.", "Tôn trọng quy định của không gian chung và boong tàu."],
+    dos: ["Làm theo hướng dẫn lên tàu và chú ý giữ thăng bằng khi di chuyển.", "Để túi ở nơi không chắn lối đi."],
+    donts: ["Đừng chiếm quá nhiều chỗ ở khu ngồi nghỉ chung.", "Đừng đứng chụp ảnh hay ngắm cảnh ở lối đi hẹp."],
+    whyItMatters: ["Trên phà hay tàu, không gian được dùng chung và đôi khi còn rung lắc, nên sự ngăn nắp và chú ý rất quan trọng."],
+    commonMistakes: ["Để hành lý giữa lối đi.", "Chụp ảnh từ chỗ khiến người khác không đi qua được."],
+    readMore: ["Với chuyến đi dài hơn, kiểm tra quy định của lounge, boong tàu và khu vực yên tĩnh thường giúp chuyến đi dễ chịu hơn nhiều."]
+  },
+  "ropeway-cablecar": {
+    quickView: ["Lên nhanh.", "Chia sẻ tự nhiên các góc nhìn đẹp.", "Đừng chắn lối xuống."],
+    dos: ["Bước nhanh vào cabin và đi sâu vào trong để nhường chỗ.", "Ngắm cảnh một lúc rồi nhường góc cho người khác."],
+    donts: ["Đừng lao lên chiếm cửa sổ đẹp nhất.", "Đừng giữ nguyên vị trí chụp đẹp suốt cả hành trình."],
+    whyItMatters: ["Cáp treo hay funicular thường ngắn, đẹp và đông, nên chỉ cần biết chia sẻ một chút là trải nghiệm đã khác hẳn."],
+    commonMistakes: ["Chiếm cửa kính phía trước suốt chuyến.", "Đứng lại ở lối ra để chụp thêm tấm cuối cùng."],
+    readMore: ["Nhịp thoải mái nhất thường rất đơn giản: lên nhanh, xem một lúc, chia sẻ tự nhiên rồi xuống gọn gàng."]
+  },
+  "hotel-lobby": {
+    quickView: ["Dùng sảnh như khu chờ chung.", "Giữ hành lý gọn.", "Nếu cần sắp xếp đồ hay xem kế hoạch, hãy nép sang bên."],
+    dos: ["Chọn một góc rõ ràng nếu bạn cần vài phút để kiểm tra lịch trình.", "Giữ đồ đạc sát bên mình."],
+    donts: ["Đừng biến giữa sảnh thành chỗ mở vali và sắp xếp đồ.", "Đừng để hành lý chắn lối đi chính."],
+    whyItMatters: ["Sảnh khách sạn phục vụ cùng lúc việc đến, đi, di chuyển của nhân viên và những khoảng chờ yên tĩnh."],
+    commonMistakes: ["Trải hành lý ra khu vực lối đi.", "Nói chuyện quá lớn vì nghĩ không gian mở thì không sao."],
+    readMore: ["Nếu cần dừng lại một lúc, chọn một góc thoáng và giữ dấu chân của mình thật nhẹ thường là cách hợp lý nhất."]
+  },
+  "hotel-elevator": {
+    quickView: ["Nhường người ra trước rồi mới vào.", "Bước hẳn vào trong và đừng đứng ở cửa.", "Giữ chuyến đi ngắn và yên."],
+    dos: ["Di chuyển vào sâu bên trong để tạo chỗ.", "Giữ cửa nếu rõ ràng có người đang tới."],
+    donts: ["Đừng đứng chặn ở khung cửa.", "Đừng để vali lớn chắn người khác."],
+    whyItMatters: ["Thang máy khách sạn là không gian nhỏ, dùng chung và rất dễ nhìn thấy cách cư xử của nhau."],
+    commonMistakes: ["Cố chen vào trước khi người khác ra hết.", "Để vali ở giữa cabin."],
+    readMore: ["Những cử chỉ đơn giản trong thang máy thường để lại ấn tượng khá rõ vì không gian ở đó rất trực diện."]
+  },
+  "shared-lounge": {
+    quickView: ["Dùng không gian nhẹ nhàng.", "Đi theo bầu không khí yên nhất trong phòng.", "Kiểm tra xem có được gọi điện, ăn hay uống không."],
+    dos: ["Chỉ chiếm chỗ đúng mức bạn cần.", "Rời đi thì để lại không gian gọn gàng."],
+    donts: ["Đừng dùng túi để chiếm nhiều ghế.", "Đừng dùng căn phòng yên nhất để gọi điện lâu."],
+    whyItMatters: ["Sự thoải mái của lounge chung phụ thuộc nhiều vào việc mỗi người dùng nó nhẹ nhàng đến đâu."],
+    commonMistakes: ["Chiếm nhiều chỗ ngồi cùng lúc.", "Để lại cốc hay rác khi rời đi."],
+    readMore: ["Nếu không chắc nên cư xử thế nào, thường cứ nhìn theo những người yên lặng nhất trong phòng là khá an toàn."]
+  },
+  "coin-laundry": {
+    quickView: ["Dùng máy hiệu quả.", "Quay lại lấy đồ đúng giờ.", "Đừng bày đồ lên mọi bề mặt chung."],
+    dos: ["Đọc kỹ hướng dẫn của máy trước khi bắt đầu.", "Đặt báo thức để quay lại đúng lúc."],
+    donts: ["Đừng để quần áo đã giặt xong trong máy quá lâu.", "Đừng chiếm nhiều máy khi không thật sự cần."],
+    whyItMatters: ["Tiệm giặt tự động dùng chung sẽ trôi chảy nhất khi mọi người tôn trọng cả thời gian của người khác lẫn chiếc máy."],
+    commonMistakes: ["Quên giờ máy xong.", "Để bột giặt, túi hay quần áo trên bàn gấp đồ."],
+    readMore: ["Khi tiệm đang đông, quay lại lấy đồ nhanh gần như quan trọng ngang với việc dùng máy đúng cách."]
+  },
+  "capsule-hotel": {
+    quickView: ["Xử lý xong việc gây tiếng động trước khi vào khu capsule.", "Để điện thoại ở chế độ im lặng.", "Di chuyển thật nhẹ vào ban đêm."],
+    dos: ["Dùng khu vực chung cho các cuộc gọi, việc sắp xếp hành lý hay bất cứ thứ gì tạo tiếng ồn.", "Chuẩn bị sẵn đồ cần dùng trước khi vào khu ngủ."],
+    donts: ["Đừng gọi điện gần capsule.", "Đừng mở khóa kéo hay lục túi ồn ào quá lâu vào đêm muộn."],
+    whyItMatters: ["Âm thanh lan đi rất dễ trong khách sạn capsule, kể cả khi bạn thấy mình đã khá nhỏ nhẹ."],
+    commonMistakes: ["Sắp lại vali sau nửa đêm.", "Xem video gần capsule nơi người khác đang ngủ."],
+    readMore: ["Ở khách sạn capsule, cách đơn giản nhất thường là xử lý xong mọi việc tạo tiếng động trước khi bước vào khu nghỉ."]
   }
 };

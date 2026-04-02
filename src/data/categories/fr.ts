@@ -240,5 +240,85 @@ export const frenchCategoryContent: Partial<Record<CategoryId, CategoryContent>>
     whyItMatters: ["Une différence de document, de signalisation, de parking ou de procédure de retour peut vite devenir un vrai problème ou un coût important."],
     commonMistakes: ["Oublier le permis ou la traduction nécessaires.", "Rendre la voiture sans refaire le plein quand c’était demandé."],
     readMore: ["Avant de partir, clarifiez au moins trois points: vos documents, les règles de stationnement et la procédure exacte de retour."]
+  },
+  "airport-limousine-bus": {
+    quickView: ["Arrivez un peu en avance.", "Vérifiez bien le bon quai et la destination.", "Suivez le processus bagages indiqué par le personnel."],
+    dos: ["Confirmez le numéro du quai et le nom exact de la destination avant de faire la queue.", "Suivez les indications du personnel pour les grandes valises."],
+    donts: ["Ne supposez pas que le bus attendra au dernier moment.", "Ne laissez pas vos bagages là où le personnel ne l’a pas demandé."],
+    whyItMatters: ["Les bus d’aéroport fonctionnent souvent à l’heure près, donc un petit flottement au départ peut gêner tout le monde."],
+    commonMistakes: ["Attendre au mauvais arrêt.", "Rater l’étape de l’étiquette bagage."],
+    readMore: ["Regarder deux fois le nom de la destination aide beaucoup, surtout quand plusieurs hôtels ou gares ont des noms proches."]
+  },
+  "night-bus": {
+    quickView: ["Considérez le bus comme un espace pour dormir.", "Réduisez au maximum bruit et lumière.", "Préparez vos affaires avant le calme de nuit."],
+    dos: ["Gardez les conversations très courtes et très basses.", "Préparez ce qu’il vous faut avant que le bus ne s’installe pour la nuit."],
+    donts: ["Ne passez pas d’appels dans le bus.", "N’utilisez pas un écran lumineux sans faire attention aux autres."],
+    whyItMatters: ["Même de petits sons ou un peu de lumière peuvent gêner beaucoup de monde dans un bus de nuit."],
+    commonMistakes: ["Ranger ou refaire son sac après extinction des lumières.", "Regarder des vidéos sans penser à la luminosité."],
+    readMore: ["Si vous devez bouger pendant le trajet, faites-le lentement et en gardant lumière et bruit au minimum."]
+  },
+  "ride-hailing": {
+    quickView: ["Trouvez d’abord le bon point de prise en charge.", "Attendez sans bloquer la file ni la chaussée.", "Suivez l’ordre du point taxi s’il y en a un."],
+    dos: ["Vérifiez l’emplacement exact avant de demander la course.", "Placez-vous là où le conducteur peut vous voir sans gêner les autres."],
+    donts: ["Ne supposez pas que la voiture peut s’arrêter n’importe où.", "Ne passez pas devant des personnes déjà en attente."],
+    whyItMatters: ["Dans les gares et aéroports, une petite erreur de point de rendez-vous crée vite de la confusion pour tout le monde."],
+    commonMistakes: ["Commander la voiture avant d’avoir trouvé la bonne zone.", "Attendre dans la mauvaise file."],
+    readMore: ["Dans un grand hub de transport, le meilleur réflexe est simple: trouvez d’abord le point de prise en charge, demandez la voiture ensuite."]
+  },
+  ferry: {
+    quickView: ["Déplacez-vous avec soin.", "Rangez vos affaires proprement.", "Respectez les règles des espaces communs et du pont."],
+    dos: ["Suivez les indications d’embarquement et gardez l’équilibre en vous déplaçant.", "Posez vos sacs de manière à ne pas gêner les allées."],
+    donts: ["Ne vous étalez pas dans les zones de repos partagées.", "Ne bloquez pas un passage étroit pour regarder ou prendre des photos."],
+    whyItMatters: ["Sur un ferry, les espaces sont partagés et parfois instables, donc l’ordre et l’attention comptent beaucoup."],
+    commonMistakes: ["Laisser les bagages dans l’allée.", "Prendre des photos depuis un endroit qui bloque les autres."],
+    readMore: ["Sur les trajets plus longs, vérifier les règles du lounge, du pont et des zones calmes rend souvent le voyage plus facile."]
+  },
+  "ropeway-cablecar": {
+    quickView: ["Montez rapidement.", "Partagez naturellement les meilleures vues.", "Laissez l’espace de sortie libre."],
+    dos: ["Entrez vite dans la cabine et avancez pour faire de la place.", "Regardez la vue un moment puis laissez tourner."],
+    donts: ["Ne vous précipitez pas sur la meilleure vitre.", "Ne gardez pas la position photo idéale pendant tout le trajet."],
+    whyItMatters: ["Ces trajets sont souvent courts, beaux et bondés, donc un peu de partage change tout."],
+    commonMistakes: ["Monopoliser la vitre avant pendant tout le voyage.", "S’arrêter dans le passage de sortie pour une dernière photo."],
+    readMore: ["Le rythme le plus confortable est simple: monter vite, regarder un peu, partager naturellement, puis sortir sans bloquer."]
+  },
+  "hotel-lobby": {
+    quickView: ["Utilisez le hall comme espace d’attente partagé.", "Gardez vos bagages compacts.", "Si vous devez vous organiser, décalez-vous sur le côté."],
+    dos: ["Choisissez une zone claire si vous avez besoin de temps pour vérifier vos plans.", "Gardez vos affaires près de vous."],
+    donts: ["Ne transformez pas le centre du hall en zone de regroupement ou de tri des sacs.", "Ne bloquez pas les allées principales avec les valises."],
+    whyItMatters: ["Le hall sert à la fois aux arrivées, départs, déplacements du personnel et attentes calmes."],
+    commonMistakes: ["Étaler les bagages dans un passage.", "Parler trop fort parce que l’espace semble ouvert."],
+    readMore: ["Si vous avez besoin de quelques minutes, le mieux est souvent de choisir un coin dégagé et de garder une empreinte légère."]
+  },
+  "hotel-elevator": {
+    quickView: ["Laissez sortir les autres avant d’entrer.", "Entrez franchement puis libérez la porte.", "Gardez le trajet calme et bref."],
+    dos: ["Avancez à l’intérieur pour laisser la place.", "Tenez la porte si quelqu’un arrive clairement."],
+    donts: ["Ne restez pas planté dans l’encadrement.", "Ne laissez pas une grosse valise bloquer les autres passagers."],
+    whyItMatters: ["L’ascenseur d’hôtel est un espace petit, visible et très partagé, donc la courtoisie s’y remarque vite."],
+    commonMistakes: ["Essayer d’entrer avant la sortie des autres.", "Laisser une valise au milieu de la cabine."],
+    readMore: ["Des gestes simples dans un ascenseur donnent souvent une impression forte, précisément parce que l’espace est si direct."]
+  },
+  "shared-lounge": {
+    quickView: ["Occupez l’espace légèrement.", "Adaptez-vous au ton le plus calme de la pièce.", "Vérifiez si appels, nourriture ou boissons sont acceptés."],
+    dos: ["Prenez seulement la place dont vous avez besoin.", "Laissez l’endroit propre en partant."],
+    donts: ["N’occupez pas plusieurs sièges avec vos sacs.", "N’utilisez pas une pièce très calme pour un appel long."],
+    whyItMatters: ["Le confort d’un salon partagé dépend surtout de la légèreté avec laquelle chacun l’utilise."],
+    commonMistakes: ["S’étaler sur plusieurs places.", "Laisser des gobelets ou emballages derrière soi."],
+    readMore: ["Quand vous hésitez sur le bon comportement, le plus sûr est souvent de vous aligner sur les personnes les plus discrètes de la pièce."]
+  },
+  "coin-laundry": {
+    quickView: ["Utilisez les machines efficacement.", "Revenez chercher le linge à temps.", "N’étalez pas vos affaires sur les surfaces communes."],
+    dos: ["Lisez bien les consignes de la machine avant de lancer le cycle.", "Mettez un rappel pour revenir à l’heure."],
+    donts: ["Ne laissez pas votre linge fini longtemps dans la machine.", "N’occupez pas plusieurs machines sans raison."],
+    whyItMatters: ["Les laveries partagées fonctionnent mieux quand chacun respecte autant le temps des autres que la machine elle-même."],
+    commonMistakes: ["Oublier l’heure de fin.", "Laisser lessive, sacs ou vêtements sur les plans de pliage."],
+    readMore: ["Quand la laverie est chargée, revenir vite chercher son linge compte presque autant que bien utiliser la machine."]
+  },
+  "capsule-hotel": {
+    quickView: ["Finissez les tâches bruyantes avant d’entrer dans la zone des capsules.", "Passez le téléphone en silencieux.", "Bougez doucement la nuit."],
+    dos: ["Utilisez les espaces communs pour les appels, le repacking ou toute tâche bruyante.", "Préparez ce qu’il vous faut avant d’entrer dans l’espace de couchage."],
+    donts: ["Ne téléphonez pas près des capsules.", "N’ouvrez pas vos sacs bruyamment pendant longtemps tard dans la nuit."],
+    whyItMatters: ["Le son circule facilement dans un hôtel capsule, même quand on croit être discret."],
+    commonMistakes: ["Refaire sa valise après minuit.", "Regarder des vidéos près des capsules endormies."],
+    readMore: ["Le plus simple dans un hôtel capsule est souvent de faire tout ce qui fait du bruit avant d’entrer dans la zone de repos."]
   }
 };
