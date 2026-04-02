@@ -320,5 +320,85 @@ export const spanishCategoryContent: Partial<Record<CategoryId, CategoryContent>
     whyItMatters: ["En un hotel cápsula el sonido se transmite con mucha facilidad, incluso cuando a ti te parece que apenas se nota."],
     commonMistakes: ["Rehacer la maleta pasada la medianoche.", "Ver vídeos cerca de cápsulas donde otras personas intentan dormir."],
     readMore: ["En un hotel cápsula, lo más cómodo suele ser terminar todo lo que haga ruido antes de entrar en la zona de sueño."]
+  },
+  "hostel-dorm": {
+    quickView: ["Usa las zonas comunes para llamadas y para reorganizar el equipaje.", "Mantén ordenada tu zona de cama.", "Por la noche, usa una luz pequeña."],
+    dos: ["Lleva las conversaciones largas y el repacking a un lounge o a una zona común.", "Mantén tus cosas cerca de tu cama."],
+    donts: ["No enciendas luces fuertes tarde por la noche salvo que sea necesario.", "No uses el suelo como espacio extra de almacenamiento."],
+    whyItMatters: ["Las habitaciones compartidas pueden sentirse sociales, pero siguen siendo espacios de descanso."],
+    commonMistakes: ["Tener una conversación larga junto a la cama mientras otras personas descansan.", "Dejar bolsas y cargadores por todo el suelo."],
+    readMore: ["Si quieres hablar, comer u organizar el equipaje, normalmente las zonas comunes son la mejor opción."]
+  },
+  "checkout-room": {
+    quickView: ["Revisa si olvidas algo.", "Deja la habitación razonablemente ordenada.", "No supongas que salir tarde no importa."],
+    dos: ["Mira enchufes, estantes del baño y debajo de la cama antes de irte.", "Sigue las indicaciones sencillas sobre basura o devolución de llave."],
+    donts: ["No dejes la habitación muy desordenada.", "No te quedes después de la hora de salida sin preguntar."],
+    whyItMatters: ["La hora de salida afecta a la limpieza y a la llegada de la siguiente persona."],
+    commonMistakes: ["Olvidar cargadores o pasaporte.", "Hacer la maleta con prisas y dejar la habitación hecha un caos."],
+    readMore: ["No hace falta dejar todo perfecto. Un orden básico y salir a tiempo suele ser suficiente."]
+  },
+  bakery: {
+    quickView: ["Coge bandeja si ese es el sistema.", "Usa las pinzas con cuidado.", "Mantén la fila en movimiento."],
+    dos: ["Usa la bandeja y las pinzas cuando la tienda las ofrezca.", "Avanza por la vitrina sin detenerte demasiado en un mismo punto."],
+    donts: ["No toques el pan directamente salvo que esté claramente permitido.", "No te inclines sobre la vitrina con bolsas abiertas o mangas sueltas."],
+    whyItMatters: ["Las vitrinas de pan están abiertas, así que importan tanto la higiene como la fluidez."],
+    commonMistakes: ["Tocar más de una pieza mientras decides.", "Bloquear demasiado tiempo la parte delantera de la vitrina."],
+    readMore: ["Aunque la panadería parezca informal, moverse como una fila tranquila suele encajar mejor con el ritmo local."]
+  },
+  "fast-food": {
+    quickView: ["Ten claro el pedido antes de llegar al mostrador.", "Devuelve la bandeja si el local lo pide.", "Deja la mesa razonablemente limpia."],
+    dos: ["Prepara el pedido antes de llegar al mostrador cuando sea posible.", "Devuelve bandejas y basura después de comer si el sistema lo espera."],
+    donts: ["No dejes envoltorios y bandejas sobre la mesa al marcharte.", "No bloquees la zona de condimentos o de recogida."],
+    whyItMatters: ["Los espacios de comida rápida están pensados para una rotación veloz, así que cualquier retraso se nota mucho."],
+    commonMistakes: ["No darse cuenta de dónde se devuelven las bandejas.", "Quedarse mucho tiempo después de terminar en hora punta."],
+    readMore: ["Mirar a una o dos personas locales suele mostrar más rápido cómo funciona la limpieza que leer todos los carteles."]
+  },
+  "food-court": {
+    quickView: ["Usa solo los asientos que necesites.", "Lleva la bandeja con cuidado.", "Devuelve platos o basura donde toque."],
+    dos: ["Ocupa solo el número de plazas que tu grupo necesita de verdad.", "Devuelve bandejas, platos o basura a la estación correcta al terminar."],
+    donts: ["No reserves una zona grande solo con bolsas.", "No dejes bandejas terminadas en la mesa si hay estación de devolución."],
+    whyItMatters: ["Los food courts dependen de que mucha gente comparta los mismos asientos durante poco tiempo."],
+    commonMistakes: ["Guardar demasiados sitios demasiado pronto.", "Tratar la zona compartida como si fuera un comedor privado."],
+    readMore: ["En los momentos más llenos, el ritmo más agradecido suele ser simple: comer, recoger y dejar sitio con naturalidad."]
+  },
+  izakaya: {
+    quickView: ["Espera a que te sienten.", "Revisa primero las normas de la casa.", "Pide al ritmo del local."],
+    dos: ["Comprueba si hay cargo de mesa, regla de una bebida o límite de tiempo.", "Mira el ambiente antes de tratarlo como un bar informal cualquiera."],
+    donts: ["No supongas que todo lo que llega a la mesa es gratis u opcional.", "No lleves equipaje grande a una zona de asientos muy pequeña."],
+    whyItMatters: ["Muchas personas viajeras se confunden con pequeñas costumbres del izakaya, sobre todo al principio de la comida."],
+    commonMistakes: ["Sorprenderse por un otoshi o un cargo de mesa.", "Tardar demasiado en pedir en un local muy pequeño."],
+    readMore: ["Una mirada rápida a la carta, al tamaño del sitio y a la información del cargo suele bastar para entender qué tipo de lugar es."]
+  },
+  bar: {
+    quickView: ["Observa el ambiente antes de hablar fuerte.", "Pide de forma clara y sencilla.", "Comprueba antes de hacer fotos."],
+    dos: ["Dedica un momento a ver si el bar es tranquilo, social, formal o informal.", "Mantén tu voz cerca del nivel que ya tiene la sala."],
+    donts: ["No supongas que todos los bares aceptan energía ruidosa de grupo.", "No uses flash ni filmes al personal sin comprobarlo."],
+    whyItMatters: ["Muchos bares en Japón dependen mucho de la atmósfera, y leer la sala importa tanto como entender la carta."],
+    commonMistakes: ["Hablar demasiado alto en un bar de cócteles tranquilo.", "Bloquear la barra mientras decides qué pedir."],
+    readMore: ["Un minuto de observación al llegar suele funcionar mejor que un minuto de preguntas."]
+  },
+  "all-you-can-drink": {
+    quickView: ["Comprueba el límite de tiempo.", "Fíjate en la hora del último pedido.", "Pide solo lo que la mesa pueda terminar."],
+    dos: ["Confirma la duración y la hora del último pedido antes de acomodarte.", "Pide al ritmo que tu grupo realmente pueda disfrutar."],
+    donts: ["No conviertas la tarifa en un reto.", "No dejes muchas bebidas sin terminar sobre la mesa."],
+    whyItMatters: ["Estos planes están organizados alrededor del tiempo, la equidad y un servicio eficiente."],
+    commonMistakes: ["Pedir demasiado y demasiado rápido.", "Perder el último pedido porque nadie miró la hora."],
+    readMore: ["Casi siempre se siente mejor acompasar a la mesa que seguir añadiendo bebidas que en realidad nadie quiere."]
+  },
+  karaoke: {
+    quickView: ["Confirma primero la duración.", "Sigue las reglas de uso de la sala.", "Deja la habitación en buen estado."],
+    dos: ["Comprueba al llegar el sistema de tarifas, el límite de tiempo y cualquier consumo mínimo.", "Usa los micrófonos y el equipo con cuidado."],
+    donts: ["No supongas que una sala privada significa que no hay normas.", "No te quedes más allá de tu hora sin revisar una posible extensión."],
+    whyItMatters: ["El karaoke en Japón es divertido pero muy de sistema, así que entender el plan al principio evita confusiones después."],
+    commonMistakes: ["No entender cómo funciona el tiempo contratado.", "Dejar la sala desordenada o tratar mal el equipo."],
+    readMore: ["Revisar al principio cómo se pide y cómo se extiende el tiempo evita la mayoría de los problemas posteriores."]
+  },
+  "food-stalls": {
+    quickView: ["Comprueba si se espera que comas allí o sigas andando.", "Apártate si te detienes.", "Lleva tu basura contigo."],
+    dos: ["Fíjate en si el puesto espera que comas cerca o continúes caminando.", "Muévete a un lado si te paras a comer o a hacer fotos."],
+    donts: ["No te detengas en la parte más estrecha de la multitud.", "No dejes caer comida ni migas mientras atraviesas una zona concurrida."],
+    whyItMatters: ["Estas zonas parecen informales, pero el movimiento y el espacio compartido importan mucho cuando hay mucha gente."],
+    commonMistakes: ["Comer en medio de una multitud en movimiento.", "Dejar brochetas, vasos o envoltorios en el lugar equivocado."],
+    readMore: ["Algunas zonas toleran más comer mientras caminas, pero detenerse con orden suele ser la opción más segura."]
   }
 };

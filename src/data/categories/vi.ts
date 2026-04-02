@@ -320,5 +320,85 @@ export const vietnameseCategoryContent: Partial<Record<CategoryId, CategoryConte
     whyItMatters: ["Âm thanh lan đi rất dễ trong khách sạn capsule, kể cả khi bạn thấy mình đã khá nhỏ nhẹ."],
     commonMistakes: ["Sắp lại vali sau nửa đêm.", "Xem video gần capsule nơi người khác đang ngủ."],
     readMore: ["Ở khách sạn capsule, cách đơn giản nhất thường là xử lý xong mọi việc tạo tiếng động trước khi bước vào khu nghỉ."]
+  },
+  "hostel-dorm": {
+    quickView: ["Dùng khu vực chung cho gọi điện và sắp xếp hành lý.", "Giữ khu vực quanh giường gọn gàng.", "Ban đêm hãy dùng đèn nhỏ."],
+    dos: ["Chuyển các cuộc nói chuyện dài và việc sắp xếp túi sang lounge hoặc khu vực chung.", "Giữ đồ đạc của bạn sát khu vực giường của mình."],
+    donts: ["Đừng bật đèn sáng mạnh muộn vào ban đêm nếu không thật sự cần.", "Đừng dùng sàn nhà như chỗ chứa đồ thêm."],
+    whyItMatters: ["Phòng dorm có thể mang cảm giác xã hội, nhưng vẫn là không gian nghỉ ngơi dùng chung."],
+    commonMistakes: ["Nói chuyện dài ngay cạnh giường trong khi người khác đang nghỉ.", "Để túi và dây sạc vương khắp sàn."],
+    readMore: ["Nếu muốn trò chuyện, ăn uống hay sắp xếp lại hành lý, khu vực chung thường là nơi phù hợp hơn nhiều."]
+  },
+  "checkout-room": {
+    quickView: ["Kiểm tra xem có quên đồ không.", "Rời phòng trong trạng thái tương đối gọn gàng.", "Đừng nghĩ ra muộn một chút lúc nào cũng ổn."],
+    dos: ["Kiểm tra ổ cắm, kệ trong phòng tắm và dưới gầm giường trước khi rời đi.", "Làm theo các hướng dẫn đơn giản về chìa khóa hay rác nếu có."],
+    donts: ["Đừng để căn phòng quá bừa bộn.", "Đừng ở quá giờ trả phòng mà không hỏi trước."],
+    whyItMatters: ["Giờ checkout ảnh hưởng trực tiếp đến việc dọn phòng và thời điểm khách tiếp theo có thể vào."],
+    commonMistakes: ["Bỏ quên sạc hay hộ chiếu.", "Thu dọn quá vội khiến phòng rối tung."],
+    readMore: ["Không cần phải hoàn hảo. Gọn gàng cơ bản và đúng giờ thường là đủ."]
+  },
+  bakery: {
+    quickView: ["Lấy khay nếu cửa hàng dùng hệ thống đó.", "Dùng kẹp cẩn thận.", "Giữ cho dòng người tiếp tục di chuyển."],
+    dos: ["Dùng khay và kẹp khi cửa hàng chuẩn bị sẵn.", "Di chuyển dọc tủ trưng bày mà không đứng quá lâu tại một chỗ."],
+    donts: ["Đừng chạm tay trực tiếp vào bánh nếu không được phép rõ ràng.", "Đừng cúi hẳn lên khay bánh với túi mở hay tay áo vướng víu."],
+    whyItMatters: ["Tủ bánh mở ra ngoài, nên cả vệ sinh lẫn nhịp di chuyển đều quan trọng."],
+    commonMistakes: ["Chạm vào nhiều món khi còn đang quyết định.", "Đứng chắn phía trước tủ quá lâu."],
+    readMore: ["Dù tiệm bánh có vẻ thoải mái, di chuyển như một hàng người yên lặng thường hợp với nhịp địa phương hơn."]
+  },
+  "fast-food": {
+    quickView: ["Biết mình định gọi gì trước khi tới quầy.", "Trả khay nếu hệ thống yêu cầu.", "Rời bàn trong trạng thái khá sạch sẽ."],
+    dos: ["Chuẩn bị sẵn món cần gọi trước khi tới quầy nếu có thể.", "Trả khay và bỏ rác sau khi ăn nếu cửa hàng dùng hệ thống đó."],
+    donts: ["Đừng bỏ khay và giấy gói lại trên bàn rồi đi luôn.", "Đừng chắn khu lấy đồ hay khu gia vị."],
+    whyItMatters: ["Không gian fast-food được thiết kế cho vòng quay nhanh, nên bất kỳ sự chậm trễ hay bừa bộn nào cũng rất dễ thấy."],
+    commonMistakes: ["Không để ý khu trả khay.", "Ngồi quá lâu sau khi ăn xong vào lúc đông."],
+    readMore: ["Quan sát một hai khách địa phương thường giúp hiểu cách dọn bàn nhanh hơn là đọc hết mọi biển báo."]
+  },
+  "food-court": {
+    quickView: ["Chỉ dùng số ghế mình thật sự cần.", "Mang khay cẩn thận.", "Trả khay hay vứt rác đúng chỗ."],
+    dos: ["Chỉ giữ số ghế đúng với nhu cầu của nhóm.", "Trả khay, chén đĩa hay rác về đúng điểm sau khi ăn xong."],
+    donts: ["Đừng giữ một vùng rộng chỉ bằng vài chiếc túi.", "Đừng để khay đã ăn xong trên bàn nếu có khu hoàn trả."],
+    whyItMatters: ["Food court phụ thuộc vào việc rất nhiều người chia sẻ cùng một chỗ ngồi trong thời gian ngắn."],
+    commonMistakes: ["Giữ quá nhiều ghế quá sớm.", "Xem khu bàn chung như phòng ăn riêng của mình."],
+    readMore: ["Lúc đông, nhịp được đánh giá cao nhất thường rất đơn giản: ăn, dọn, rồi nhường chỗ tự nhiên."]
+  },
+  izakaya: {
+    quickView: ["Chờ được xếp chỗ.", "Kiểm tra quy định của quán trước.", "Gọi món theo nhịp của không gian."],
+    dos: ["Kiểm tra xem có phụ phí chỗ ngồi, quy định gọi đồ uống hay giới hạn thời gian hay không.", "Quan sát bầu không khí trước khi xem nơi này như một quán pub bình thường."],
+    donts: ["Đừng nghĩ mọi thứ được đặt trên bàn đều miễn phí hay có thể từ chối dễ dàng.", "Đừng mang hành lý lớn vào khu ngồi rất nhỏ."],
+    whyItMatters: ["Nhiều người dễ bối rối với những tập quán nhỏ ở izakaya, nhất là vào đầu bữa ăn."],
+    commonMistakes: ["Ngạc nhiên vì otoshi hay phụ phí chỗ ngồi.", "Mất quá nhiều thời gian để gọi món ở quán rất nhỏ."],
+    readMore: ["Nhìn nhanh thực đơn, kích thước quán và thông tin phụ phí thường đã đủ để hiểu đây là kiểu quán nào."]
+  },
+  bar: {
+    quickView: ["Nhìn không khí trước khi nói to.", "Gọi đồ rõ ràng và đơn giản.", "Kiểm tra trước nếu muốn chụp ảnh."],
+    dos: ["Dành một chút thời gian xem quán bar đang yên tĩnh, giao lưu, trang trọng hay thoải mái.", "Giữ giọng của mình gần với mức âm thanh hiện có trong phòng."],
+    donts: ["Đừng nghĩ quán bar nào cũng chào đón năng lượng ồn ào của cả nhóm.", "Đừng dùng flash hay quay nhân viên khi chưa kiểm tra."],
+    whyItMatters: ["Nhiều quán bar ở Nhật phụ thuộc rất mạnh vào bầu không khí, nên đọc được căn phòng quan trọng không kém việc hiểu menu."],
+    commonMistakes: ["Nói quá to trong một cocktail bar yên tĩnh.", "Đứng chắn quầy khi còn đang chọn đồ."],
+    readMore: ["Một phút quan sát khi mới bước vào thường hiệu quả hơn một phút hỏi liên tục."]
+  },
+  "all-you-can-drink": {
+    quickView: ["Kiểm tra rõ giới hạn thời gian.", "Nhớ thời điểm gọi món cuối.", "Chỉ gọi lượng mà cả bàn có thể uống hết."],
+    dos: ["Xác nhận thời lượng và giờ last order trước khi ngồi lâu.", "Gọi theo nhịp mà cả nhóm thật sự có thể tận hưởng."],
+    donts: ["Đừng biến gói uống thỏa thích thành một cuộc thử thách.", "Đừng để lại quá nhiều ly chưa uống hết trên bàn."],
+    whyItMatters: ["Những gói này được xây dựng dựa trên thời gian, sự công bằng và tốc độ phục vụ."],
+    commonMistakes: ["Gọi quá nhiều quá nhanh.", "Lỡ last order vì không ai để ý giờ."],
+    readMore: ["Hầu như lúc nào cũng dễ chịu hơn nếu giữ nhịp phù hợp với cả bàn thay vì gọi thêm đồ uống mà chẳng ai thật sự muốn."]
+  },
+  karaoke: {
+    quickView: ["Xác nhận thời lượng trước.", "Làm theo quy định dùng phòng.", "Rời phòng trong tình trạng tốt."],
+    dos: ["Kiểm tra hệ thống tính phí, giới hạn thời gian và yêu cầu gọi món tối thiểu ngay khi vào.", "Dùng micro và thiết bị trong phòng cẩn thận."],
+    donts: ["Đừng nghĩ phòng riêng nghĩa là không có quy định.", "Đừng ở quá giờ khi chưa hỏi về gia hạn."],
+    whyItMatters: ["Karaoke ở Nhật rất vui nhưng vận hành theo hệ thống rõ ràng, nên hiểu kế hoạch từ đầu sẽ tránh được nhiều nhầm lẫn về sau."],
+    commonMistakes: ["Không hiểu gói thời gian mình đã chọn.", "Để phòng bừa bộn hoặc dùng thiết bị quá mạnh tay."],
+    readMore: ["Kiểm tra ngay từ đầu cách gọi món và quy định gia hạn thường ngăn được hầu hết các rắc rối sau đó."]
+  },
+  "food-stalls": {
+    quickView: ["Xem quầy muốn bạn ăn tại chỗ hay cầm đi tiếp.", "Nếu dừng ăn, hãy nép vào bên.", "Giữ rác theo người."],
+    dos: ["Quan sát xem quầy mong bạn ăn gần đó hay tiếp tục đi.", "Nếu dừng để ăn hay chụp ảnh, hãy bước sang bên lối đi chính."],
+    donts: ["Đừng đứng lại ở đoạn hẹp nhất của đám đông.", "Đừng làm rơi hay dây thức ăn khi đang đi trong chỗ đông."],
+    whyItMatters: ["Khu đồ ăn đường phố có thể trông thoải mái, nhưng khi đông người thì việc di chuyển và chia sẻ không gian trở nên rất quan trọng."],
+    commonMistakes: ["Ăn ngay giữa dòng người đang di chuyển.", "Để que xiên, cốc hay giấy gói sai chỗ."],
+    readMore: ["Một số nơi thoải mái hơn với việc vừa đi vừa ăn, nhưng dừng gọn gàng vẫn thường là lựa chọn an toàn hơn."]
   }
 };
