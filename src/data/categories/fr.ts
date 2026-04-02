@@ -160,5 +160,85 @@ export const frenchCategoryContent: Partial<Record<CategoryId, CategoryContent>>
     whyItMatters: ["Le supermarché est un espace du quotidien pour les habitants, donc la fluidité y compte beaucoup."],
     commonMistakes: ["Commencer à emballer à la caisse alors que d’autres attendent.", "Reposer un produit au mauvais endroit après avoir changé d’avis."],
     readMore: ["Si vous ne prenez plus un article, le remettre dans son bon rayon aide beaucoup plus que le laisser au hasard."]
+  },
+  drugstore: {
+    quickView: ["Distinguez les achats simples des produits qui demandent un conseil.", "Pour les médicaments, lisez bien les indications.", "En cas de doute, une question courte vaut mieux qu’un pari."],
+    dos: ["Demandez brièvement au personnel si vous cherchez un produit adapté à un symptôme ou à un besoin précis.", "Suivez les explications du personnel pour les articles avec restrictions ou avertissements."],
+    donts: ["N’ouvrez pas les produits et n’utilisez pas les testeurs au hasard.", "Ne supposez pas que tous les médicaments s’achètent comme de simples snacks ou cosmétiques."],
+    whyItMatters: ["Les drugstores japonais vendent à la fois des articles du quotidien et des produits liés à la santé, donc certaines règles sont plus strictes."],
+    commonMistakes: ["Acheter un médicament sans comprendre à quoi il sert.", "Confondre un testeur avec un produit neuf à vendre."],
+    readMore: ["Quand un article touche à la santé ou aux soins du corps, une courte question au personnel est souvent l’option la plus sûre."]
+  },
+  "department-store": {
+    quickView: ["Avancez calmement et lisez l’ambiance.", "Manipulez les produits avec soin.", "Adaptez-vous au rythme plus posé du lieu."],
+    dos: ["Laissez de l’espace au personnel et aux autres clients, surtout près des comptoirs.", "Si le service paraît plus formel, suivez simplement ce ton."],
+    donts: ["Ne traitez pas le magasin comme un salon bruyant.", "N’ouvrez pas les emballages et ne manipulez pas les présentations trop librement."],
+    whyItMatters: ["Les grands magasins au Japon accordent souvent beaucoup d’importance à la présentation, au calme et à la qualité du service."],
+    commonMistakes: ["Parler fort en groupe.", "Traiter un comptoir soigné comme un rayon entièrement libre-service."],
+    readMore: ["Plus un étage paraît raffiné, plus il est utile de ralentir un peu et d’observer avant d’agir."]
+  },
+  "duty-free": {
+    quickView: ["Préparez les bons documents avant de payer.", "Voyez la détaxe comme une procédure complète, pas seulement une remise.", "Suivez les consignes sur l’emballage et la remise des achats."],
+    dos: ["Gardez votre passeport original prêt si le magasin l’exige.", "Vérifiez d’abord si l’achat et le type d’article entrent bien dans le dispositif."],
+    donts: ["Ne supposez pas que tous les magasins ou tous les articles sont éligibles.", "N’arrivez pas au comptoir sans les documents nécessaires."],
+    whyItMatters: ["La détaxe dépend surtout des règles, des catégories d’articles et de l’identification, pas seulement du prix."],
+    commonMistakes: ["Laisser son passeport à l’hôtel.", "Penser qu’une photo du passeport sur le téléphone suffit."],
+    readMore: ["Décider avant le passage en caisse si vous voulez une procédure détaxée rend généralement l’achat bien plus simple."]
+  },
+  "fitting-room": {
+    quickView: ["Attendez votre tour et suivez les règles du magasin.", "Aidez à garder les vêtements propres.", "En cas de doute sur le nombre d’articles ou la marche à suivre, demandez avant."],
+    dos: ["Retirez vos chaussures ou utilisez la housse de visage si le magasin le demande.", "Entrez avec le nombre d’articles autorisé par le magasin."],
+    donts: ["N’entrez pas avec des chaussures là où elles sont interdites.", "Ne supposez pas que les photos sont toujours permises dans les cabines."],
+    whyItMatters: ["Les cabines sont des espaces contrôlés, car le magasin protège à la fois les vêtements, l’hygiène et le rythme de la file."],
+    commonMistakes: ["Laisser les vêtements refusés en désordre.", "Essayer d’entrer avec trop d’articles sans vérifier la règle."],
+    readMore: ["Si le système d’essayage paraît strict, c’est généralement pour des raisons de propreté, d’ordre et de soin des produits."]
+  },
+  "market-shopping-street": {
+    quickView: ["Continuez d’avancer et ne transformez pas le milieu de la rue en zone d’arrêt.", "Laissez de la place aux habitants et aux devantures.", "Si vous prenez des photos, regardez d’abord le moment et l’espace."],
+    dos: ["Si vous devez vous arrêter, décalez-vous sur le côté.", "Demandez avant de photographier une boutique, un vendeur ou un étal qui ressemble à un espace de travail."],
+    donts: ["Ne bloquez pas une entrée de magasin et ne restez pas longtemps devant un étal.", "Ne touchez pas les produits frais si le système n’est pas clairement en libre-service."],
+    whyItMatters: ["Les marchés et rues commerçantes servent à la fois au tourisme, au travail et aux courses du quotidien."],
+    commonMistakes: ["S’arrêter pour discuter juste devant une boutique.", "Prendre en photo des commerçants sans demander."],
+    readMore: ["Le bon réflexe est simple: profitez du lieu, mais souvenez-vous qu’il fonctionne encore comme espace de travail réel."]
+  },
+  "museum-gallery": {
+    quickView: ["Parlez bas et lisez les règles avant d’entrer.", "Ne supposez pas que tout se touche ou se photographie.", "Laissez aux autres visiteurs un vrai espace de regard."],
+    dos: ["Vérifiez les règles de chaque salle ou exposition avant d’utiliser l’appareil photo.", "Gardez une distance raisonnable avec les œuvres et les autres visiteurs."],
+    donts: ["N’utilisez pas le flash et ne vous approchez pas trop des objets fragiles.", "Ne monopolisez pas trop longtemps une œuvre très regardée sans vous en rendre compte."],
+    whyItMatters: ["Les musées et galeries au Japon valorisent souvent une atmosphère calme et attentive."],
+    commonMistakes: ["Photographier dans une salle où cela est interdit.", "Traiter l’exposition comme une attraction touristique bruyante."],
+    readMore: ["Si les règles changent d’une salle à l’autre, les relire en avançant reste souvent le choix le plus sûr."]
+  },
+  "castle-garden": {
+    quickView: ["Marchez lentement et restez sur le parcours indiqué.", "Considérez les barrières comme de vraies limites.", "Faites attention aux surfaces anciennes et fragiles."],
+    dos: ["Retirez vos chaussures ou suivez les consignes particulières si le site le demande.", "Respectez le sens de visite et les chemins balisés."],
+    donts: ["Ne passez pas derrière une barrière basse pour obtenir une meilleure photo.", "Ne touchez pas inutilement le bois, la pierre ou les surfaces historiques."],
+    whyItMatters: ["De nombreux sites historiques sont plus fragiles qu’ils n’en ont l’air et dépendent du soin apporté par les visiteurs."],
+    commonMistakes: ["S’appuyer sur une structure ancienne.", "Penser qu’un espace visuellement ouvert est forcément accessible."],
+    readMore: ["Quand un lieu semble délicat, il l’est souvent vraiment. Y avancer avec précaution fait partie du respect du site."]
+  },
+  "festival-fireworks": {
+    quickView: ["Arrivez tôt et pensez déjà au retour.", "Gardez en tête le sens du flux de foule.", "Maîtrisez vos déchets et vos affaires."],
+    dos: ["Prévoyez plus de temps pour l’entrée comme pour la sortie.", "Suivez les indications du personnel si les accès ou sorties sont régulés."],
+    donts: ["Ne vous arrêtez pas brusquement dans une foule en mouvement.", "Ne supposez pas que vous sortirez facilement sans plan."],
+    whyItMatters: ["Les festivals et feux d’artifice peuvent passer très vite d’une ambiance détendue à une foule extrêmement dense."],
+    commonMistakes: ["Essayer d’aller à contre-courant de la foule.", "Attendre le tout dernier moment pour réfléchir au trajet retour."],
+    readMore: ["Savoir à l’avance où vous vous placerez et comment vous repartirez rend souvent les grands événements bien plus simples."]
+  },
+  "seasonal-scenic-spot": {
+    quickView: ["Profitez du paysage avec douceur.", "Partagez patiemment les meilleurs points photo.", "Ne sortez pas du chemin pour gagner un angle."],
+    dos: ["Restez sur les parcours indiqués et regardez les panneaux des zones protégées.", "Attendez votre tour pour les photos au lieu de vous imposer."],
+    donts: ["Ne tirez pas sur une branche et ne touchez pas les fleurs pour arranger votre photo.", "N’utilisez pas un grand trépied là où le passage est étroit et fréquenté."],
+    whyItMatters: ["Les lieux célèbres pour les saisons doivent préserver en même temps leur beauté, leur sécurité et la nature elle-même."],
+    commonMistakes: ["Rester trop longtemps au point le plus étroit.", "Entrer sur une zone protégée pour se rapprocher du sujet."],
+    readMore: ["Dans les lieux très populaires, attendre calmement donne souvent une meilleure expérience que vouloir réussir la photo parfaite tout de suite."]
+  },
+  "rental-car": {
+    quickView: ["Vérifiez vos documents avant de conduire.", "Comprenez les règles de stationnement et de retour.", "Ne supposez pas que tout fonctionne comme dans votre pays."],
+    dos: ["Confirmez dès la prise du véhicule les règles sur le permis, le carburant et l’heure de retour.", "Garez-vous uniquement là où l’autorisation est claire."],
+    donts: ["Ne supposez pas que votre permis habituel suffit dans tous les cas.", "Ne rendez pas la voiture en retard sans prévenir.", "Ne vous garez pas au bord de la route en espérant que cela passera."],
+    whyItMatters: ["Une différence de document, de signalisation, de parking ou de procédure de retour peut vite devenir un vrai problème ou un coût important."],
+    commonMistakes: ["Oublier le permis ou la traduction nécessaires.", "Rendre la voiture sans refaire le plein quand c’était demandé."],
+    readMore: ["Avant de partir, clarifiez au moins trois points: vos documents, les règles de stationnement et la procédure exacte de retour."]
   }
 };

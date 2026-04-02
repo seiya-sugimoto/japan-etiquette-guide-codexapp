@@ -160,5 +160,85 @@ export const spanishCategoryContent: Partial<Record<CategoryId, CategoryContent>
     whyItMatters: ["El supermercado es un espacio de vida diaria para la gente local, así que la fluidez importa mucho."],
     commonMistakes: ["Empezar a embolsar en la caja mientras otras personas esperan.", "Dejar en cualquier sitio un producto que ya no quieres."],
     readMore: ["Si cambias de idea sobre un artículo, devolverlo a su zona correcta ayuda mucho más que dejarlo en cualquier estante."]
+  },
+  drugstore: {
+    quickView: ["Distingue lo que es compra sencilla de lo que conviene consultar.", "Si es medicina, lee bien el uso y las advertencias.", "Si dudas, una pregunta corta es mejor que adivinar."],
+    dos: ["Pregunta brevemente al personal si buscas algo para un síntoma o una necesidad concreta.", "Sigue las indicaciones del personal cuando el producto tenga restricciones o avisos especiales."],
+    donts: ["No abras productos ni uses testers sin confirmar que están para eso.", "No pienses que todos los medicamentos se compran como si fueran snacks o cosméticos."],
+    whyItMatters: ["Las droguerías japonesas mezclan productos cotidianos con artículos de salud, así que algunas compras requieren más cuidado."],
+    commonMistakes: ["Comprar una medicina sin entender para qué sirve.", "Confundir un tester con un producto nuevo para la venta."],
+    readMore: ["Si el artículo está relacionado con salud o cuidado corporal, preguntar al personal suele ser la opción más segura."]
+  },
+  "department-store": {
+    quickView: ["Muévete con calma y lee el ambiente.", "Toca los productos con cuidado.", "Adáptate al ritmo más sereno del lugar."],
+    dos: ["Deja espacio al personal y a otras personas, sobre todo cerca de mostradores y exposiciones.", "Si el servicio se siente más formal, acompaña ese tono."],
+    donts: ["No trates los grandes almacenes como una plaza ruidosa para descansar.", "No abras embalajes ni manipules las presentaciones con demasiada libertad."],
+    whyItMatters: ["Muchos grandes almacenes en Japón cuidan mucho la presentación, la atmósfera y la atención al cliente."],
+    commonMistakes: ["Hablar demasiado alto en grupo.", "Tratar un mostrador cuidado como si fuera una estantería de autoservicio."],
+    readMore: ["Cuanto más refinado parezca un espacio, más útil suele ser bajar un poco el ritmo y observar antes."]
+  },
+  "duty-free": {
+    quickView: ["Lleva los documentos correctos antes de pagar.", "Piensa en la compra libre de impuestos como un trámite completo, no solo un descuento.", "Sigue las indicaciones sobre embalaje y entrega."],
+    dos: ["Ten listo el pasaporte original si la tienda lo exige.", "Comprueba antes si el producto y la compra entran realmente en el sistema."],
+    donts: ["No supongas que todas las tiendas o todos los artículos son aptos.", "No llegues al mostrador sin la documentación necesaria."],
+    whyItMatters: ["La compra libre de impuestos depende mucho de reglas, categorías de producto e identificación."],
+    commonMistakes: ["Dejar el pasaporte en el hotel.", "Pensar que una foto del pasaporte en el móvil basta."],
+    readMore: ["Decidir antes de pagar si quieres hacer el trámite libre de impuestos suele ahorrar tiempo y confusiones."]
+  },
+  "fitting-room": {
+    quickView: ["Espera tu turno y sigue las reglas de la tienda.", "Ayuda a mantener la ropa limpia.", "Si dudas sobre cuántas prendas o cómo usar el probador, pregunta antes."],
+    dos: ["Quítate los zapatos o usa la funda para la cara si la tienda lo pide.", "Entra solo con el número de prendas permitido."],
+    donts: ["No entres con zapatos donde no se permite.", "No des por hecho que siempre se pueden hacer fotos dentro del probador."],
+    whyItMatters: ["Los probadores son espacios controlados porque la tienda protege la higiene, la ropa y el ritmo de la cola."],
+    commonMistakes: ["Dejar tiradas las prendas que no quieres.", "Intentar entrar con demasiadas piezas sin mirar la norma."],
+    readMore: ["Si el sistema del probador parece estricto, normalmente tiene que ver con limpieza, orden y cuidado de la mercancía."]
+  },
+  "market-shopping-street": {
+    quickView: ["Sigue avanzando y no conviertas el centro de la calle en zona de parada.", "Deja espacio a la gente local y a las entradas de las tiendas.", "Si vas a hacer fotos, mira primero el momento y el espacio."],
+    dos: ["Si necesitas parar, apártate a un lado.", "Pregunta antes de fotografiar tiendas, trabajadores o puestos que siguen funcionando."],
+    donts: ["No bloquees una entrada ni te quedes mucho rato delante de un puesto.", "No toques productos frescos si no está claro que el sistema es de autoservicio."],
+    whyItMatters: ["Mercados y calles comerciales son a la vez lugares para visitantes, para trabajar y para las compras diarias de la gente local."],
+    commonMistakes: ["Pararse a hablar justo delante de una tienda.", "Hacer fotos a vendedores sin pedir permiso."],
+    readMore: ["La mejor idea es simple: disfruta del lugar, pero recuerda que sigue siendo un espacio de trabajo real."]
+  },
+  "museum-gallery": {
+    quickView: ["Habla bajo y lee las normas antes de entrar.", "No des por hecho que todo se puede tocar o fotografiar.", "Deja espacio real para que otras personas vean las obras."],
+    dos: ["Comprueba las reglas de cada sala o exposición antes de sacar la cámara.", "Mantén una distancia razonable con las obras y con otras personas."],
+    donts: ["No uses flash ni te acerques demasiado a objetos frágiles.", "No ocupes demasiado tiempo delante de una pieza muy popular sin darte cuenta."],
+    whyItMatters: ["Museos y galerías en Japón suelen valorar una atmósfera tranquila y atenta."],
+    commonMistakes: ["Hacer fotos en una sala donde está prohibido.", "Tratar la exposición como una atracción turística ruidosa."],
+    readMore: ["Si las normas cambian de una sala a otra, volver a mirar los carteles al avanzar suele ser lo más seguro."]
+  },
+  "castle-garden": {
+    quickView: ["Camina despacio y sigue la ruta marcada.", "Toma las barreras como límites reales.", "Ten cuidado con superficies antiguas y delicadas."],
+    dos: ["Quítate los zapatos o sigue las normas específicas si el lugar lo pide.", "Respeta el sentido de la visita y los caminos señalados."],
+    donts: ["No pases una barrera baja solo para conseguir una foto mejor.", "No toques madera, piedra ni superficies históricas sin necesidad."],
+    whyItMatters: ["Muchos lugares históricos son más frágiles de lo que parecen y dependen del cuidado de cada visitante."],
+    commonMistakes: ["Apoyarse en una estructura antigua.", "Pensar que un espacio abierto a la vista significa que se puede entrar."],
+    readMore: ["Cuando un lugar parece delicado, suele serlo de verdad. Moverse con cuidado forma parte del respeto."]
+  },
+  "festival-fireworks": {
+    quickView: ["Llega con tiempo y piensa desde el principio en la vuelta.", "Ten presente la dirección del flujo de gente.", "Controla bien tu basura y tus pertenencias."],
+    dos: ["Cuenta con más tiempo para entrar y para salir.", "Sigue al personal cuando haya control de accesos o de salidas."],
+    donts: ["No te pares de golpe dentro de una multitud en movimiento.", "No des por hecho que podrás salir fácilmente sin un plan."],
+    whyItMatters: ["Los festivales y fuegos artificiales pueden pasar muy rápido de ambiente relajado a una multitud intensísima."],
+    commonMistakes: ["Intentar caminar contra el flujo de la gente.", "Esperar hasta el último momento para pensar cómo volver."],
+    readMore: ["Saber de antemano dónde vas a colocarte y cómo vas a salir suele hacer mucho más llevaderos los grandes eventos."]
+  },
+  "seasonal-scenic-spot": {
+    quickView: ["Disfruta del paisaje con cuidado.", "Comparte con paciencia los mejores puntos de foto.", "No salgas del camino para conseguir otro ángulo."],
+    dos: ["Mantente en las rutas indicadas y mira las señales de zonas protegidas.", "Espera tu turno para la foto en vez de meterte delante."],
+    donts: ["No tires de ramas ni toques flores para arreglar la foto.", "No uses trípodes grandes donde el paso es estrecho y hay mucha gente."],
+    whyItMatters: ["Los lugares famosos por sakura o colores de otoño deben proteger a la vez el paisaje, la seguridad y la naturaleza."],
+    commonMistakes: ["Quedarse demasiado rato en el punto más estrecho.", "Entrar en zonas protegidas para acercarse más."],
+    readMore: ["En lugares muy populares, esperar con calma suele dar una experiencia mejor que intentar sacar la foto perfecta enseguida."]
+  },
+  "rental-car": {
+    quickView: ["Revisa los documentos antes de conducir.", "Entiende bien las normas de aparcamiento y devolución.", "No supongas que todo funciona igual que en tu país."],
+    dos: ["Confirma al recoger el coche las reglas sobre permiso, combustible y hora de devolución.", "Aparca solo donde esté claramente permitido."],
+    donts: ["No des por hecho que tu permiso normal sirve en cualquier caso.", "No devuelvas el coche tarde sin avisar.", "No aparques en un borde de carretera esperando que no pase nada."],
+    whyItMatters: ["Una diferencia en documentos, señales, aparcamiento o proceso de devolución puede convertirse enseguida en un problema serio o un coste alto."],
+    commonMistakes: ["Olvidar el permiso o la traducción necesarios.", "Devolver el coche sin repostar cuando el contrato lo pedía."],
+    readMore: ["Antes de salir, deja claras al menos tres cosas: tus documentos, dónde puedes aparcar y cómo es exactamente la devolución."]
   }
 };

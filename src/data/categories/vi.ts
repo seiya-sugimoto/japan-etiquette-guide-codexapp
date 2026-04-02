@@ -160,5 +160,85 @@ export const vietnameseCategoryContent: Partial<Record<CategoryId, CategoryConte
     whyItMatters: ["Siêu thị là không gian sinh hoạt hằng ngày của người địa phương, nên sự trôi chảy ở đây rất quan trọng."],
     commonMistakes: ["Bắt đầu đóng gói ngay ở quầy thu ngân khi người khác còn đang chờ.", "Đặt món không mua nữa sai khu vực."],
     readMore: ["Nếu đổi ý về một món hàng, đem trả lại đúng quầy sẽ giúp cửa hàng hơn nhiều so với để tạm ở kệ bất kỳ."]
+  },
+  drugstore: {
+    quickView: ["Phân biệt món nào là mua nhanh và món nào nên hỏi nhân viên trước.", "Nếu là thuốc, hãy đọc kỹ công dụng và cảnh báo.", "Khi không chắc, hỏi ngắn gọn vẫn tốt hơn tự đoán."],
+    dos: ["Hỏi nhân viên ngắn gọn nếu bạn đang tìm thứ phù hợp với triệu chứng hay nhu cầu cụ thể.", "Làm theo hướng dẫn của nhân viên với các mặt hàng có giới hạn hoặc lưu ý đặc biệt."],
+    donts: ["Đừng tự mở hàng hay dùng tester khi chưa rõ có được phép không.", "Đừng nghĩ thuốc nào cũng mua như đồ ăn vặt hay mỹ phẩm."],
+    whyItMatters: ["Drugstore ở Nhật bán cả đồ dùng thường ngày lẫn sản phẩm liên quan đến sức khỏe, nên có những món cần cẩn thận hơn mua sắm thông thường."],
+    commonMistakes: ["Mua thuốc mà chưa hiểu nó dùng cho việc gì.", "Nhầm hàng thử với hàng mới để bán."],
+    readMore: ["Nếu món đồ liên quan đến sức khỏe hay chăm sóc cơ thể, hỏi nhân viên ngắn gọn thường là cách an toàn hơn."]
+  },
+  "department-store": {
+    quickView: ["Di chuyển nhẹ nhàng và đọc bầu không khí.", "Chạm vào sản phẩm cẩn thận.", "Đi theo nhịp điệu yên hơn của không gian."],
+    dos: ["Nhường khoảng trống cho nhân viên và khách khác, nhất là gần quầy hay khu trưng bày.", "Nếu cách phục vụ có vẻ trang trọng hơn, cứ đi theo nhịp đó."],
+    donts: ["Đừng xem bách hóa như nơi nghỉ chân ồn ào.", "Đừng tự ý mở bao bì hay sờ đồ trưng bày quá thoải mái."],
+    whyItMatters: ["Nhiều cửa hàng bách hóa ở Nhật rất coi trọng cách trình bày, bầu không khí và dịch vụ chỉn chu."],
+    commonMistakes: ["Nói chuyện quá to theo nhóm.", "Xem quầy trưng bày như kệ tự lấy hoàn toàn."],
+    readMore: ["Càng là không gian chỉn chu, việc chậm lại một chút và quan sát trước thường càng phù hợp."]
+  },
+  "duty-free": {
+    quickView: ["Chuẩn bị đúng giấy tờ trước khi thanh toán.", "Xem mua miễn thuế là một quy trình chứ không chỉ là giảm giá.", "Làm theo hướng dẫn về đóng gói và bàn giao hàng."],
+    dos: ["Mang sẵn hộ chiếu bản gốc nếu cửa hàng hoặc hệ thống yêu cầu.", "Kiểm tra trước xem mặt hàng và khoản mua của bạn có đủ điều kiện hay không."],
+    donts: ["Đừng nghĩ cửa hàng nào hay món nào cũng áp dụng miễn thuế giống nhau.", "Đừng tới quầy khi vẫn thiếu giấy tờ cần thiết."],
+    whyItMatters: ["Mua miễn thuế phụ thuộc nhiều vào giấy tờ, loại hàng và quy định của hệ thống hơn là giá tiền đơn thuần."],
+    commonMistakes: ["Để quên hộ chiếu ở khách sạn.", "Nghĩ rằng ảnh chụp hộ chiếu trong điện thoại là đủ."],
+    readMore: ["Quyết định trước khi thanh toán xem bạn có làm thủ tục miễn thuế hay không thường sẽ giúp mọi thứ nhanh và rõ ràng hơn."]
+  },
+  "fitting-room": {
+    quickView: ["Chờ đến lượt và làm theo quy định của cửa hàng.", "Giữ quần áo sạch sẽ cho người sau.", "Nếu chưa rõ được mang bao nhiêu món hay thử thế nào, hãy hỏi trước."],
+    dos: ["Cởi giày hoặc dùng khăn che mặt nếu cửa hàng yêu cầu.", "Chỉ mang vào số lượng quần áo mà cửa hàng cho phép."],
+    donts: ["Đừng bước vào khu thử đồ với giày khi không được phép.", "Đừng mặc định rằng lúc nào cũng được chụp ảnh trong phòng thử."],
+    whyItMatters: ["Phòng thử đồ là khu vực được kiểm soát vì cửa hàng phải giữ vệ sinh, bảo vệ quần áo và giữ nhịp cho hàng chờ."],
+    commonMistakes: ["Để quần áo không lấy nằm lộn xộn.", "Mang vào quá nhiều món mà không xem quy định."],
+    readMore: ["Nếu hệ thống phòng thử có vẻ khá chặt, thường là vì lý do sạch sẽ, thứ tự và bảo quản sản phẩm."]
+  },
+  "market-shopping-street": {
+    quickView: ["Tiếp tục di chuyển và đừng biến giữa đường thành chỗ đứng lại.", "Nhường không gian cho người địa phương và mặt tiền cửa hàng.", "Nếu muốn chụp ảnh, hãy nhìn thời điểm và không gian trước."],
+    dos: ["Nếu cần dừng lại, hãy nép sang một bên.", "Hỏi trước khi chụp cửa hàng, người bán hay quầy hàng đang hoạt động."],
+    donts: ["Đừng chắn lối vào hay đứng lâu trước quầy bán hàng.", "Đừng chạm vào thực phẩm tươi nếu không phải dạng tự lấy rõ ràng."],
+    whyItMatters: ["Chợ và phố mua sắm vừa là nơi tham quan, vừa là nơi làm việc và mua sắm hằng ngày của người địa phương."],
+    commonMistakes: ["Đứng nói chuyện ngay trước cửa hàng.", "Chụp ảnh người bán mà không hỏi."],
+    readMore: ["Cách nghĩ tốt nhất là cứ tận hưởng nơi đó, nhưng luôn nhớ rằng nơi ấy vẫn đang hoạt động như một không gian làm việc thật."]
+  },
+  "museum-gallery": {
+    quickView: ["Nói nhỏ và đọc quy định trước khi vào.", "Đừng mặc định rằng thứ gì cũng được chạm hay chụp.", "Để người khác có không gian thực sự để xem tác phẩm."],
+    dos: ["Kiểm tra quy định của từng phòng hay từng triển lãm trước khi lấy máy ảnh ra.", "Giữ khoảng cách hợp lý với hiện vật và với người xem khác."],
+    donts: ["Đừng dùng flash hay đứng quá gần các món dễ hỏng.", "Đừng chiếm chỗ trước một tác phẩm nổi tiếng quá lâu mà không để ý."],
+    whyItMatters: ["Bảo tàng và phòng trưng bày ở Nhật thường coi trọng không khí yên tĩnh và tập trung."],
+    commonMistakes: ["Chụp ảnh trong phòng cấm chụp.", "Xem khu trưng bày như một điểm du lịch ồn ào bình thường."],
+    readMore: ["Nếu quy định thay đổi theo từng phòng, nhìn lại biển báo khi di chuyển tiếp thường là cách an toàn nhất."]
+  },
+  "castle-garden": {
+    quickView: ["Đi chậm và ở trong lối đã chỉ định.", "Xem hàng rào là ranh giới thật sự.", "Cẩn thận với bề mặt cũ và khu vực dễ hỏng."],
+    dos: ["Cởi giày hay làm theo quy định riêng nếu địa điểm yêu cầu.", "Tôn trọng lộ trình và hướng tham quan đã đánh dấu."],
+    donts: ["Đừng bước qua rào thấp chỉ để lấy góc ảnh đẹp hơn.", "Đừng chạm vào gỗ, đá hay bề mặt lịch sử khi không cần thiết."],
+    whyItMatters: ["Nhiều di tích lịch sử mong manh hơn vẻ ngoài và phụ thuộc vào sự cẩn thận của từng người ghé thăm."],
+    commonMistakes: ["Tựa vào công trình cũ.", "Nghĩ rằng khu vực trông mở nghĩa là có thể bước vào."],
+    readMore: ["Khi một nơi trông có vẻ mong manh, thường nó thật sự như vậy. Đi lại cẩn thận cũng là một phần của sự tôn trọng."]
+  },
+  "festival-fireworks": {
+    quickView: ["Đến sớm và nghĩ trước đường về.", "Luôn để ý hướng di chuyển của đám đông.", "Giữ rác và đồ cá nhân gọn gàng."],
+    dos: ["Chừa thêm thời gian cho cả lúc vào lẫn lúc ra.", "Làm theo hướng dẫn của nhân viên khi có kiểm soát lối đi hay lối ra."],
+    donts: ["Đừng dừng đột ngột giữa đám đông đang di chuyển.", "Đừng nghĩ rằng có thể rời sự kiện dễ dàng mà không cần kế hoạch."],
+    whyItMatters: ["Lễ hội và pháo hoa có thể chuyển rất nhanh từ cảm giác thư thả sang cực kỳ đông đúc."],
+    commonMistakes: ["Cố đi ngược dòng người.", "Đợi đến phút cuối mới nghĩ cách trở về."],
+    readMore: ["Biết trước mình sẽ đứng ở đâu và rời đi thế nào thường giúp những sự kiện lớn dễ chịu hơn nhiều."]
+  },
+  "seasonal-scenic-spot": {
+    quickView: ["Thưởng cảnh nhẹ nhàng.", "Chia sẻ kiên nhẫn những điểm chụp ảnh đẹp nhất.", "Đừng bước ra khỏi lối đi chỉ để lấy góc ảnh khác."],
+    dos: ["Ở trong lối quy định và nhìn biển báo khu vực cần bảo vệ.", "Chờ lượt chụp ảnh thay vì chen lên trước người khác."],
+    donts: ["Đừng kéo cành hay chạm hoa để chỉnh ảnh.", "Đừng dùng chân máy lớn ở nơi lối đi hẹp và đông."],
+    whyItMatters: ["Những điểm ngắm sakura hay lá đỏ nổi tiếng phải cùng lúc bảo vệ cảnh đẹp, an toàn và chính thiên nhiên."],
+    commonMistakes: ["Đứng quá lâu ở chỗ hẹp nhất.", "Bước vào khu vực bảo vệ để lại gần hơn."],
+    readMore: ["Ở nơi nổi tiếng, chờ bình tĩnh thường đem lại trải nghiệm tốt hơn là cố chụp được bức ảnh hoàn hảo ngay lập tức."]
+  },
+  "rental-car": {
+    quickView: ["Kiểm tra giấy tờ trước khi lái.", "Hiểu rõ quy định đỗ xe và trả xe.", "Đừng nghĩ rằng mọi thứ sẽ giống hệt ở nước mình."],
+    dos: ["Xác nhận ngay lúc nhận xe về bằng lái, xăng và giờ trả xe.", "Chỉ đỗ ở nơi cho phép rõ ràng."],
+    donts: ["Đừng nghĩ bằng lái thông thường của mình lúc nào cũng đủ.", "Đừng trả xe muộn mà không báo trước.", "Đừng đỗ ven đường chỉ vì đoán rằng chắc không sao."],
+    whyItMatters: ["Khác biệt về giấy tờ, biển báo, bãi đỗ hay thủ tục trả xe có thể nhanh chóng thành chi phí lớn hoặc rắc rối thật sự."],
+    commonMistakes: ["Quên bằng lái hay bản dịch cần thiết.", "Trả xe mà chưa đổ xăng dù hợp đồng yêu cầu."],
+    readMore: ["Trước khi lái đi, hãy làm rõ ít nhất ba điểm: giấy tờ của bạn, chỗ nào được đỗ và quy trình trả xe cụ thể."]
   }
 };
