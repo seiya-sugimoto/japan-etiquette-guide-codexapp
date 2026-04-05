@@ -164,6 +164,7 @@ Premium direction notes are collected here:
 
 - `PREMIUM_PLAN.md`
 - `PREMIUM_HYPOTHESES.md`
+- `PREMIUM_HYPOTHESES_JA.md`
 
 ## Notes
 
