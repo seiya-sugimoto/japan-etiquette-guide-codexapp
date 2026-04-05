@@ -3,6 +3,7 @@ import { Image, Pressable, StyleSheet, View } from "react-native";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 
+import { AppBadge } from "@/components/ui/AppBadge";
 import { AppButton } from "@/components/ui/AppButton";
 import { AppCard } from "@/components/ui/AppCard";
 import { AppScreen } from "@/components/ui/AppScreen";
@@ -29,6 +30,7 @@ export default function PremiumScreen() {
   const copy = getPremiumPreviewCopy(currentLanguage);
   const mockCopy = getPremiumMockCopy(currentLanguage);
   const tierCopy = getPremiumTierCopy(currentLanguage);
+
   const previewCandidates = useMemo(
     () => categories.filter((category) => category.premiumTier === "preview"),
     [categories]
@@ -37,6 +39,9 @@ export default function PremiumScreen() {
     () => categories.filter((category) => category.premiumTier === "premium-only"),
     [categories]
   );
+  const featuredPremiumOnly = useMemo(() => premiumOnlyCandidates.slice(0, 4), [premiumOnlyCandidates]);
+  const featuredPreview = useMemo(() => previewCandidates.slice(0, 3), [previewCandidates]);
+
   const effectiveUnlocked = isReady && isPremiumUnlocked;
   const currentStateLabel = effectiveUnlocked ? mockCopy.unlockedState : mockCopy.previewState;
   const statusTitle = effectiveUnlocked ? mockCopy.unlockedModeTitle : mockCopy.previewModeTitle;
@@ -110,101 +115,169 @@ export default function PremiumScreen() {
         <AppText color={colors.textMuted}>{statusBody}</AppText>
       </AppCard>
 
-      <AppCard style={styles.sectionCard}>
-        <View style={styles.sectionHeader}>
-          <View style={[styles.sectionIcon, styles.nowIcon]}>
-            <Ionicons color={colors.primary} name="checkmark" size={18} />
-          </View>
-          <View style={styles.sectionCopy}>
-            <AppText style={styles.sectionTitle} variant="subtitle">
-              {copy.nowTitle}
-            </AppText>
-            <AppText color={colors.textMuted}>{copy.nowBody}</AppText>
-          </View>
-        </View>
-        {copy.nowPoints.map((point) => (
-          <View key={point} style={styles.pointRow}>
-            <Ionicons color={colors.success} name="checkmark-circle" size={18} />
-            <AppText color={colors.textSubtle} style={styles.pointText}>
-              {point}
-            </AppText>
-          </View>
-        ))}
-      </AppCard>
-
-      <AppCard style={[styles.sectionCard, styles.plannedCard]}>
-        <View style={styles.sectionHeader}>
-          <View style={[styles.sectionIcon, styles.laterIcon]}>
-            <Ionicons color={colors.surface} name="sparkles" size={18} />
-          </View>
-          <View style={styles.sectionCopy}>
-            <AppText style={styles.sectionTitle} variant="subtitle">
-              {copy.laterTitle}
-            </AppText>
-            <AppText color={colors.textMuted}>{copy.laterBody}</AppText>
-          </View>
-        </View>
-        {copy.laterPoints.map((point) => (
-          <View key={point} style={styles.pointRow}>
-            <Ionicons color={colors.primary} name="arrow-forward-circle" size={18} />
-            <AppText color={colors.textSubtle} style={styles.pointText}>
-              {point}
-            </AppText>
-          </View>
-        ))}
-      </AppCard>
-
       {effectiveUnlocked ? (
-        <AppCard style={styles.unlockedListCard}>
-          <View style={styles.sectionHeader}>
-            <View style={[styles.sectionIcon, styles.unlockedIcon]}>
-              <Ionicons color={colors.surface} name="layers" size={18} />
-            </View>
-            <View style={styles.sectionCopy}>
-              <AppText style={styles.sectionTitle} variant="subtitle">
-                {mockCopy.unlockedListTitle}
-              </AppText>
-              <AppText color={colors.textMuted}>{mockCopy.unlockedListBody}</AppText>
-            </View>
-          </View>
-
-          <View style={styles.previewList}>
-            {previewCandidates.map((category) => (
-              <View key={category.id} style={styles.previewListRow}>
-                <Ionicons color={colors.primary} name="checkmark-circle" size={16} />
-                <AppText color={colors.textSubtle} style={styles.previewListText}>
-                  {category.title}
+        <>
+          <AppCard style={styles.unlockedHeroCard}>
+            <View style={styles.unlockedHeroTop}>
+              <View style={[styles.sectionIcon, styles.unlockedHeroIcon]}>
+                <Ionicons color={colors.surface} name="diamond" size={18} />
+              </View>
+              <View style={styles.sectionCopy}>
+                <AppText color="rgba(255,255,255,0.74)" variant="caption">
+                  {currentStateLabel}
+                </AppText>
+                <AppText color={colors.surface} style={styles.unlockedHeroTitle} variant="subtitle">
+                  {mockCopy.unlockedModeTitle}
                 </AppText>
               </View>
-            ))}
-          </View>
-        </AppCard>
-      ) : null}
+            </View>
 
-      <AppCard style={styles.unlockedListCard}>
-        <View style={styles.sectionHeader}>
-          <View style={[styles.sectionIcon, styles.previewIcon]}>
-            <Ionicons color={colors.primary} name="lock-closed" size={18} />
-          </View>
-          <View style={styles.sectionCopy}>
+            <AppText color="rgba(255,255,255,0.82)">{mockCopy.unlockedModeBody}</AppText>
+
+            <View style={styles.unlockedStatRow}>
+              <View style={styles.unlockedMiniStat}>
+                <AppText color="rgba(255,255,255,0.72)" variant="caption">
+                  {tierCopy.premiumOnlyBadge}
+                </AppText>
+                <AppText color={colors.surface} style={styles.unlockedMiniStatValue} variant="subtitle">
+                  {premiumOnlyCandidates.length}
+                </AppText>
+              </View>
+              <View style={styles.unlockedMiniStat}>
+                <AppText color="rgba(255,255,255,0.72)" variant="caption">
+                  {mockCopy.previewState}
+                </AppText>
+                <AppText color={colors.surface} style={styles.unlockedMiniStatValue} variant="subtitle">
+                  {previewCandidates.length}
+                </AppText>
+              </View>
+            </View>
+          </AppCard>
+
+          <View style={styles.sectionBlock}>
             <AppText style={styles.sectionTitle} variant="subtitle">
               {tierCopy.premiumOnlyListTitle}
             </AppText>
             <AppText color={colors.textMuted}>{tierCopy.premiumOnlyListBody}</AppText>
-          </View>
-        </View>
 
-        <View style={styles.previewList}>
-          {premiumOnlyCandidates.map((category) => (
-            <View key={category.id} style={styles.previewListRow}>
-              <Ionicons color={colors.primary} name="lock-closed" size={16} />
-              <AppText color={colors.textSubtle} style={styles.previewListText}>
-                {category.title}
-              </AppText>
+            <View style={styles.featuredGrid}>
+              {featuredPremiumOnly.map((category) => (
+                <Pressable key={category.id} onPress={() => router.push(`/category/${category.slug}`)} style={styles.featuredPressable}>
+                  <AppCard style={styles.featuredCard}>
+                    <Image source={{ uri: category.imageUrl }} style={styles.featuredImage} />
+                    <AppBadge label={tierCopy.premiumOnlyBadge} tone="premium" />
+                    <AppText style={styles.featuredTitle} variant="subtitle">
+                      {category.title}
+                    </AppText>
+                    <AppText color={colors.textMuted} numberOfLines={3} style={styles.featuredBody}>
+                      {category.shortDescription}
+                    </AppText>
+                  </AppCard>
+                </Pressable>
+              ))}
             </View>
-          ))}
-        </View>
-      </AppCard>
+          </View>
+
+          <AppCard style={styles.unlockedListCard}>
+            <View style={styles.sectionHeader}>
+              <View style={[styles.sectionIcon, styles.unlockedIcon]}>
+                <Ionicons color={colors.surface} name="layers" size={18} />
+              </View>
+              <View style={styles.sectionCopy}>
+                <AppText style={styles.sectionTitle} variant="subtitle">
+                  {mockCopy.unlockedListTitle}
+                </AppText>
+                <AppText color={colors.textMuted}>{mockCopy.unlockedListBody}</AppText>
+              </View>
+            </View>
+
+            <View style={styles.previewList}>
+              {featuredPreview.map((category) => (
+                <Pressable key={category.id} onPress={() => router.push(`/category/${category.slug}`)} style={styles.previewLink}>
+                  <View style={styles.previewListRow}>
+                    <Ionicons color={colors.primary} name="checkmark-circle" size={16} />
+                    <AppText color={colors.textSubtle} style={styles.previewListText}>
+                      {category.title}
+                    </AppText>
+                    <Ionicons color={colors.textMuted} name="chevron-forward" size={16} />
+                  </View>
+                </Pressable>
+              ))}
+            </View>
+          </AppCard>
+        </>
+      ) : (
+        <>
+          <AppCard style={styles.sectionCard}>
+            <View style={styles.sectionHeader}>
+              <View style={[styles.sectionIcon, styles.nowIcon]}>
+                <Ionicons color={colors.primary} name="checkmark" size={18} />
+              </View>
+              <View style={styles.sectionCopy}>
+                <AppText style={styles.sectionTitle} variant="subtitle">
+                  {copy.nowTitle}
+                </AppText>
+                <AppText color={colors.textMuted}>{copy.nowBody}</AppText>
+              </View>
+            </View>
+            {copy.nowPoints.map((point) => (
+              <View key={point} style={styles.pointRow}>
+                <Ionicons color={colors.success} name="checkmark-circle" size={18} />
+                <AppText color={colors.textSubtle} style={styles.pointText}>
+                  {point}
+                </AppText>
+              </View>
+            ))}
+          </AppCard>
+
+          <AppCard style={[styles.sectionCard, styles.plannedCard]}>
+            <View style={styles.sectionHeader}>
+              <View style={[styles.sectionIcon, styles.laterIcon]}>
+                <Ionicons color={colors.surface} name="sparkles" size={18} />
+              </View>
+              <View style={styles.sectionCopy}>
+                <AppText style={styles.sectionTitle} variant="subtitle">
+                  {copy.laterTitle}
+                </AppText>
+                <AppText color={colors.textMuted}>{copy.laterBody}</AppText>
+              </View>
+            </View>
+            {copy.laterPoints.map((point) => (
+              <View key={point} style={styles.pointRow}>
+                <Ionicons color={colors.primary} name="arrow-forward-circle" size={18} />
+                <AppText color={colors.textSubtle} style={styles.pointText}>
+                  {point}
+                </AppText>
+              </View>
+            ))}
+          </AppCard>
+
+          <AppCard style={styles.unlockedListCard}>
+            <View style={styles.sectionHeader}>
+              <View style={[styles.sectionIcon, styles.previewIcon]}>
+                <Ionicons color={colors.primary} name="lock-closed" size={18} />
+              </View>
+              <View style={styles.sectionCopy}>
+                <AppText style={styles.sectionTitle} variant="subtitle">
+                  {tierCopy.premiumOnlyListTitle}
+                </AppText>
+                <AppText color={colors.textMuted}>{tierCopy.premiumOnlyListBody}</AppText>
+              </View>
+            </View>
+
+            <View style={styles.previewList}>
+              {premiumOnlyCandidates.map((category) => (
+                <View key={category.id} style={styles.previewListRow}>
+                  <Ionicons color={colors.primary} name="lock-closed" size={16} />
+                  <AppText color={colors.textSubtle} style={styles.previewListText}>
+                    {category.title}
+                  </AppText>
+                </View>
+              ))}
+            </View>
+          </AppCard>
+        </>
+      )}
 
       <AppCard style={styles.noteCard}>
         <View style={styles.noteHeader}>
@@ -314,6 +387,37 @@ const styles = StyleSheet.create({
   unlockedIcon: {
     backgroundColor: colors.primary
   },
+  unlockedHeroCard: {
+    borderRadius: 32,
+    backgroundColor: colors.primary,
+    gap: spacing.md,
+    ...shadows.strong
+  },
+  unlockedHeroTop: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md
+  },
+  unlockedHeroIcon: {
+    backgroundColor: colors.primarySoft
+  },
+  unlockedHeroTitle: {
+    color: colors.surface
+  },
+  unlockedStatRow: {
+    flexDirection: "row",
+    gap: spacing.md
+  },
+  unlockedMiniStat: {
+    flex: 1,
+    borderRadius: 22,
+    padding: spacing.md,
+    backgroundColor: "rgba(255,255,255,0.08)",
+    gap: spacing.xs
+  },
+  unlockedMiniStatValue: {
+    color: colors.surface
+  },
   sectionHeader: {
     flexDirection: "row",
     alignItems: "flex-start",
@@ -348,6 +452,53 @@ const styles = StyleSheet.create({
     flex: 1,
     lineHeight: 22
   },
+  sectionBlock: {
+    gap: spacing.md
+  },
+  unlockedListCard: {
+    borderRadius: 30,
+    backgroundColor: colors.surfaceSoft
+  },
+  featuredGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: spacing.md
+  },
+  featuredPressable: {
+    width: "47%"
+  },
+  featuredCard: {
+    borderRadius: 24,
+    backgroundColor: colors.surface,
+    gap: spacing.sm,
+    minHeight: 248
+  },
+  featuredImage: {
+    width: "100%",
+    height: 108,
+    borderRadius: 18
+  },
+  featuredTitle: {
+    color: colors.primary
+  },
+  featuredBody: {
+    lineHeight: 21
+  },
+  previewList: {
+    gap: spacing.sm
+  },
+  previewLink: {
+    borderRadius: 18
+  },
+  previewListRow: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.sm
+  },
+  previewListText: {
+    flex: 1,
+    lineHeight: 22
+  },
   noteCard: {
     borderRadius: 28,
     backgroundColor: colors.surfaceSoft
@@ -359,22 +510,6 @@ const styles = StyleSheet.create({
   },
   noteTitle: {
     color: colors.primary
-  },
-  unlockedListCard: {
-    borderRadius: 30,
-    backgroundColor: colors.surfaceSoft
-  },
-  previewList: {
-    gap: spacing.sm
-  },
-  previewListRow: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-    gap: spacing.sm
-  },
-  previewListText: {
-    flex: 1,
-    lineHeight: 22
   },
   ctaWrap: {
     gap: spacing.md,
