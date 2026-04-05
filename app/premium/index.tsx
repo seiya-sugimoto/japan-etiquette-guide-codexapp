@@ -26,7 +26,7 @@ const topImage =
 
 export default function PremiumScreen() {
   const router = useRouter();
-  const { currentLanguage, supportedLanguages } = useAppLanguage();
+  const { currentLanguage, supportedLanguages, t } = useAppLanguage();
   const categories = useCategories();
   const { isPremiumUnlocked, isReady, toggleMockPremium } = usePremium();
   const copy = getPremiumPreviewCopy(currentLanguage);
@@ -203,7 +203,11 @@ export default function PremiumScreen() {
 
                   <View style={styles.featuredGrid}>
                     {pack.scenes.map((category) => (
-                      <Pressable key={category.id} onPress={() => router.push(`/category/${category.slug}`)} style={styles.featuredPressable}>
+                      <Pressable
+                        key={category.id}
+                        onPress={() => router.push(`/category/${category.slug}`)}
+                        style={({ pressed }) => [styles.featuredPressable, pressed && styles.featuredPressablePressed]}
+                      >
                         <AppCard style={styles.featuredCard}>
                           <Image source={{ uri: category.imageUrl }} style={styles.featuredImage} />
                           <AppText style={styles.featuredTitle} variant="subtitle">
@@ -212,6 +216,12 @@ export default function PremiumScreen() {
                           <AppText color={colors.textMuted} numberOfLines={3} style={styles.featuredBody}>
                             {category.shortDescription}
                           </AppText>
+                          <View style={styles.featuredCtaRow}>
+                            <AppText color={colors.primary} variant="caption">
+                              {t.readMore}
+                            </AppText>
+                            <Ionicons color={colors.primary} name="arrow-forward" size={14} />
+                          </View>
                         </AppCard>
                       </Pressable>
                     ))}
@@ -539,6 +549,9 @@ const styles = StyleSheet.create({
   featuredPressable: {
     width: "47%"
   },
+  featuredPressablePressed: {
+    opacity: 0.84
+  },
   featuredCard: {
     borderRadius: 24,
     backgroundColor: colors.surface,
@@ -555,6 +568,13 @@ const styles = StyleSheet.create({
   },
   featuredBody: {
     lineHeight: 21
+  },
+  featuredCtaRow: {
+    marginTop: "auto",
+    paddingTop: spacing.xs,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6
   },
   previewList: {
     gap: spacing.sm
