@@ -160,6 +160,10 @@ Store-facing copy notes are collected here:
 
 - `APP_STORE_METADATA.md`
 
+Premium direction notes are collected here:
+
+- `PREMIUM_PLAN.md`
+
 ## Notes
 
 - There is no backend, CMS, auth, or database
