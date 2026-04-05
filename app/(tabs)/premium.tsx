@@ -15,6 +15,7 @@ import { colors } from "@/lib/constants/colors";
 import { premiumPacks } from "@/lib/constants/premium";
 import { getPremiumPreviewCopy } from "@/lib/i18n/marketing-copy";
 import { getPremiumMockCopy } from "@/lib/i18n/premium-mock-copy";
+import { getPremiumPackBenefitsCopy } from "@/lib/i18n/premium-pack-benefits-copy";
 import { getPremiumPackCopy } from "@/lib/i18n/premium-pack-copy";
 import { getPremiumTierCopy } from "@/lib/i18n/premium-tier-copy";
 import { shadows } from "@/lib/constants/shadows";
@@ -31,6 +32,7 @@ export default function PremiumTabScreen() {
   const copy = getPremiumPreviewCopy(currentLanguage);
   const mockCopy = getPremiumMockCopy(currentLanguage);
   const packCopy = getPremiumPackCopy(currentLanguage);
+  const packBenefitsCopy = getPremiumPackBenefitsCopy(currentLanguage);
   const tierCopy = getPremiumTierCopy(currentLanguage);
 
   const previewCandidates = useMemo(
@@ -54,10 +56,14 @@ export default function PremiumTabScreen() {
           id: pack.id,
           title: packCopy.packs[pack.id].title,
           body: packCopy.packs[pack.id].body,
+          highlights: packBenefitsCopy.packs[pack.id].highlights,
+          deepDiveCount: scenes.filter((scene) => Boolean(scene.content.premiumDeepDive)).length,
+          phraseCount: scenes.reduce((total, scene) => total + (scene.content.premiumDeepDive?.phraseCards.length ?? 0), 0),
+          scenarioCount: scenes.reduce((total, scene) => total + (scene.content.premiumDeepDive?.situationCards.length ?? 0), 0),
           scenes
         };
       }),
-    [categories, packCopy]
+    [categories, packBenefitsCopy, packCopy]
   );
 
   const effectiveUnlocked = isReady && isPremiumUnlocked;
@@ -188,6 +194,49 @@ export default function PremiumTabScreen() {
                     <AppText color={colors.textMuted} variant="caption">
                       {pack.scenes.length} {packCopy.scenesLabel}
                     </AppText>
+                  </View>
+
+                  <View style={styles.packMetricsRow}>
+                    <View style={styles.packMetric}>
+                      <AppText color={colors.textMuted} variant="caption">
+                        {packBenefitsCopy.deepGuidesLabel}
+                      </AppText>
+                      <AppText style={styles.packMetricValue} variant="subtitle">
+                        {pack.deepDiveCount}
+                      </AppText>
+                    </View>
+                    <View style={styles.packMetric}>
+                      <AppText color={colors.textMuted} variant="caption">
+                        {packBenefitsCopy.phraseTipsLabel}
+                      </AppText>
+                      <AppText style={styles.packMetricValue} variant="subtitle">
+                        {pack.phraseCount}
+                      </AppText>
+                    </View>
+                    <View style={styles.packMetric}>
+                      <AppText color={colors.textMuted} variant="caption">
+                        {packBenefitsCopy.scenariosLabel}
+                      </AppText>
+                      <AppText style={styles.packMetricValue} variant="subtitle">
+                        {pack.scenarioCount}
+                      </AppText>
+                    </View>
+                  </View>
+
+                  <View style={styles.packExtrasBlock}>
+                    <AppText color={colors.textMuted} variant="caption">
+                      {packBenefitsCopy.extrasLabel}
+                    </AppText>
+                    <View style={styles.packHighlightsList}>
+                      {pack.highlights.map((highlight) => (
+                        <View key={highlight} style={styles.packHighlightRow}>
+                          <Ionicons color={colors.primary} name="sparkles" size={14} />
+                          <AppText color={colors.textSubtle} style={styles.packHighlightText}>
+                            {highlight}
+                          </AppText>
+                        </View>
+                      ))}
+                    </View>
                   </View>
 
                   <View style={styles.featuredGrid}>
@@ -511,6 +560,35 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     gap: spacing.sm
+  },
+  packMetricsRow: {
+    flexDirection: "row",
+    gap: spacing.sm
+  },
+  packMetric: {
+    flex: 1,
+    borderRadius: 18,
+    padding: spacing.sm,
+    backgroundColor: colors.surfaceMuted,
+    gap: 4
+  },
+  packMetricValue: {
+    color: colors.primary
+  },
+  packExtrasBlock: {
+    gap: spacing.sm
+  },
+  packHighlightsList: {
+    gap: spacing.sm
+  },
+  packHighlightRow: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.xs
+  },
+  packHighlightText: {
+    flex: 1,
+    lineHeight: 22
   },
   featuredGrid: {
     flexDirection: "row",
