@@ -12,8 +12,10 @@ import { useCategories } from "@/features/categories/hooks/useCategories";
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
 import { usePremium } from "@/features/premium/hooks/usePremium";
 import { colors } from "@/lib/constants/colors";
+import { premiumPacks } from "@/lib/constants/premium";
 import { getPremiumPreviewCopy } from "@/lib/i18n/marketing-copy";
 import { getPremiumMockCopy } from "@/lib/i18n/premium-mock-copy";
+import { getPremiumPackCopy } from "@/lib/i18n/premium-pack-copy";
 import { getPremiumTierCopy } from "@/lib/i18n/premium-tier-copy";
 import { radius } from "@/lib/constants/radius";
 import { shadows } from "@/lib/constants/shadows";
@@ -29,6 +31,7 @@ export default function PremiumScreen() {
   const { isPremiumUnlocked, isReady, toggleMockPremium } = usePremium();
   const copy = getPremiumPreviewCopy(currentLanguage);
   const mockCopy = getPremiumMockCopy(currentLanguage);
+  const packCopy = getPremiumPackCopy(currentLanguage);
   const tierCopy = getPremiumTierCopy(currentLanguage);
 
   const previewCandidates = useMemo(
@@ -41,6 +44,22 @@ export default function PremiumScreen() {
   );
   const featuredPremiumOnly = useMemo(() => premiumOnlyCandidates.slice(0, 4), [premiumOnlyCandidates]);
   const featuredPreview = useMemo(() => previewCandidates.slice(0, 3), [previewCandidates]);
+  const premiumPackItems = useMemo(
+    () =>
+      premiumPacks.map((pack) => {
+        const scenes = pack.categoryIds
+          .map((id) => categories.find((category) => category.id === id))
+          .filter((category): category is NonNullable<typeof category> => Boolean(category));
+
+        return {
+          id: pack.id,
+          title: packCopy.packs[pack.id].title,
+          body: packCopy.packs[pack.id].body,
+          scenes
+        };
+      }),
+    [categories, packCopy]
+  );
 
   const effectiveUnlocked = isReady && isPremiumUnlocked;
   const currentStateLabel = effectiveUnlocked ? mockCopy.unlockedState : mockCopy.previewState;
@@ -156,24 +175,48 @@ export default function PremiumScreen() {
 
           <View style={styles.sectionBlock}>
             <AppText style={styles.sectionTitle} variant="subtitle">
-              {tierCopy.premiumOnlyListTitle}
+              {packCopy.sectionTitle}
             </AppText>
-            <AppText color={colors.textMuted}>{tierCopy.premiumOnlyListBody}</AppText>
+            <AppText color={colors.textMuted}>{packCopy.sectionBody}</AppText>
 
-            <View style={styles.featuredGrid}>
-              {featuredPremiumOnly.map((category) => (
-                <Pressable key={category.id} onPress={() => router.push(`/category/${category.slug}`)} style={styles.featuredPressable}>
-                  <AppCard style={styles.featuredCard}>
-                    <Image source={{ uri: category.imageUrl }} style={styles.featuredImage} />
+            <View style={styles.packList}>
+              {premiumPackItems.map((pack) => (
+                <AppCard key={pack.id} style={styles.packCard}>
+                  <View style={styles.packHeader}>
+                    <View style={styles.packIcon}>
+                      <Ionicons color={colors.primary} name="albums-outline" size={18} />
+                    </View>
+                    <View style={styles.sectionCopy}>
+                      <AppText style={styles.packTitle} variant="subtitle">
+                        {pack.title}
+                      </AppText>
+                      <AppText color={colors.textMuted}>{pack.body}</AppText>
+                    </View>
+                  </View>
+
+                  <View style={styles.packMeta}>
                     <AppBadge label={tierCopy.premiumOnlyBadge} tone="premium" />
-                    <AppText style={styles.featuredTitle} variant="subtitle">
-                      {category.title}
+                    <AppText color={colors.textMuted} variant="caption">
+                      {pack.scenes.length} {packCopy.scenesLabel}
                     </AppText>
-                    <AppText color={colors.textMuted} numberOfLines={3} style={styles.featuredBody}>
-                      {category.shortDescription}
-                    </AppText>
-                  </AppCard>
-                </Pressable>
+                  </View>
+
+                  <View style={styles.featuredGrid}>
+                    {pack.scenes.map((category) => (
+                      <Pressable key={category.id} onPress={() => router.push(`/category/${category.slug}`)} style={styles.featuredPressable}>
+                        <AppCard style={styles.featuredCard}>
+                          <Image source={{ uri: category.imageUrl }} style={styles.featuredImage} />
+                          <AppText style={styles.featuredTitle} variant="subtitle">
+                            {category.title}
+                          </AppText>
+                          <AppText color={colors.textMuted} numberOfLines={3} style={styles.featuredBody}>
+                            {category.shortDescription}
+                          </AppText>
+                        </AppCard>
+                      </Pressable>
+                    ))}
+                  </View>
+                </AppCard>
               ))}
             </View>
           </View>
@@ -266,7 +309,7 @@ export default function PremiumScreen() {
             </View>
 
             <View style={styles.previewList}>
-              {premiumOnlyCandidates.map((category) => (
+              {featuredPremiumOnly.map((category) => (
                 <View key={category.id} style={styles.previewListRow}>
                   <Ionicons color={colors.primary} name="lock-closed" size={16} />
                   <AppText color={colors.textSubtle} style={styles.previewListText}>
@@ -458,6 +501,35 @@ const styles = StyleSheet.create({
   unlockedListCard: {
     borderRadius: 30,
     backgroundColor: colors.surfaceSoft
+  },
+  packList: {
+    gap: spacing.md
+  },
+  packCard: {
+    borderRadius: 28,
+    backgroundColor: colors.surface
+  },
+  packHeader: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.md
+  },
+  packIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.surfaceMuted
+  },
+  packTitle: {
+    color: colors.primary
+  },
+  packMeta: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: spacing.sm
   },
   featuredGrid: {
     flexDirection: "row",
