@@ -1,5 +1,8 @@
 import type { CategoryId, PremiumDeepDive } from "@/types/category";
 import type { AppLanguage } from "@/types/language";
+import { koreanPremiumDeepDive } from "@/data/categories/premium-deep-dive.ko";
+import { traditionalChinesePremiumDeepDive } from "@/data/categories/premium-deep-dive.zh-Hant";
+import { simplifiedChinesePremiumDeepDive } from "@/data/categories/premium-deep-dive.zh-Hans";
 
 type PremiumDeepDiveMap = Partial<Record<CategoryId, PremiumDeepDive>>;
 
@@ -987,5 +990,8 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "給油、移動、返却手続きまで見込んで、最後は余裕を持って動く。"
       ]
     }
-  }
+  },
+  ko: koreanPremiumDeepDive,
+  "zh-Hant": traditionalChinesePremiumDeepDive,
+  "zh-Hans": simplifiedChinesePremiumDeepDive
 };
