@@ -40,12 +40,9 @@ export default function PremiumScreen() {
         <AppText color={colors.textMuted} style={styles.heroBody}>
           {t.unlockBody}
         </AppText>
-        <View style={styles.priceChip}>
-          <Ionicons color={colors.primary} name="sparkles" size={14} />
-          <AppText color={colors.primary} variant="caption">
-            $9.99
-          </AppText>
-        </View>
+        <AppCard style={styles.previewCard}>
+          <AppText color={colors.textMuted}>{t.premiumPlaceholder}</AppText>
+        </AppCard>
       </View>
 
       <View style={styles.benefits}>
@@ -158,13 +155,9 @@ const styles = StyleSheet.create({
     maxWidth: 320,
     lineHeight: 28
   },
-  priceChip: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-    paddingHorizontal: spacing.md,
-    paddingVertical: 10,
-    borderRadius: radius.pill,
+  previewCard: {
+    width: "100%",
+    borderRadius: 24,
     backgroundColor: colors.surfaceMuted
   },
   benefits: {
