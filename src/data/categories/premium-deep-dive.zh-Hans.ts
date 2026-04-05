@@ -283,4 +283,180 @@ export const simplifiedChinesePremiumDeepDive: PremiumDeepDiveMap = {
       "吃东西、讲电话和大整理行李，能移到公共区域就移过去。"
     ]
   }
+  ,
+  "all-you-can-drink": {
+    culturalNotes: [
+      "喝到饱方案看起来很轻松，但它其实仍然建立在共用时间限制和整桌节奏上。",
+      "容易尴尬的点通常不在于喝酒本身，而是在于点太多、错过最后加点，或和整桌节奏脱节。"
+    ],
+    situationCards: [
+      {
+        title: "时间快到时还想再点最后一杯",
+        body: "如果整桌节奏已经慢下来，硬要再补一轮，可能会让人感觉整桌都在为了你一个人的步调被拉长。"
+      },
+      {
+        title: "大家各自在不同时间分别点单",
+        body: "这样很容易让整桌节奏变乱，也让气氛显得零散。很多店里，稍微一起抓同一个点单节奏会更顺。"
+      }
+    ],
+    phraseCards: [
+      {
+        phrase: "ラストオーダーは何時ですか？",
+        pronunciation: "Rasuto oodaa wa nanji desu ka?",
+        explanation: "直接确认最后加点时间。",
+        useWhen: "想提早抓好整桌节奏、不要到最后才匆忙时很好用。"
+      },
+      {
+        phrase: "次は一緒に頼みますか？",
+        pronunciation: "Tsugi wa issho ni tanomimasu ka?",
+        explanation: "温和地询问下一轮要不要一起点。",
+        useWhen: "饮料快见底，又不想让点单节奏太分散时很有帮助。"
+      }
+    ],
+    checklist: [
+      "不要拖到最后一刻，先确认时间限制和最后加点时间。",
+      "不要一直零碎加点，尽量配合整桌节奏。",
+      "如果你比较早停下来，也让整桌维持轻松的节奏。"
+    ]
+  },
+  karaoke: {
+    culturalNotes: [
+      "日本卡拉 OK 常更像是共享顺序、一起维持房间氛围，而不是比谁唱得最好。",
+      "比起唱得厉害，让人觉得和你同房很舒服，往往更重要。"
+    ],
+    situationCards: [
+      {
+        title: "你很会操作点歌机，所以一直很快地点歌",
+        body: "就算没有人抱怨，如果你太强势地掌握整个房间节奏，安静一点的人就很容易自然退到后面。"
+      },
+      {
+        title: "你想一开始就把气氛炒热",
+        body: "比起一开始就唱自己最私人的歌或最炸的歌，先挑一首大家都容易跟上的歌，通常更容易让整体气氛顺起来。"
+      }
+    ],
+    phraseCards: [
+      {
+        phrase: "次どうぞ",
+        pronunciation: "Tsugi douzo",
+        explanation: "自然地把下一首或下一轮让给别人。",
+        useWhen: "想让房间继续流动，又不想自己占太多空间时很实用。"
+      },
+      {
+        phrase: "みんなで歌える曲にしますね",
+        pronunciation: "Minna de utaeru kyoku ni shimasu ne",
+        explanation: "表示自己会选一首大家都能一起享受的歌。",
+        useWhen: "想让房间气氛更有包容感时很好用。"
+      }
+    ],
+    checklist: [
+      "先用适合房间氛围的歌开场，不要一开始就选最长或最重的歌。",
+      "自然地把下一轮让出去，也留意是否有人还没唱过。",
+      "用遥控器、铃鼓和点餐时，不要把整个房间变成自己的舞台。"
+    ]
+  },
+  "live-concert": {
+    culturalNotes: [
+      "演唱会和剧场礼仪，常常是在保护整个空间共同维持的专注感。",
+      "那些看起来严格的规则，通常不是因为形式，而是为了避免一个人的灯光、动作或声音打断很多人的体验。"
+    ],
+    situationCards: [
+      {
+        title: "演出开始后才匆匆赶到",
+        body: "就算座位就在附近，按着自己的节奏快速挤进去，也常比先等工作人员指示更打扰别人。"
+      },
+      {
+        title: "不确定偷拍一张可不可以",
+        body: "在拍摄规则严格的场馆里，“只拍一下”往往不会被当成小例外，而更像是在破坏彼此的默契。"
+      }
+    ],
+    phraseCards: [
+      {
+        phrase: "写真は大丈夫ですか？",
+        pronunciation: "Shashin wa daijoubu desu ka?",
+        explanation: "快速又有礼地确认能不能拍照。",
+        useWhen: "演出前、中场休息，或规则看不太清楚时很好用。"
+      },
+      {
+        phrase: "この席で合っていますか？",
+        pronunciation: "Kono seki de atteimasu ka?",
+        explanation: "确认自己是不是在正确的座位或区域。",
+        useWhen: "区域拥挤、或接近开演才到场时很有帮助。"
+      }
+    ],
+    checklist: [
+      "演出前先确认座位、时间和拍摄规则。",
+      "安静型场馆里，手机连震动都最好关掉。",
+      "如果迟到，先跟着工作人员指引，不要自己临场乱穿。"
+    ]
+  },
+  "sports-event": {
+    culturalNotes: [
+      "体育赛事现场虽然热闹，但每个区域常常仍有自己关于站立、应援和移动的内部节奏。",
+      "最自然的做法通常不是把自己的风格硬带进去，而是享受现场能量，同时和周围的人对齐。"
+    ],
+    situationCards: [
+      {
+        title: "你很兴奋，想经常站起来应援",
+        body: "有些区域这样很自然，但有些区域会很快挡到别人的视线。先看一下四周，通常就能知道这一块的默契。"
+      },
+      {
+        title: "食物、饮料和应援小物越堆越多",
+        body: "气氛可以很随意，但台阶、膝前和座位下空间仍然是共享的。东西一散开，整排都会感觉更挤。"
+      }
+    ],
+    phraseCards: [
+      {
+        phrase: "ここは立って応援する感じですか？",
+        pronunciation: "Koko wa tatte ouen suru kanji desu ka?",
+        explanation: "自然地询问这一块是不是站着应援的氛围。",
+        useWhen: "当现场看起来比预期更有秩序时很有帮助。"
+      },
+      {
+        phrase: "この席で合っていますか？",
+        pronunciation: "Kono seki de atteimasu ka?",
+        explanation: "坐下前先平静确认自己是不是在对的位置。",
+        useWhen: "区块和排数看起来很像、不想打扰别人两次时很好用。"
+      }
+    ],
+    checklist: [
+      "先看这一块是坐着、站着、偏安静，还是很积极应援的氛围。",
+      "食物、包和应援用品尽量留在自己的座位范围内。",
+      "比赛重新开始时，身体和注意力要尽快回到原位。"
+    ]
+  },
+  "theme-park": {
+    culturalNotes: [
+      "日本主题乐园表面上看起来很轻松热闹，但底层动线通常是高度有秩序的。",
+      "摩擦感通常不是来自设施本身，而是大家怎么使用排队区、等待区和看表演的位置。"
+    ],
+    situationCards: [
+      {
+        title: "一群人停在路中间讨论下一步",
+        body: "在人很多的园区里，这样很快就会变成移动障碍物。哪怕只往旁边多移几步，整体感受都会差很多。"
+      },
+      {
+        title: "你觉得只是先帮朋友占一下位置",
+        body: "在游行、表演和排队现场，替还没到的人占太多空间，往往比旅客想象中更快被觉得不公平。"
+      }
+    ],
+    phraseCards: [
+      {
+        phrase: "ここで待てばいいですか？",
+        pronunciation: "Koko de mateba ii desu ka?",
+        explanation: "确认是不是该在这里排或等。",
+        useWhen: "动线分成 standby、预约入场或回来时间时特别有帮助。"
+      },
+      {
+        phrase: "今ここで止まっても大丈夫ですか？",
+        pronunciation: "Ima koko de tomatte mo daijoubu desu ka?",
+        explanation: "温和地确认这里可不可以暂时停一下。",
+        useWhen: "想看地图、整理包、或集合人之前很好用。"
+      }
+    ],
+    checklist: [
+      "先确认这里是真正的队伍，还是队伍入口前的空间。",
+      "讨论下一步时，不要让整群人把走道占满。",
+      "把游行、表演和拍照点都当成共享观看空间来使用。"
+    ]
+  }
 };
