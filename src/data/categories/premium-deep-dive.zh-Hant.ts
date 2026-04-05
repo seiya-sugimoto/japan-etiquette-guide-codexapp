@@ -458,5 +458,40 @@ export const traditionalChinesePremiumDeepDive: PremiumDeepDiveMap = {
       "討論下一步時，不要讓整群人把走道占滿。",
       "把遊行、表演和拍照點都當成共享觀看空間來使用。"
     ]
+  },
+  "rental-car": {
+    culturalNotes: [
+      "日本租車禮儀與其說是在講風格，不如說是在減少那些其實可以避免的摩擦，例如停車、窄路、加油規則和還車時間。",
+      "真正容易讓人手忙腳亂的，常常不是開車本身，而是取車、收費道路、以及哪些地方到底能不能停車這些小小的預設。"
+    ],
+    situationCards: [
+      {
+        title: "看起來只是短暫停一下，應該沒關係",
+        body: "在很多地方，『只停一下』也可能擋到窄路、店家出入口或在地車流。看起來安靜的路段，也可能其實管理得很緊。"
+      },
+      {
+        title: "還車時間感覺應該可以有一點彈性",
+        body: "租車公司的交車節奏常比旅客想像中更緊。稍微晚一點，都可能影響到工作人員、清潔或下一筆預約。"
+      }
+    ],
+    phraseCards: [
+      {
+        phrase: "この近くに駐車しても大丈夫ですか？",
+        pronunciation: "Kono chikaku ni chuusha shitemo daijoubu desu ka?",
+        explanation: "小心確認附近能不能停車。",
+        useWhen: "標示不夠明確、或這個空間看起來有點模糊時很有幫助。"
+      },
+      {
+        phrase: "返却前に給油が必要ですか？",
+        pronunciation: "Henkyaku mae ni kyuuyu ga hitsuyou desu ka?",
+        explanation: "直接確認還車前是否需要加油。",
+        useWhen: "接近最後一天、或取車時說明聽得有點趕時特別實用。"
+      }
+    ],
+    checklist: [
+      "離開停車場前，先再次確認駕照、收費方式、油量規則和還車時間。",
+      "就算只是短停，也先看會不會擋到行人動線或出入口。",
+      "接近還車前，要把加油、移動時間和最後確認都留得寬一些。"
+    ]
   }
 };
