@@ -1,6 +1,10 @@
 import type { CategoryId, PremiumDeepDive } from "@/types/category";
 import type { AppLanguage } from "@/types/language";
 import { koreanPremiumDeepDive } from "@/data/categories/premium-deep-dive.ko";
+import { thaiPremiumDeepDive } from "@/data/categories/premium-deep-dive.th";
+import { frenchPremiumDeepDive } from "@/data/categories/premium-deep-dive.fr";
+import { spanishPremiumDeepDive } from "@/data/categories/premium-deep-dive.es";
+import { vietnamesePremiumDeepDive } from "@/data/categories/premium-deep-dive.vi";
 import { traditionalChinesePremiumDeepDive } from "@/data/categories/premium-deep-dive.zh-Hant";
 import { simplifiedChinesePremiumDeepDive } from "@/data/categories/premium-deep-dive.zh-Hans";
 
@@ -992,6 +996,10 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
     }
   },
   ko: koreanPremiumDeepDive,
+  th: thaiPremiumDeepDive,
+  fr: frenchPremiumDeepDive,
+  es: spanishPremiumDeepDive,
+  vi: vietnamesePremiumDeepDive,
   "zh-Hant": traditionalChinesePremiumDeepDive,
   "zh-Hans": simplifiedChinesePremiumDeepDive
 };
