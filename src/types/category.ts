@@ -72,6 +72,19 @@ export type CategoryId =
 export type CategoryAccess = "free" | "premium";
 export type PremiumContentTier = "free" | "preview" | "premium-only";
 
+export type PremiumPhraseCard = {
+  phrase: string;
+  pronunciation?: string;
+  explanation: string;
+  useWhen: string;
+};
+
+export type PremiumDeepDive = {
+  culturalNotes: string[];
+  phraseCards: PremiumPhraseCard[];
+  checklist: string[];
+};
+
 export type CategoryContent = {
   quickView: string[];
   dos: string[];
@@ -79,6 +92,7 @@ export type CategoryContent = {
   whyItMatters: string[];
   commonMistakes: string[];
   readMore: string[];
+  premiumDeepDive?: PremiumDeepDive;
 };
 
 export type Category = {

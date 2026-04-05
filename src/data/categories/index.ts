@@ -11,6 +11,7 @@ import { additionalTraditionalChineseCategoryContent } from "@/data/categories/z
 import { traditionalChineseCategoryContent } from "@/data/categories/zh-Hant";
 import { additionalSimplifiedChineseCategoryContent } from "@/data/categories/zh-Hans-additional";
 import { simplifiedChineseCategoryContent } from "@/data/categories/zh-Hans";
+import { premiumDeepDiveByLanguage } from "@/data/categories/premium-deep-dive";
 import { getCategoryPremiumTier } from "@/lib/constants/premium";
 import { localizedCategoryCopy } from "@/lib/i18n/translations";
 import type { Category, CategoryAccess, CategoryContent, CategoryId } from "@/types/category";
@@ -31,27 +32,43 @@ const frenchContent = { ...frenchCategoryContent };
 const spanishContent = { ...spanishCategoryContent };
 const vietnameseContent = { ...vietnameseCategoryContent };
 
+function getLocalizedPremiumDeepDive(language: AppLanguage, categoryId: CategoryId) {
+  const englishDeepDive = premiumDeepDiveByLanguage.en?.[categoryId];
+  const localizedDeepDive = premiumDeepDiveByLanguage[language]?.[categoryId];
+
+  return localizedDeepDive ?? englishDeepDive;
+}
+
 function getLocalizedContent(language: AppLanguage, categoryId: CategoryId, fallback: CategoryContent) {
-  switch (language) {
-    case "ja":
-      return japaneseContent[categoryId] ?? fallback;
-    case "ko":
-      return koreanContent[categoryId] ?? fallback;
-    case "zh-Hant":
-      return traditionalChineseContent[categoryId] ?? fallback;
-    case "zh-Hans":
-      return simplifiedChineseContent[categoryId] ?? fallback;
-    case "th":
-      return thaiContent[categoryId] ?? fallback;
-    case "fr":
-      return frenchContent[categoryId] ?? fallback;
-    case "es":
-      return spanishContent[categoryId] ?? fallback;
-    case "vi":
-      return vietnameseContent[categoryId] ?? fallback;
-    default:
-      return fallback;
-  }
+  const localizedContent = (() => {
+    switch (language) {
+      case "ja":
+        return japaneseContent[categoryId] ?? fallback;
+      case "ko":
+        return koreanContent[categoryId] ?? fallback;
+      case "zh-Hant":
+        return traditionalChineseContent[categoryId] ?? fallback;
+      case "zh-Hans":
+        return simplifiedChineseContent[categoryId] ?? fallback;
+      case "th":
+        return thaiContent[categoryId] ?? fallback;
+      case "fr":
+        return frenchContent[categoryId] ?? fallback;
+      case "es":
+        return spanishContent[categoryId] ?? fallback;
+      case "vi":
+        return vietnameseContent[categoryId] ?? fallback;
+      default:
+        return fallback;
+    }
+  })();
+
+  const premiumDeepDive = getLocalizedPremiumDeepDive(language, categoryId);
+
+  return {
+    ...localizedContent,
+    premiumDeepDive: premiumDeepDive ?? localizedContent.premiumDeepDive
+  };
 }
 
 export function getCategories(language: AppLanguage = "en"): Category[] {

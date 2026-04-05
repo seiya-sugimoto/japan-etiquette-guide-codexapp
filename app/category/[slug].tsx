@@ -13,6 +13,7 @@ import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
 import { usePremium } from "@/features/premium/hooks/usePremium";
 import { colors } from "@/lib/constants/colors";
 import { getCategoryDetailCopy } from "@/lib/i18n/category-detail-copy";
+import { getPremiumDeepDiveCopy } from "@/lib/i18n/premium-deep-dive-copy";
 import { getPremiumTierCopy } from "@/lib/i18n/premium-tier-copy";
 import { radius } from "@/lib/constants/radius";
 import { shadows } from "@/lib/constants/shadows";
@@ -35,7 +36,9 @@ export default function CategoryDetailScreen() {
 
   const premiumTierCopy = getPremiumTierCopy(currentLanguage);
   const detailCopy = getCategoryDetailCopy(currentLanguage);
+  const premiumDeepDiveCopy = getPremiumDeepDiveCopy(currentLanguage);
   const isPremiumOnlyLocked = category.premiumTier === "premium-only" && !isPremiumUnlocked;
+  const premiumDeepDive = !isPremiumOnlyLocked ? category.content.premiumDeepDive : undefined;
   const heroBadge =
     category.badge === "high-risk"
       ? t.avoidLabel
@@ -210,6 +213,76 @@ export default function CategoryDetailScreen() {
               </AppText>
             ))}
           </View>
+        </AppCard>
+      ) : null}
+
+      {premiumDeepDive ? (
+        <AppCard style={styles.premiumDeepDiveCard}>
+          <View style={styles.premiumDeepDiveHeader}>
+            <AppBadge label={premiumDeepDiveCopy.badge} tone="premium" />
+            <AppText style={styles.premiumDeepDiveTitle} variant="subtitle">
+              {premiumDeepDiveCopy.title}
+            </AppText>
+            <AppText color={colors.textMuted}>{premiumDeepDiveCopy.body}</AppText>
+          </View>
+
+          {premiumDeepDive.culturalNotes.length > 0 ? (
+            <View style={styles.deepDiveSection}>
+              <AppText style={styles.deepDiveHeading} variant="subtitle">
+                {premiumDeepDiveCopy.culturalNotesHeading}
+              </AppText>
+              <View style={styles.list}>
+                {premiumDeepDive.culturalNotes.map((item) => (
+                  <View key={`deep-note-${item}`} style={styles.bulletRow}>
+                    <View style={[styles.smallDot, styles.premiumDot]} />
+                    <AppText style={styles.bulletText}>{item}</AppText>
+                  </View>
+                ))}
+              </View>
+            </View>
+          ) : null}
+
+          {premiumDeepDive.phraseCards.length > 0 ? (
+            <View style={styles.deepDiveSection}>
+              <AppText style={styles.deepDiveHeading} variant="subtitle">
+                {premiumDeepDiveCopy.phraseCardsHeading}
+              </AppText>
+              <View style={styles.phraseList}>
+                {premiumDeepDive.phraseCards.map((item) => (
+                  <View key={`phrase-${item.phrase}`} style={styles.phraseCard}>
+                    <AppText style={styles.phraseText} variant="subtitle">
+                      {item.phrase}
+                    </AppText>
+                    {item.pronunciation ? (
+                      <AppText color={colors.textMuted} style={styles.phrasePronunciation}>
+                        {item.pronunciation}
+                      </AppText>
+                    ) : null}
+                    <AppText style={styles.bulletText}>{item.explanation}</AppText>
+                    <AppText color={colors.textMuted} style={styles.phraseWhen}>
+                      {premiumDeepDiveCopy.useWhenLabel}: {item.useWhen}
+                    </AppText>
+                  </View>
+                ))}
+              </View>
+            </View>
+          ) : null}
+
+          {premiumDeepDive.checklist.length > 0 ? (
+            <View style={styles.deepDiveSection}>
+              <AppText style={styles.deepDiveHeading} variant="subtitle">
+                {premiumDeepDiveCopy.checklistHeading}
+              </AppText>
+              <View style={styles.list}>
+                {premiumDeepDive.checklist.map((item) => (
+                  <View key={`deep-check-${item}`} style={styles.bulletRow}>
+                    <Ionicons color={colors.primary} name="checkmark-circle" size={16} style={styles.checkIcon} />
+                    <AppText style={styles.bulletText}>{item}</AppText>
+                  </View>
+                ))}
+              </View>
+            </View>
+          ) : null}
         </AppCard>
       ) : null}
 
@@ -420,6 +493,48 @@ const styles = StyleSheet.create({
   },
   readMoreCard: {
     borderRadius: 28
+  },
+  premiumDeepDiveCard: {
+    borderRadius: 30,
+    backgroundColor: colors.surfaceSoft,
+    gap: spacing.lg
+  },
+  premiumDeepDiveHeader: {
+    gap: spacing.sm
+  },
+  premiumDeepDiveTitle: {
+    color: colors.primary
+  },
+  deepDiveSection: {
+    gap: spacing.sm
+  },
+  deepDiveHeading: {
+    color: colors.primary
+  },
+  phraseList: {
+    gap: spacing.sm
+  },
+  phraseCard: {
+    gap: spacing.xs,
+    padding: spacing.md,
+    borderRadius: 22,
+    backgroundColor: colors.surface,
+    ...shadows.card
+  },
+  phraseText: {
+    color: colors.primary
+  },
+  phrasePronunciation: {
+    fontSize: 13
+  },
+  phraseWhen: {
+    lineHeight: 22
+  },
+  premiumDot: {
+    backgroundColor: colors.primary
+  },
+  checkIcon: {
+    marginTop: 4
   },
   premiumPanel: {
     backgroundColor: colors.primary,
