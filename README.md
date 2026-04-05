@@ -156,6 +156,10 @@ A simple pre-release checklist is available here:
 
 - `RELEASE_CHECKLIST.md`
 
+Store-facing copy notes are collected here:
+
+- `APP_STORE_METADATA.md`
+
 ## Notes
 
 - There is no backend, CMS, auth, or database

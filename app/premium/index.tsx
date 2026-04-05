@@ -8,17 +8,18 @@ import { AppScreen } from "@/components/ui/AppScreen";
 import { AppText } from "@/components/ui/AppText";
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
 import { colors } from "@/lib/constants/colors";
+import { getPremiumPreviewCopy } from "@/lib/i18n/marketing-copy";
 import { radius } from "@/lib/constants/radius";
+import { shadows } from "@/lib/constants/shadows";
 import { spacing } from "@/lib/constants/spacing";
 
-const wideImage =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuAcf98yDWwtqepV3bu8GkiGTkogZoynhHZFyX7Dquiwtf-mMMxtza16eGCP44x-JGu9mFVqapJslNeoxpZwVzp2TXY2jU0MGzXae1ASpHfgsaKi5F6Zkr2nzm5hMtORHQ9h_0fjaapg67ek5rPy1_zCwDEcZ2jl4nRcOEsoGCMIzmLJJ6f70sDD94mhEnCvEg9tipcyT4FyM68fJOIjaPpjgmXj2dGmq405sstRsNO7yvbZG6t7Mi9bdqAACwh4cybxdwqWhR40Xq8";
 const topImage =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuBMsadtsc5m3U9lICnRQz74t0IxnNVuwQmoIeiWlJSE74n-5_u97px9jqFQcj000D_WFogrUQGVtEIkXEeUuxmVy8JTzu81m40lLWlcQJu8OJIPfr91zlgWcN41yvB1gq7t7BCROuSIRmQUMliU2a5dqIOeEyN2SvqOZ4_T-2EFeoUYvto66LkBunKeN67SZnuYBCxpOy8c6k9-dg7ytd4PYvai-dMIhzPJUgMbKpEeNFWtzEl8t8Kyt6roGsL4o6L4A4QjxhxtHXU";
 
 export default function PremiumScreen() {
   const router = useRouter();
-  const { t } = useAppLanguage();
+  const { currentLanguage, supportedLanguages } = useAppLanguage();
+  const copy = getPremiumPreviewCopy(currentLanguage);
 
   return (
     <AppScreen>
@@ -27,91 +28,102 @@ export default function PremiumScreen() {
           <Ionicons color={colors.primary} name="close" size={20} />
         </Pressable>
         <AppText style={styles.headerTitle} variant="caption">
-          {t.premiumAccess}
+          Premium Preview
         </AppText>
         <View style={styles.headerSpacer} />
       </View>
 
       <View style={styles.heroSection}>
         <Image source={{ uri: topImage }} style={styles.heroThumb} />
-        <AppText style={styles.heroTitle} variant="title">
-          {t.unlockTitle}
-        </AppText>
-        <AppText color={colors.textMuted} style={styles.heroBody}>
-          {t.unlockBody}
-        </AppText>
-        <AppCard style={styles.previewCard}>
-          <AppText color={colors.textMuted}>{t.premiumPlaceholder}</AppText>
+        <View style={styles.heroCopy}>
+          <AppText color={colors.accent} style={styles.heroEyebrow} variant="eyebrow">
+            {copy.eyebrow}
+          </AppText>
+          <AppText style={styles.heroTitle} variant="title">
+            {copy.title}
+          </AppText>
+          <AppText color={colors.textMuted} style={styles.heroBody}>
+            {copy.body}
+          </AppText>
+        </View>
+      </View>
+
+      <View style={styles.statRow}>
+        <AppCard style={styles.statCard}>
+          <AppText color={colors.textMuted} variant="caption">
+            {copy.guidesLabel}
+          </AppText>
+          <AppText style={styles.statValue} variant="hero">
+            69
+          </AppText>
+        </AppCard>
+        <AppCard style={styles.statCard}>
+          <AppText color={colors.textMuted} variant="caption">
+            {copy.languagesLabel}
+          </AppText>
+          <AppText style={styles.statValue} variant="hero">
+            {supportedLanguages.length}
+          </AppText>
         </AppCard>
       </View>
 
-      <View style={styles.benefits}>
-        <AppCard style={styles.benefitCard}>
-          <View style={styles.benefitIcon}>
-            <Ionicons color={colors.primary} name="book-outline" size={20} />
+      <AppCard style={styles.sectionCard}>
+        <View style={styles.sectionHeader}>
+          <View style={[styles.sectionIcon, styles.nowIcon]}>
+            <Ionicons color={colors.primary} name="checkmark" size={18} />
           </View>
-          <View style={styles.benefitCopy}>
-            <AppText style={styles.benefitTitle} variant="subtitle">
-              {t.commonSituations}
+          <View style={styles.sectionCopy}>
+            <AppText style={styles.sectionTitle} variant="subtitle">
+              {copy.nowTitle}
             </AppText>
-            <AppText color={colors.textMuted}>{t.unlockBody}</AppText>
+            <AppText color={colors.textMuted}>{copy.nowBody}</AppText>
           </View>
-        </AppCard>
-
-        <AppCard style={styles.benefitCard}>
-          <View style={styles.benefitIcon}>
-            <Ionicons color={colors.primary} name="download-outline" size={20} />
-          </View>
-          <View style={styles.benefitCopy}>
-            <AppText style={styles.benefitTitle} variant="subtitle">
-              {t.readMore}
+        </View>
+        {copy.nowPoints.map((point) => (
+          <View key={point} style={styles.pointRow}>
+            <Ionicons color={colors.success} name="checkmark-circle" size={18} />
+            <AppText color={colors.textSubtle} style={styles.pointText}>
+              {point}
             </AppText>
-            <AppText color={colors.textMuted}>{t.premiumPlaceholder}</AppText>
           </View>
-        </AppCard>
+        ))}
+      </AppCard>
 
-        <AppCard style={styles.benefitCard}>
-          <View style={styles.benefitIcon}>
-            <Ionicons color={colors.primary} name="sparkles-outline" size={20} />
+      <AppCard style={[styles.sectionCard, styles.plannedCard]}>
+        <View style={styles.sectionHeader}>
+          <View style={[styles.sectionIcon, styles.laterIcon]}>
+            <Ionicons color={colors.surface} name="sparkles" size={18} />
           </View>
-          <View style={styles.benefitCopy}>
-            <AppText style={styles.benefitTitle} variant="subtitle">
-              {t.whyItMatters}
+          <View style={styles.sectionCopy}>
+            <AppText style={styles.sectionTitle} variant="subtitle">
+              {copy.laterTitle}
             </AppText>
-            <AppText color={colors.textMuted}>{t.feedbackPlaceholder}</AppText>
+            <AppText color={colors.textMuted}>{copy.laterBody}</AppText>
           </View>
-        </AppCard>
-      </View>
+        </View>
+        {copy.laterPoints.map((point) => (
+          <View key={point} style={styles.pointRow}>
+            <Ionicons color={colors.primary} name="arrow-forward-circle" size={18} />
+            <AppText color={colors.textSubtle} style={styles.pointText}>
+              {point}
+            </AppText>
+          </View>
+        ))}
+      </AppCard>
 
-      <Image source={{ uri: wideImage }} style={styles.wideImage} />
-
-      <AppCard style={styles.compareCard}>
-        <AppText color={colors.textMuted} style={styles.compareEyebrow} variant="eyebrow">
-          {t.settingsTitlePremium}
-        </AppText>
-        <View style={styles.compareRow}>
-          <AppText style={styles.compareText}>{t.commonSituations}</AppText>
-          <Ionicons color={colors.primary} name="checkmark-circle" size={18} />
+      <AppCard style={styles.noteCard}>
+        <View style={styles.noteHeader}>
+          <Ionicons color={colors.primary} name="information-circle-outline" size={18} />
+          <AppText style={styles.noteTitle} variant="subtitle">
+            {copy.noteTitle}
+          </AppText>
         </View>
-        <View style={styles.compareRow}>
-          <AppText style={styles.compareText}>{t.whyItMatters}</AppText>
-          <Ionicons color={colors.primary} name="checkmark-circle" size={18} />
-        </View>
-        <View style={styles.compareRow}>
-          <AppText style={styles.compareText}>{t.readMore}</AppText>
-          <Ionicons color={colors.primary} name="checkmark-circle" size={18} />
-        </View>
+        <AppText color={colors.textMuted}>{copy.noteBody}</AppText>
       </AppCard>
 
       <View style={styles.ctaWrap}>
-        <AppButton label={t.settingsTitleFeedback} onPress={() => router.push("/feedback")} />
-        <View style={styles.footerLinks}>
-          <Pressable onPress={() => router.push("/feedback")}>
-            <AppText color={colors.textMuted} variant="caption">
-              {t.settingsTitleFeedback}
-            </AppText>
-          </Pressable>
-        </View>
+        <AppButton label={copy.browseCta} onPress={() => router.push("/browse")} />
+        <AppButton label={copy.feedbackCta} onPress={() => router.push("/feedback")} tone="secondary" />
       </View>
     </AppScreen>
   );
@@ -138,13 +150,21 @@ const styles = StyleSheet.create({
   },
   heroSection: {
     alignItems: "center",
-    gap: spacing.md,
-    paddingTop: spacing.sm
+    gap: spacing.lg
   },
   heroThumb: {
-    width: 96,
-    height: 96,
-    borderRadius: 24
+    width: 104,
+    height: 104,
+    borderRadius: 28,
+    ...shadows.strong
+  },
+  heroCopy: {
+    alignItems: "center",
+    gap: spacing.sm
+  },
+  heroEyebrow: {
+    textTransform: "uppercase",
+    textAlign: "center"
   },
   heroTitle: {
     textAlign: "center",
@@ -152,70 +172,77 @@ const styles = StyleSheet.create({
   },
   heroBody: {
     textAlign: "center",
-    maxWidth: 320,
-    lineHeight: 28
+    maxWidth: 330,
+    lineHeight: 26
   },
-  previewCard: {
-    width: "100%",
-    borderRadius: 24,
-    backgroundColor: colors.surfaceMuted
-  },
-  benefits: {
+  statRow: {
+    flexDirection: "row",
     gap: spacing.md
   },
-  benefitCard: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-    gap: spacing.md,
+  statCard: {
+    flex: 1,
     borderRadius: 28,
     backgroundColor: colors.surfaceMuted,
-    padding: spacing.lg
+    alignItems: "center"
   },
-  benefitIcon: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+  statValue: {
+    color: colors.primary
+  },
+  sectionCard: {
+    borderRadius: 30,
+    gap: spacing.md
+  },
+  plannedCard: {
+    backgroundColor: colors.surfaceMuted
+  },
+  sectionHeader: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.md
+  },
+  sectionIcon: {
+    width: 42,
+    height: 42,
+    borderRadius: 21,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center"
+  },
+  nowIcon: {
     backgroundColor: "#F6EDEB"
   },
-  benefitCopy: {
+  laterIcon: {
+    backgroundColor: colors.primary
+  },
+  sectionCopy: {
     flex: 1,
     gap: 6
   },
-  benefitTitle: {
-    color: colors.text
+  sectionTitle: {
+    color: colors.primary
   },
-  wideImage: {
-    width: "100%",
-    height: 148,
-    borderRadius: 28
+  pointRow: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.sm
   },
-  compareCard: {
+  pointText: {
+    flex: 1,
+    lineHeight: 22
+  },
+  noteCard: {
     borderRadius: 28,
-    padding: spacing.lg
+    backgroundColor: colors.surfaceSoft
   },
-  compareEyebrow: {
-    textTransform: "uppercase",
-    marginBottom: spacing.sm
-  },
-  compareRow: {
+  noteHeader: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
-    paddingVertical: spacing.sm
+    gap: spacing.xs
   },
-  compareText: {
-    color: colors.textSubtle
+  noteTitle: {
+    color: colors.primary
   },
   ctaWrap: {
     gap: spacing.md,
     paddingBottom: spacing.md
-  },
-  footerLinks: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: spacing.sm
   }
 });
