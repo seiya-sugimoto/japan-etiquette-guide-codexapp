@@ -1,4 +1,4 @@
-import { router } from "expo-router";
+import { Link } from "expo-router";
 import { Image, Pressable, StyleSheet, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -29,31 +29,39 @@ export function CategoryCard({ category }: { category: Category }) {
           : null;
 
   return (
-    <Pressable onPress={() => router.push(`/category/${category.slug}`)}>
-      <AppCard style={styles.card}>
-        <View style={styles.thumbWrap}>
-          <Image source={{ uri: category.imageUrl }} style={styles.thumb} />
-        </View>
-        <View style={styles.body}>
-          <View style={styles.header}>
-            <AppText style={styles.title} variant="subtitle">
-              {category.title}
-            </AppText>
-            {badgeLabel ? <AppBadge label={badgeLabel} tone={category.premiumTier !== "free" ? "premium" : "default"} /> : null}
+    <Link asChild href={`/category/${category.slug}`}>
+      <Pressable style={({ pressed }) => [styles.pressable, pressed && styles.pressablePressed]}>
+        <AppCard style={styles.card}>
+          <View style={styles.thumbWrap}>
+            <Image source={{ uri: category.imageUrl }} style={styles.thumb} />
           </View>
-          <AppText color={colors.textMuted} numberOfLines={2} style={styles.description}>
-            {category.shortDescription}
-          </AppText>
-        </View>
-        <View style={styles.chevronWrap}>
-          <Ionicons color={colors.textMuted} name={isLocked ? "lock-closed" : "chevron-forward"} size={18} />
-        </View>
-      </AppCard>
-    </Pressable>
+          <View style={styles.body}>
+            <View style={styles.header}>
+              <AppText style={styles.title} variant="subtitle">
+                {category.title}
+              </AppText>
+              {badgeLabel ? <AppBadge label={badgeLabel} tone={category.premiumTier !== "free" ? "premium" : "default"} /> : null}
+            </View>
+            <AppText color={colors.textMuted} numberOfLines={2} style={styles.description}>
+              {category.shortDescription}
+            </AppText>
+          </View>
+          <View style={styles.chevronWrap}>
+            <Ionicons color={colors.textMuted} name={isLocked ? "lock-closed" : "chevron-forward"} size={18} />
+          </View>
+        </AppCard>
+      </Pressable>
+    </Link>
   );
 }
 
 const styles = StyleSheet.create({
+  pressable: {
+    borderRadius: 28
+  },
+  pressablePressed: {
+    opacity: 0.84
+  },
   card: {
     flexDirection: "row",
     alignItems: "center",
