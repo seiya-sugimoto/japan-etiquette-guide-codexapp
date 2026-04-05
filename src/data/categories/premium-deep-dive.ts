@@ -154,6 +154,81 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "Pass the next turn naturally and notice if someone has not had a chance yet.",
         "Use the room controls, tambourines, and food orders without turning the whole room into your personal stage."
       ]
+    },
+    "live-concert": {
+      culturalNotes: [
+        "Concert and theater etiquette often centers on protecting the shared concentration of the room.",
+        "What feels strict is usually less about formality and more about preventing one person's movement, light, or voice from breaking the experience for many others."
+      ],
+      phraseCards: [
+        {
+          phrase: "写真は大丈夫ですか？",
+          pronunciation: "Shashin wa daijoubu desu ka?",
+          explanation: "A quick, polite way to confirm whether photos are okay.",
+          useWhen: "Helpful before the show, during intermission, or whenever the venue rules feel unclear."
+        },
+        {
+          phrase: "この席で合っていますか？",
+          pronunciation: "Kono seki de atteimasu ka?",
+          explanation: "A simple way to confirm that you are in the right seat or area.",
+          useWhen: "Useful when the section layout is crowded or you arrive close to the start time."
+        }
+      ],
+      checklist: [
+        "Check seat, timing, and filming rules before the performance begins.",
+        "Silence your phone completely, including vibration if the room is very quiet.",
+        "If you arrive late, move carefully and follow staff guidance instead of improvising."
+      ]
+    },
+    "sports-event": {
+      culturalNotes: [
+        "Sports crowds can be loud, but each section often still has an internal rhythm about standing, cheering, and moving.",
+        "The most respectful approach is usually to enjoy the energy while matching the people around you instead of forcing your own style onto the section."
+      ],
+      phraseCards: [
+        {
+          phrase: "ここは立って応援する感じですか？",
+          pronunciation: "Koko wa tatte ouen suru kanji desu ka?",
+          explanation: "A natural way to ask whether this section tends to stand and cheer.",
+          useWhen: "Helpful when the atmosphere feels more organized than you expected."
+        },
+        {
+          phrase: "この席で合っていますか？",
+          pronunciation: "Kono seki de atteimasu ka?",
+          explanation: "A calm way to confirm your seat before settling in.",
+          useWhen: "Useful when blocks and rows feel similar and you do not want to interrupt people twice."
+        }
+      ],
+      checklist: [
+        "Notice early whether your section is seated, standing, quiet, or highly active.",
+        "Keep food, bags, and cheering goods inside your own seat space.",
+        "When play restarts, return your focus and body position quickly so you do not block others."
+      ]
+    },
+    "theme-park": {
+      culturalNotes: [
+        "Theme parks in Japan often feel playful on the surface but highly structured underneath.",
+        "The friction usually comes from how people use lines, waiting space, and show-viewing areas rather than from the rides themselves."
+      ],
+      phraseCards: [
+        {
+          phrase: "ここで待てばいいですか？",
+          pronunciation: "Koko de mateba ii desu ka?",
+          explanation: "A useful way to confirm whether you are waiting in the right place.",
+          useWhen: "Helpful when queue systems split into standby, timed entry, or return windows."
+        },
+        {
+          phrase: "今ここで止まっても大丈夫ですか？",
+          pronunciation: "Ima koko de tomatte mo daijoubu desu ka?",
+          explanation: "A soft way to check whether stopping here is okay.",
+          useWhen: "Useful before checking maps, fixing bags, or gathering your group in a busy walkway."
+        }
+      ],
+      checklist: [
+        "Confirm whether this is the actual queue or just the entry to the queue.",
+        "Do not spread the group across the walkway while deciding the next move.",
+        "Treat parade, show, and photo spots as shared viewing space, not claimed territory."
+      ]
     }
   },
   ja: {
@@ -305,6 +380,81 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "最初の一曲は、長すぎたり重すぎたりしない、部屋になじみやすいものにする。",
         "まだ歌っていない人がいないかを見て、自然に順番を回す。",
         "リモコン、タンバリン、注文なども含めて、自分だけのステージにしない。"
+      ]
+    },
+    "live-concert": {
+      culturalNotes: [
+        "ライブや劇場では、その場にいる全員の集中を守ることが、いちばん大きなマナーになりやすいです。",
+        "厳しめに感じるルールも、形式のためというより、一人の光や音や動きで多くの人の体験が切れてしまうのを防ぐためと考えると分かりやすいです。"
+      ],
+      phraseCards: [
+        {
+          phrase: "写真は大丈夫ですか？",
+          pronunciation: "Shashin wa daijoubu desu ka?",
+          explanation: "写真を撮ってよいかを、短く自然に確認できる言い方です。",
+          useWhen: "開演前や休憩中、会場ルールが少し分かりにくいときに便利です。"
+        },
+        {
+          phrase: "この席で合っていますか？",
+          pronunciation: "Kono seki de atteimasu ka?",
+          explanation: "自分の席やエリアが合っているかを、落ち着いて確認できます。",
+          useWhen: "席が詰まっていて入りにくいときや、開演直前で急ぎたくないときに使いやすいです。"
+        }
+      ],
+      checklist: [
+        "開演前に、席・時間・撮影ルールを確認しておく。",
+        "静かな会場ではバイブも含めてスマホを完全に止める。",
+        "遅れて入るときは自己判断で急がず、スタッフの案内に従う。"
+      ]
+    },
+    "sports-event": {
+      culturalNotes: [
+        "スポーツ観戦はにぎやかでも、席のブロックごとに立つタイミングや応援の熱量にリズムがあることが多いです。",
+        "自分の楽しみ方を押し出すより、周りの人の応援のしかたに自然に合わせるほうが、その場では気持ちよく見えます。"
+      ],
+      phraseCards: [
+        {
+          phrase: "ここは立って応援する感じですか？",
+          pronunciation: "Koko wa tatte ouen suru kanji desu ka?",
+          explanation: "このエリアの応援の雰囲気を、やわらかく確認できます。",
+          useWhen: "思ったよりルールや一体感がありそうだと感じたときに便利です。"
+        },
+        {
+          phrase: "この席で合っていますか？",
+          pronunciation: "Kono seki de atteimasu ka?",
+          explanation: "自分の席を、着席前に落ち着いて確認する言い方です。",
+          useWhen: "列や番号が似ていて、何度も人を立たせたくないときに使いやすいです。"
+        }
+      ],
+      checklist: [
+        "自分のブロックが座って見る雰囲気か、立って盛り上がる雰囲気かを早めに見る。",
+        "荷物、飲み物、応援グッズは自分の席の範囲に収める。",
+        "プレーが始まる場面では、体の向きや立ち位置をすぐ整えて人の視界をふさがない。"
+      ]
+    },
+    "theme-park": {
+      culturalNotes: [
+        "テーマパークは楽しい空気が前面にありますが、実際には列、待機場所、鑑賞エリアがかなり細かく設計されています。",
+        "気まずくなりやすいのはアトラクションそのものより、待つ場所、立ち止まる場所、場所取りのしかたです。"
+      ],
+      phraseCards: [
+        {
+          phrase: "ここで待てばいいですか？",
+          pronunciation: "Koko de mateba ii desu ka?",
+          explanation: "今いる場所が正しい待機位置かどうかを確認できます。",
+          useWhen: "通常列、時間指定、再集合などで導線が分かれていて迷うときに便利です。"
+        },
+        {
+          phrase: "今ここで止まっても大丈夫ですか？",
+          pronunciation: "Ima koko de tomatte mo daijoubu desu ka?",
+          explanation: "その場で立ち止まってよいかを、やわらかく聞けます。",
+          useWhen: "地図を見る、荷物を直す、グループをまとめる前に確認したいときに使いやすいです。"
+        }
+      ],
+      checklist: [
+        "今いる場所が『列そのもの』なのか、『列の入口』なのかをまず確認する。",
+        "次を決めるあいだ、グループで通路いっぱいに広がらない。",
+        "パレードやショーの場所は、自分たちの専有スペースではなく共有の観覧エリアとして扱う。"
       ]
     }
   }
