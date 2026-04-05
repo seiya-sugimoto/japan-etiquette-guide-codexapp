@@ -104,6 +104,56 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "Use headphones, small lights, and the quietest zip or bag routine you can.",
         "Move eating, calls, and full repacking to the common area when possible."
       ]
+    },
+    "all-you-can-drink": {
+      culturalNotes: [
+        "All-you-can-drink plans usually feel relaxed, but they still run on shared timing and a group pace.",
+        "The awkward moments are often not about drinking itself, but about leaving others behind, over-ordering, or missing the final call."
+      ],
+      phraseCards: [
+        {
+          phrase: "ラストオーダーは何時ですか？",
+          pronunciation: "Rasuto oodaa wa nanji desu ka?",
+          explanation: "A direct way to confirm the last order timing.",
+          useWhen: "Helpful when the group is settling in and you want to pace drinks without rushing later."
+        },
+        {
+          phrase: "次は一緒に頼みますか？",
+          pronunciation: "Tsugi wa issho ni tanomimasu ka?",
+          explanation: "A soft way to check whether the table wants to order together.",
+          useWhen: "Useful when drinks are low and you do not want to create an uneven flow at the table."
+        }
+      ],
+      checklist: [
+        "Check the time limit and last order early, not when the staff are already making the rounds.",
+        "Keep pace with the table instead of creating separate mini-orders every few minutes.",
+        "If you stop drinking earlier, let the group rhythm stay easy instead of making it a big moment."
+      ]
+    },
+    karaoke: {
+      culturalNotes: [
+        "Karaoke in Japan often feels more like shared turn-taking than a performance contest.",
+        "Being fun to share a room with usually matters more than singing well."
+      ],
+      phraseCards: [
+        {
+          phrase: "次どうぞ",
+          pronunciation: "Tsugi douzo",
+          explanation: "A very natural way to pass the next turn to someone else.",
+          useWhen: "Useful when you want to keep the room moving without taking too much space."
+        },
+        {
+          phrase: "みんなで歌える曲にしますね",
+          pronunciation: "Minna de utaeru kyoku ni shimasu ne",
+          explanation: "A friendly way to signal that you are choosing something the room can enjoy together.",
+          useWhen: "Helpful when you want to lower pressure and keep the mood inclusive."
+        }
+      ],
+      checklist: [
+        "Keep your first song easy for the room instead of using the longest or most intense pick right away.",
+        "Pass the next turn naturally and notice if someone has not had a chance yet.",
+        "Use the room controls, tambourines, and food orders without turning the whole room into your personal stage."
+      ]
     }
   },
   ja: {
@@ -205,6 +255,56 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "洗面道具や着替えは、寝る前に手元へまとめておく。",
         "ヘッドホン、小さめの灯り、できるだけ静かな荷物の開け閉めを意識する。",
         "食事、通話、しっかりした荷造りは、できるだけ共用部へ移す。"
+      ]
+    },
+    "all-you-can-drink": {
+      culturalNotes: [
+        "飲み放題は気軽に見えても、実際には時間制とテーブル全体の流れの中で動いています。",
+        "気まずくなりやすいのは、お酒を飲むこと自体よりも、注文のばらつきやラストオーダーの見落とし、周りとの温度差です."
+      ],
+      phraseCards: [
+        {
+          phrase: "ラストオーダーは何時ですか？",
+          pronunciation: "Rasuto oodaa wa nanji desu ka?",
+          explanation: "ラストオーダーの時間を、短くはっきり確認できる言い方です。",
+          useWhen: "席について落ち着いたあと、後半に慌てないよう先に確認しておきたいときに便利です。"
+        },
+        {
+          phrase: "次は一緒に頼みますか？",
+          pronunciation: "Tsugi wa issho ni tanomimasu ka?",
+          explanation: "次の注文をテーブルでそろえるか、やわらかく確認できます。",
+          useWhen: "飲み物が減ってきたときに、自分だけ先に動かず、場の流れを合わせたいときに使いやすいです。"
+        }
+      ],
+      checklist: [
+        "制限時間とラストオーダーを、終盤ではなく早めに確認する。",
+        "数分おきに個別注文を重ねるより、テーブル全体の流れに合わせる。",
+        "自分はもう飲まなくても、そのことを重くせず場の空気を止めない。"
+      ]
+    },
+    karaoke: {
+      culturalNotes: [
+        "日本のカラオケは、歌のうまさを競う場というより、順番を回しながら部屋全体で楽しむ空気に近いことが多いです。",
+        "うまく歌うことよりも、一緒にいて気楽な人でいることのほうが、場の印象を大きく左右します。"
+      ],
+      phraseCards: [
+        {
+          phrase: "次どうぞ",
+          pronunciation: "Tsugi douzo",
+          explanation: "次の人へ自然に順番を渡せる、とても使いやすい一言です。",
+          useWhen: "自分ばかり続けず、部屋の流れを軽く回したいときに便利です。"
+        },
+        {
+          phrase: "みんなで歌える曲にしますね",
+          pronunciation: "Minna de utaeru kyoku ni shimasu ne",
+          explanation: "みんなが入りやすい曲を選ぶことを、やわらかく伝えられます。",
+          useWhen: "空気を和らげたいときや、初対面が多い場で緊張を下げたいときに使いやすいです。"
+        }
+      ],
+      checklist: [
+        "最初の一曲は、長すぎたり重すぎたりしない、部屋になじみやすいものにする。",
+        "まだ歌っていない人がいないかを見て、自然に順番を回す。",
+        "リモコン、タンバリン、注文なども含めて、自分だけのステージにしない。"
       ]
     }
   }
