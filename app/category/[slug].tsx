@@ -38,7 +38,10 @@ export default function CategoryDetailScreen() {
   const detailCopy = getCategoryDetailCopy(currentLanguage);
   const premiumDeepDiveCopy = getPremiumDeepDiveCopy(currentLanguage);
   const isPremiumOnlyLocked = category.premiumTier === "premium-only" && !isPremiumUnlocked;
-  const premiumDeepDive = !isPremiumOnlyLocked ? category.content.premiumDeepDive : undefined;
+  const premiumDeepDive =
+    !isPremiumOnlyLocked && isPremiumUnlocked && category.premiumTier !== "free"
+      ? category.content.premiumDeepDive
+      : undefined;
   const heroBadge =
     category.badge === "high-risk"
       ? t.avoidLabel
@@ -304,7 +307,7 @@ export default function CategoryDetailScreen() {
         </AppCard>
       ) : null}
 
-      {category.premiumTier === "preview" ? (
+      {category.premiumTier === "preview" && !isPremiumUnlocked ? (
         <View style={styles.premiumPanel}>
           <View style={styles.premiumPanelHeader}>
             <Ionicons color={colors.accentSoft} name="sparkles" size={16} />

@@ -5,6 +5,146 @@ type PremiumDeepDiveMap = Partial<Record<CategoryId, PremiumDeepDive>>;
 
 export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepDiveMap>> = {
   en: {
+    onsen: {
+      culturalNotes: [
+        "Bathing etiquette in Japan is less about memorizing a ritual and more about protecting the calm and cleanliness of a shared bath.",
+        "People notice preparation and pace more than perfection, so washing fully and moving gently matter more than looking experienced."
+      ],
+      situationCards: [
+        {
+          title: "You feel rushed because others seem to know the flow",
+          body: "Trying to copy people too quickly often creates more awkwardness than simply slowing down and checking the signs. Onsen spaces reward calm more than speed."
+        },
+        {
+          title: "Your belongings start spreading around the washing area",
+          body: "Even when the bath itself feels spacious, the washing station is still shared personal space. Small clutter there feels more noticeable than travelers expect."
+        }
+      ],
+      phraseCards: [
+        {
+          phrase: "タオルはどこに置けばいいですか？",
+          pronunciation: "Taoru wa doko ni okeba ii desu ka?",
+          explanation: "A simple way to check where your towel should go.",
+          useWhen: "Helpful if the layout feels unfamiliar and you do not want to guess."
+        },
+        {
+          phrase: "こちらのお風呂を使って大丈夫ですか？",
+          pronunciation: "Kochira no ofuro o tsukatte daijoubu desu ka?",
+          explanation: "A polite way to confirm that this bath is available to you.",
+          useWhen: "Useful when there are several baths, private areas, or posted restrictions."
+        }
+      ],
+      checklist: [
+        "Check tattoo, photography, and time rules before you settle in.",
+        "Wash fully before entering and keep your towel out of the bath.",
+        "Leave your washing spot clean enough that the next person can sit down immediately."
+      ]
+    },
+    shrine: {
+      culturalNotes: [
+        "Shrine etiquette often feels subtle because it is built around atmosphere, boundaries, and worship happening alongside tourism.",
+        "You usually do not need to perform every ritual perfectly. What matters more is moving with patience and not turning worship space into your own scene."
+      ],
+      situationCards: [
+        {
+          title: "You want a good photo near the main worship area",
+          body: "The most beautiful angle is often also the most active worship space. Waiting a little and leaving a clear path usually feels better than claiming the spot quickly."
+        },
+        {
+          title: "You are unsure whether to copy the ritual",
+          body: "Watching one or two people first is often the most respectful choice. Copying too fast can feel more careless than simply pausing."
+        }
+      ],
+      phraseCards: [
+        {
+          phrase: "写真はここで大丈夫ですか？",
+          pronunciation: "Shashin wa koko de daijoubu desu ka?",
+          explanation: "A natural way to check whether photos are okay in that spot.",
+          useWhen: "Helpful near worship areas, gates, purification basins, or quieter corners."
+        },
+        {
+          phrase: "こちらでお参りしてもいいですか？",
+          pronunciation: "Kochira de omairi shitemo ii desu ka?",
+          explanation: "A gentle way to confirm whether this is the right place to worship.",
+          useWhen: "Useful when there are several structures and the route is not obvious."
+        }
+      ],
+      checklist: [
+        "Look for photo restrictions before raising your camera.",
+        "Slow down near the main approach, basin, and offering area.",
+        "If you are unsure, observe first and keep the worship path open."
+      ]
+    },
+    temple: {
+      culturalNotes: [
+        "Temple etiquette often feels quieter and more interior-facing than shrine etiquette, especially around halls, memorial spaces, and prayer.",
+        "The respectful move is usually to read the room before you read the ritual. Silence and careful distance matter more than confidence."
+      ],
+      situationCards: [
+        {
+          title: "You enter a hall that looks open to visitors",
+          body: "A hall may still have boundaries around prayer, shoes, and photography even if the doorway is open. Treat open access as an invitation to look carefully, not as total freedom."
+        },
+        {
+          title: "You want to take time in front of an altar or memorial object",
+          body: "Even if no one stops you, these spaces often hold private meaning for worshippers. Giving them quiet space matters more than taking your full viewing time at the center."
+        }
+      ],
+      phraseCards: [
+        {
+          phrase: "ここは入っても大丈夫ですか？",
+          pronunciation: "Koko wa haitte mo daijoubu desu ka?",
+          explanation: "A calm way to ask whether you may enter.",
+          useWhen: "Helpful at interior halls, side buildings, or rope-marked boundaries."
+        },
+        {
+          phrase: "靴はここで脱ぎますか？",
+          pronunciation: "Kutsu wa koko de nugimasu ka?",
+          explanation: "A direct way to confirm shoe removal.",
+          useWhen: "Useful when the entry flow feels subtle and you do not want to step too far."
+        }
+      ],
+      checklist: [
+        "Check shoe, photo, and interior-entry rules before crossing a threshold.",
+        "Keep your voice especially low indoors.",
+        "If people are praying, give them the center of the space."
+      ]
+    },
+    bicycle: {
+      culturalNotes: [
+        "Bicycle etiquette in Japan is often less about bold road behavior and more about not becoming friction for pedestrians, stations, or parking areas.",
+        "Small assumptions, especially around where a bike may be left, cause more trouble than the ride itself."
+      ],
+      situationCards: [
+        {
+          title: "A quiet corner near the station looks fine for parking",
+          body: "In many areas, that is exactly where removal or enforcement happens. The lack of obvious activity does not mean the spot is acceptable."
+        },
+        {
+          title: "You need to pass through a crowded sightseeing street",
+          body: "Even slow riding can feel uncomfortable for pedestrians in tight areas. Getting off and walking for a short stretch often looks more natural."
+        }
+      ],
+      phraseCards: [
+        {
+          phrase: "自転車はどこに停めればいいですか？",
+          pronunciation: "Jitensha wa doko ni tomereba ii desu ka?",
+          explanation: "A clear way to ask where bicycle parking is allowed.",
+          useWhen: "Useful near stations, markets, parks, and sightseeing areas."
+        },
+        {
+          phrase: "この道は自転車で通れますか？",
+          pronunciation: "Kono michi wa jitensha de tooremasu ka?",
+          explanation: "A polite way to ask if riding through is okay.",
+          useWhen: "Helpful when the path feels more pedestrian than road-like."
+        }
+      ],
+      checklist: [
+        "Check parking before you stop, not after.",
+        "Slow down early where pedestrians are dense.",
+        "When the space feels too shared, walking the bike is often the best choice."
+      ]
+    },
     ryokan: {
       culturalNotes: [
         "Ryokan service often feels anticipatory rather than reactive. Staff explain things early because the day runs on shared timing.",
@@ -357,6 +497,146 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
     }
   },
   ja: {
+    onsen: {
+      culturalNotes: [
+        "温泉のマナーは、儀式を完璧にこなすことより、共有の湯船の清潔さと落ち着きを守ることに近いです。",
+        "慣れているように見せることより、しっかり洗って、静かに動くことの方がずっと大切に見られます。"
+      ],
+      situationCards: [
+        {
+          title: "周りが慣れていて、急いで合わせたくなる",
+          body: "見よう見まねで急ぐより、いったん表示を見たり、流れを一度観察したりする方が自然です。温泉は速さより落ち着きの方が合います。"
+        },
+        {
+          title: "洗い場に自分の物が広がっていく",
+          body: "湯船が広くても、洗い場は個人の小さな共有スペースです。そこが散らかると、旅行者が思う以上に目立ちます。"
+        }
+      ],
+      phraseCards: [
+        {
+          phrase: "タオルはどこに置けばいいですか？",
+          pronunciation: "Taoru wa doko ni okeba ii desu ka?",
+          explanation: "タオルの置き方や置き場所を、短く確認できます。",
+          useWhen: "浴場のつくりに少し迷ったとき、自己判断で動きたくない場面に便利です。"
+        },
+        {
+          phrase: "こちらのお風呂を使って大丈夫ですか？",
+          pronunciation: "Kochira no ofuro o tsukatte daijoubu desu ka?",
+          explanation: "このお風呂を使ってよいかを、ていねいに確認できます。",
+          useWhen: "複数の湯船や貸切風呂、制限がありそうな表示があるときに使いやすいです。"
+        }
+      ],
+      checklist: [
+        "タトゥー、撮影、利用時間のルールを先に確認する。",
+        "入る前にしっかり洗い、タオルは湯船に入れない。",
+        "洗い場は次の人がそのまま座れるくらいに整えて出る。"
+      ]
+    },
+    shrine: {
+      culturalNotes: [
+        "神社のマナーは、細かい型そのものより、空気、境界、参拝の流れを壊さないことにあります。",
+        "作法を完璧にこなす必要はなく、急がず、参拝する人の動線をじゃましないことの方が大切です。"
+      ],
+      situationCards: [
+        {
+          title: "本殿の前で良い写真を撮りたくなる",
+          body: "いちばんきれいな場所は、参拝の中心でもあることが多いです。すぐに場所を取るより、少し待って道を空ける方が、その場には自然です。"
+        },
+        {
+          title: "作法をすぐ真似したくなる",
+          body: "急いで合わせるより、一度か二度見てから動く方が、結果として落ち着いて見えます。分からないなら観察するのも十分に自然です。"
+        }
+      ],
+      phraseCards: [
+        {
+          phrase: "写真はここで大丈夫ですか？",
+          pronunciation: "Shashin wa koko de daijoubu desu ka?",
+          explanation: "その場所で写真を撮ってよいかを、自然に確認できます。",
+          useWhen: "参拝エリア、鳥居まわり、手水舎、静かな境内で迷ったときに便利です。"
+        },
+        {
+          phrase: "こちらでお参りしてもいいですか？",
+          pronunciation: "Kochira de omairi shitemo ii desu ka?",
+          explanation: "ここで参拝してよいかを、やわらかく確認する言い方です。",
+          useWhen: "建物が複数あるときや、どこが中心の参拝場所か分かりにくいときに使いやすいです。"
+        }
+      ],
+      checklist: [
+        "カメラを向ける前に撮影ルールを見る。",
+        "参道、手水舎、賽銭箱の前では特に動きをゆるめる。",
+        "迷ったら、まず見て、参拝の流れをふさがない。"
+      ]
+    },
+    temple: {
+      culturalNotes: [
+        "お寺のマナーは、神社よりも屋内や祈りの空気に近く、静けさや距離感がより大きく見られることがあります。",
+        "作法を知っているように振る舞うことより、場の空気を読んで静かに動くことの方が自然です。"
+      ],
+      situationCards: [
+        {
+          title: "開いて見えるお堂にそのまま入る",
+          body: "入口が開いていても、靴、撮影、立ち入り範囲にルールがあることがあります。開いていることと、自由に入ってよいことは同じではありません。"
+        },
+        {
+          title: "仏像や位牌の前でゆっくり見たくなる",
+          body: "観光の対象でもありますが、同時に誰かにとっては祈りや供養の場です。中央を長く占めるより、少し距離を取る方がその場には合います。"
+        }
+      ],
+      phraseCards: [
+        {
+          phrase: "ここは入っても大丈夫ですか？",
+          pronunciation: "Koko wa haitte mo daijoubu desu ka?",
+          explanation: "この場所に入ってよいかを、落ち着いて確認できます。",
+          useWhen: "お堂の中、脇の建物、ロープや段差がある場所で便利です。"
+        },
+        {
+          phrase: "靴はここで脱ぎますか？",
+          pronunciation: "Kutsu wa koko de nugimasu ka?",
+          explanation: "靴を脱ぐ位置を、短く確認できます。",
+          useWhen: "入口の流れが控えめで、踏み込みすぎたくないときに使いやすいです。"
+        }
+      ],
+      checklist: [
+        "敷居をまたぐ前に、靴・撮影・立ち入りのルールを確認する。",
+        "屋内では特に声を小さくする。",
+        "祈っている人がいるときは、その人の前の空間を優先する。"
+      ]
+    },
+    bicycle: {
+      culturalNotes: [
+        "自転車のマナーは、車道をどう走るかよりも、歩行者、駅前、駐輪場所に余計な摩擦を作らないことにあります。",
+        "問題になりやすいのは走っている最中より、どこに停めるか、どこをそのまま進むかという小さな判断です。"
+      ],
+      situationCards: [
+        {
+          title: "駅前の静かな端なら停めてよさそうに見える",
+          body: "人が少なくても、そこが放置自転車の対象エリアであることは珍しくありません。静かに見えることと、停めてよいことは別です。"
+        },
+        {
+          title: "観光地の細い道をそのまま乗って通りたくなる",
+          body: "ゆっくりでも、歩行者が多い場所では自転車があるだけで圧になります。少しだけ降りて押す方が、ずっと自然に見える場面があります。"
+        }
+      ],
+      phraseCards: [
+        {
+          phrase: "自転車はどこに停めればいいですか？",
+          pronunciation: "Jitensha wa doko ni tomereba ii desu ka?",
+          explanation: "駐輪してよい場所を、はっきり確認できます。",
+          useWhen: "駅前、商店街、公園、観光地で停める前に便利です。"
+        },
+        {
+          phrase: "この道は自転車で通れますか？",
+          pronunciation: "Kono michi wa jitensha de tooremasu ka?",
+          explanation: "この道を自転車で進んでよいかを、やわらかく聞けます。",
+          useWhen: "道が歩行者中心に見えて、そのまま乗るか迷うときに使いやすいです。"
+        }
+      ],
+      checklist: [
+        "停めたあとではなく、停める前に駐輪場所を確認する。",
+        "人が増えそうな場所では早めに速度を落とす。",
+        "共有感が強い道では、降りて押す判断を選べるようにする。"
+      ]
+    },
     ryokan: {
       culturalNotes: [
         "旅館は、お願いしてから動くというより、先回りして案内してくれる宿です。最初の説明に一通り入っているのは、その日の流れが全体で決まっていることが多いからです。",
