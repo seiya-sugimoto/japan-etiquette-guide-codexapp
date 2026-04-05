@@ -7,40 +7,60 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
   en: {
     ryokan: {
       culturalNotes: [
-        "Ryokan service often feels anticipatory rather than reactive. Staff may explain everything up front because the day runs on shared timing.",
-        "A room can shift from lounge to dining to sleeping space, so keeping it orderly helps the inn reset the space smoothly."
+        "Ryokan service often feels anticipatory rather than reactive. Staff explain things early because the day runs on shared timing.",
+        "A room may shift from lounge to dining to sleeping space, so leaving it orderly is part of the experience rather than a separate hotel rule."
+      ],
+      situationCards: [
+        {
+          title: "You want to go out right after check-in",
+          body: "If meal time, bath hours, or room access details were just explained, rushing off without checking them can create small problems later. It is usually worth pausing for one careful minute first."
+        },
+        {
+          title: "Staff may enter while you are settling in",
+          body: "In a ryokan, bedding, meal service, or room preparation can involve staff entering more than once. Open luggage, wet towels, and chargers across the floor feel much more disruptive here than in a standard hotel."
+        }
       ],
       phraseCards: [
         {
           phrase: "夕食は何時ですか？",
           pronunciation: "Yuushoku wa nanji desu ka?",
           explanation: "A simple, polite way to confirm dinner time.",
-          useWhen: "Useful if the meal explanation felt fast or you arrived a little tired."
+          useWhen: "Helpful if the meal explanation felt fast or you arrived tired."
         },
         {
           phrase: "こちらで待てばいいですか？",
           pronunciation: "Kochira de mateba ii desu ka?",
-          explanation: "A calm way to ask whether you should stay where you are.",
-          useWhen: "Helpful during check-in, room guidance, or before a meal is prepared."
+          explanation: "A calm way to ask where you should wait.",
+          useWhen: "Useful during check-in, room guidance, or meal preparation."
         }
       ],
       checklist: [
         "Confirm meal, bath, and checkout timing before you fully settle in.",
         "Use the right slippers in the right places, especially near toilets and tatami.",
-        "Keep wet towels, open luggage, and charging cables compact when staff may enter."
+        "Keep wet items, open luggage, and cables compact when staff may enter."
       ]
     },
     "visiting-home": {
       culturalNotes: [
         "Being a good guest is usually more about matching the host's pace than performing formal etiquette.",
-        "Hosts may say \"it's fine\" out of kindness, so a little self-restraint often reads as thoughtful rather than distant."
+        "Hosts may say 'it's fine' out of kindness, so a little restraint often feels more natural than taking every offer literally."
+      ],
+      situationCards: [
+        {
+          title: "You are told to relax and make yourself at home",
+          body: "That usually means you should stop being stiff, not that you should treat the home like a hotel or close friend's apartment. It is still better to move lightly and wait for cues."
+        },
+        {
+          title: "You are unsure whether to help",
+          body: "Doing too much can feel intrusive, but doing nothing at all can feel distant. A small offer once or twice is usually enough; after that, follow the host's answer."
+        }
       ],
       phraseCards: [
         {
           phrase: "何かお手伝いしましょうか？",
           pronunciation: "Nanika otetsudai shimashou ka?",
           explanation: "A gentle offer to help without sounding pushy.",
-          useWhen: "Good when food is being set out, cleared away, or when your host looks busy."
+          useWhen: "Good when food is being set out, cleared away, or your host looks busy."
         },
         {
           phrase: "どこに置けばいいですか？",
@@ -57,8 +77,18 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
     },
     "residential-private": {
       culturalNotes: [
-        "Apartment rules are often about neighbors hearing or seeing things you may not notice as a short-term guest.",
-        "Trash timing in Japan can be precise, so \"close enough\" can still create real trouble for hosts or residents."
+        "Apartment rules are often about neighbors hearing or seeing things that a short-term guest barely notices.",
+        "Trash timing in Japan can be precise, so 'close enough' can still create real trouble for hosts or residents."
+      ],
+      situationCards: [
+        {
+          title: "Late-night arrival feels harmless",
+          body: "Rolling a suitcase, talking outside the building, or checking your phone with speaker audio can be much more noticeable in a quiet residential lane than it feels to you."
+        },
+        {
+          title: "The building layout is confusing",
+          body: "Residents may have separate doors, mail areas, storage spaces, and parking lanes. Entering the wrong area can feel more intrusive in a home building than in a hotel."
+        }
       ],
       phraseCards: [
         {
@@ -85,6 +115,16 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "Hostel dorms in Japan often feel quieter than backpacker hostels in some other countries.",
         "Common areas usually hold the social energy, while the dorm itself is treated more like a shared bedroom."
       ],
+      situationCards: [
+        {
+          title: "You arrive late and only need two minutes",
+          body: "Those two minutes often become ten once bags, chargers, and toiletries come out. In a dorm, preparing first and entering quietly matters more than intention."
+        },
+        {
+          title: "The room feels social, so conversation starts at the bedside",
+          body: "A quick greeting is fine, but once a real conversation starts, moving it to the lounge is usually the more considerate choice."
+        }
+      ],
       phraseCards: [
         {
           phrase: "ここで電話しても大丈夫ですか？",
@@ -107,27 +147,37 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
     },
     "all-you-can-drink": {
       culturalNotes: [
-        "All-you-can-drink plans usually feel relaxed, but they still run on shared timing and a group pace.",
-        "The awkward moments are often not about drinking itself, but about leaving others behind, over-ordering, or missing the final call."
+        "All-you-can-drink plans may feel casual, but they still run on shared timing and a group pace.",
+        "The awkward moments are usually about over-ordering, missing the last order, or moving out of sync with the table rather than about drinking itself."
+      ],
+      situationCards: [
+        {
+          title: "You want one more drink just before time runs out",
+          body: "If the group has already slowed down, pushing one last extra round can feel like it drags the table rhythm out for your sake alone."
+        },
+        {
+          title: "Everyone orders separately at different times",
+          body: "That can confuse the flow and make the table feel disorganized. In many places, ordering in a more shared rhythm feels smoother."
+        }
       ],
       phraseCards: [
         {
           phrase: "ラストオーダーは何時ですか？",
           pronunciation: "Rasuto oodaa wa nanji desu ka?",
           explanation: "A direct way to confirm the last order timing.",
-          useWhen: "Helpful when the group is settling in and you want to pace drinks without rushing later."
+          useWhen: "Helpful when you want to pace the table without rushing later."
         },
         {
           phrase: "次は一緒に頼みますか？",
           pronunciation: "Tsugi wa issho ni tanomimasu ka?",
           explanation: "A soft way to check whether the table wants to order together.",
-          useWhen: "Useful when drinks are low and you do not want to create an uneven flow at the table."
+          useWhen: "Useful when drinks are low and you do not want to create uneven flow."
         }
       ],
       checklist: [
-        "Check the time limit and last order early, not when the staff are already making the rounds.",
-        "Keep pace with the table instead of creating separate mini-orders every few minutes.",
-        "If you stop drinking earlier, let the group rhythm stay easy instead of making it a big moment."
+        "Check the time limit and last order early, not at the final minute.",
+        "Keep pace with the table instead of creating constant mini-orders.",
+        "If you stop drinking earlier, let the group rhythm stay easy."
       ]
     },
     karaoke: {
@@ -135,48 +185,68 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "Karaoke in Japan often feels more like shared turn-taking than a performance contest.",
         "Being fun to share a room with usually matters more than singing well."
       ],
+      situationCards: [
+        {
+          title: "You know the room well, so you keep choosing songs quickly",
+          body: "Even if no one complains, taking the room rhythm too strongly can make quieter people disappear from the flow."
+        },
+        {
+          title: "You want to make the room lively right away",
+          body: "Starting with a song everyone can enjoy together often works better than opening with your most personal or most intense choice."
+        }
+      ],
       phraseCards: [
         {
           phrase: "次どうぞ",
           pronunciation: "Tsugi douzo",
-          explanation: "A very natural way to pass the next turn to someone else.",
+          explanation: "A natural way to pass the next turn to someone else.",
           useWhen: "Useful when you want to keep the room moving without taking too much space."
         },
         {
           phrase: "みんなで歌える曲にしますね",
           pronunciation: "Minna de utaeru kyoku ni shimasu ne",
           explanation: "A friendly way to signal that you are choosing something the room can enjoy together.",
-          useWhen: "Helpful when you want to lower pressure and keep the mood inclusive."
+          useWhen: "Helpful when you want to keep the mood inclusive."
         }
       ],
       checklist: [
-        "Keep your first song easy for the room instead of using the longest or most intense pick right away.",
-        "Pass the next turn naturally and notice if someone has not had a chance yet.",
-        "Use the room controls, tambourines, and food orders without turning the whole room into your personal stage."
+        "Start with a song that suits the room instead of the longest or heaviest pick.",
+        "Pass the next turn naturally and notice if someone has not sung yet.",
+        "Use controls, tambourines, and food orders without turning the room into your personal stage."
       ]
     },
     "live-concert": {
       culturalNotes: [
         "Concert and theater etiquette often centers on protecting the shared concentration of the room.",
-        "What feels strict is usually less about formality and more about preventing one person's movement, light, or voice from breaking the experience for many others."
+        "What feels strict is usually less about formality and more about preventing one person's light, movement, or voice from breaking the experience for many others."
+      ],
+      situationCards: [
+        {
+          title: "You arrive just after the performance starts",
+          body: "Even if your seat is near, entering fast and squeezing through people under your own timing can feel much more disruptive than waiting for staff guidance."
+        },
+        {
+          title: "You are unsure whether a quick photo is okay",
+          body: "In venues where filming rules are strict, 'just one quick shot' often feels like breaking trust rather than bending a small rule."
+        }
       ],
       phraseCards: [
         {
           phrase: "写真は大丈夫ですか？",
           pronunciation: "Shashin wa daijoubu desu ka?",
           explanation: "A quick, polite way to confirm whether photos are okay.",
-          useWhen: "Helpful before the show, during intermission, or whenever the venue rules feel unclear."
+          useWhen: "Helpful before the show, during intermission, or when rules feel unclear."
         },
         {
           phrase: "この席で合っていますか？",
           pronunciation: "Kono seki de atteimasu ka?",
           explanation: "A simple way to confirm that you are in the right seat or area.",
-          useWhen: "Useful when the section layout is crowded or you arrive close to the start time."
+          useWhen: "Useful when the section layout is crowded or you arrive close to start time."
         }
       ],
       checklist: [
         "Check seat, timing, and filming rules before the performance begins.",
-        "Silence your phone completely, including vibration if the room is very quiet.",
+        "Silence your phone completely, including vibration in quiet venues.",
         "If you arrive late, move carefully and follow staff guidance instead of improvising."
       ]
     },
@@ -184,6 +254,16 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
       culturalNotes: [
         "Sports crowds can be loud, but each section often still has an internal rhythm about standing, cheering, and moving.",
         "The most respectful approach is usually to enjoy the energy while matching the people around you instead of forcing your own style onto the section."
+      ],
+      situationCards: [
+        {
+          title: "You are excited and want to stand often",
+          body: "In some blocks that feels natural, but in others it breaks sightlines quickly. Looking around first usually tells you what the section expects."
+        },
+        {
+          title: "Food, drinks, and cheering goods pile up",
+          body: "The mood may be casual, but steps, knees, and under-seat space are still shared. Once your things spread out, the block feels tighter for everyone."
+        }
       ],
       phraseCards: [
         {
@@ -202,7 +282,7 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
       checklist: [
         "Notice early whether your section is seated, standing, quiet, or highly active.",
         "Keep food, bags, and cheering goods inside your own seat space.",
-        "When play restarts, return your focus and body position quickly so you do not block others."
+        "When play restarts, return your focus and body position quickly."
       ]
     },
     "theme-park": {
@@ -210,12 +290,22 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "Theme parks in Japan often feel playful on the surface but highly structured underneath.",
         "The friction usually comes from how people use lines, waiting space, and show-viewing areas rather than from the rides themselves."
       ],
+      situationCards: [
+        {
+          title: "Your group stops in the middle to decide the next move",
+          body: "That can happen naturally, but in a busy park it quickly turns your group into a moving obstacle. Even a few steps to the side changes the whole feeling."
+        },
+        {
+          title: "You think you are holding space for friends",
+          body: "At parades, shows, and queues, claiming more space than the people actually present often feels unfair faster than travelers expect."
+        }
+      ],
       phraseCards: [
         {
           phrase: "ここで待てばいいですか？",
           pronunciation: "Koko de mateba ii desu ka?",
           explanation: "A useful way to confirm whether you are waiting in the right place.",
-          useWhen: "Helpful when queue systems split into standby, timed entry, or return windows."
+          useWhen: "Helpful when systems split into standby, timed entry, or return windows."
         },
         {
           phrase: "今ここで止まっても大丈夫ですか？",
@@ -225,9 +315,44 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         }
       ],
       checklist: [
-        "Confirm whether this is the actual queue or just the entry to the queue.",
+        "Confirm whether this is the actual queue or just the entry to it.",
         "Do not spread the group across the walkway while deciding the next move.",
-        "Treat parade, show, and photo spots as shared viewing space, not claimed territory."
+        "Treat parade, show, and photo spots as shared viewing space."
+      ]
+    },
+    "rental-car": {
+      culturalNotes: [
+        "Rental-car etiquette in Japan is less about style and more about avoiding avoidable friction: parking, narrow roads, fuel rules, and return timing.",
+        "The stressful part is often not the driving itself, but all the small assumptions around pickup, tolls, and where the car may be left."
+      ],
+      situationCards: [
+        {
+          title: "A short stop looks harmless",
+          body: "In many places, 'just a minute' parking can still block a narrow street, store access, or local traffic. Roads that feel quiet may still be tightly managed."
+        },
+        {
+          title: "Return time feels flexible",
+          body: "Rental returns often work on a tighter handover rhythm than travelers expect. Being a little late can affect staff, cleaning, and the next booking."
+        }
+      ],
+      phraseCards: [
+        {
+          phrase: "この近くに駐車しても大丈夫ですか？",
+          pronunciation: "Kono chikaku ni chuusha shitemo daijoubu desu ka?",
+          explanation: "A careful way to ask whether parking nearby is acceptable.",
+          useWhen: "Useful when signs are unclear or the space feels ambiguous."
+        },
+        {
+          phrase: "返却前に給油が必要ですか？",
+          pronunciation: "Henkyaku mae ni kyuuyu ga hitsuyou desu ka?",
+          explanation: "A direct way to confirm the refueling rule before return.",
+          useWhen: "Helpful before the last day, especially if the pickup explanation was rushed."
+        }
+      ],
+      checklist: [
+        "Confirm license validity, toll method, fuel rule, and return time before leaving the lot.",
+        "Treat parking as something to verify clearly, not something to improvise.",
+        "Leave extra time for refueling, navigation, and the final handover."
       ]
     }
   },
@@ -235,14 +360,24 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
     ryokan: {
       culturalNotes: [
         "旅館は、お願いしてから動くというより、先回りして案内してくれる宿です。最初の説明に一通り入っているのは、その日の流れが全体で決まっていることが多いからです。",
-        "和室は、くつろぐ場所、食事の場、寝る場へと役割が切り替わります。部屋を整えておくこと自体が、宿の流れを助ける配慮になります。"
+        "和室は、くつろぐ場、食事の場、寝る場へと役割が切り替わります。部屋を整えておくこと自体が、宿の流れを助ける配慮になります。"
+      ],
+      situationCards: [
+        {
+          title: "到着後すぐ外へ出たくなる",
+          body: "夕食やお風呂の時間、部屋の使い方などを聞き流したまま出てしまうと、あとで小さなズレが重なりやすいです。最初に一度だけ落ち着いて確認するとかなり違います。"
+        },
+        {
+          title: "落ち着いている途中にスタッフが入ることがある",
+          body: "旅館では、布団、食事、部屋の整え直しでスタッフが複数回入ることがあります。荷物を大きく広げたままだと、ホテル以上に気まずくなりやすいです。"
+        }
       ],
       phraseCards: [
         {
           phrase: "夕食は何時ですか？",
           pronunciation: "Yuushoku wa nanji desu ka?",
-          explanation: "夕食の時間をていねいに確認する、短くて使いやすい言い方です。",
-          useWhen: "説明が早く感じたときや、到着後にもう一度確認したいときに役立ちます。"
+          explanation: "夕食の時間を、短くていねいに確認できる言い方です。",
+          useWhen: "説明が早く感じたときや、到着後にもう一度確認したいときに便利です。"
         },
         {
           phrase: "こちらで待てばいいですか？",
@@ -261,6 +396,16 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
       culturalNotes: [
         "家に招かれたときは、完璧な作法よりも、相手のペースに合わせることの方が大切です。",
         "ホストが『大丈夫ですよ』と言ってくれる場面でも、少し遠慮を置くほうが、かえって自然で心地よく見えることがあります。"
+      ],
+      situationCards: [
+        {
+          title: "『くつろいでください』と言われる",
+          body: "それは緊張しすぎなくていいという意味であって、ホテルの部屋のように自由に振る舞ってよいという意味ではないことが多いです。少し軽く構えるくらいがちょうど自然です。"
+        },
+        {
+          title: "手伝うべきか迷う",
+          body: "やりすぎると相手の段取りに入りすぎますが、何もしないと距離があるようにも見えます。まず一度か二度、やわらかく申し出れば十分なことが多いです。"
+        }
       ],
       phraseCards: [
         {
@@ -287,6 +432,16 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "住宅やアパートのルールは、旅行者には気づきにくい音や視線の問題を防ぐために細かくなっていることがあります。",
         "ごみ出しは『だいたい合っている』では足りないことがあり、少しのずれでもホストや住人の負担になりやすいです。"
       ],
+      situationCards: [
+        {
+          title: "夜の到着は少し気をつけるだけで十分だと思う",
+          body: "キャスター音、建物前での会話、スマホの音などは、住宅地では思ったより響きます。自分では短時間でも、住んでいる人には強く残ることがあります。"
+        },
+        {
+          title: "建物のつくりが分かりにくい",
+          body: "住民用の入口、ポスト、ゴミ置き場、駐輪場などが近くに並んでいることがあります。ホテル感覚で歩き回ると、私的な空間に入ってしまいやすいです。"
+        }
+      ],
       phraseCards: [
         {
           phrase: "ごみはどこに出せばいいですか？",
@@ -312,6 +467,16 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "日本のドミトリーは、海外のバックパッカーホステルより静かな空気を大切にしていることがよくあります。",
         "交流の雰囲気はラウンジ側にあり、寝室そのものは『共有の寝室』として扱うほうが自然です。"
       ],
+      situationCards: [
+        {
+          title: "夜遅くに着いて、2分で済むと思う",
+          body: "荷物を開ける、充電する、洗面道具を出す、を始めると意外と長くなります。意図よりも、入る前の準備のほうが大事になりやすい場面です。"
+        },
+        {
+          title: "ベッド横で会話が始まる",
+          body: "軽い挨拶なら自然ですが、会話として続き始めたらラウンジへ移したほうが、部屋全体にはずっとやさしいです。"
+        }
+      ],
       phraseCards: [
         {
           phrase: "ここで電話しても大丈夫ですか？",
@@ -335,7 +500,17 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
     "all-you-can-drink": {
       culturalNotes: [
         "飲み放題は気軽に見えても、実際には時間制とテーブル全体の流れの中で動いています。",
-        "気まずくなりやすいのは、お酒を飲むこと自体よりも、注文のばらつきやラストオーダーの見落とし、周りとの温度差です."
+        "気まずくなりやすいのは、お酒を飲むこと自体よりも、注文のばらつきやラストオーダーの見落とし、周りとの温度差です。"
+      ],
+      situationCards: [
+        {
+          title: "終わり際にもう一杯いきたくなる",
+          body: "テーブル全体が落ち着いているところで自分だけ最後の一杯を強く回すと、場の流れを自分の都合で引っぱる感じになりやすいです。"
+        },
+        {
+          title: "みんなが別々のタイミングで注文する",
+          body: "一人ひとりが細かく動くと、注文の流れが散ってテーブルが落ち着かなくなります。飲み放題では、少しまとめるほうが自然なことが多いです。"
+        }
       ],
       phraseCards: [
         {
@@ -362,6 +537,16 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "日本のカラオケは、歌のうまさを競う場というより、順番を回しながら部屋全体で楽しむ空気に近いことが多いです。",
         "うまく歌うことよりも、一緒にいて気楽な人でいることのほうが、場の印象を大きく左右します。"
       ],
+      situationCards: [
+        {
+          title: "選曲が早いので、どんどん自分で入れてしまう",
+          body: "誰も何も言わなくても、流れを一人で握る形になると、静かな人が入りにくくなります。上手い下手より、この偏りの方が空気に残りやすいです。"
+        },
+        {
+          title: "最初から一気に盛り上げたい",
+          body: "自分の一番好きな重い曲や長い曲より、みんなが入りやすい一曲から始める方が、部屋全体では成功しやすいです。"
+        }
+      ],
       phraseCards: [
         {
           phrase: "次どうぞ",
@@ -386,6 +571,16 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
       culturalNotes: [
         "ライブや劇場では、その場にいる全員の集中を守ることが、いちばん大きなマナーになりやすいです。",
         "厳しめに感じるルールも、形式のためというより、一人の光や音や動きで多くの人の体験が切れてしまうのを防ぐためと考えると分かりやすいです。"
+      ],
+      situationCards: [
+        {
+          title: "開演後に少し遅れて入る",
+          body: "自分では席が近いと思っていても、自己判断で急いで入ると、人を立たせたり視界を切ったりしやすいです。こういう場面ではスタッフの案内に乗る方が自然です。"
+        },
+        {
+          title: "『一枚だけなら』と写真を撮りたくなる",
+          body: "撮影ルールが厳しい会場では、『少しくらい』が信頼を壊す行動に見えやすいです。写真の一枚そのものより、その判断の軽さが目立ちます。"
+        }
       ],
       phraseCards: [
         {
@@ -412,6 +607,16 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "スポーツ観戦はにぎやかでも、席のブロックごとに立つタイミングや応援の熱量にリズムがあることが多いです。",
         "自分の楽しみ方を押し出すより、周りの人の応援のしかたに自然に合わせるほうが、その場では気持ちよく見えます。"
       ],
+      situationCards: [
+        {
+          title: "盛り上がって何度も立ちたくなる",
+          body: "そのブロックでは自然でも、別のブロックでは視界をふさぎやすいです。少し見回すだけで、その席の空気はかなり読みやすくなります。"
+        },
+        {
+          title: "飲み物や応援グッズが足元に増えていく",
+          body: "カジュアルに見えても、足元、ひざまわり、通路は共有です。荷物が少し広がるだけで、隣の人には急に窮屈になります。"
+        }
+      ],
       phraseCards: [
         {
           phrase: "ここは立って応援する感じですか？",
@@ -437,6 +642,16 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "テーマパークは楽しい空気が前面にありますが、実際には列、待機場所、鑑賞エリアがかなり細かく設計されています。",
         "気まずくなりやすいのはアトラクションそのものより、待つ場所、立ち止まる場所、場所取りのしかたです。"
       ],
+      situationCards: [
+        {
+          title: "次を決めるために通路の真ん中で止まる",
+          body: "本人たちには自然でも、混んでいる園内では一瞬で『動く障害物』になります。数歩だけ横へ寄るだけで、空気はかなり変わります。"
+        },
+        {
+          title: "仲間のぶんまで場所を取っておく",
+          body: "パレードやショー、列では、実際にその場にいる人数以上のスペースを確保すると、不公平さがすぐに目立ちます。"
+        }
+      ],
       phraseCards: [
         {
           phrase: "ここで待てばいいですか？",
@@ -455,6 +670,41 @@ export const premiumDeepDiveByLanguage: Partial<Record<AppLanguage, PremiumDeepD
         "今いる場所が『列そのもの』なのか、『列の入口』なのかをまず確認する。",
         "次を決めるあいだ、グループで通路いっぱいに広がらない。",
         "パレードやショーの場所は、自分たちの専有スペースではなく共有の観覧エリアとして扱う。"
+      ]
+    },
+    "rental-car": {
+      culturalNotes: [
+        "レンタカーのマナーは、見た目の礼儀よりも、駐車、細い道、給油、返却時刻などの小さな思い込みを減らすことにあります。",
+        "難しくなりやすいのは運転そのものより、受け取り後の判断や『少しだけなら大丈夫』という感覚のほうです。"
+      ],
+      situationCards: [
+        {
+          title: "短時間ならここに停めてよさそうに見える",
+          body: "少しの駐車でも、細い道や店舗前では十分に邪魔になります。静かな道でも、生活動線として厳しく見られることがあります。"
+        },
+        {
+          title: "返却時間は少し遅れても大丈夫そうに感じる",
+          body: "返却は清掃や次の予約とつながっていることが多く、数分の遅れでもスタッフ側の流れには響きやすいです。"
+        }
+      ],
+      phraseCards: [
+        {
+          phrase: "この近くに駐車しても大丈夫ですか？",
+          pronunciation: "Kono chikaku ni chuusha shitemo daijoubu desu ka?",
+          explanation: "近くに停めてよいかを、慎重に確認する言い方です。",
+          useWhen: "標識が分かりにくいときや、停めてよいか微妙な場所で役立ちます。"
+        },
+        {
+          phrase: "返却前に給油が必要ですか？",
+          pronunciation: "Henkyaku mae ni kyuuyu ga hitsuyou desu ka?",
+          explanation: "返却前の給油ルールを、短く確認できます。",
+          useWhen: "出発前や最終日の前に、説明をもう一度はっきりさせたいときに便利です。"
+        }
+      ],
+      checklist: [
+        "免許条件、ETC、給油ルール、返却時間を出発前に確認する。",
+        "駐車は自己判断で済ませず、はっきり確認できる場所を使う。",
+        "給油、移動、返却手続きまで見込んで、最後は余裕を持って動く。"
       ]
     }
   }

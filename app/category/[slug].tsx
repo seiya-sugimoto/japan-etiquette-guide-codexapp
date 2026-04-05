@@ -242,6 +242,24 @@ export default function CategoryDetailScreen() {
             </View>
           ) : null}
 
+          {premiumDeepDive.situationCards.length > 0 ? (
+            <View style={styles.deepDiveSection}>
+              <AppText style={styles.deepDiveHeading} variant="subtitle">
+                {premiumDeepDiveCopy.situationsHeading}
+              </AppText>
+              <View style={styles.situationList}>
+                {premiumDeepDive.situationCards.map((item) => (
+                  <View key={`deep-situation-${item.title}`} style={styles.situationCard}>
+                    <AppText style={styles.situationTitle} variant="subtitle">
+                      {item.title}
+                    </AppText>
+                    <AppText style={styles.bulletText}>{item.body}</AppText>
+                  </View>
+                ))}
+              </View>
+            </View>
+          ) : null}
+
           {premiumDeepDive.phraseCards.length > 0 ? (
             <View style={styles.deepDiveSection}>
               <AppText style={styles.deepDiveHeading} variant="subtitle">
@@ -514,6 +532,9 @@ const styles = StyleSheet.create({
   phraseList: {
     gap: spacing.sm
   },
+  situationList: {
+    gap: spacing.sm
+  },
   phraseCard: {
     gap: spacing.xs,
     padding: spacing.md,
@@ -521,7 +542,16 @@ const styles = StyleSheet.create({
     backgroundColor: colors.surface,
     ...shadows.card
   },
+  situationCard: {
+    gap: spacing.xs,
+    padding: spacing.md,
+    borderRadius: 22,
+    backgroundColor: "#F9F4F2"
+  },
   phraseText: {
+    color: colors.primary
+  },
+  situationTitle: {
     color: colors.primary
   },
   phrasePronunciation: {

@@ -79,8 +79,14 @@ export type PremiumPhraseCard = {
   useWhen: string;
 };
 
+export type PremiumSituationCard = {
+  title: string;
+  body: string;
+};
+
 export type PremiumDeepDive = {
   culturalNotes: string[];
+  situationCards: PremiumSituationCard[];
   phraseCards: PremiumPhraseCard[];
   checklist: string[];
 };
