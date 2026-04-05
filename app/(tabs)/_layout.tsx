@@ -62,6 +62,16 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="premium"
+        options={{
+          title: t.settingsTitlePremium,
+          headerShown: false,
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons color={color} name={focused ? "diamond" : "diamond-outline"} size={22} />
+          )
+        }}
+      />
+      <Tabs.Screen
         name="settings"
         options={{
           title: t.settingsTab,

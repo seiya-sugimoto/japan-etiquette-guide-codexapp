@@ -17,14 +17,13 @@ import { getPremiumPreviewCopy } from "@/lib/i18n/marketing-copy";
 import { getPremiumMockCopy } from "@/lib/i18n/premium-mock-copy";
 import { getPremiumPackCopy } from "@/lib/i18n/premium-pack-copy";
 import { getPremiumTierCopy } from "@/lib/i18n/premium-tier-copy";
-import { radius } from "@/lib/constants/radius";
 import { shadows } from "@/lib/constants/shadows";
 import { spacing } from "@/lib/constants/spacing";
 
 const topImage =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuBMsadtsc5m3U9lICnRQz74t0IxnNVuwQmoIeiWlJSE74n-5_u97px9jqFQcj000D_WFogrUQGVtEIkXEeUuxmVy8JTzu81m40lLWlcQJu8OJIPfr91zlgWcN41yvB1gq7t7BCROuSIRmQUMliU2a5dqIOeEyN2SvqOZ4_T-2EFeoUYvto66LkBunKeN67SZnuYBCxpOy8c6k9-dg7ytd4PYvai-dMIhzPJUgMbKpEeNFWtzEl8t8Kyt6roGsL4o6L4A4QjxhxtHXU";
 
-export default function PremiumScreen() {
+export default function PremiumTabScreen() {
   const router = useRouter();
   const { currentLanguage, supportedLanguages, t } = useAppLanguage();
   const categories = useCategories();
@@ -70,16 +69,6 @@ export default function PremiumScreen() {
 
   return (
     <AppScreen>
-      <View style={styles.header}>
-        <Pressable onPress={() => router.back()} style={({ pressed }) => [styles.headerButton, pressed && styles.headerButtonPressed]}>
-          <Ionicons color={colors.primary} name="close" size={20} />
-        </Pressable>
-        <AppText style={styles.headerTitle} variant="caption">
-          Premium Preview
-        </AppText>
-        <View style={styles.headerSpacer} />
-      </View>
-
       <View style={styles.heroSection}>
         <Image source={{ uri: topImage }} style={styles.heroThumb} />
         <View style={styles.heroCopy}>
@@ -352,27 +341,6 @@ export default function PremiumScreen() {
 }
 
 const styles = StyleSheet.create({
-  header: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between"
-  },
-  headerButton: {
-    width: 40,
-    height: 40,
-    borderRadius: radius.pill,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  headerButtonPressed: {
-    opacity: 0.72
-  },
-  headerTitle: {
-    color: colors.primary
-  },
-  headerSpacer: {
-    width: 40
-  },
   heroSection: {
     alignItems: "center",
     gap: spacing.lg

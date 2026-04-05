@@ -20,7 +20,6 @@ export default function RootLayout() {
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="category/[slug]" options={{ headerShown: false }} />
           <Stack.Screen name="language/index" options={{ title: "Language" }} />
-          <Stack.Screen name="premium/index" options={{ headerShown: false }} />
           <Stack.Screen name="feedback/index" options={{ title: "Feedback" }} />
         </Stack>
       </PremiumProvider>

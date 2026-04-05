@@ -1,6 +1,6 @@
 import { Link } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
+import { Image, ImageBackground, Pressable, StyleSheet, View } from "react-native";
 
 import { AppScreen } from "@/components/ui/AppScreen";
 import { AppText } from "@/components/ui/AppText";
@@ -13,13 +13,6 @@ import { spacing } from "@/lib/constants/spacing";
 
 const heroSlug = "photo-video";
 const featuredGridSlugs = ["restaurant", "train", "shrine", "onsen"] as const;
-
-const categoryIcons: Record<string, keyof typeof Ionicons.glyphMap> = {
-  restaurant: "restaurant-outline",
-  train: "train-outline",
-  shrine: "business-outline",
-  onsen: "water-outline"
-};
 
 export default function HomeScreen() {
   const { currentLanguage, getLanguageLabel, t } = useAppLanguage();
@@ -126,19 +119,15 @@ export default function HomeScreen() {
         {featuredCards.map((category) => (
           <Link asChild href={`/category/${category.slug}`} key={category.id}>
             <Pressable style={({ pressed }) => [styles.categoryCard, pressed && styles.pressedCard]}>
-              <View style={styles.iconCircle}>
-                <Ionicons
-                  color={colors.primary}
-                  name={categoryIcons[category.slug] ?? "ellipse-outline"}
-                  size={20}
-                />
+              <Image source={{ uri: category.imageUrl }} style={styles.categoryImage} />
+              <View style={styles.categoryCopy}>
+                <AppText style={styles.categoryTitle} variant="subtitle">
+                  {category.title}
+                </AppText>
+                <AppText color={colors.textMuted} numberOfLines={2} style={styles.categoryDescription}>
+                  {category.shortDescription}
+                </AppText>
               </View>
-              <AppText style={styles.categoryTitle} variant="subtitle">
-                {category.title}
-              </AppText>
-              <AppText color={colors.textMuted} numberOfLines={2} style={styles.categoryDescription}>
-                {category.shortDescription}
-              </AppText>
             </Pressable>
           </Link>
         ))}
@@ -287,27 +276,28 @@ const styles = StyleSheet.create({
   },
   categoryCard: {
     width: "47.5%",
-    minHeight: 180,
     borderRadius: 30,
     backgroundColor: colors.surface,
-    padding: spacing.md,
-    justifyContent: "space-between",
+    padding: spacing.sm,
+    gap: spacing.sm,
     ...shadows.card
   },
-  iconCircle: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.surfaceMuted
+  categoryImage: {
+    width: "100%",
+    height: 112,
+    borderRadius: 22
+  },
+  categoryCopy: {
+    paddingHorizontal: spacing.xs,
+    paddingBottom: spacing.xs,
+    gap: spacing.xs
   },
   categoryTitle: {
     color: colors.primary
   },
   categoryDescription: {
-    marginTop: spacing.xs,
-    minHeight: 42
+    minHeight: 42,
+    lineHeight: 21
   },
   premiumBanner: {
     backgroundColor: colors.primary,
