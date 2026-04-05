@@ -135,5 +135,5 @@ export const premiumMockCopy: Record<AppLanguage, PremiumMockCopy> = {
 };
 
 export function getPremiumMockCopy(language: AppLanguage) {
-  return premiumMockCopy[language];
+  return premiumMockCopy[language] ?? premiumMockCopy.en;
 }

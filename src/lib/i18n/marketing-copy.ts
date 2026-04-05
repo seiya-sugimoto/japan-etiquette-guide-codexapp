@@ -528,9 +528,9 @@ const feedbackScreenCopy: Record<AppLanguage, FeedbackCopy> = {
 };
 
 export function getPremiumPreviewCopy(language: AppLanguage) {
-  return premiumPreviewCopy[language];
+  return premiumPreviewCopy[language] ?? premiumPreviewCopy.en;
 }
 
 export function getFeedbackScreenCopy(language: AppLanguage) {
-  return feedbackScreenCopy[language];
+  return feedbackScreenCopy[language] ?? feedbackScreenCopy.en;
 }

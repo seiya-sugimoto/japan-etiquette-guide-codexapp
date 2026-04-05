@@ -224,5 +224,5 @@ const premiumPackCopy: Record<AppLanguage, PremiumPackCopy> = {
 };
 
 export function getPremiumPackCopy(language: AppLanguage) {
-  return premiumPackCopy[language];
+  return premiumPackCopy[language] ?? premiumPackCopy.en;
 }

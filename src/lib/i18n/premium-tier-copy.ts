@@ -160,5 +160,5 @@ const premiumTierCopy: Record<AppLanguage, PremiumTierCopy> = {
 };
 
 export function getPremiumTierCopy(language: AppLanguage) {
-  return premiumTierCopy[language];
+  return premiumTierCopy[language] ?? premiumTierCopy.en;
 }

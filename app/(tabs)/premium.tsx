@@ -34,6 +34,7 @@ export default function PremiumTabScreen() {
   const packCopy = getPremiumPackCopy(currentLanguage);
   const packBenefitsCopy = getPremiumPackBenefitsCopy(currentLanguage);
   const tierCopy = getPremiumTierCopy(currentLanguage);
+  const englishPackCopy = getPremiumPackCopy("en");
 
   const previewCandidates = useMemo(
     () => categories.filter((category) => category.premiumTier === "preview"),
@@ -54,8 +55,8 @@ export default function PremiumTabScreen() {
 
         return {
           id: pack.id,
-          title: packCopy.packs[pack.id].title,
-          body: packCopy.packs[pack.id].body,
+          title: packCopy.packs[pack.id]?.title ?? englishPackCopy.packs[pack.id].title,
+          body: packCopy.packs[pack.id]?.body ?? englishPackCopy.packs[pack.id].body,
           highlights: packBenefitsCopy.packs[pack.id].highlights,
           deepDiveCount: scenes.filter((scene) => Boolean(scene.content.premiumDeepDive)).length,
           phraseCount: scenes.reduce((total, scene) => total + (scene.content.premiumDeepDive?.phraseCards.length ?? 0), 0),
@@ -63,7 +64,7 @@ export default function PremiumTabScreen() {
           scenes
         };
       }),
-    [categories, packBenefitsCopy, packCopy]
+    [categories, englishPackCopy, packBenefitsCopy, packCopy]
   );
 
   const effectiveUnlocked = isReady && isPremiumUnlocked;
