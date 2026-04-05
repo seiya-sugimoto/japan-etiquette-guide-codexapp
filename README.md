@@ -1,123 +1,71 @@
 # Japan Etiquette Guide
 
-Japan Etiquette Guide は、訪日外国人向けのモバイルアプリです。
+Japan Etiquette Guide is an Expo-based mobile app for first-time visitors to Japan.
 
-観光ガイドではなく、日本での振る舞い、マナー、暗黙ルールを短時間で分かりやすく伝えることを目的にしています。旅行者が日常の場面で不安を減らし、日本人と外国人が相互に気持ちよく過ごせる共有空間を支えるためのアプリです。
+It is not a sightseeing guide. It is a practical etiquette and behavior guide that helps users understand what usually feels respectful in Japan, avoid common mistakes, and move through everyday situations with less stress.
 
-## コンセプト
-
-訪日外国人が困るのは、興味や敬意が足りないからとは限りません。日本の社会的な期待や振る舞いは、静かで文脈依存なものが多く、短い旅行の中では気づきにくいことがあります。
-
-このアプリは、そうした不安や戸惑いを減らすために作っています。
-
-目指している体験は次のとおりです。
-
-- 3〜10秒で要点がつかめる
-- よくある誤解を減らせる
-- 旅行中に落ち着いて行動できる
-- 絶対ルールと、地域差や場面差のある「無難な行動」の違いが分かる
-
-文言と体験のトーンは、常に次を重視しています。
+The product tone is:
 
 - practical
 - calm
 - non-judgmental
-- culturally natural
-- mobile で読みやすいこと
+- easy to scan on mobile
 
-## 想定ユーザー
+The goal is not to teach users how to "avoid annoying Japanese people". The goal is to help things go smoothly and give helpful cultural context without sounding strict or moralizing.
 
-- 初めて、または2回目くらいの訪日旅行者
-- 日本語があまり読めない旅行者
-- 実際の場面で役立つマナーを知りたい人
-- 「怒られないため」ではなく、相互に気持ちよく過ごしたい人
+## Current Status
 
-## 現在のアプリ構成
+- Built with Expo, React Native, and TypeScript
+- Uses `expo-router` for app navigation
+- iOS-first layout and interaction direction
+- Supports 9 UI languages
+- Covers 69 etiquette scenes
+- All 69 scenes now have detailed content in all 9 supported languages
+- Includes `Home`, `Browse`, `Search`, `Category Detail`, `Premium`, and `Settings`
+- `Premium` UI exists, but real purchase flow is not implemented yet
 
-現在の MVP では主に次を含みます。
+## Supported Languages
 
-- Home
-- Browse
-- Search
-- Settings
-- カテゴリ詳細画面
-- 言語切り替え
-- Premium 導線の土台
-- 非英語向けの軽量なローカライズ構造
+- English
+- Japanese
+- Korean
+- Traditional Chinese
+- Simplified Chinese
+- Thai
+- French
+- Spanish
+- Vietnamese
 
-## 現在のガイドカテゴリ
+## Content Coverage
 
-現在収録している主なカテゴリは次のとおりです。
+The app currently includes:
 
-- 電車
-- レストラン
-- 神社
-- 温泉
-- 寺院
-- 旅館
-- 靴を脱ぐ
-- ゴミ・公共マナー
-- 支払い・チップ
-- 箸
-- 家を訪問するとき
-- コンビニ
-- 列・エスカレーター
-- 写真・動画撮影
-- 喫煙
-- 大きな荷物・スーツケース
-- 住宅街・私有地・民泊
-- トイレ
-- 自転車・レンタサイクル
+- 19 original scenes
+- 50 additional scenes
+- 69 total scenes
 
-## デザイン方針
+Main scenario groups include:
 
-UI は、旅行中でも一瞬で読める落ち着いた体験を目指しています。
+- trains, buses, taxis, and airport transfers
+- restaurants, cafes, izakaya, bars, and food courts
+- shrines, temples, onsen, and ryokan
+- hotels, lounges, coin laundry, capsule hotels, and hostels
+- supermarkets, drugstores, department stores, and duty-free shops
+- museums, festivals, observatories, theme parks, and scenic spots
+- toilets, trash, photos, smoking, luggage, bicycles, and residential areas
 
-- やわらかいオフホワイト系の背景
-- 深い藍色を基調にした配色
-- 控えめな朱色アクセント
-- 余白をしっかり取ったカードベースの構成
-- 片手でも使いやすいモバイル体験
+## App Structure
 
-日本らしさは出しつつも、ありがちな観光アプリ風や派手すぎる見た目にはしない方針です。
+The current MVP is mainly organized around these screens:
 
-## 技術構成
+- `Home`
+- `Browse`
+- `Search`
+- `Category Detail`
+- `Premium`
+- `Settings`
 
-- Expo
-- React Native
-- TypeScript
-- expo-router
-- AsyncStorage
-
-## 多言語対応
-
-UI 言語として現在サポート対象にしているのは次です。
-
-- 英語
-- 日本語
-- 韓国語
-- 繁体字中国語
-- 簡体字中国語
-- タイ語
-- フランス語
-- スペイン語
-- ベトナム語
-
-現時点では英語を中心にコンテンツを持ちつつ、他言語は UI ローカライズと軽量なフォールバック構造で支えています。今後、カテゴリ本文の本格翻訳を追加できる前提で設計しています。
-
-## Premium 構造
-
-将来的な one-time unlock を見据えて、Premium 用の構造を先に入れています。
-
-現状は主に次の土台です。
-
-- free / premium カテゴリ分離
-- premium バッジや導線
-- 将来の課金接続ポイント
-
-## ディレクトリ構成
-
-ルート層は薄く保ち、主要ロジックは `src/` に寄せています。
+Main routing and app logic are split across `app/` and `src/`.
 
 ```text
 app/
@@ -130,46 +78,83 @@ app/
 src/
   components/
   data/
-  features/
   lib/
   types/
 ```
 
-## ローカル起動方法
+## Design Direction
+
+The UI is intentionally calm and editorial rather than loud or touristy.
+
+- warm neutral background
+- deep red primary accents
+- rounded cards and buttons
+- spacing and tonal surfaces instead of thin dividers
+- practical first, decorative second
+
+## Tech Stack
+
+- Expo
+- React Native
+- TypeScript
+- expo-router
+- Async Storage
+- expo-localization
+
+## Getting Started
+
+### Install
 
 ```bash
 npm install
+```
+
+### Start
+
+```bash
 npm start
 ```
 
-型チェック:
+For iPhone testing with Expo Go, LAN mode is the most reliable:
+
+```bash
+npx expo start --lan -c
+```
+
+On Windows, this form is also useful:
+
+```powershell
+cmd /c npx.cmd expo start --lan -c
+```
+
+### Type Check
 
 ```bash
 npx tsc --noEmit
 ```
 
-## 現在の開発状況
+## Implemented
 
-このリポジトリは MVP 開発中です。
+- 9-language UI switching
+- 69 detailed etiquette scenes
+- browsing, search, and category detail views
+- editorial-style home screen
+- premium placeholder screen
+- Expo Go testing flow
 
-ここまでの主な実装内容は次のとおりです。
+## Remaining Work
 
-- Expo アプリの土台構築
-- カテゴリベースのコンテンツモデル
-- 旅行中に使いやすい UI への調整
-- 多言語設定と UI ローカライズ
-- 「知らないと困りやすい」シーンの追加
-- 説教的になりすぎないコンテンツ文言への見直し
+The biggest remaining tasks are:
 
-## プロダクト原則
+- final QA across all screens and all languages
+- small copy and line-wrap adjustments for longer languages
+- adding screenshots to this README
+- refining how Premium is presented
+- adding minimal automated tests if needed
 
-このアプリは、外国人をジャッジするためのものではありません。
+## Notes
 
-訪日外国人が日本で自然にふるまいやすくなり、不安を減らし、共有空間での快適さを高めることを目的としています。
-
-今後コンテンツや機能を追加するときも、次を優先します。
-
-- 完全性より分かりやすさ
-- 指摘よりガイド
-- 雑学より旅行中の実用性
-- 一般化しすぎない地域差・場面差への配慮
+- There is no backend, CMS, auth, or database
+- Real in-app purchase handling is not implemented yet
+- Content quality and mobile readability have been prioritized over feature breadth
+- The project is now in a late MVP polish phase
