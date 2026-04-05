@@ -41,6 +41,7 @@ export default function LanguageScreen() {
             onPress={() => {
               void setLanguage(language.code);
             }}
+            style={({ pressed }) => pressed && styles.pressedRow}
           >
             <AppCard style={[styles.languageRow, selected ? styles.languageRowSelected : null]}>
               <View style={styles.languageCopy}>
@@ -98,5 +99,8 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     borderRadius: radius.pill,
     backgroundColor: "#F6EDEB"
+  },
+  pressedRow: {
+    opacity: 0.86
   }
 });

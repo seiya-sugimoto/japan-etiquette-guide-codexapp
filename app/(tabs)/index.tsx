@@ -1,4 +1,4 @@
-import { Link, useRouter } from "expo-router";
+import { Link } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { ImageBackground, Pressable, StyleSheet, View } from "react-native";
 
@@ -22,7 +22,6 @@ const categoryIcons: Record<string, keyof typeof Ionicons.glyphMap> = {
 };
 
 export default function HomeScreen() {
-  const router = useRouter();
   const { currentLanguage, getLanguageLabel, t } = useAppLanguage();
   const categories = useCategories();
 
@@ -45,7 +44,7 @@ export default function HomeScreen() {
 
         <View style={styles.topActions}>
           <Link asChild href="/language">
-            <Pressable style={styles.languageChip}>
+            <Pressable style={({ pressed }) => [styles.languageChip, pressed && styles.pressedChip]}>
               <Ionicons color={colors.primary} name="language" size={16} />
               <AppText color={colors.primary} variant="caption">
                 {getLanguageLabel(currentLanguage)}
@@ -54,7 +53,7 @@ export default function HomeScreen() {
           </Link>
 
           <Link asChild href="/(tabs)/settings">
-            <Pressable style={styles.iconButton}>
+            <Pressable style={({ pressed }) => [styles.iconButton, pressed && styles.pressedChip]}>
               <Ionicons color={colors.primary} name="settings-outline" size={18} />
             </Pressable>
           </Link>
@@ -71,7 +70,7 @@ export default function HomeScreen() {
       </View>
 
       <Link asChild href="/(tabs)/search">
-        <Pressable style={styles.searchEntry}>
+        <Pressable style={({ pressed }) => [styles.searchEntry, pressed && styles.pressedEntry]}>
           <Ionicons color={colors.textMuted} name="search" size={18} />
           <AppText color={colors.textMuted}>{t.searchPlaceholder}</AppText>
         </Pressable>
@@ -79,7 +78,7 @@ export default function HomeScreen() {
 
       {hero ? (
         <Link asChild href={`/category/${hero.slug}`}>
-          <Pressable style={styles.heroCard}>
+          <Pressable style={({ pressed }) => [styles.heroCard, pressed && styles.pressedCard]}>
             <ImageBackground imageStyle={styles.heroImage} source={{ uri: hero.imageUrl }} style={styles.heroImage}>
               <View style={styles.heroOverlay} />
               <View style={styles.heroContent}>
@@ -114,17 +113,19 @@ export default function HomeScreen() {
         <AppText style={styles.sectionTitle} variant="subtitle">
           {t.browseTitle}
         </AppText>
-        <Pressable onPress={() => router.push("/browse")}>
-          <AppText color={colors.primary} variant="caption">
-            {t.seeAll}
-          </AppText>
-        </Pressable>
+        <Link asChild href="/browse">
+          <Pressable style={({ pressed }) => pressed && styles.pressedInline}>
+            <AppText color={colors.primary} variant="caption">
+              {t.seeAll}
+            </AppText>
+          </Pressable>
+        </Link>
       </View>
 
       <View style={styles.cardGrid}>
         {featuredCards.map((category) => (
           <Link asChild href={`/category/${category.slug}`} key={category.id}>
-            <Pressable style={styles.categoryCard}>
+            <Pressable style={({ pressed }) => [styles.categoryCard, pressed && styles.pressedCard]}>
               <View style={styles.iconCircle}>
                 <Ionicons
                   color={colors.primary}
@@ -154,11 +155,13 @@ export default function HomeScreen() {
           <AppText color="rgba(255,255,255,0.82)">{t.unlockBody}</AppText>
         </View>
 
-        <Pressable onPress={() => router.push("/premium")} style={styles.premiumAction}>
-          <AppText color={colors.primary} variant="caption">
-            {t.goPremium}
-          </AppText>
-        </Pressable>
+        <Link asChild href="/premium">
+          <Pressable style={({ pressed }) => [styles.premiumAction, pressed && styles.pressedCard]}>
+            <AppText color={colors.primary} variant="caption">
+              {t.goPremium}
+            </AppText>
+          </Pressable>
+        </Link>
       </View>
     </AppScreen>
   );
@@ -328,5 +331,17 @@ const styles = StyleSheet.create({
     borderRadius: radius.pill,
     paddingHorizontal: spacing.lg,
     paddingVertical: 14
+  },
+  pressedChip: {
+    opacity: 0.84
+  },
+  pressedEntry: {
+    opacity: 0.9
+  },
+  pressedCard: {
+    opacity: 0.88
+  },
+  pressedInline: {
+    opacity: 0.72
   }
 });

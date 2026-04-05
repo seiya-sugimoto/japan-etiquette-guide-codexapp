@@ -14,7 +14,14 @@ type AppButtonProps = {
 
 export function AppButton({ label, onPress, tone = "primary" }: AppButtonProps) {
   return (
-    <Pressable onPress={onPress} style={[styles.button, tone === "primary" ? styles.primary : styles.secondary]}>
+    <Pressable
+      onPress={onPress}
+      style={({ pressed }) => [
+        styles.button,
+        tone === "primary" ? styles.primary : styles.secondary,
+        pressed && styles.pressed
+      ]}
+    >
       <AppText style={styles.label} variant="caption" color={tone === "primary" ? colors.surface : colors.primary}>
         {label}
       </AppText>
@@ -34,6 +41,9 @@ const styles = StyleSheet.create({
   },
   label: {
     textTransform: "none"
+  },
+  pressed: {
+    opacity: 0.86
   },
   primary: {
     backgroundColor: colors.primary,

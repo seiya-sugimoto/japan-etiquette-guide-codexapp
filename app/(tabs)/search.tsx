@@ -47,7 +47,7 @@ export default function SearchScreen() {
                 setQuery(topic.label);
                 router.push(`/category/${topic.slug}`);
               }}
-              style={styles.chip}
+              style={({ pressed }) => [styles.chip, pressed && styles.pressedChip]}
             >
               <AppText style={styles.chipLabel}>{topic.label}</AppText>
             </Pressable>
@@ -67,7 +67,7 @@ export default function SearchScreen() {
           <AppText color={colors.primary} style={styles.eyebrow} variant="eyebrow">
             {t.recentSearches}
           </AppText>
-          <Pressable onPress={() => setRecentItems([])}>
+          <Pressable onPress={() => setRecentItems([])} style={({ pressed }) => pressed && styles.pressedInline}>
             <AppText color={colors.textMuted} variant="caption">
               {t.clearAll}
             </AppText>
@@ -79,10 +79,13 @@ export default function SearchScreen() {
             <View style={styles.recentIcon}>
               <Ionicons color={colors.textMuted} name="time-outline" size={16} />
             </View>
-            <Pressable onPress={() => setQuery(topic)} style={styles.recentTextWrap}>
+            <Pressable onPress={() => setQuery(topic)} style={({ pressed }) => [styles.recentTextWrap, pressed && styles.pressedInline]}>
               <AppText style={styles.recentText}>{topic}</AppText>
             </Pressable>
-            <Pressable onPress={() => setRecentItems((items) => items.filter((item) => item !== topic))}>
+            <Pressable
+              onPress={() => setRecentItems((items) => items.filter((item) => item !== topic))}
+              style={({ pressed }) => pressed && styles.pressedInline}
+            >
               <Ionicons color={colors.textMuted} name="close" size={16} />
             </Pressable>
           </View>
@@ -116,6 +119,9 @@ const styles = StyleSheet.create({
     backgroundColor: colors.surface,
     borderRadius: radius.pill
   },
+  pressedChip: {
+    opacity: 0.84
+  },
   chipLabel: {
     color: colors.textSubtle
   },
@@ -147,5 +153,8 @@ const styles = StyleSheet.create({
   },
   recentText: {
     color: colors.textSubtle
+  },
+  pressedInline: {
+    opacity: 0.7
   }
 });

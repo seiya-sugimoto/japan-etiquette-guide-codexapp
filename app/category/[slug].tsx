@@ -48,7 +48,7 @@ export default function CategoryDetailScreen() {
   return (
     <AppScreen>
       <View style={styles.header}>
-        <Pressable onPress={() => router.back()} style={styles.headerButton}>
+        <Pressable onPress={() => router.back()} style={({ pressed }) => [styles.headerButton, pressed && styles.headerButtonPressed]}>
           <Ionicons color={colors.primary} name="arrow-back" size={20} />
         </Pressable>
         <AppText numberOfLines={1} style={styles.headerTitle} variant="caption">
@@ -245,6 +245,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: colors.surfaceMuted
+  },
+  headerButtonPressed: {
+    opacity: 0.72
   },
   headerTitle: {
     flex: 1,

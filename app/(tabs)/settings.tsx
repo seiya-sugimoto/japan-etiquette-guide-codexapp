@@ -26,7 +26,7 @@ function SettingsRow({
 }) {
   return (
     <Link asChild href={href}>
-      <Pressable>
+      <Pressable style={({ pressed }) => pressed && styles.pressedRow}>
         <AppCard style={styles.rowCard}>
           <View style={styles.rowIcon}>
             <Ionicons color={colors.primary} name={icon} size={20} />
@@ -153,5 +153,8 @@ const styles = StyleSheet.create({
   },
   trailingText: {
     textAlign: "right"
+  },
+  pressedRow: {
+    opacity: 0.86
   }
 });

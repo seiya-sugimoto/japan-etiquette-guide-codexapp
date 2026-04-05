@@ -71,7 +71,7 @@ export default function PremiumScreen() {
   return (
     <AppScreen>
       <View style={styles.header}>
-        <Pressable onPress={() => router.back()} style={styles.headerButton}>
+        <Pressable onPress={() => router.back()} style={({ pressed }) => [styles.headerButton, pressed && styles.headerButtonPressed]}>
           <Ionicons color={colors.primary} name="close" size={20} />
         </Pressable>
         <AppText style={styles.headerTitle} variant="caption">
@@ -363,6 +363,9 @@ const styles = StyleSheet.create({
     borderRadius: radius.pill,
     alignItems: "center",
     justifyContent: "center"
+  },
+  headerButtonPressed: {
+    opacity: 0.72
   },
   headerTitle: {
     color: colors.primary
