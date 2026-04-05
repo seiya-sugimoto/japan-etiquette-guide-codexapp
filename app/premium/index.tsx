@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Image, Pressable, StyleSheet, View } from "react-native";
-import { useRouter } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 
 import { AppBadge } from "@/components/ui/AppBadge";
@@ -203,27 +203,25 @@ export default function PremiumScreen() {
 
                   <View style={styles.featuredGrid}>
                     {pack.scenes.map((category) => (
-                      <Pressable
-                        key={category.id}
-                        onPress={() => router.push(`/category/${category.slug}`)}
-                        style={({ pressed }) => [styles.featuredPressable, pressed && styles.featuredPressablePressed]}
-                      >
-                        <AppCard style={styles.featuredCard}>
-                          <Image source={{ uri: category.imageUrl }} style={styles.featuredImage} />
-                          <AppText style={styles.featuredTitle} variant="subtitle">
-                            {category.title}
-                          </AppText>
-                          <AppText color={colors.textMuted} numberOfLines={3} style={styles.featuredBody}>
-                            {category.shortDescription}
-                          </AppText>
-                          <View style={styles.featuredCtaRow}>
-                            <AppText color={colors.primary} variant="caption">
-                              {t.readMore}
+                      <Link asChild href={`/category/${category.slug}`} key={category.id}>
+                        <Pressable style={({ pressed }) => [styles.featuredPressable, pressed && styles.featuredPressablePressed]}>
+                          <AppCard style={styles.featuredCard}>
+                            <Image source={{ uri: category.imageUrl }} style={styles.featuredImage} />
+                            <AppText style={styles.featuredTitle} variant="subtitle">
+                              {category.title}
                             </AppText>
-                            <Ionicons color={colors.primary} name="arrow-forward" size={14} />
-                          </View>
-                        </AppCard>
-                      </Pressable>
+                            <AppText color={colors.textMuted} numberOfLines={3} style={styles.featuredBody}>
+                              {category.shortDescription}
+                            </AppText>
+                            <View style={styles.featuredCtaRow}>
+                              <AppText color={colors.primary} variant="caption">
+                                {t.readMore}
+                              </AppText>
+                              <Ionicons color={colors.primary} name="arrow-forward" size={14} />
+                            </View>
+                          </AppCard>
+                        </Pressable>
+                      </Link>
                     ))}
                   </View>
                 </AppCard>
@@ -246,15 +244,17 @@ export default function PremiumScreen() {
 
             <View style={styles.previewList}>
               {featuredPreview.map((category) => (
-                <Pressable key={category.id} onPress={() => router.push(`/category/${category.slug}`)} style={styles.previewLink}>
-                  <View style={styles.previewListRow}>
-                    <Ionicons color={colors.primary} name="checkmark-circle" size={16} />
-                    <AppText color={colors.textSubtle} style={styles.previewListText}>
-                      {category.title}
-                    </AppText>
-                    <Ionicons color={colors.textMuted} name="chevron-forward" size={16} />
-                  </View>
-                </Pressable>
+                <Link asChild href={`/category/${category.slug}`} key={category.id}>
+                  <Pressable style={({ pressed }) => [styles.previewLink, pressed && styles.previewLinkPressed]}>
+                    <View style={styles.previewListRow}>
+                      <Ionicons color={colors.primary} name="checkmark-circle" size={16} />
+                      <AppText color={colors.textSubtle} style={styles.previewListText}>
+                        {category.title}
+                      </AppText>
+                      <Ionicons color={colors.textMuted} name="chevron-forward" size={16} />
+                    </View>
+                  </Pressable>
+                </Link>
               ))}
             </View>
           </AppCard>
@@ -581,6 +581,9 @@ const styles = StyleSheet.create({
   },
   previewLink: {
     borderRadius: 18
+  },
+  previewLinkPressed: {
+    opacity: 0.8
   },
   previewListRow: {
     flexDirection: "row",

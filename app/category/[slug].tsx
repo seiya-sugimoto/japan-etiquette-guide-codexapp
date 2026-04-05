@@ -12,6 +12,7 @@ import { useCategoryDetail } from "@/features/categories/hooks/useCategoryDetail
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
 import { usePremium } from "@/features/premium/hooks/usePremium";
 import { colors } from "@/lib/constants/colors";
+import { getCategoryDetailCopy } from "@/lib/i18n/category-detail-copy";
 import { getPremiumTierCopy } from "@/lib/i18n/premium-tier-copy";
 import { radius } from "@/lib/constants/radius";
 import { shadows } from "@/lib/constants/shadows";
@@ -33,6 +34,7 @@ export default function CategoryDetailScreen() {
   }
 
   const premiumTierCopy = getPremiumTierCopy(currentLanguage);
+  const detailCopy = getCategoryDetailCopy(currentLanguage);
   const isPremiumOnlyLocked = category.premiumTier === "premium-only" && !isPremiumUnlocked;
   const heroBadge =
     category.badge === "high-risk"
@@ -199,7 +201,7 @@ export default function CategoryDetailScreen() {
       {!isPremiumOnlyLocked && category.content.readMore.length > 0 ? (
         <AppCard style={styles.readMoreCard}>
           <AppText style={styles.sectionTitle} variant="subtitle">
-            {t.readMore}
+            {detailCopy.moreNotesHeading}
           </AppText>
           <View style={styles.list}>
             {category.content.readMore.map((item) => (
