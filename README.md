@@ -152,6 +152,10 @@ The biggest remaining tasks are:
 - refining how Premium is presented
 - adding minimal automated tests if needed
 
+A simple pre-release checklist is available here:
+
+- `RELEASE_CHECKLIST.md`
+
 ## Notes
 
 - There is no backend, CMS, auth, or database
