@@ -10,7 +10,6 @@ import { colors } from "@/lib/constants/colors";
 import { radius } from "@/lib/constants/radius";
 import { shadows } from "@/lib/constants/shadows";
 import { spacing } from "@/lib/constants/spacing";
-import type { CategoryId } from "@/types/category";
 
 const heroSlug = "photo-video";
 const featuredGridSlugs = ["restaurant", "train", "shrine", "onsen"] as const;

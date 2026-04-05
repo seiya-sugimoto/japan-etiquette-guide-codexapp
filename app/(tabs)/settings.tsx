@@ -7,7 +7,6 @@ import { AppScreen } from "@/components/ui/AppScreen";
 import { AppText } from "@/components/ui/AppText";
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
 import { colors } from "@/lib/constants/colors";
-import { radius } from "@/lib/constants/radius";
 import { spacing } from "@/lib/constants/spacing";
 
 function SettingsRow({

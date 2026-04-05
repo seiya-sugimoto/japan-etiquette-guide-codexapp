@@ -6,7 +6,6 @@ import { AppBadge } from "@/components/ui/AppBadge";
 import { AppCard } from "@/components/ui/AppCard";
 import { AppText } from "@/components/ui/AppText";
 import { colors } from "@/lib/constants/colors";
-import { radius } from "@/lib/constants/radius";
 import { spacing } from "@/lib/constants/spacing";
 import type { Category } from "@/types/category";
 
