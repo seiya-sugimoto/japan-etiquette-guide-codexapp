@@ -6,7 +6,9 @@ import { AppCard } from "@/components/ui/AppCard";
 import { AppScreen } from "@/components/ui/AppScreen";
 import { AppText } from "@/components/ui/AppText";
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
+import { usePremium } from "@/features/premium/hooks/usePremium";
 import { colors } from "@/lib/constants/colors";
+import { getPremiumMockCopy } from "@/lib/i18n/premium-mock-copy";
 import { spacing } from "@/lib/constants/spacing";
 
 function SettingsRow({
@@ -53,6 +55,9 @@ function SettingsRow({
 
 export default function SettingsScreen() {
   const { currentLanguage, getLanguageLabel, t } = useAppLanguage();
+  const { isPremiumUnlocked } = usePremium();
+  const premiumStateCopy = getPremiumMockCopy(currentLanguage);
+  const premiumTrailing = isPremiumUnlocked ? premiumStateCopy.unlockedState : premiumStateCopy.previewState;
 
   return (
     <AppScreen>
@@ -89,6 +94,7 @@ export default function SettingsScreen() {
         icon="diamond-outline"
         title={t.settingsTitlePremium}
         description={t.settingsBodyPremium}
+        trailing={premiumTrailing}
       />
       <SettingsRow
         href="/feedback"
@@ -143,7 +149,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.xs,
-    maxWidth: 96
+    maxWidth: 132
   },
   trailingText: {
     textAlign: "right"

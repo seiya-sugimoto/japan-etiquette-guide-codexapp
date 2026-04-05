@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Image, Pressable, StyleSheet, View } from "react-native";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
@@ -6,9 +7,12 @@ import { AppButton } from "@/components/ui/AppButton";
 import { AppCard } from "@/components/ui/AppCard";
 import { AppScreen } from "@/components/ui/AppScreen";
 import { AppText } from "@/components/ui/AppText";
+import { useCategories } from "@/features/categories/hooks/useCategories";
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
+import { usePremium } from "@/features/premium/hooks/usePremium";
 import { colors } from "@/lib/constants/colors";
 import { getPremiumPreviewCopy } from "@/lib/i18n/marketing-copy";
+import { getPremiumMockCopy } from "@/lib/i18n/premium-mock-copy";
 import { radius } from "@/lib/constants/radius";
 import { shadows } from "@/lib/constants/shadows";
 import { spacing } from "@/lib/constants/spacing";
@@ -19,7 +23,20 @@ const topImage =
 export default function PremiumScreen() {
   const router = useRouter();
   const { currentLanguage, supportedLanguages } = useAppLanguage();
+  const categories = useCategories();
+  const { isPremiumUnlocked, isReady, toggleMockPremium } = usePremium();
   const copy = getPremiumPreviewCopy(currentLanguage);
+  const mockCopy = getPremiumMockCopy(currentLanguage);
+  const previewCandidates = useMemo(
+    () => categories.filter((category) => category.premiumTier === "preview"),
+    [categories]
+  );
+  const effectiveUnlocked = isReady && isPremiumUnlocked;
+  const currentStateLabel = effectiveUnlocked ? mockCopy.unlockedState : mockCopy.previewState;
+  const statusTitle = effectiveUnlocked ? mockCopy.unlockedModeTitle : mockCopy.previewModeTitle;
+  const statusBody = effectiveUnlocked ? mockCopy.unlockedModeBody : mockCopy.previewModeBody;
+  const statusIconName = effectiveUnlocked ? "diamond" : "eye-outline";
+  const toggleLabel = effectiveUnlocked ? mockCopy.resetMockCta : mockCopy.unlockMockCta;
 
   return (
     <AppScreen>
@@ -67,6 +84,26 @@ export default function PremiumScreen() {
         </AppCard>
       </View>
 
+      <AppCard style={styles.statusCard}>
+        <View style={styles.statusHeader}>
+          <View style={[styles.statusIcon, effectiveUnlocked ? styles.unlockedIcon : styles.previewIcon]}>
+            <Ionicons color={effectiveUnlocked ? colors.surface : colors.primary} name={statusIconName} size={18} />
+          </View>
+          <View style={styles.sectionCopy}>
+            <AppText color={colors.textMuted} variant="caption">
+              {mockCopy.stateLabel}
+            </AppText>
+            <AppText style={styles.sectionTitle} variant="subtitle">
+              {currentStateLabel}
+            </AppText>
+          </View>
+        </View>
+        <AppText style={styles.sectionTitle} variant="subtitle">
+          {statusTitle}
+        </AppText>
+        <AppText color={colors.textMuted}>{statusBody}</AppText>
+      </AppCard>
+
       <AppCard style={styles.sectionCard}>
         <View style={styles.sectionHeader}>
           <View style={[styles.sectionIcon, styles.nowIcon]}>
@@ -111,6 +148,33 @@ export default function PremiumScreen() {
         ))}
       </AppCard>
 
+      {effectiveUnlocked ? (
+        <AppCard style={styles.unlockedListCard}>
+          <View style={styles.sectionHeader}>
+            <View style={[styles.sectionIcon, styles.unlockedIcon]}>
+              <Ionicons color={colors.surface} name="layers" size={18} />
+            </View>
+            <View style={styles.sectionCopy}>
+              <AppText style={styles.sectionTitle} variant="subtitle">
+                {mockCopy.unlockedListTitle}
+              </AppText>
+              <AppText color={colors.textMuted}>{mockCopy.unlockedListBody}</AppText>
+            </View>
+          </View>
+
+          <View style={styles.previewList}>
+            {previewCandidates.map((category) => (
+              <View key={category.id} style={styles.previewListRow}>
+                <Ionicons color={colors.primary} name="checkmark-circle" size={16} />
+                <AppText color={colors.textSubtle} style={styles.previewListText}>
+                  {category.title}
+                </AppText>
+              </View>
+            ))}
+          </View>
+        </AppCard>
+      ) : null}
+
       <AppCard style={styles.noteCard}>
         <View style={styles.noteHeader}>
           <Ionicons color={colors.primary} name="information-circle-outline" size={18} />
@@ -122,6 +186,7 @@ export default function PremiumScreen() {
       </AppCard>
 
       <View style={styles.ctaWrap}>
+        <AppButton label={toggleLabel} onPress={() => void toggleMockPremium()} />
         <AppButton label={copy.browseCta} onPress={() => router.push("/browse")} />
         <AppButton label={copy.feedbackCta} onPress={() => router.push("/feedback")} tone="secondary" />
       </View>
@@ -195,6 +260,29 @@ const styles = StyleSheet.create({
   plannedCard: {
     backgroundColor: colors.surfaceMuted
   },
+  statusCard: {
+    borderRadius: 30,
+    backgroundColor: colors.surfaceMuted,
+    gap: spacing.sm
+  },
+  statusHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md
+  },
+  statusIcon: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  previewIcon: {
+    backgroundColor: "#F6EDEB"
+  },
+  unlockedIcon: {
+    backgroundColor: colors.primary
+  },
   sectionHeader: {
     flexDirection: "row",
     alignItems: "flex-start",
@@ -240,6 +328,22 @@ const styles = StyleSheet.create({
   },
   noteTitle: {
     color: colors.primary
+  },
+  unlockedListCard: {
+    borderRadius: 30,
+    backgroundColor: colors.surfaceSoft
+  },
+  previewList: {
+    gap: spacing.sm
+  },
+  previewListRow: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.sm
+  },
+  previewListText: {
+    flex: 1,
+    lineHeight: 22
   },
   ctaWrap: {
     gap: spacing.md,
