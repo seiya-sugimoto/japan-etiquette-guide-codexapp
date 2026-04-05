@@ -70,6 +70,7 @@ export type CategoryId =
   | "service-area";
 
 export type CategoryAccess = "free" | "premium";
+export type PremiumContentTier = "free" | "preview" | "premium-only";
 
 export type CategoryContent = {
   quickView: string[];
@@ -86,8 +87,11 @@ export type Category = {
   title: string;
   shortDescription: string;
   access: CategoryAccess;
+  premiumTier: PremiumContentTier;
   imageUrl: string;
   badge?: "essential" | "high-risk" | "premium";
   tags: string[];
   content: CategoryContent;
 };
+
+export type CategorySeed = Omit<Category, "premiumTier">;

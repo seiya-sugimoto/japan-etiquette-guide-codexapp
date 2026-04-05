@@ -17,8 +17,8 @@ export function CategoryHero({ category }: { category: Category }) {
         <View style={styles.overlay} />
         <View style={styles.copy}>
           <AppBadge
-            label={category.access === "premium" ? t.settingsTitlePremium : t.quickView}
-            tone={category.access === "premium" ? "premium" : "default"}
+            label={category.premiumTier !== "free" ? t.premiumAccess : t.quickView}
+            tone={category.premiumTier !== "free" ? "premium" : "default"}
           />
           <AppText color={colors.surface} variant="title">
             {category.title}

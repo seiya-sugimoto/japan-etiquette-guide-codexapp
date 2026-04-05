@@ -1,4 +1,4 @@
-import type { Category } from "@/types/category";
+import type { CategorySeed } from "@/types/category";
 
 const transportImage =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCvf0R7-J215zxndN4nPR_cHU9H_hrBMo7bEXWWfvmo4OHxvyExFZ15hNAQQu6oZXCvDFRuBWJUlbYrWRTRY7jb3ims_RvKWB5UghnK3qWTAdXAzSZjZxnnca6S_2Fj4Le12npnJZlprgRf0Th20O3o49-Rdfm8ixhvT5H4_L7ZzmVAYp-esFQnnIr6gUKR4V2o41VTGfEI2_6CJb1HXxI2-3WY9zJPHkFl0fyrmPGKnUJAYWcGj9F4XXMYYzaPsYttuE9hra6pXo-W";
@@ -11,7 +11,7 @@ const lodgingImage =
 const publicImage =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuBfmLWBNLM_bradzi3uk-lpF9asqjEzZ0NXnclzkJuOyge_UUC3zd2Nx5b3F0SGMPvn7BK_gLfnlPEcTuSU-rzBmAqNKdnJylkeUsRa-qBgHkWkTUmc4THrzcc7uGVI-k3huYb3emYGWrdimlVwU5wp927CFwAMXbQQtsbu7sthQE8qvvGIhjt4HVR-Qt9fN5i259Mpt_1ngJmBlumW06H4Gyn7KMs8VcHqaG1Dzcv1iDYRncCuzaEcczNDZuj4K4agSWjcMVBE3A2v";
 
-export const additionalEnglishCategories: Category[] = [
+export const additionalEnglishCategories: CategorySeed[] = [
   {
     id: "airport-arrival",
     slug: "airport-arrival",

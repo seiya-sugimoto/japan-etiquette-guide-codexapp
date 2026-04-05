@@ -15,8 +15,8 @@ export function CategoryCard({ category }: { category: Category }) {
       ? "HIGH RISK"
       : category.badge === "essential"
         ? "ESSENTIAL"
-        : category.access === "premium"
-          ? "PREMIUM"
+        : category.premiumTier !== "free"
+          ? "PREVIEW"
           : null;
 
   return (
@@ -30,7 +30,7 @@ export function CategoryCard({ category }: { category: Category }) {
             <AppText style={styles.title} variant="subtitle">
               {category.title}
             </AppText>
-            {badgeLabel ? <AppBadge label={badgeLabel} tone={category.access === "premium" ? "premium" : "default"} /> : null}
+            {badgeLabel ? <AppBadge label={badgeLabel} tone={category.premiumTier !== "free" ? "premium" : "default"} /> : null}
           </View>
           <AppText color={colors.textMuted} numberOfLines={2} style={styles.description}>
             {category.shortDescription}

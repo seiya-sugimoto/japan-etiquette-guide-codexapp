@@ -1,7 +1,7 @@
-import type { Category } from "@/types/category";
+import type { CategorySeed } from "@/types/category";
 import { additionalEnglishCategories } from "@/data/categories/en-additional";
 
-export const englishCategories: Category[] = [
+export const englishCategories: CategorySeed[] = [
   {
     id: "train",
     slug: "train",

@@ -29,7 +29,12 @@ export default function CategoryDetailScreen() {
     );
   }
 
-  const heroBadge = category.badge === "high-risk" ? t.avoidLabel : category.access === "premium" ? t.settingsTitlePremium : t.quickView;
+  const heroBadge =
+    category.badge === "high-risk"
+      ? t.avoidLabel
+      : category.premiumTier !== "free"
+        ? t.premiumAccess
+        : t.quickView;
 
   return (
     <AppScreen>
@@ -44,7 +49,7 @@ export default function CategoryDetailScreen() {
       </View>
 
       <View style={styles.titleBlock}>
-        <AppBadge label={heroBadge} tone={category.access === "premium" ? "premium" : "default"} />
+        <AppBadge label={heroBadge} tone={category.premiumTier !== "free" ? "premium" : "default"} />
         <AppText style={styles.title} variant="title">
           {category.title}
         </AppText>
@@ -170,19 +175,21 @@ export default function CategoryDetailScreen() {
         </AppCard>
       ) : null}
 
-      <View style={styles.premiumPanel}>
-        <View style={styles.premiumPanelHeader}>
-          <Ionicons color={colors.accentSoft} name="sparkles" size={16} />
-          <AppText color={colors.accentSoft} style={styles.rowEyebrow} variant="eyebrow">
-            {t.settingsTitlePremium}
+      {category.premiumTier !== "free" ? (
+        <View style={styles.premiumPanel}>
+          <View style={styles.premiumPanelHeader}>
+            <Ionicons color={colors.accentSoft} name="sparkles" size={16} />
+            <AppText color={colors.accentSoft} style={styles.rowEyebrow} variant="eyebrow">
+              {t.premiumAccess}
+            </AppText>
+          </View>
+          <AppText color={colors.surface} style={styles.premiumPanelTitle} variant="subtitle">
+            {t.unlockTitle}
           </AppText>
+          <AppText color="rgba(255,255,255,0.82)">{t.unlockBody}</AppText>
+          <AppButton label={t.goPremium} onPress={() => router.push("/premium")} />
         </View>
-        <AppText color={colors.surface} style={styles.premiumPanelTitle} variant="subtitle">
-          {t.unlockTitle}
-        </AppText>
-        <AppText color="rgba(255,255,255,0.82)">{t.unlockBody}</AppText>
-        <AppButton label={t.goPremium} onPress={() => router.push("/premium")} />
-      </View>
+      ) : null}
     </AppScreen>
   );
 }
