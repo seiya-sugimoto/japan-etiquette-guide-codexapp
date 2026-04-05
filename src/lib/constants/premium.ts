@@ -6,13 +6,21 @@ export const previewCategoryIds: CategoryId[] = [
   "onsen",
   "shrine",
   "temple",
-  "ryokan",
-  "visiting-home",
-  "residential-private",
   "bicycle"
 ];
 
-export const premiumOnlyCategoryIds: CategoryId[] = [];
+export const premiumOnlyCategoryIds: CategoryId[] = [
+  "ryokan",
+  "visiting-home",
+  "residential-private",
+  "hostel-dorm",
+  "all-you-can-drink",
+  "karaoke",
+  "live-concert",
+  "sports-event",
+  "theme-park",
+  "rental-car"
+];
 
 export function getCategoryPremiumTier(categoryId: CategoryId): PremiumContentTier {
   if (premiumOnlyCategoryIds.includes(categoryId)) {

@@ -5,18 +5,27 @@ import { Ionicons } from "@expo/vector-icons";
 import { AppBadge } from "@/components/ui/AppBadge";
 import { AppCard } from "@/components/ui/AppCard";
 import { AppText } from "@/components/ui/AppText";
+import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
+import { usePremium } from "@/features/premium/hooks/usePremium";
 import { colors } from "@/lib/constants/colors";
+import { getPremiumTierCopy } from "@/lib/i18n/premium-tier-copy";
 import { spacing } from "@/lib/constants/spacing";
 import type { Category } from "@/types/category";
 
 export function CategoryCard({ category }: { category: Category }) {
+  const { currentLanguage } = useAppLanguage();
+  const { isPremiumUnlocked } = usePremium();
+  const premiumTierCopy = getPremiumTierCopy(currentLanguage);
+  const isLocked = category.premiumTier === "premium-only" && !isPremiumUnlocked;
   const badgeLabel =
     category.badge === "high-risk"
       ? "HIGH RISK"
       : category.badge === "essential"
         ? "ESSENTIAL"
-        : category.premiumTier !== "free"
-          ? "PREVIEW"
+        : category.premiumTier === "premium-only"
+          ? premiumTierCopy.premiumOnlyBadge
+          : category.premiumTier === "preview"
+            ? premiumTierCopy.previewBadge
           : null;
 
   return (
@@ -37,7 +46,7 @@ export function CategoryCard({ category }: { category: Category }) {
           </AppText>
         </View>
         <View style={styles.chevronWrap}>
-          <Ionicons color={colors.textMuted} name="chevron-forward" size={18} />
+          <Ionicons color={colors.textMuted} name={isLocked ? "lock-closed" : "chevron-forward"} size={18} />
         </View>
       </AppCard>
     </Pressable>

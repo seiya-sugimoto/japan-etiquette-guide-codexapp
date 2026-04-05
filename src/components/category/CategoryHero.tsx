@@ -3,23 +3,32 @@ import { ImageBackground, StyleSheet, View } from "react-native";
 import { AppBadge } from "@/components/ui/AppBadge";
 import { AppText } from "@/components/ui/AppText";
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
+import { usePremium } from "@/features/premium/hooks/usePremium";
 import { colors } from "@/lib/constants/colors";
+import { getPremiumTierCopy } from "@/lib/i18n/premium-tier-copy";
 import { radius } from "@/lib/constants/radius";
 import { spacing } from "@/lib/constants/spacing";
 import type { Category } from "@/types/category";
 
 export function CategoryHero({ category }: { category: Category }) {
-  const { t } = useAppLanguage();
+  const { currentLanguage, t } = useAppLanguage();
+  const { isPremiumUnlocked } = usePremium();
+  const premiumTierCopy = getPremiumTierCopy(currentLanguage);
+  const premiumBadgeLabel =
+    category.premiumTier === "premium-only"
+      ? premiumTierCopy.premiumOnlyBadge
+      : category.premiumTier === "preview"
+        ? t.premiumAccess
+        : t.quickView;
+  const tone = category.premiumTier === "free" ? "default" : "premium";
+  const label = category.premiumTier === "premium-only" && isPremiumUnlocked ? premiumTierCopy.premiumOnlyBadge : premiumBadgeLabel;
 
   return (
     <View>
       <ImageBackground imageStyle={styles.image} source={{ uri: category.imageUrl }} style={styles.hero}>
         <View style={styles.overlay} />
         <View style={styles.copy}>
-          <AppBadge
-            label={category.premiumTier !== "free" ? t.premiumAccess : t.quickView}
-            tone={category.premiumTier !== "free" ? "premium" : "default"}
-          />
+          <AppBadge label={label} tone={tone} />
           <AppText color={colors.surface} variant="title">
             {category.title}
           </AppText>

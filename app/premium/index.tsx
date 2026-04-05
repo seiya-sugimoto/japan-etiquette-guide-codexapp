@@ -13,6 +13,7 @@ import { usePremium } from "@/features/premium/hooks/usePremium";
 import { colors } from "@/lib/constants/colors";
 import { getPremiumPreviewCopy } from "@/lib/i18n/marketing-copy";
 import { getPremiumMockCopy } from "@/lib/i18n/premium-mock-copy";
+import { getPremiumTierCopy } from "@/lib/i18n/premium-tier-copy";
 import { radius } from "@/lib/constants/radius";
 import { shadows } from "@/lib/constants/shadows";
 import { spacing } from "@/lib/constants/spacing";
@@ -27,8 +28,13 @@ export default function PremiumScreen() {
   const { isPremiumUnlocked, isReady, toggleMockPremium } = usePremium();
   const copy = getPremiumPreviewCopy(currentLanguage);
   const mockCopy = getPremiumMockCopy(currentLanguage);
+  const tierCopy = getPremiumTierCopy(currentLanguage);
   const previewCandidates = useMemo(
     () => categories.filter((category) => category.premiumTier === "preview"),
+    [categories]
+  );
+  const premiumOnlyCandidates = useMemo(
+    () => categories.filter((category) => category.premiumTier === "premium-only"),
     [categories]
   );
   const effectiveUnlocked = isReady && isPremiumUnlocked;
@@ -174,6 +180,31 @@ export default function PremiumScreen() {
           </View>
         </AppCard>
       ) : null}
+
+      <AppCard style={styles.unlockedListCard}>
+        <View style={styles.sectionHeader}>
+          <View style={[styles.sectionIcon, styles.previewIcon]}>
+            <Ionicons color={colors.primary} name="lock-closed" size={18} />
+          </View>
+          <View style={styles.sectionCopy}>
+            <AppText style={styles.sectionTitle} variant="subtitle">
+              {tierCopy.premiumOnlyListTitle}
+            </AppText>
+            <AppText color={colors.textMuted}>{tierCopy.premiumOnlyListBody}</AppText>
+          </View>
+        </View>
+
+        <View style={styles.previewList}>
+          {premiumOnlyCandidates.map((category) => (
+            <View key={category.id} style={styles.previewListRow}>
+              <Ionicons color={colors.primary} name="lock-closed" size={16} />
+              <AppText color={colors.textSubtle} style={styles.previewListText}>
+                {category.title}
+              </AppText>
+            </View>
+          ))}
+        </View>
+      </AppCard>
 
       <AppCard style={styles.noteCard}>
         <View style={styles.noteHeader}>

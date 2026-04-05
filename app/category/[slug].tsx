@@ -10,7 +10,9 @@ import { AppText } from "@/components/ui/AppText";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { useCategoryDetail } from "@/features/categories/hooks/useCategoryDetail";
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
+import { usePremium } from "@/features/premium/hooks/usePremium";
 import { colors } from "@/lib/constants/colors";
+import { getPremiumTierCopy } from "@/lib/i18n/premium-tier-copy";
 import { radius } from "@/lib/constants/radius";
 import { shadows } from "@/lib/constants/shadows";
 import { spacing } from "@/lib/constants/spacing";
@@ -19,7 +21,8 @@ export default function CategoryDetailScreen() {
   const router = useRouter();
   const params = useLocalSearchParams<{ slug: string }>();
   const category = useCategoryDetail(params.slug);
-  const { t } = useAppLanguage();
+  const { currentLanguage, t } = useAppLanguage();
+  const { isPremiumUnlocked } = usePremium();
 
   if (!category) {
     return (
@@ -29,10 +32,14 @@ export default function CategoryDetailScreen() {
     );
   }
 
+  const premiumTierCopy = getPremiumTierCopy(currentLanguage);
+  const isPremiumOnlyLocked = category.premiumTier === "premium-only" && !isPremiumUnlocked;
   const heroBadge =
     category.badge === "high-risk"
       ? t.avoidLabel
-      : category.premiumTier !== "free"
+      : category.premiumTier === "premium-only"
+        ? premiumTierCopy.premiumOnlyBadge
+        : category.premiumTier !== "free"
         ? t.premiumAccess
         : t.quickView;
 
@@ -60,7 +67,36 @@ export default function CategoryDetailScreen() {
 
       <Image source={{ uri: category.imageUrl }} style={styles.heroImage} />
 
-      {category.content.whyItMatters.length > 0 ? (
+      {isPremiumOnlyLocked ? (
+        <AppCard style={styles.lockedCard}>
+          <View style={styles.lockedHeader}>
+            <View style={styles.lockedIcon}>
+              <Ionicons color={colors.surface} name="lock-closed" size={18} />
+            </View>
+            <View style={styles.lockedCopy}>
+              <AppText color={colors.textMuted} variant="caption">
+                {premiumTierCopy.premiumOnlyBadge}
+              </AppText>
+              <AppText style={styles.contextTitle} variant="subtitle">
+                {premiumTierCopy.lockedTitle}
+              </AppText>
+            </View>
+          </View>
+          <AppText color={colors.textMuted}>{premiumTierCopy.lockedBody}</AppText>
+          <View style={styles.list}>
+            {premiumTierCopy.lockedPoints.map((item) => (
+              <View key={item} style={styles.bulletRow}>
+                <View style={[styles.smallDot, styles.lockedDot]} />
+                <AppText style={styles.bulletText}>{item}</AppText>
+              </View>
+            ))}
+          </View>
+          <View style={styles.lockedActions}>
+            <AppButton label={premiumTierCopy.unlockCta} onPress={() => router.push("/premium")} />
+            <AppButton label={premiumTierCopy.browseCta} onPress={() => router.push("/browse")} tone="secondary" />
+          </View>
+        </AppCard>
+      ) : category.content.whyItMatters.length > 0 ? (
         <AppCard style={styles.contextCard}>
           <View style={styles.contextHeader}>
             <View style={styles.contextIcon}>
@@ -80,7 +116,7 @@ export default function CategoryDetailScreen() {
         </AppCard>
       ) : null}
 
-      {category.content.quickView.length > 0 ? (
+      {!isPremiumOnlyLocked && category.content.quickView.length > 0 ? (
         <View style={styles.sectionBlock}>
           <AppText style={styles.sectionTitle} variant="subtitle">
             {t.quickView}
@@ -100,7 +136,7 @@ export default function CategoryDetailScreen() {
         </View>
       ) : null}
 
-      {category.content.dos.length > 0 ? (
+      {!isPremiumOnlyLocked && category.content.dos.length > 0 ? (
         <AppCard style={styles.doCard}>
           <View style={styles.rowHeader}>
             <Ionicons color={colors.success} name="checkmark-circle" size={18} />
@@ -119,7 +155,7 @@ export default function CategoryDetailScreen() {
         </AppCard>
       ) : null}
 
-      {category.content.donts.length > 0 ? (
+      {!isPremiumOnlyLocked && category.content.donts.length > 0 ? (
         <AppCard style={styles.dontCard}>
           <View style={styles.rowHeader}>
             <Ionicons color="#B42318" name="close-circle" size={18} />
@@ -138,7 +174,7 @@ export default function CategoryDetailScreen() {
         </AppCard>
       ) : null}
 
-      {category.content.commonMistakes.length > 0 ? (
+      {!isPremiumOnlyLocked && category.content.commonMistakes.length > 0 ? (
         <View style={styles.sectionBlock}>
           <View style={styles.noteHeader}>
             <Ionicons color={colors.textMuted} name="bulb-outline" size={16} />
@@ -160,7 +196,7 @@ export default function CategoryDetailScreen() {
         </View>
       ) : null}
 
-      {category.content.readMore.length > 0 ? (
+      {!isPremiumOnlyLocked && category.content.readMore.length > 0 ? (
         <AppCard style={styles.readMoreCard}>
           <AppText style={styles.sectionTitle} variant="subtitle">
             {t.readMore}
@@ -175,7 +211,7 @@ export default function CategoryDetailScreen() {
         </AppCard>
       ) : null}
 
-      {category.premiumTier !== "free" ? (
+      {category.premiumTier === "preview" ? (
         <View style={styles.premiumPanel}>
           <View style={styles.premiumPanelHeader}>
             <Ionicons color={colors.accentSoft} name="sparkles" size={16} />
@@ -238,10 +274,20 @@ const styles = StyleSheet.create({
     borderRadius: 28,
     padding: spacing.lg
   },
+  lockedCard: {
+    backgroundColor: colors.surfaceMuted,
+    borderRadius: 28,
+    padding: spacing.lg
+  },
   contextHeader: {
     flexDirection: "row",
     alignItems: "center",
     gap: spacing.sm
+  },
+  lockedHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.md
   },
   contextIcon: {
     width: 32,
@@ -253,6 +299,18 @@ const styles = StyleSheet.create({
   },
   contextTitle: {
     color: colors.primary
+  },
+  lockedIcon: {
+    width: 38,
+    height: 38,
+    borderRadius: 19,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.primary
+  },
+  lockedCopy: {
+    flex: 1,
+    gap: 4
   },
   contextBody: {
     lineHeight: 26
@@ -326,6 +384,9 @@ const styles = StyleSheet.create({
   dontDot: {
     backgroundColor: "#B42318"
   },
+  lockedDot: {
+    backgroundColor: colors.primary
+  },
   bulletText: {
     flex: 1,
     color: colors.textSubtle,
@@ -369,5 +430,8 @@ const styles = StyleSheet.create({
   },
   premiumPanelTitle: {
     color: colors.surface
+  },
+  lockedActions: {
+    gap: spacing.sm
   }
 });
