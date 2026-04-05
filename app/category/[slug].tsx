@@ -29,7 +29,7 @@ export default function CategoryDetailScreen() {
     );
   }
 
-  const heroBadge = category.badge === "high-risk" ? t.avoidLabel : category.access === "premium" ? "Premium" : t.quickView;
+  const heroBadge = category.badge === "high-risk" ? t.avoidLabel : category.access === "premium" ? t.settingsTitlePremium : t.quickView;
 
   return (
     <AppScreen>
@@ -174,7 +174,7 @@ export default function CategoryDetailScreen() {
         <View style={styles.premiumPanelHeader}>
           <Ionicons color={colors.accentSoft} name="sparkles" size={16} />
           <AppText color={colors.accentSoft} style={styles.rowEyebrow} variant="eyebrow">
-            Premium
+            {t.settingsTitlePremium}
           </AppText>
         </View>
         <AppText color={colors.surface} style={styles.premiumPanelTitle} variant="subtitle">

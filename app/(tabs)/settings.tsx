@@ -62,7 +62,7 @@ export default function SettingsScreen() {
           {t.settingsTab}
         </AppText>
         <AppText color={colors.textMuted}>
-          Keep the app simple, readable, and useful while you travel.
+          {t.languagePlaceholder}
         </AppText>
       </View>
 
@@ -71,10 +71,10 @@ export default function SettingsScreen() {
           Japan Etiquette Guide
         </AppText>
         <AppText style={styles.infoTitle} variant="subtitle">
-          Practical help for everyday situations in Japan.
+          {t.browseTitle}
         </AppText>
         <AppText color={colors.textMuted}>
-          Use language, premium, and feedback settings here without leaving the calm flow of the app.
+          {t.browseDescription}
         </AppText>
       </AppCard>
 

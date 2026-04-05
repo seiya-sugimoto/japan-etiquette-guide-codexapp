@@ -86,7 +86,7 @@ export default function HomeScreen() {
               <View style={styles.heroContent}>
                 <View style={styles.heroBadge}>
                   <AppText color={colors.surface} style={styles.heroBadgeLabel} variant="caption">
-                    {hero.badge === "premium" ? "Premium" : t.commonSituations}
+                    {hero.badge === "premium" ? t.settingsTitlePremium : t.commonSituations}
                   </AppText>
                 </View>
 
@@ -147,7 +147,7 @@ export default function HomeScreen() {
       <View style={styles.premiumBanner}>
         <View style={styles.premiumCopy}>
           <AppText color={colors.accentSoft} style={styles.premiumKicker} variant="eyebrow">
-            Premium
+            {t.settingsTitlePremium}
           </AppText>
           <AppText color={colors.surface} style={styles.premiumTitle} variant="title">
             {t.unlockTitle}

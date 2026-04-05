@@ -2,19 +2,22 @@ import { ImageBackground, StyleSheet, View } from "react-native";
 
 import { AppBadge } from "@/components/ui/AppBadge";
 import { AppText } from "@/components/ui/AppText";
+import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
 import { colors } from "@/lib/constants/colors";
 import { radius } from "@/lib/constants/radius";
 import { spacing } from "@/lib/constants/spacing";
 import type { Category } from "@/types/category";
 
 export function CategoryHero({ category }: { category: Category }) {
+  const { t } = useAppLanguage();
+
   return (
     <View>
       <ImageBackground imageStyle={styles.image} source={{ uri: category.imageUrl }} style={styles.hero}>
         <View style={styles.overlay} />
         <View style={styles.copy}>
           <AppBadge
-            label={category.access === "premium" ? "Premium" : "Guide"}
+            label={category.access === "premium" ? t.settingsTitlePremium : t.quickView}
             tone={category.access === "premium" ? "premium" : "default"}
           />
           <AppText color={colors.surface} variant="title">

@@ -67,7 +67,7 @@ export default function PremiumScreen() {
           </View>
           <View style={styles.benefitCopy}>
             <AppText style={styles.benefitTitle} variant="subtitle">
-              Offline Access
+              {t.readMore}
             </AppText>
             <AppText color={colors.textMuted}>{t.premiumPlaceholder}</AppText>
           </View>
@@ -90,7 +90,7 @@ export default function PremiumScreen() {
 
       <AppCard style={styles.compareCard}>
         <AppText color={colors.textMuted} style={styles.compareEyebrow} variant="eyebrow">
-          Premium
+          {t.settingsTitlePremium}
         </AppText>
         <View style={styles.compareRow}>
           <AppText style={styles.compareText}>{t.commonSituations}</AppText>
@@ -107,19 +107,13 @@ export default function PremiumScreen() {
       </AppCard>
 
       <View style={styles.ctaWrap}>
-        <AppButton label={t.goPremium} onPress={() => router.push("/feedback")} />
+        <AppButton label={t.settingsTitleFeedback} onPress={() => router.push("/feedback")} />
         <View style={styles.footerLinks}>
           <Pressable onPress={() => router.push("/feedback")}>
             <AppText color={colors.textMuted} variant="caption">
               {t.settingsTitleFeedback}
             </AppText>
           </Pressable>
-          <AppText color={colors.border} variant="caption">
-            |
-          </AppText>
-          <AppText color={colors.textMuted} variant="caption">
-            Terms
-          </AppText>
         </View>
       </View>
     </AppScreen>
