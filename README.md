@@ -163,6 +163,7 @@ Store-facing copy notes are collected here:
 Premium direction notes are collected here:
 
 - `PREMIUM_PLAN.md`
+- `PREMIUM_BILLING_PLAN_JA.md`
 - `PREMIUM_HYPOTHESES.md`
 - `PREMIUM_HYPOTHESES_JA.md`
 
