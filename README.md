@@ -165,6 +165,7 @@ Premium direction notes are collected here:
 - `PREMIUM_PLAN.md`
 - `PREMIUM_BILLING_PLAN_JA.md`
 - `PREMIUM_TECH_PLAN_JA.md`
+- `PREMIUM_IMPLEMENTATION_TASKS_JA.md`
 - `PREMIUM_HYPOTHESES.md`
 - `PREMIUM_HYPOTHESES_JA.md`
 
