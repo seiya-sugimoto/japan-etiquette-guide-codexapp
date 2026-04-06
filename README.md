@@ -133,6 +133,10 @@ cmd /c npx.cmd expo start --lan -c
 For real Premium billing checks later, Expo Go is not enough.  
 You will need a development build after RevenueCat and App Store Connect are configured.
 
+The repo now includes a minimal EAS config for this step:
+
+- `eas.json`
+
 ### Type Check
 
 ```bash

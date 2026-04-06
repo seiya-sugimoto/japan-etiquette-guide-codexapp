@@ -3,6 +3,16 @@
 このメモは `Japan Etiquette Guide` を **無料アプリ + 買い切り Premium** として出すための、
 RevenueCat と App Store Connect の最小セットアップ手順です。
 
+## 最短チェックリスト
+
+まずはこの順で進めれば十分です。
+
+1. App Store Connect で `Non-Consumable` 商品を 1 つ作る
+2. RevenueCat で `premium` entitlement と `default` offering を作る
+3. `.env` に iOS API key を入れる
+4. `eas build --profile development --platform ios` で development build を作る
+5. iOS sandbox tester で `purchase / restore / unlock` を確認する
+
 ## 目的
 
 - 無料アプリとして公開する
@@ -70,6 +80,15 @@ EXPO_PUBLIC_REVENUECAT_PACKAGE_TYPE=lifetime
 
 まずは `.env.example` をコピーして `.env` を作り、`EXPO_PUBLIC_REVENUECAT_IOS_API_KEY` だけ埋めれば十分です。
 
+```powershell
+Copy-Item .env.example .env
+```
+
+入れる場所:
+
+- [C:\Users\seiya\OneDrive\ドキュメント\Playground\japan-etiquette-guide\.env.example](C:\Users\seiya\OneDrive\ドキュメント\Playground\japan-etiquette-guide\.env.example)
+- [C:\Users\seiya\OneDrive\ドキュメント\Playground\japan-etiquette-guide\app.config.ts](C:\Users\seiya\OneDrive\ドキュメント\Playground\japan-etiquette-guide\app.config.ts)
+
 ## 4. 今のコードが見る場所
 
 現在の実装はここを見ます。
@@ -90,6 +109,10 @@ EXPO_PUBLIC_REVENUECAT_PACKAGE_TYPE=lifetime
 本課金は Expo Go では確認できません。  
 次の段階では `development build` が必要です。
 
+このリポジトリには、development build 用の最小 `eas.json` を追加しています。
+
+- [C:\Users\seiya\OneDrive\ドキュメント\Playground\japan-etiquette-guide\eas.json](C:\Users\seiya\OneDrive\ドキュメント\Playground\japan-etiquette-guide\eas.json)
+
 最小方針:
 
 1. Apple Developer / App Store Connect の準備
@@ -97,6 +120,15 @@ EXPO_PUBLIC_REVENUECAT_PACKAGE_TYPE=lifetime
 3. `.env` に iOS API key を追加
 4. development build 作成
 5. iOS sandbox tester で purchase / restore を確認
+
+コマンドの流れ:
+
+```powershell
+cmd /c npx.cmd expo install expo-dev-client
+cmd /c npx.cmd eas build --profile development --platform ios
+```
+
+`expo-dev-client` はすでに依存に入っているので、実際には `eas build` から進めて大丈夫です。
 
 ## 6. 確認ポイント
 
