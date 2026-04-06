@@ -18,6 +18,7 @@ import { getPremiumMockCopy } from "@/lib/i18n/premium-mock-copy";
 import { getPremiumPackBenefitsCopy } from "@/lib/i18n/premium-pack-benefits-copy";
 import { getPremiumPackCopy } from "@/lib/i18n/premium-pack-copy";
 import { getPremiumPackJourneyCopy } from "@/lib/i18n/premium-pack-journey-copy";
+import { getPremiumRecommendedCopy } from "@/lib/i18n/premium-recommended-copy";
 import { getPremiumTierCopy } from "@/lib/i18n/premium-tier-copy";
 import { shadows } from "@/lib/constants/shadows";
 import { spacing } from "@/lib/constants/spacing";
@@ -35,6 +36,7 @@ export default function PremiumTabScreen() {
   const packCopy = getPremiumPackCopy(currentLanguage);
   const packBenefitsCopy = getPremiumPackBenefitsCopy(currentLanguage);
   const packJourneyCopy = getPremiumPackJourneyCopy(currentLanguage);
+  const recommendedCopy = getPremiumRecommendedCopy(currentLanguage);
   const tierCopy = getPremiumTierCopy(currentLanguage);
   const englishPackCopy = getPremiumPackCopy("en");
 
@@ -69,6 +71,24 @@ export default function PremiumTabScreen() {
         };
       }),
     [categories, englishPackCopy, packBenefitsCopy, packCopy, packJourneyCopy]
+  );
+  const recommendedPackItems = useMemo(
+    () =>
+      recommendedCopy.items
+        .map((item) => {
+          const pack = premiumPackItems.find((candidate) => candidate.id === item.packId);
+
+          if (!pack) {
+            return undefined;
+          }
+
+          return {
+            ...item,
+            packTitle: pack.title
+          };
+        })
+        .filter((item): item is NonNullable<typeof item> => Boolean(item)),
+    [premiumPackItems, recommendedCopy.items]
   );
 
   const effectiveUnlocked = isReady && isPremiumUnlocked;
@@ -170,6 +190,27 @@ export default function PremiumTabScreen() {
                   {previewCandidates.length}
                 </AppText>
               </View>
+            </View>
+          </AppCard>
+
+          <AppCard style={styles.recommendedCard}>
+            <AppText style={styles.sectionTitle} variant="subtitle">
+              {recommendedCopy.title}
+            </AppText>
+            <AppText color={colors.textMuted}>{recommendedCopy.body}</AppText>
+            <View style={styles.recommendedList}>
+              {recommendedPackItems.map((item) => (
+                <View key={item.packId} style={styles.recommendedItem}>
+                  <View style={styles.recommendedTopRow}>
+                    <AppBadge label={item.packTitle} tone="premium" />
+                    <Ionicons color={colors.primary} name="sparkles" size={16} />
+                  </View>
+                  <AppText style={styles.recommendedTitle} variant="subtitle">
+                    {item.title}
+                  </AppText>
+                  <AppText color={colors.textMuted}>{item.body}</AppText>
+                </View>
+              ))}
             </View>
           </AppCard>
 
@@ -561,6 +602,30 @@ const styles = StyleSheet.create({
   unlockedListCard: {
     borderRadius: 30,
     backgroundColor: colors.surfaceSoft
+  },
+  recommendedCard: {
+    borderRadius: 28,
+    backgroundColor: colors.surfaceMuted,
+    gap: spacing.md
+  },
+  recommendedList: {
+    gap: spacing.md
+  },
+  recommendedItem: {
+    borderRadius: 22,
+    padding: spacing.md,
+    backgroundColor: colors.surface,
+    gap: spacing.xs,
+    ...shadows.card
+  },
+  recommendedTopRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: spacing.sm
+  },
+  recommendedTitle: {
+    color: colors.primary
   },
   packList: {
     gap: spacing.md
