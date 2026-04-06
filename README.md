@@ -23,6 +23,7 @@ The goal is not to teach users how to "avoid annoying Japanese people". The goal
 - All 69 scenes now have detailed content in all 9 supported languages
 - Includes `Home`, `Browse`, `Search`, `Category Detail`, `Premium`, and `Settings`
 - `Premium` UI exists, but real purchase flow is not implemented yet
+- RevenueCat foundation and Premium billing UI are wired, but real App Store product setup is still pending
 
 ## Supported Languages
 
@@ -100,6 +101,8 @@ The UI is intentionally calm and editorial rather than loud or touristy.
 - expo-router
 - Async Storage
 - expo-localization
+- react-native-purchases
+- expo-dev-client
 
 ## Getting Started
 
@@ -126,6 +129,9 @@ On Windows, this form is also useful:
 ```powershell
 cmd /c npx.cmd expo start --lan -c
 ```
+
+For real Premium billing checks later, Expo Go is not enough.  
+You will need a development build after RevenueCat and App Store Connect are configured.
 
 ### Type Check
 
@@ -168,10 +174,11 @@ Premium direction notes are collected here:
 - `PREMIUM_IMPLEMENTATION_TASKS_JA.md`
 - `PREMIUM_HYPOTHESES.md`
 - `PREMIUM_HYPOTHESES_JA.md`
+- `REVENUECAT_SETUP_JA.md`
 
 ## Notes
 
 - There is no backend, CMS, auth, or database
-- Real in-app purchase handling is not implemented yet
+- Real in-app purchase handling is partially wired, but Apple / RevenueCat product setup is not finished yet
 - Content quality and mobile readability have been prioritized over feature breadth
 - The project is now in a late MVP polish phase
