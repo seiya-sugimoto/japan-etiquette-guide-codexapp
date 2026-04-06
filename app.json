@@ -11,6 +11,14 @@
     "ios": {
       "supportsTablet": false
     },
+    "extra": {
+      "revenueCat": {
+        "iosApiKey": "",
+        "entitlementId": "premium",
+        "offeringId": "default",
+        "packageType": "lifetime"
+      }
+    },
     "plugins": [
       "expo-router",
       "expo-localization"
