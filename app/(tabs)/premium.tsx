@@ -17,6 +17,7 @@ import { getPremiumPreviewCopy } from "@/lib/i18n/marketing-copy";
 import { getPremiumMockCopy } from "@/lib/i18n/premium-mock-copy";
 import { getPremiumPackBenefitsCopy } from "@/lib/i18n/premium-pack-benefits-copy";
 import { getPremiumPackCopy } from "@/lib/i18n/premium-pack-copy";
+import { getPremiumPackJourneyCopy } from "@/lib/i18n/premium-pack-journey-copy";
 import { getPremiumTierCopy } from "@/lib/i18n/premium-tier-copy";
 import { shadows } from "@/lib/constants/shadows";
 import { spacing } from "@/lib/constants/spacing";
@@ -33,6 +34,7 @@ export default function PremiumTabScreen() {
   const mockCopy = getPremiumMockCopy(currentLanguage);
   const packCopy = getPremiumPackCopy(currentLanguage);
   const packBenefitsCopy = getPremiumPackBenefitsCopy(currentLanguage);
+  const packJourneyCopy = getPremiumPackJourneyCopy(currentLanguage);
   const tierCopy = getPremiumTierCopy(currentLanguage);
   const englishPackCopy = getPremiumPackCopy("en");
 
@@ -58,13 +60,15 @@ export default function PremiumTabScreen() {
           title: packCopy.packs[pack.id]?.title ?? englishPackCopy.packs[pack.id].title,
           body: packCopy.packs[pack.id]?.body ?? englishPackCopy.packs[pack.id].body,
           highlights: packBenefitsCopy.packs[pack.id].highlights,
+          bestFor: packJourneyCopy.packs[pack.id].bestFor,
+          useWhen: packJourneyCopy.packs[pack.id].useWhen,
           deepDiveCount: scenes.filter((scene) => Boolean(scene.content.premiumDeepDive)).length,
           phraseCount: scenes.reduce((total, scene) => total + (scene.content.premiumDeepDive?.phraseCards.length ?? 0), 0),
           scenarioCount: scenes.reduce((total, scene) => total + (scene.content.premiumDeepDive?.situationCards.length ?? 0), 0),
           scenes
         };
       }),
-    [categories, englishPackCopy, packBenefitsCopy, packCopy]
+    [categories, englishPackCopy, packBenefitsCopy, packCopy, packJourneyCopy]
   );
 
   const effectiveUnlocked = isReady && isPremiumUnlocked;
@@ -174,6 +178,12 @@ export default function PremiumTabScreen() {
               {packCopy.sectionTitle}
             </AppText>
             <AppText color={colors.textMuted}>{packCopy.sectionBody}</AppText>
+            <AppCard style={styles.packChooserCard}>
+              <AppText style={styles.packChooserTitle} variant="subtitle">
+                {packJourneyCopy.chooseTitle}
+              </AppText>
+              <AppText color={colors.textMuted}>{packJourneyCopy.chooseBody}</AppText>
+            </AppCard>
 
             <View style={styles.packList}>
               {premiumPackItems.map((pack) => (
@@ -237,6 +247,25 @@ export default function PremiumTabScreen() {
                           </AppText>
                         </View>
                       ))}
+                    </View>
+                  </View>
+
+                  <View style={styles.packJourneyBlock}>
+                    <View style={styles.packJourneyItem}>
+                      <AppText color={colors.textMuted} variant="caption">
+                        {packJourneyCopy.bestForLabel}
+                      </AppText>
+                      <AppText color={colors.textSubtle} style={styles.packJourneyText}>
+                        {pack.bestFor}
+                      </AppText>
+                    </View>
+                    <View style={styles.packJourneyItem}>
+                      <AppText color={colors.textMuted} variant="caption">
+                        {packJourneyCopy.useWhenLabel}
+                      </AppText>
+                      <AppText color={colors.textSubtle} style={styles.packJourneyText}>
+                        {pack.useWhen}
+                      </AppText>
                     </View>
                   </View>
 
@@ -536,6 +565,14 @@ const styles = StyleSheet.create({
   packList: {
     gap: spacing.md
   },
+  packChooserCard: {
+    borderRadius: 24,
+    backgroundColor: colors.surfaceMuted,
+    gap: spacing.xs
+  },
+  packChooserTitle: {
+    color: colors.primary
+  },
   packCard: {
     borderRadius: 28,
     backgroundColor: colors.surface
@@ -578,6 +615,15 @@ const styles = StyleSheet.create({
   },
   packExtrasBlock: {
     gap: spacing.sm
+  },
+  packJourneyBlock: {
+    gap: spacing.sm
+  },
+  packJourneyItem: {
+    gap: 4
+  },
+  packJourneyText: {
+    lineHeight: 22
   },
   packHighlightsList: {
     gap: spacing.sm
