@@ -8,7 +8,7 @@ import { AppScreen } from "@/components/ui/AppScreen";
 import { AppText } from "@/components/ui/AppText";
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
 import { colors } from "@/lib/constants/colors";
-import { getFeedbackScreenCopy } from "@/lib/i18n/marketing-copy";
+import { getFeedbackCopy } from "@/lib/i18n/feedback-copy";
 import { radius } from "@/lib/constants/radius";
 import { spacing } from "@/lib/constants/spacing";
 
@@ -21,7 +21,7 @@ const cardIcons: [keyof typeof Ionicons.glyphMap, keyof typeof Ionicons.glyphMap
 export default function FeedbackPlaceholderScreen() {
   const router = useRouter();
   const { currentLanguage } = useAppLanguage();
-  const copy = getFeedbackScreenCopy(currentLanguage);
+  const copy = getFeedbackCopy(currentLanguage);
 
   return (
     <AppScreen>
@@ -30,7 +30,7 @@ export default function FeedbackPlaceholderScreen() {
           <Ionicons color={colors.primary} name="arrow-back" size={20} />
         </Pressable>
         <AppText style={styles.headerTitle} variant="caption">
-          Feedback
+          {copy.headerTitle}
         </AppText>
         <View style={styles.headerSpacer} />
       </View>
@@ -65,9 +65,10 @@ export default function FeedbackPlaceholderScreen() {
 
       <AppCard style={styles.helpCard}>
         <AppText style={styles.helpTitle} variant="subtitle">
-          {copy.helpsTitle}
+          {copy.checklistTitle}
         </AppText>
-        {copy.helpsPoints.map((point) => (
+        <AppText color={colors.textMuted}>{copy.checklistBody}</AppText>
+        {copy.checklistPoints.map((point) => (
           <View key={point} style={styles.helpRow}>
             <Ionicons color={colors.primary} name="checkmark-circle" size={18} />
             <AppText color={colors.textSubtle} style={styles.helpText}>
@@ -75,6 +76,26 @@ export default function FeedbackPlaceholderScreen() {
             </AppText>
           </View>
         ))}
+      </AppCard>
+
+      <AppCard style={styles.templateCard}>
+        <View style={styles.statusHeader}>
+          <Ionicons color={colors.primary} name="document-text-outline" size={18} />
+          <AppText style={styles.statusTitle} variant="subtitle">
+            {copy.templateTitle}
+          </AppText>
+        </View>
+        <AppText color={colors.textMuted}>{copy.templateBody}</AppText>
+        <View style={styles.templateList}>
+          {copy.templateLines.map((line) => (
+            <View key={line} style={styles.templateLine}>
+              <Ionicons color={colors.primary} name="chevron-forward" size={14} />
+              <AppText color={colors.textSubtle} style={styles.templateText}>
+                {line}
+              </AppText>
+            </View>
+          ))}
+        </View>
       </AppCard>
 
       <AppCard style={styles.statusCard}>
@@ -85,6 +106,16 @@ export default function FeedbackPlaceholderScreen() {
           </AppText>
         </View>
         <AppText color={colors.textMuted}>{copy.statusBody}</AppText>
+      </AppCard>
+
+      <AppCard style={styles.nextCard}>
+        <View style={styles.statusHeader}>
+          <Ionicons color={colors.primary} name="sparkles-outline" size={18} />
+          <AppText style={styles.statusTitle} variant="subtitle">
+            {copy.nextTitle}
+          </AppText>
+        </View>
+        <AppText color={colors.textMuted}>{copy.nextBody}</AppText>
       </AppCard>
 
       <View style={styles.ctaWrap}>
@@ -157,6 +188,10 @@ const styles = StyleSheet.create({
     borderRadius: 28,
     backgroundColor: colors.surfaceMuted
   },
+  templateCard: {
+    borderRadius: 28,
+    backgroundColor: colors.surface
+  },
   helpTitle: {
     color: colors.primary
   },
@@ -173,6 +208,10 @@ const styles = StyleSheet.create({
     borderRadius: 28,
     backgroundColor: colors.surfaceSoft
   },
+  nextCard: {
+    borderRadius: 28,
+    backgroundColor: colors.surfaceMuted
+  },
   statusHeader: {
     flexDirection: "row",
     alignItems: "center",
@@ -180,6 +219,18 @@ const styles = StyleSheet.create({
   },
   statusTitle: {
     color: colors.primary
+  },
+  templateList: {
+    gap: spacing.sm
+  },
+  templateLine: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: spacing.xs
+  },
+  templateText: {
+    flex: 1,
+    lineHeight: 22
   },
   ctaWrap: {
     gap: spacing.md,
