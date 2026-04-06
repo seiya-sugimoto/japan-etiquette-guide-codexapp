@@ -179,6 +179,7 @@ Premium direction notes are collected here:
 - `PREMIUM_HYPOTHESES.md`
 - `PREMIUM_HYPOTHESES_JA.md`
 - `REVENUECAT_SETUP_JA.md`
+- `APP_STORE_REVENUECAT_SCREEN_GUIDE_JA.md`
 
 ## Notes
 
