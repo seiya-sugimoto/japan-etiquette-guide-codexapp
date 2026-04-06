@@ -27,6 +27,16 @@ type LanguageContextValue = {
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
+const fallbackLanguage: AppLanguage = "en";
+const supportedLanguageCodes = new Set<AppLanguage>(supportedLanguages.map((language) => language.code));
+
+function normalizeLanguage(language: string | null | undefined): AppLanguage {
+  if (language && supportedLanguageCodes.has(language as AppLanguage)) {
+    return language as AppLanguage;
+  }
+
+  return fallbackLanguage;
+}
 
 function resolveDeviceLanguage(): AppLanguage {
   const locale = getLocales()[0];
@@ -51,24 +61,28 @@ export function LanguageProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     loadStoredLanguage()
       .then((stored) => {
-        setCurrentLanguage(stored ?? deviceSuggestedLanguage);
+        setCurrentLanguage(normalizeLanguage(stored ?? deviceSuggestedLanguage));
       })
       .finally(() => setIsReady(true));
   }, [deviceSuggestedLanguage]);
 
   const value = useMemo<LanguageContextValue>(() => {
+    const safeLanguage = normalizeLanguage(currentLanguage);
+
     return {
-      currentLanguage,
+      currentLanguage: safeLanguage,
       isReady,
       setLanguage: async (language) => {
-        setCurrentLanguage(language);
-        await saveStoredLanguage(language);
+        const normalizedLanguage = normalizeLanguage(language);
+        setCurrentLanguage(normalizedLanguage);
+        await saveStoredLanguage(normalizedLanguage);
       },
-      t: translations[currentLanguage],
+      t: translations[safeLanguage] ?? translations[fallbackLanguage],
       supportedLanguages,
-      suggestedTopics: localizedSuggestedTopics[currentLanguage],
-      recentSearches: localizedRecentSearches[currentLanguage],
-      getCategoryCopy: (categoryId: string) => localizedCategoryCopy[currentLanguage][categoryId],
+      suggestedTopics: localizedSuggestedTopics[safeLanguage] ?? localizedSuggestedTopics[fallbackLanguage],
+      recentSearches: localizedRecentSearches[safeLanguage] ?? localizedRecentSearches[fallbackLanguage],
+      getCategoryCopy: (categoryId: string) =>
+        localizedCategoryCopy[safeLanguage]?.[categoryId] ?? localizedCategoryCopy[fallbackLanguage]?.[categoryId],
       getLanguageLabel,
       deviceSuggestedLanguage
     };
