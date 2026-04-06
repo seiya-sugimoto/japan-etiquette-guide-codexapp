@@ -10,16 +10,19 @@ type AppButtonProps = {
   label: string;
   onPress: () => void;
   tone?: "primary" | "secondary";
+  disabled?: boolean;
 };
 
-export function AppButton({ label, onPress, tone = "primary" }: AppButtonProps) {
+export function AppButton({ label, onPress, tone = "primary", disabled = false }: AppButtonProps) {
   return (
     <Pressable
+      disabled={disabled}
       onPress={onPress}
       style={({ pressed }) => [
         styles.button,
         tone === "primary" ? styles.primary : styles.secondary,
-        pressed && styles.pressed
+        pressed && !disabled && styles.pressed,
+        disabled && styles.disabled
       ]}
     >
       <AppText style={styles.label} variant="caption" color={tone === "primary" ? colors.surface : colors.primary}>
@@ -44,6 +47,9 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.86
+  },
+  disabled: {
+    opacity: 0.54
   },
   primary: {
     backgroundColor: colors.primary,

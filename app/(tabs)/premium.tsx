@@ -20,6 +20,7 @@ import { getPremiumPackCopy } from "@/lib/i18n/premium-pack-copy";
 import { getPremiumPackJourneyCopy } from "@/lib/i18n/premium-pack-journey-copy";
 import { getPremiumRecommendedCopy } from "@/lib/i18n/premium-recommended-copy";
 import { getPremiumTierCopy } from "@/lib/i18n/premium-tier-copy";
+import { getPremiumBillingCopy } from "@/lib/i18n/premium-billing-copy";
 import { shadows } from "@/lib/constants/shadows";
 import { spacing } from "@/lib/constants/spacing";
 
@@ -30,9 +31,22 @@ export default function PremiumTabScreen() {
   const router = useRouter();
   const { currentLanguage, supportedLanguages, t } = useAppLanguage();
   const categories = useCategories();
-  const { isPremiumUnlocked, isReady, toggleMockPremium } = usePremium();
+  const {
+    isPremiumUnlocked,
+    isReady,
+    isUsingRealPremium,
+    isPurchaseInFlight,
+    isRestoreInFlight,
+    priceLabel,
+    lastError,
+    toggleMockPremium,
+    purchasePremium,
+    restorePurchases,
+    refreshCustomerInfo
+  } = usePremium();
   const copy = getPremiumPreviewCopy(currentLanguage);
   const mockCopy = getPremiumMockCopy(currentLanguage);
+  const billingCopy = getPremiumBillingCopy(currentLanguage);
   const packCopy = getPremiumPackCopy(currentLanguage);
   const packBenefitsCopy = getPremiumPackBenefitsCopy(currentLanguage);
   const packJourneyCopy = getPremiumPackJourneyCopy(currentLanguage);
@@ -97,6 +111,17 @@ export default function PremiumTabScreen() {
   const statusBody = effectiveUnlocked ? mockCopy.unlockedModeBody : mockCopy.previewModeBody;
   const statusIconName = effectiveUnlocked ? "diamond" : "eye-outline";
   const toggleLabel = effectiveUnlocked ? mockCopy.resetMockCta : mockCopy.unlockMockCta;
+  const billingCaption = isUsingRealPremium ? billingCopy.liveStatusCaption : billingCopy.mockStatusCaption;
+  const billingTitle = isUsingRealPremium ? billingCopy.liveReadyTitle : billingCopy.mockReadyTitle;
+  const billingBody = isUsingRealPremium ? billingCopy.liveReadyBody : billingCopy.mockReadyBody;
+  const purchaseLabel = isPurchaseInFlight
+    ? billingCopy.purchasePendingLabel
+    : priceLabel
+      ? billingCopy.buyWithPriceLabel.replace("{price}", priceLabel)
+      : billingCopy.buyNowLabel;
+  const restoreLabel = isRestoreInFlight ? billingCopy.restorePendingLabel : billingCopy.restoreLabel;
+  const canPurchaseNow = !isPurchaseInFlight && !isRestoreInFlight && (!isUsingRealPremium || Boolean(priceLabel));
+  const canRestoreNow = isUsingRealPremium && !isPurchaseInFlight && !isRestoreInFlight;
 
   return (
     <AppScreen>
@@ -152,6 +177,34 @@ export default function PremiumTabScreen() {
           {statusTitle}
         </AppText>
         <AppText color={colors.textMuted}>{statusBody}</AppText>
+      </AppCard>
+
+      <AppCard style={styles.billingCard}>
+        <View style={styles.sectionHeader}>
+          <View style={[styles.sectionIcon, isUsingRealPremium ? styles.unlockedIcon : styles.previewIcon]}>
+            <Ionicons color={isUsingRealPremium ? colors.surface : colors.primary} name={isUsingRealPremium ? "card" : "construct-outline"} size={18} />
+          </View>
+          <View style={styles.sectionCopy}>
+            <AppText color={colors.textMuted} variant="caption">
+              {billingCaption}
+            </AppText>
+            <AppText style={styles.sectionTitle} variant="subtitle">
+              {billingTitle}
+            </AppText>
+            <AppText color={colors.textMuted}>{billingBody}</AppText>
+          </View>
+        </View>
+        {isUsingRealPremium && !priceLabel && !effectiveUnlocked ? (
+          <AppText color={colors.textMuted}>{billingCopy.noPackageBody}</AppText>
+        ) : null}
+        {lastError ? (
+          <View style={styles.errorBox}>
+            <AppText style={styles.errorTitle} variant="subtitle">
+              {billingCopy.errorTitle}
+            </AppText>
+            <AppText color={colors.textMuted}>{lastError.message}</AppText>
+          </View>
+        ) : null}
       </AppCard>
 
       {effectiveUnlocked ? (
@@ -452,7 +505,17 @@ export default function PremiumTabScreen() {
       </AppCard>
 
       <View style={styles.ctaWrap}>
-        <AppButton label={toggleLabel} onPress={() => void toggleMockPremium()} />
+        {isUsingRealPremium ? (
+          <>
+            {!effectiveUnlocked ? (
+              <AppButton disabled={!canPurchaseNow} label={purchaseLabel} onPress={() => void purchasePremium()} />
+            ) : null}
+            <AppButton disabled={!canRestoreNow} label={restoreLabel} onPress={() => void restorePurchases()} tone="secondary" />
+            <AppButton label={billingCopy.refreshLabel} onPress={() => void refreshCustomerInfo()} tone="secondary" />
+          </>
+        ) : (
+          <AppButton label={toggleLabel} onPress={() => void toggleMockPremium()} />
+        )}
         <AppButton label={copy.browseCta} onPress={() => router.push("/browse")} />
         <AppButton label={copy.feedbackCta} onPress={() => router.push("/feedback")} tone="secondary" />
       </View>
@@ -512,6 +575,11 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     backgroundColor: colors.surfaceMuted,
     gap: spacing.sm
+  },
+  billingCard: {
+    borderRadius: 30,
+    backgroundColor: colors.surface,
+    gap: spacing.md
   },
   statusHeader: {
     flexDirection: "row",
@@ -595,6 +663,15 @@ const styles = StyleSheet.create({
   pointText: {
     flex: 1,
     lineHeight: 22
+  },
+  errorBox: {
+    borderRadius: 20,
+    padding: spacing.md,
+    gap: spacing.xs,
+    backgroundColor: colors.surfaceMuted
+  },
+  errorTitle: {
+    color: colors.primary
   },
   sectionBlock: {
     gap: spacing.md
