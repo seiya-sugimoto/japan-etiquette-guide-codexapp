@@ -1,11 +1,12 @@
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { Pressable, StyleSheet, View } from "react-native";
+import { Alert, Pressable, StyleSheet, View } from "react-native";
 
 import { AppButton } from "@/components/ui/AppButton";
 import { AppCard } from "@/components/ui/AppCard";
 import { AppScreen } from "@/components/ui/AppScreen";
 import { AppText } from "@/components/ui/AppText";
+import { hasFeedbackFormUrl, openFeedbackForm } from "@/features/feedback/lib/feedback-form";
 import { useAppLanguage } from "@/features/localization/hooks/useAppLanguage";
 import { colors } from "@/lib/constants/colors";
 import { getFeedbackCopy } from "@/lib/i18n/feedback-copy";
@@ -22,6 +23,15 @@ export default function FeedbackPlaceholderScreen() {
   const router = useRouter();
   const { currentLanguage } = useAppLanguage();
   const copy = getFeedbackCopy(currentLanguage);
+  const formReady = hasFeedbackFormUrl();
+
+  const handleOpenForm = async () => {
+    const opened = await openFeedbackForm();
+
+    if (!opened) {
+      Alert.alert(copy.unavailableTitle, copy.unavailableBody);
+    }
+  };
 
   return (
     <AppScreen>
@@ -105,7 +115,10 @@ export default function FeedbackPlaceholderScreen() {
             {copy.statusTitle}
           </AppText>
         </View>
-        <AppText color={colors.textMuted}>{copy.statusBody}</AppText>
+        <AppText color={colors.textMuted}>{formReady ? copy.statusBodyReady : copy.statusBodyMissing}</AppText>
+        <AppText color={colors.textSubtle} style={styles.browserNote}>
+          {copy.browserNote}
+        </AppText>
       </AppCard>
 
       <AppCard style={styles.nextCard}>
@@ -119,7 +132,8 @@ export default function FeedbackPlaceholderScreen() {
       </AppCard>
 
       <View style={styles.ctaWrap}>
-        <AppButton label={copy.browseCta} onPress={() => router.push("/browse")} />
+        <AppButton label={formReady ? copy.openFormCta : copy.openFormPendingCta} onPress={handleOpenForm} tone="primary" />
+        <AppButton label={copy.browseCta} onPress={() => router.push("/browse")} tone="secondary" />
         <AppButton label={copy.premiumCta} onPress={() => router.push("/premium")} tone="secondary" />
       </View>
     </AppScreen>
@@ -219,6 +233,9 @@ const styles = StyleSheet.create({
   },
   statusTitle: {
     color: colors.primary
+  },
+  browserNote: {
+    lineHeight: 22
   },
   templateList: {
     gap: spacing.sm

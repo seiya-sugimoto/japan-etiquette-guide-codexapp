@@ -4,6 +4,7 @@ const revenueCatIosApiKey = process.env.EXPO_PUBLIC_REVENUECAT_IOS_API_KEY ?? ""
 const revenueCatEntitlementId = process.env.EXPO_PUBLIC_REVENUECAT_ENTITLEMENT_ID ?? "premium";
 const revenueCatOfferingId = process.env.EXPO_PUBLIC_REVENUECAT_OFFERING_ID ?? "default";
 const revenueCatPackageType = process.env.EXPO_PUBLIC_REVENUECAT_PACKAGE_TYPE ?? "lifetime";
+const feedbackFormUrl = process.env.EXPO_PUBLIC_FEEDBACK_FORM_URL ?? "";
 
 const config: ExpoConfig = {
   name: "Japan Etiquette Guide",
@@ -18,6 +19,9 @@ const config: ExpoConfig = {
     supportsTablet: false
   },
   extra: {
+    feedback: {
+      formUrl: feedbackFormUrl
+    },
     revenueCat: {
       iosApiKey: revenueCatIosApiKey,
       entitlementId: revenueCatEntitlementId,
