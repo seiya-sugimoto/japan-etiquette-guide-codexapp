@@ -181,6 +181,10 @@ Premium direction notes are collected here:
 - `REVENUECAT_SETUP_JA.md`
 - `APP_STORE_REVENUECAT_SCREEN_GUIDE_JA.md`
 
+Feedback collection notes are collected here:
+
+- `FEEDBACK_GOOGLE_FORM_PLAN_JA.md`
+
 ## Notes
 
 - There is no backend, CMS, auth, or database
